@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "831122608682",
+    "firebase_url": "https://kissan-connect-3a3ea-default-rtdb.firebaseio.com",
+    "project_id": "kissan-connect-3a3ea",
+    "storage_bucket": "kissan-connect-3a3ea.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831122608682:android:e76c3f0e897f5653502953",
+        "android_client_info": {
+          "package_name": "com.example.kissan_connect_app_2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJF0fOwcDz-imZ0U-_HE8H5_9oI60ux24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
