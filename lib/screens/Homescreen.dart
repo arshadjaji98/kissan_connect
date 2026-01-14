@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:http/http.dart' as http;
+import 'package:kissan_connect_app_2/generated/l10n.dart';
+import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 import 'cropguide.dart';
 import 'WelcomeScreen.dart';
 import 'WeatherScreen.dart';
@@ -329,9 +331,10 @@ class FertilizerGuideScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fertilizer Guide'),
+        title: Text(localization.fertilizer_guide),
         backgroundColor: Colors.green,
       ),
       body: SingleChildScrollView(
@@ -347,12 +350,12 @@ class FertilizerGuideScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Row(
+                    Row(
                       children: [
                         Icon(Icons.eco, color: Colors.green, size: 30),
                         SizedBox(width: 10),
                         Text(
-                          'Fertilizer Recommendation',
+                          localization.fertilizer_guide,
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -371,11 +374,12 @@ class FertilizerGuideScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      fertilizerData['reason'] ?? 'No reason provided',
+                      fertilizerData['reason'] ??
+                          localization.no_reason_provided,
                       style: const TextStyle(fontSize: 16),
                     ),
                     if ((fertilizerData['adjustment'] as String?) !=
-                        'Optimal application rate')
+                        localization.optimal_application_rate)
                       Text(
                         'Adjustment: ${fertilizerData['adjustment'] ?? "None"}',
                         style: TextStyle(
@@ -392,40 +396,47 @@ class FertilizerGuideScreen extends StatelessWidget {
             const SizedBox(height: 20),
 
             // Application Guide
-            const Text(
-              '📋 Application Guide:',
+            Text(
+              localization.application_guide,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            _buildApplicationGuide(fertilizerData['cropName'] ?? 'General'),
+            _buildApplicationGuide(
+              context,
+              fertilizerData['cropName'] ?? localization.general,
+            ),
 
             const SizedBox(height: 20),
 
             // Fertilizer Types
-            const Text(
-              '🧪 Recommended Fertilizer Types:',
+            Text(
+              localization.recommended_fertilizer_types,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            _buildFertilizerTypes(fertilizerData['cropName'] ?? 'General'),
+            _buildFertilizerTypes(
+              fertilizerData['cropName'] ?? localization.general,
+            ),
 
             const SizedBox(height: 20),
 
             // Timing and Methods
-            const Text(
-              '⏰ Best Application Timing:',
+            Text(
+              localization.best_application_timing,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            _buildTimingGuide(fertilizerData['growthStage'] ?? 'General'),
+            _buildTimingGuide(
+              fertilizerData['growthStage'] ?? localization.general,
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildApplicationGuide(String cropName) {
-    final guides = _getApplicationGuide(cropName);
+  Widget _buildApplicationGuide(BuildContext context, String cropName) {
+    final guides = _getApplicationGuide(context, cropName);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -513,49 +524,50 @@ class FertilizerGuideScreen extends StatelessWidget {
     );
   }
 
-  List<String> _getApplicationGuide(String cropName) {
+  List<String> _getApplicationGuide(BuildContext context, String cropName) {
+    final localization = AppLocalizations.of(context)!;
     final guides = {
-      'Wheat': [
-        'Apply 1/3 of nitrogen at sowing',
-        'Apply remaining nitrogen in two splits during tillering and jointing',
-        'Mix fertilizers thoroughly in soil',
-        'Apply when soil has adequate moisture',
-        'Avoid application during heavy rainfall',
-        'Use soil test-based recommendations',
+      localization.wheat: [
+        localization.apply_one_third_nitrogen_sowing,
+        localization.apply_remaining_nitrogen_splits,
+        localization.mix_fertilizers_thoroughly,
+        localization.apply_when_soil_moist,
+        localization.avoid_heavy_rainfall_application,
+        localization.use_soil_test_recommendations,
       ],
-      'Cotton': [
-        'Apply full dose of phosphorus and potassium at sowing',
-        'Split nitrogen application in 3-4 doses',
-        'First dose at sowing, second at squaring',
-        'Third dose at flowering, fourth if needed',
-        'Apply in bands 5-7 cm deep',
-        'Irrigate immediately after application',
+      localization.cotton: [
+        localization.apply_full_phosphorus_potassium,
+        localization.split_nitrogen_three_four_doses,
+        localization.apply_in_bands,
+        localization.irrigate_after_application,
+        localization.apply_in_bands,
+        localization.irrigate_after_application,
       ],
-      'Rice': [
-        'Apply basal dose before pudding',
-        'Split nitrogen application in 3 equal doses',
-        'First at transplanting, second at tillering, third at panicle initiation',
-        'Apply in standing water for better efficiency',
-        'Use urea super granules for better results',
-        'Avoid application during strong winds',
+      localization.rice: [
+        localization.apply_basal_before_pudding,
+        localization.first_second_third,
+        localization.split_nitrogen_three_equal_doses,
+        localization.apply_in_standing_water,
+        localization.use_urea_super_granules,
+        localization.avoid_strong_wind_application,
       ],
-      'Corn': [
-        'Apply starter fertilizer at planting',
-        'Side-dress nitrogen when plants are 30-45 cm tall',
-        'Apply phosphorus and potassium based on soil test',
-        'Use split applications for sandy soils',
-        'Incorporate fertilizers properly',
-        'Avoid root contact with concentrated fertilizers',
+      localization.corn: [
+        localization.apply_starter_fertilizer_planting,
+        localization.side_dress_nitrogen,
+        localization.apply_phosphorus_potassium_soil_test,
+        localization.use_split_for_sandy_soils,
+        localization.incorporate_fertilizers_properly,
+        localization.avoid_root_contact_concentrated,
       ],
     };
     return guides[cropName] ??
         [
-          'Apply fertilizers based on soil test results',
-          'Split applications for better efficiency',
-          'Incorporate fertilizers properly into soil',
-          'Apply when plants are actively growing',
-          'Avoid application during extreme weather',
-          'Follow recommended dosage strictly',
+          localization.apply_based_on_soil_test,
+          localization.split_applications_for_efficiency,
+          localization.incorporate_fertilizers_properly,
+          localization.apply_when_plants_growing,
+          localization.avoid_extreme_weather_application,
+          localization.follow_recommended_dosage,
         ];
   }
 
@@ -661,9 +673,10 @@ class IrrigationGuideScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Irrigation Guide'),
+        title: Text(loc.irrigation_guide),
         backgroundColor: Colors.blue,
       ),
       body: SingleChildScrollView(
@@ -679,12 +692,12 @@ class IrrigationGuideScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Row(
+                    Row(
                       children: [
                         Icon(Icons.opacity, color: Colors.blue, size: 30),
                         SizedBox(width: 10),
                         Text(
-                          'Irrigation Recommendation',
+                          loc.irrigation_recommendation,
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -703,7 +716,7 @@ class IrrigationGuideScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      irrigationData['reason'] ?? 'No reason provided',
+                      irrigationData['reason'] ?? loc.no_reason_provided,
                       style: const TextStyle(fontSize: 16),
                     ),
                     const SizedBox(height: 10),
@@ -722,8 +735,8 @@ class IrrigationGuideScreen extends StatelessWidget {
             const SizedBox(height: 20),
 
             // Irrigation Schedule
-            const Text(
-              '📅 Irrigation Schedule:',
+            Text(
+              loc.irrigation_schedule,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
@@ -732,8 +745,8 @@ class IrrigationGuideScreen extends StatelessWidget {
             const SizedBox(height: 20),
 
             // Water Management Tips
-            const Text(
-              '💧 Water Management Tips:',
+            Text(
+              loc.water_management_tips,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
@@ -742,8 +755,8 @@ class IrrigationGuideScreen extends StatelessWidget {
             const SizedBox(height: 20),
 
             // Methods and Techniques
-            const Text(
-              '⚙️ Irrigation Methods:',
+            Text(
+              loc.irrigation_methods,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
@@ -997,7 +1010,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
     _currentDisplayCrop = widget.primaryCrop;
     final userLocation = widget.userLocation.trim();
-    _displayCity = userLocation.isNotEmpty ? userLocation : 'Your Location';
+    _displayCity = userLocation.isNotEmpty
+        ? userLocation
+        : AppLocalizations.of(context)!.your_location;
 
     _isFirstTimeUser = widget.isFirstTime;
 
@@ -1029,7 +1044,7 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       await FirebaseHelper.initializeCollections();
     } catch (e) {
-      print('Error initializing Firebase: $e');
+      print(AppLocalizations.of(context)!.error_initializing_firebase);
     }
   }
 
@@ -1043,7 +1058,7 @@ class _HomeScreenState extends State<HomeScreen> {
             .update({'isFirstTime': false, 'firstLoginCompleted': true});
       }
     } catch (e) {
-      print('Error updating first-time status: $e');
+      print(AppLocalizations.of(context)!.error_updating_first_time_status);
     }
   }
 
@@ -1064,7 +1079,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 duration: const Duration(milliseconds: 800),
                 curve: Curves.elasticOut,
                 child: Text(
-                  'Welcome ${widget.userName}!',
+                  '${AppLocalizations.of(context)!.welcome} ${widget.userName}!',
                   style: const TextStyle(
                     fontSize: 42,
                     fontWeight: FontWeight.bold,
@@ -1300,38 +1315,54 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   String _getWeatherConditionFromCode(int weatherCode) {
-    if (weatherCode == 0) return 'Clear';
-    if (weatherCode == 1) return 'Clear';
-    if (weatherCode == 2) return 'Partly Cloudy';
-    if (weatherCode == 3) return 'Cloudy';
-    if (weatherCode == 45 || weatherCode == 48) return 'Fog';
-    if (weatherCode >= 51 && weatherCode <= 57) return 'Drizzle';
-    if (weatherCode >= 61 && weatherCode <= 67) return 'Rain';
-    if (weatherCode >= 80 && weatherCode <= 86) return 'Rain';
-    if (weatherCode >= 71 && weatherCode <= 77) return 'Snow';
-    if (weatherCode >= 95 && weatherCode <= 99) return 'Thunderstorm';
-    return 'Clear';
+    if (weatherCode == 0) return AppLocalizations.of(context)!.clear;
+    if (weatherCode == 1) return AppLocalizations.of(context)!.clear;
+    if (weatherCode == 2) return AppLocalizations.of(context)!.partlyCloudy;
+    if (weatherCode == 3) return AppLocalizations.of(context)!.cloudy;
+    if (weatherCode == 45 || weatherCode == 48) {
+      return AppLocalizations.of(context)!.fog;
+    }
+    if (weatherCode >= 51 && weatherCode <= 57) {
+      return AppLocalizations.of(context)!.drizzle;
+    }
+    if (weatherCode >= 61 && weatherCode <= 67) {
+      return AppLocalizations.of(context)!.rain;
+    }
+    if (weatherCode >= 80 && weatherCode <= 86) {
+      return AppLocalizations.of(context)!.rain;
+    }
+    if (weatherCode >= 71 && weatherCode <= 77) {
+      return AppLocalizations.of(context)!.snow;
+    }
+    if (weatherCode >= 95 && weatherCode <= 99) {
+      return AppLocalizations.of(context)!.thunderstorm;
+    }
+    return AppLocalizations.of(context)!.clear;
   }
 
   String _getWeatherDescriptionFromCode(int weatherCode) {
-    if (weatherCode == 0) return 'Clear sky';
-    if (weatherCode == 1) return 'Mainly clear';
-    if (weatherCode == 2) return 'Partly cloudy';
-    if (weatherCode == 3) return 'Overcast';
-    if (weatherCode == 45) return 'Fog';
-    if (weatherCode == 48) return 'Depositing rime fog';
-    if (weatherCode == 51) return 'Light drizzle';
-    if (weatherCode == 53) return 'Moderate drizzle';
-    if (weatherCode == 55) return 'Dense drizzle';
-    if (weatherCode == 61) return 'Slight rain';
-    if (weatherCode == 63) return 'Moderate rain';
-    if (weatherCode == 65) return 'Heavy rain';
-    if (weatherCode == 71) return 'Slight snow';
-    if (weatherCode == 73) return 'Moderate snow';
-    if (weatherCode == 75) return 'Heavy snow';
-    if (weatherCode == 95) return 'Thunderstorm';
-    if (weatherCode == 96) return 'Thunderstorm with hail';
-    return 'Clear sky';
+    if (weatherCode == 0) return AppLocalizations.of(context)!.clearSky;
+    if (weatherCode == 1) return AppLocalizations.of(context)!.mainlyClear;
+    if (weatherCode == 2) return AppLocalizations.of(context)!.partlyCloudy;
+    if (weatherCode == 3) return AppLocalizations.of(context)!.overcast;
+    if (weatherCode == 45) return AppLocalizations.of(context)!.fog;
+    if (weatherCode == 48) {
+      return AppLocalizations.of(context)!.depositingRimeFog;
+    }
+    if (weatherCode == 51) return AppLocalizations.of(context)!.lightDrizzle;
+    if (weatherCode == 53) return AppLocalizations.of(context)!.moderateDrizzle;
+    if (weatherCode == 55) return AppLocalizations.of(context)!.denseDrizzle;
+    if (weatherCode == 61) return AppLocalizations.of(context)!.slightRain;
+    if (weatherCode == 63) return AppLocalizations.of(context)!.moderateRain;
+    if (weatherCode == 65) return AppLocalizations.of(context)!.heavyRain;
+    if (weatherCode == 71) return AppLocalizations.of(context)!.slightSnow;
+    if (weatherCode == 73) return AppLocalizations.of(context)!.moderateSnow;
+    if (weatherCode == 75) return AppLocalizations.of(context)!.heavySnow;
+    if (weatherCode == 95) return AppLocalizations.of(context)!.thunderstorm;
+    if (weatherCode == 96) {
+      return AppLocalizations.of(context)!.thunderstormWithHail;
+    }
+    return AppLocalizations.of(context)!.clearSky;
   }
 
   IconData _getWeatherIcon(String weatherCondition) {
@@ -1389,8 +1420,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final currentWeather = getCurrentWeather();
     if (currentWeather == null) {
       return {
-        'riskLevel': 'Unknown',
-        'message': 'Weather data not available',
+        'riskLevel': AppLocalizations.of(context)!.unknown,
+        'message': AppLocalizations.of(context)!.weather_data_unavailable,
         'pestType': 'Various pests',
         'isHighRisk': false,
         'cropSpecificRisks': [],
@@ -1520,7 +1551,7 @@ class _HomeScreenState extends State<HomeScreen> {
       message = 'Temperature optimal for ${cropName.toLowerCase()} pests';
     } else if (temp < criticalTemp['min']! || temp > criticalTemp['max']!) {
       riskScore += 0;
-      message = 'Temperature extremes may reduce pest activity';
+      message = AppLocalizations.of(context)!.temperature_extremes;
     } else {
       riskScore += 2;
     }
@@ -1547,10 +1578,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
     if (weatherCondition.contains('Rain')) {
       riskScore -= 1;
-      message = 'Rain may reduce some pest populations';
+      message = AppLocalizations.of(context)!.rain_reduction;
     } else if (weatherCondition.contains('Clear')) {
       riskScore += 1;
-      if (message.isEmpty) message = 'Sunny conditions favor pest development';
+      if (message.isEmpty) {
+        message = AppLocalizations.of(
+          context,
+        )!.sunny_conditions_favor_pest_development;
+      }
     }
 
     String riskLevel;
@@ -1558,7 +1593,7 @@ class _HomeScreenState extends State<HomeScreen> {
     String pestType;
 
     if (riskScore >= 6 || highRiskPests.isNotEmpty) {
-      riskLevel = 'High Risk';
+      riskLevel = AppLocalizations.of(context)!.high_risk;
       isHighRisk = true;
       pestType = highRiskPests.isNotEmpty
           ? highRiskPests.join(', ')
@@ -1567,7 +1602,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ? 'High risk of ${highRiskPests.isNotEmpty ? highRiskPests.join(', ') : 'pest'} infestation in $cropName'
           : message;
     } else if (riskScore >= 3 || moderateRiskPests.isNotEmpty) {
-      riskLevel = 'Moderate Risk';
+      riskLevel = AppLocalizations.of(context)!.moderate_risk;
       isHighRisk = false;
       pestType = moderateRiskPests.isNotEmpty
           ? moderateRiskPests.join(', ')
@@ -1576,7 +1611,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ? 'Monitor $cropName for ${moderateRiskPests.isNotEmpty ? moderateRiskPests.join(', ') : 'potential pests'}'
           : message;
     } else {
-      riskLevel = 'Low Risk';
+      riskLevel = AppLocalizations.of(context)!.low_risk;
       isHighRisk = false;
       pestType = cropData['pestTypes'][0];
       message = message.isEmpty
@@ -1608,12 +1643,14 @@ class _HomeScreenState extends State<HomeScreen> {
     final currentWeather = getCurrentWeather();
     if (currentWeather == null) {
       return {
-        'recommendation': 'Standard application needed',
+        'recommendation': AppLocalizations.of(
+          context,
+        )!.standard_application_needed,
         'reason': 'Weather data unavailable - using standard recommendation',
-        'adjustment': 'No adjustment',
+        'adjustment': AppLocalizations.of(context)!.no_adjustment_needed,
         'cropSpecific': true,
         'cropName': _currentDisplayCrop,
-        'growthStage': 'General',
+        'growthStage': AppLocalizations.of(context)!.general,
       };
     }
 
@@ -1622,27 +1659,27 @@ class _HomeScreenState extends State<HomeScreen> {
 
     final Map<String, Map<String, dynamic>> _cropDatabase = {
       "Wheat": {
-        "name": "Wheat",
+        "name": AppLocalizations.of(context)!.wheat,
         "optimalTemp": {"min": 15, "max": 25},
-        "growthStage": "Vegetative",
+        "growthStage": AppLocalizations.of(context)!.vegetative,
         "fertilizerBase": 50.0,
       },
       "Cotton": {
-        "name": "Cotton",
+        "name": AppLocalizations.of(context)!.cotton,
         "optimalTemp": {"min": 20, "max": 30},
-        "growthStage": "Flowering",
+        "growthStage": AppLocalizations.of(context)!.flowering,
         "fertilizerBase": 60.0,
       },
       "Rice": {
-        "name": "Rice",
+        "name": AppLocalizations.of(context)!.rice,
         "optimalTemp": {"min": 20, "max": 35},
-        "growthStage": "Tillering",
+        "growthStage": AppLocalizations.of(context)!.tillering,
         "fertilizerBase": 70.0,
       },
       "Corn": {
-        "name": "Corn",
+        "name": AppLocalizations.of(context)!.corn,
         "optimalTemp": {"min": 18, "max": 32},
-        "growthStage": "Silking",
+        "growthStage": AppLocalizations.of(context)!.silking,
         "fertilizerBase": 65.0,
       },
     };
@@ -1658,15 +1695,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
     if (temp > optimalTemp['max']! + 5) {
       baseAmount *= 0.7;
-      adjustment = 'Reduced due to high temperature';
+      adjustment = AppLocalizations.of(
+        context,
+      )!.reduced_due_to_high_temperature;
       reason = 'High temperatures increase fertilizer burn risk for $cropName';
     } else if (temp > optimalTemp['max']!) {
       baseAmount *= 0.85;
-      adjustment = 'Slightly reduced due to warm conditions';
+      adjustment = AppLocalizations.of(
+        context,
+      )!.slightly_increased_due_to_optimal_temp;
       reason = 'Warm weather increases nutrient availability for $cropName';
     } else if (temp < optimalTemp['min']!) {
       baseAmount *= 0.6;
-      adjustment = 'Significantly reduced due to cold weather';
+      adjustment = AppLocalizations.of(
+        context,
+      )!.reduced_due_to_high_temperature;
       reason = 'Cold temperatures slow $cropName growth and nutrient uptake';
     } else {
       reason = 'Optimal temperature for $cropName fertilizer application';
@@ -1675,14 +1718,14 @@ class _HomeScreenState extends State<HomeScreen> {
     if (weatherCondition.contains('Rain')) {
       baseAmount *= 1.1;
       adjustment = adjustment.isEmpty
-          ? 'Increased before expected rain'
+          ? AppLocalizations.of(context)!.increased_before_expected_rain
           : '$adjustment, increased for rain';
       reason = '$reason. Rain will help $cropName absorb nutrients efficiently';
     } else if (weatherCondition.contains('Clear') &&
         temp > optimalTemp['max']!) {
       baseAmount *= 0.9;
       adjustment = adjustment.isEmpty
-          ? 'Reduced for dry conditions'
+          ? AppLocalizations.of(context)!.reduced_due_to_high_temperature
           : '$adjustment, reduced for dryness';
       reason = '$reason. $cropName may require irrigation after application';
     }
@@ -1722,8 +1765,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final currentWeather = getCurrentWeather();
     if (currentWeather == null) {
       return {
-        'recommendation': 'Normal irrigation needed',
-        'reason': 'Weather data unavailable - using standard recommendation',
+        'recommendation': AppLocalizations.of(
+          context,
+        )!.normal_irrigation_schedule,
+        'reason': AppLocalizations.of(context)!.weather_data_unavailable,
         'urgency': 'Medium',
         'cropSpecific': true,
         'cropName': _currentDisplayCrop,
@@ -1741,25 +1786,25 @@ class _HomeScreenState extends State<HomeScreen> {
         "name": "Wheat",
         "optimalTemp": {"min": 15, "max": 25},
         "waterRequirement": 4.0,
-        "growthStage": "Vegetative",
+        "growthStage": AppLocalizations.of(context)!.vegetative,
       },
       "Cotton": {
         "name": "Cotton",
         "optimalTemp": {"min": 20, "max": 30},
         "waterRequirement": 5.0,
-        "growthStage": "Flowering",
+        "growthStage": AppLocalizations.of(context)!.flowering,
       },
       "Rice": {
         "name": "Rice",
         "optimalTemp": {"min": 20, "max": 35},
         "waterRequirement": 6.0,
-        "growthStage": "Tillering",
+        "growthStage": AppLocalizations.of(context)!.tillering,
       },
       "Corn": {
         "name": "Corn",
         "optimalTemp": {"min": 18, "max": 32},
         "waterRequirement": 5.5,
-        "growthStage": "Silking",
+        "growthStage": AppLocalizations.of(context)!.silking,
       },
     };
 
@@ -1797,27 +1842,35 @@ class _HomeScreenState extends State<HomeScreen> {
     final growthStage = cropData['growthStage'];
 
     if (weatherCondition.contains('Rain')) {
-      recommendation = 'Delay irrigation - Rain expected';
+      recommendation = AppLocalizations.of(
+        context,
+      )!.delay_irrigation_rain_expected;
       reason =
           'Natural rainfall will provide sufficient moisture for $cropName';
       urgency = 'Low';
     } else if (weatherCondition.contains('Thunderstorm')) {
-      recommendation = 'Delay irrigation - Heavy rain expected';
+      recommendation = AppLocalizations.of(
+        context,
+      )!.delay_irrigation_heavy_rain;
       reason =
           'Storm will provide adequate rainfall for $cropName, avoid waterlogging';
       urgency = 'Low';
     } else if (evapotranspiration > baseET * 1.5) {
-      recommendation = 'Increase irrigation frequency';
+      recommendation = AppLocalizations.of(
+        context,
+      )!.increase_irrigation_frequency;
       reason =
           'High evaporation rate (${evapotranspiration.toStringAsFixed(1)}mm/day) requires more frequent watering for $cropName';
       urgency = 'High';
     } else if (evapotranspiration < baseET * 0.7) {
-      recommendation = 'Reduce irrigation frequency';
+      recommendation = AppLocalizations.of(
+        context,
+      )!.reduce_irrigation_frequency;
       reason =
           'Low evaporation rate (${evapotranspiration.toStringAsFixed(1)}mm/day) - $cropName needs less water';
       urgency = 'Low';
     } else if (humidity < 35 && temp > optimalTemp['max']!) {
-      recommendation = 'Monitor soil moisture closely';
+      recommendation = AppLocalizations.of(context)!.monitor_soil_moisture;
       reason =
           'Dry, warm conditions require careful water management for $cropName';
       urgency = 'Medium';
@@ -1935,7 +1988,7 @@ class _HomeScreenState extends State<HomeScreen> {
         (route) => false,
       );
     } catch (e) {
-      print('Error during logout: $e');
+      print(AppLocalizations.of(context)!.error_logout);
 
       Navigator.pushAndRemoveUntil(
         context,
@@ -1947,15 +2000,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final localization = AppLocalizations.of(context)!;
     final pestData = _getPestPrediction();
     final fertilizerData = _getFertilizerRecommendation();
-    final irrigationData = _getIrrigationRecommendation();
     final currentWeather = getCurrentWeather();
 
     return WillPopScope(
       onWillPop: () async {
         return false;
       },
+
       child: Scaffold(
         backgroundColor: const Color(0xFFF5F5F5),
         appBar: AppBar(
@@ -1984,8 +2038,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Text(
-                        'Kissan Connect',
+                      Text(
+                        AppLocalizations.of(context)!.app_name,
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
@@ -2091,7 +2145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                  'Weather data unavailable',
+                                  localization.weather_data_unavailable,
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.grey[600],
@@ -2110,7 +2164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ElevatedButton(
                                   onPressed: () =>
                                       _fetchWeatherData(widget.userLocation),
-                                  child: const Text('Retry'),
+                                  child: Text(localization.retry),
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.green,
                                     padding: const EdgeInsets.symmetric(
@@ -2150,7 +2204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                         ),
                                         child: Text(
-                                          'Approximate',
+                                          localization.approximate,
                                           style: TextStyle(
                                             fontSize: 9,
                                             color: Colors.orange[800],
@@ -2243,7 +2297,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                           const SizedBox(height: 2),
                                           Text(
-                                            'Feels like ${currentWeather['main']['feels_like']?.round() ?? 0}°C',
+                                            '${AppLocalizations.of(context)!.feels_like} ${currentWeather['main']['feels_like']?.round() ?? 0}°C',
                                             style: TextStyle(
                                               fontSize: 11,
                                               color: Colors.grey[500],
@@ -2256,11 +2310,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Icon(
                                       _getWeatherIcon(
                                         currentWeather['weather'][0]['main'] ??
-                                            'Clear',
+                                            localization.clear,
                                       ),
                                       color: _getWeatherIconColor(
                                         currentWeather['weather'][0]['main'] ??
-                                            'Clear',
+                                            localization.clear,
                                       ),
                                       size: 60,
                                     ),
@@ -2277,8 +2331,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   size: 40,
                                 ),
                                 const SizedBox(height: 8),
-                                const Text(
-                                  'Weather data error',
+                                Text(
+                                  localization.weather_data_error,
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.black87,
@@ -2288,7 +2342,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ElevatedButton(
                                   onPressed: () =>
                                       _fetchWeatherData(widget.userLocation),
-                                  child: const Text('Retry'),
+                                  child: Text(localization.retry),
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.green,
                                     padding: const EdgeInsets.symmetric(
@@ -2301,13 +2355,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                     ),
                   ),
-
                   const SizedBox(height: 24),
-
                   Row(
                     children: [
-                      const Text(
-                        'Recommendations for ',
+                      Text(
+                        localization.recommendations_for,
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -2459,8 +2511,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           const SizedBox(width: 4),
                                           Text(
                                             pestData['isHighRisk']
-                                                ? 'High Alert'
-                                                : 'Moderate Alert',
+                                                ? localization.high_risk
+                                                : localization.moderate_risk,
                                             style: TextStyle(
                                               fontSize: 12,
                                               fontWeight: FontWeight.w600,
@@ -2484,7 +2536,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 const SizedBox(height: 12),
                                 Text(
-                                  'Pest Attack Prediction',
+                                  localization.pest_attack_prediction,
                                   style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
@@ -2505,7 +2557,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 const SizedBox(height: 8),
                                 Text(
                                   pestData['message'] ??
-                                      'Weather conditions are favorable for pest activity.',
+                                      localization.weather_conditions_favorable,
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
@@ -2518,7 +2570,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Row(
                                   children: [
                                     Text(
-                                      'Tap for prevention guide',
+                                      localization.tap_to_change,
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: Colors.green[600],
@@ -2717,7 +2769,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Text(
                                     widget.userLocation.isNotEmpty
                                         ? widget.userLocation
-                                        : 'Your Location',
+                                        : localization.your_location,
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: Colors.grey[600],
@@ -2748,9 +2800,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: Colors.red[400],
                                   size: 20,
                                 ),
-                                const SizedBox(width: 10),
+                                SizedBox(width: 10),
                                 Text(
-                                  'Logout',
+                                  AppLocalizations.of(context)!.logout,
                                   style: TextStyle(
                                     color: Colors.red[400],
                                     fontWeight: FontWeight.bold,
@@ -2823,19 +2875,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 break;
             }
           },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: AppLocalizations.of(context)!.home,
+            ),
             BottomNavigationBarItem(
               icon: Icon(Icons.wb_sunny_outlined),
-              label: 'Weather',
+              label: AppLocalizations.of(context)!.weather,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.grass),
-              label: 'Crop Guide',
+              label: AppLocalizations.of(context)!.crop_guide,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.storefront),
-              label: 'Marketplace',
+              label: AppLocalizations.of(context)!.marketplace,
             ),
           ],
         ),

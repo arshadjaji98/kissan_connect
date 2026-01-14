@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kissan_connect_app_2/firebase_options.dart';
+import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 import 'routes.dart';
 import 'screens/SignupScreen.dart';
 import 'screens/LoginScreen.dart';
 import 'screens/HomeScreen.dart';
 import 'screens/auth_wrapper.dart';
 import 'services/firebase_service.dart';
+import 'localization/app_localizations.dart'; // generated localization
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,15 +17,51 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  // Static function to change locale dynamically
+  static void setLocale(BuildContext context, Locale newLocale) {
+    _MyAppState? state = context.findAncestorStateOfType<_MyAppState>();
+    state?.setLocale(newLocale);
+  }
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Locale _locale = const Locale('en'); // default language
+
+  void setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     final firebaseService = FirebaseService();
 
     return MaterialApp(
-      locale: Locale('ur'),
+      locale: _locale,
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      localeResolutionCallback: (locale, supportedLocales) {
+        if (locale != null) {
+          for (var supportedLocale in supportedLocales) {
+            if (supportedLocale.languageCode == locale.languageCode) {
+              return supportedLocale;
+            }
+          }
+        }
+        return const Locale('en'); // fallback
+      },
       title: 'Kissan Connect',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -111,25 +150,17 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-
-      // Use AuthWrapper as home (removes the need for welcome route in routes)
       home: AuthWrapper(firebaseService: firebaseService),
-
-      // Only define routes that are NOT handled by AuthWrapper
       routes: {
-        // REMOVED: AppRoutes.welcome from here since AuthWrapper handles it
         AppRoutes.signup: (context) =>
             SignupScreen(firebaseService: FirebaseService()),
         AppRoutes.login: (context) =>
             LoginScreen(firebaseService: FirebaseService()),
       },
-
-      // Keep onGenerateRoute for HomeScreen with arguments
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case AppRoutes.home:
             final args = settings.arguments as Map<String, dynamic>?;
-
             List<String> selectedCrops = ['Wheat'];
             if (args?['selectedCrops'] != null) {
               if (args!['selectedCrops'] is List<String>) {
@@ -138,11 +169,9 @@ class MyApp extends StatelessWidget {
                 selectedCrops = List<String>.from(args['selectedCrops']);
               }
             }
-
             String primaryCrop =
                 args?['primaryCrop']?.toString() ??
                 (selectedCrops.isNotEmpty ? selectedCrops.first : 'Wheat');
-
             return MaterialPageRoute(
               builder: (_) => HomeScreen(
                 userLocation:
@@ -153,7 +182,7 @@ class MyApp extends StatelessWidget {
               ),
             );
           default:
-            return null; // Let Flutter use the routes table or home
+            return null;
         }
       },
     );

@@ -1,5 +1,6 @@
 // lib/widgets/crop_selection_widget.dart
 import 'package:flutter/material.dart';
+import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 
 class CropSelectionWidget extends StatefulWidget {
   final Function(List<String>)? onCropsSelected;
@@ -17,15 +18,6 @@ class CropSelectionWidget extends StatefulWidget {
 
 class _CropSelectionWidgetState extends State<CropSelectionWidget> {
   late List<String> _selectedCrops; // Change to late
-
-  final List<String> _crops = [
-    "Wheat",
-    "Rice",
-    "Cotton",
-    "Sugarcane",
-    "Maize",
-    "Vegetables"
-  ];
 
   @override
   void initState() {
@@ -68,6 +60,15 @@ class _CropSelectionWidgetState extends State<CropSelectionWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> _crops = [
+      AppLocalizations.of(context)!.wheat,
+      AppLocalizations.of(context)!.rice,
+      AppLocalizations.of(context)!.cotton,
+      AppLocalizations.of(context)!.sugarcane,
+      AppLocalizations.of(context)!.maize,
+      AppLocalizations.of(context)!.vegetables,
+    ];
+
     return Container(
       width: double.infinity,
       child: Column(
@@ -98,7 +99,9 @@ class _CropSelectionWidgetState extends State<CropSelectionWidget> {
                     color: isSelected ? const Color(0xFF4CAF50) : Colors.white,
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
-                      color: isSelected ? const Color(0xFF4CAF50) : Colors.grey[300]!,
+                      color: isSelected
+                          ? const Color(0xFF4CAF50)
+                          : Colors.grey[300]!,
                       width: 1.5,
                     ),
                     boxShadow: [
@@ -123,12 +126,10 @@ class _CropSelectionWidgetState extends State<CropSelectionWidget> {
               );
             },
           ),
-
-          // Instruction text
-          const Padding(
+          Padding(
             padding: EdgeInsets.zero,
             child: Text(
-              'You can select multiple crops',
+              AppLocalizations.of(context)!.selectMultipleCrops,
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.grey,

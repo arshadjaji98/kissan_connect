@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 // FIX: Use relative path to import the routes file
 import '../routes.dart';
 
@@ -39,9 +40,7 @@ class WelcomeScreen extends StatelessWidget {
           // regardless of how bright the background image is.
           // ------------------------------------------------
           Positioned.fill(
-            child: Container(
-              color: Colors.black.withOpacity(0.3),
-            ),
+            child: Container(color: Colors.black.withOpacity(0.3)),
           ),
 
           // ------------------------------------------------
@@ -49,17 +48,16 @@ class WelcomeScreen extends StatelessWidget {
           // ------------------------------------------------
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24.0,
+                vertical: 20.0,
+              ),
               child: Column(
                 children: [
                   // --- Top Bar: Language ---
 
-
                   // Flexible spacer to push content down
-                  Flexible(
-                    child: Container(),
-                    flex: 1,
-                  ),
+                  Flexible(child: Container(), flex: 1),
 
                   // --- LOGO (Enlarged) ---
                   Flexible(
@@ -68,7 +66,7 @@ class WelcomeScreen extends StatelessWidget {
                       child: Container(
                         constraints: const BoxConstraints(
                           maxHeight: 500, // Reduced from 600
-                          maxWidth: 500,  // Reduced from 600
+                          maxWidth: 500, // Reduced from 600
                         ),
                         child: Image.asset(
                           'assets/images/logo2.png',
@@ -86,10 +84,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
 
                   // Flexible spacer to push buttons up
-                  Flexible(
-                    child: Container(),
-                    flex: 2,
-                  ),
+                  Flexible(child: Container(), flex: 2),
 
                   // Button Section - Fixed at bottom
                   Column(
@@ -106,15 +101,19 @@ class WelcomeScreen extends StatelessWidget {
                             Navigator.of(context).pushNamed(AppRoutes.signup);
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF00C853), // Bright Green
+                            backgroundColor: const Color(
+                              0xFF00C853,
+                            ), // Bright Green
                             foregroundColor: Colors.white,
                             elevation: 0,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30), // Pill shape
+                              borderRadius: BorderRadius.circular(
+                                30,
+                              ), // Pill shape
                             ),
                           ),
-                          child: const Text(
-                            'Sign Up',
+                          child: Text(
+                            AppLocalizations.of(context)!.sign_up,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -135,14 +134,19 @@ class WelcomeScreen extends StatelessWidget {
                             Navigator.of(context).pushNamed(AppRoutes.login);
                           },
                           style: OutlinedButton.styleFrom(
-                            side: const BorderSide(color: Colors.white, width: 1.5),
-                            backgroundColor: Colors.white.withOpacity(0.15), // Glassy effect
+                            side: const BorderSide(
+                              color: Colors.white,
+                              width: 1.5,
+                            ),
+                            backgroundColor: Colors.white.withOpacity(
+                              0.15,
+                            ), // Glassy effect
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
                           ),
-                          child: const Text(
-                            'Login',
+                          child: Text(
+                            AppLocalizations.of(context)!.login,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,

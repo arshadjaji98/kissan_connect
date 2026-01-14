@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
+import 'package:kissan_connect_app_2/localization/app_localizations.dart';
+import 'package:kissan_connect_app_2/main.dart';
 import '../widgets/crop_selection_widget.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -694,18 +697,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Select Language',
-                        style: TextStyle(
+                      // Title
+                      Text(
+                        AppLocalizations.of(context)!.selectLanguage,
+                        style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                           color: Colors.black87,
                         ),
                       ),
                       const SizedBox(height: 4),
-                      const Text(
-                        'Choose your preferred language',
-                        style: TextStyle(fontSize: 14, color: Colors.grey),
+                      Text(
+                        AppLocalizations.of(context)!.choosePreferredLanguage,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey,
+                        ),
                       ),
                       const SizedBox(height: 24),
 
@@ -749,9 +756,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ),
                                 side: BorderSide(color: Colors.grey[300]!),
                               ),
-                              child: const Text(
-                                'Cancel',
-                                style: TextStyle(
+                              child: Text(
+                                AppLocalizations.of(context)!.cancel,
+                                style: const TextStyle(
                                   fontSize: 16,
                                   color: Colors.black87,
                                   fontWeight: FontWeight.w500,
@@ -770,6 +777,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                                   final user = _auth.currentUser;
                                   if (user != null) {
+                                    // Save language in Firestore
                                     await _firestore
                                         .collection('users')
                                         .doc(user.uid)
@@ -783,18 +791,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       _selectedLanguage = tempSelectedLanguage;
                                     });
 
+                                    // Switch app locale dynamically
+                                    if (tempSelectedLanguage == 'English') {
+                                      MyApp.setLocale(
+                                        context,
+                                        const Locale('en'),
+                                      );
+                                    } else if (tempSelectedLanguage == 'Urdu') {
+                                      MyApp.setLocale(
+                                        context,
+                                        const Locale('ur'),
+                                      );
+                                    }
+
                                     Navigator.pop(context);
+
+                                    // Show snackbar with placeholder method
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
-                                          'Language changed to $tempSelectedLanguage',
+                                          AppLocalizations.of(
+                                            context,
+                                          )!.languageChangedTo(
+                                            tempSelectedLanguage,
+                                          ),
                                         ),
                                         backgroundColor: Colors.green,
                                       ),
                                     );
-
-                                    // TODO: Implement language change in the app
-                                    // You can use a state management solution or locale to apply language changes
                                   }
                                 } catch (e) {
                                   ScaffoldMessenger.of(context).showSnackBar(
@@ -824,9 +848,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ),
                                 elevation: 0,
                               ),
-                              child: const Text(
-                                'Save',
-                                style: TextStyle(
+                              child: Text(
+                                AppLocalizations.of(context)!.save,
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -914,7 +938,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
           : ListView(
               padding: const EdgeInsets.all(16),
               children: [
-                // Profile Header Card
                 Card(
                   elevation: 4,
                   shape: RoundedRectangleBorder(

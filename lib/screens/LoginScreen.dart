@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 import '../routes.dart';
 import '../services/firebase_service.dart';
 import 'package:flutter/foundation.dart';
@@ -59,11 +60,11 @@ class _LoginScreenState extends State<LoginScreen> {
         await _fetchUserDataAndNavigate(currentUser.uid);
       } else {
         setState(() {
-          _errorMessage = 'Login successful but user data not available. Please try again.';
+          _errorMessage =
+              'Login successful but user data not available. Please try again.';
           _isLoading = false;
         });
       }
-
     } on FirebaseAuthException catch (e) {
       String errorMessage;
       switch (e.code) {
@@ -83,7 +84,8 @@ class _LoginScreenState extends State<LoginScreen> {
           errorMessage = 'Too many login attempts. Please try again later.';
           break;
         case 'network-request-failed':
-          errorMessage = 'Network error. Please check your internet connection.';
+          errorMessage =
+              'Network error. Please check your internet connection.';
           break;
         default:
           errorMessage = 'Login failed: ${e.message}';
@@ -117,8 +119,10 @@ class _LoginScreenState extends State<LoginScreen> {
         final userData = userDoc.data() as Map<String, dynamic>;
 
         // Extract user data with fallback defaults
-        final userName = userData['name'] ?? userData['displayName'] ?? 'Farmer';
-        final userLocation = userData['location'] ?? userData['address'] ?? 'Your Location';
+        final userName =
+            userData['name'] ?? userData['displayName'] ?? 'Farmer';
+        final userLocation =
+            userData['location'] ?? userData['address'] ?? 'Your Location';
 
         // Extract selected crops - handle different possible field names
         List<String> selectedCrops = [];
@@ -138,14 +142,15 @@ class _LoginScreenState extends State<LoginScreen> {
         }
 
         // Determine primary crop (first one in list or from database)
-        final primaryCrop = userData['primaryCrop'] ??
+        final primaryCrop =
+            userData['primaryCrop'] ??
             (selectedCrops.isNotEmpty ? selectedCrops[0] : 'Wheat');
 
         // Navigate to HomeScreen with all the data
         Navigator.pushNamedAndRemoveUntil(
           context,
           AppRoutes.home,
-              (route) => false,
+          (route) => false,
           arguments: {
             'userName': userName,
             'userLocation': userLocation,
@@ -163,7 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Navigator.pushNamedAndRemoveUntil(
           context,
           AppRoutes.home,
-              (route) => false,
+          (route) => false,
           arguments: {
             'userName': 'Farmer',
             'userLocation': 'Your Location',
@@ -183,7 +188,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.pushNamedAndRemoveUntil(
         context,
         AppRoutes.home,
-            (route) => false,
+        (route) => false,
         arguments: {
           'userName': 'Farmer',
           'userLocation': 'Your Location',
@@ -246,7 +251,9 @@ class _LoginScreenState extends State<LoginScreen> {
         context: context,
         builder: (context) => AlertDialog(
           title: const Text('Password Reset Email Sent'),
-          content: Text('A password reset link has been sent to $email. Please check your inbox.'),
+          content: Text(
+            'A password reset link has been sent to $email. Please check your inbox.',
+          ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -260,7 +267,9 @@ class _LoginScreenState extends State<LoginScreen> {
         context: context,
         builder: (context) => AlertDialog(
           title: const Text('Error'),
-          content: const Text('Failed to send reset email. Please check the email address and try again.'),
+          content: const Text(
+            'Failed to send reset email. Please check the email address and try again.',
+          ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -274,6 +283,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -281,12 +291,9 @@ class _LoginScreenState extends State<LoginScreen> {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          'Log In',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+        title: Text(
+          localizations.login,
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
@@ -304,7 +311,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   children: [
                     Text(
-                      'Welcome Back!',
+                      localizations.welcome_back,
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -312,12 +319,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    const Text(
-                      'Sign in to continue to Kissan Connect',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey,
-                      ),
+                    Text(
+                      localizations.signin_continue,
+                      style: TextStyle(fontSize: 16, color: Colors.grey),
                     ),
                   ],
                 ),
@@ -350,19 +354,19 @@ class _LoginScreenState extends State<LoginScreen> {
               // Email Field
               TextFormField(
                 controller: _emailController,
-                decoration: const InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter your email address',
+                decoration: InputDecoration(
+                  labelText: localizations.email,
+                  hintText: localizations.enter_email,
                   prefixIcon: Icon(Icons.email_outlined),
                   border: OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your email address';
+                    return localizations.enter_email_first;
                   }
                   if (!value.contains('@') || !value.contains('.')) {
-                    return 'Please enter a valid email address';
+                    return localizations.please_enter_valid_email;
                   }
                   return null;
                 },
@@ -374,8 +378,8 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFormField(
                 controller: _passwordController,
                 decoration: InputDecoration(
-                  labelText: 'Password',
-                  hintText: 'Enter your password',
+                  labelText: localizations.password,
+                  hintText: localizations.enter_password,
                   prefixIcon: const Icon(Icons.lock_outline),
                   suffixIcon: IconButton(
                     icon: Icon(
@@ -394,10 +398,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: _obscurePassword,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
+                    return localizations.enter_password;
                   }
                   if (value.length < 8) {
-                    return 'Password must be at least 8 characters';
+                    return localizations.password_min_8;
                   }
                   return null;
                 },
@@ -420,13 +424,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         activeColor: const Color(0xFF4CAF50),
                       ),
-                      const Text('Remember me'),
+                      Text(localizations.remember_me),
                     ],
                   ),
                   TextButton(
                     onPressed: _isLoading ? null : _resetPassword,
-                    child: const Text(
-                      'Forgot Password?',
+                    child: Text(
+                      localizations.forgot_password,
                       style: TextStyle(color: Color(0xFF4CAF50)),
                     ),
                   ),
@@ -447,21 +451,23 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 child: _isLoading
                     ? const SizedBox(
-                  height: 24,
-                  width: 24,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                  ),
-                )
-                    : const Text(
-                  'Log In',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                        height: 24,
+                        width: 24,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Colors.white,
+                          ),
+                        ),
+                      )
+                    : Text(
+                        localizations.log_in,
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
               ),
 
               const SizedBox(height: 24),
@@ -469,26 +475,15 @@ class _LoginScreenState extends State<LoginScreen> {
               // Divider
               Row(
                 children: [
-                  Expanded(
-                    child: Divider(
-                      color: Colors.grey[300],
-                    ),
-                  ),
+                  Expanded(child: Divider(color: Colors.grey[300])),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Text(
-                      'or continue with',
-                      style: TextStyle(
-                        color: Colors.grey[600],
-                        fontSize: 14,
-                      ),
+                      localizations.or_continue_with,
+                      style: TextStyle(color: Colors.grey[600], fontSize: 14),
                     ),
                   ),
-                  Expanded(
-                    child: Divider(
-                      color: Colors.grey[300],
-                    ),
-                  ),
+                  Expanded(child: Divider(color: Colors.grey[300])),
                 ],
               ),
 
@@ -511,7 +506,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   // Facebook
                   IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.facebook, size: 24, color: Colors.blue),
+                    icon: const Icon(
+                      Icons.facebook,
+                      size: 24,
+                      color: Colors.blue,
+                    ),
                     style: IconButton.styleFrom(
                       backgroundColor: Colors.grey[100],
                       padding: const EdgeInsets.all(16),
@@ -521,7 +520,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   // Apple
                   IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.apple, size: 24, color: Colors.black),
+                    icon: const Icon(
+                      Icons.apple,
+                      size: 24,
+                      color: Colors.black,
+                    ),
                     style: IconButton.styleFrom(
                       backgroundColor: Colors.grey[100],
                       padding: const EdgeInsets.all(16),
@@ -536,14 +539,14 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Don't have an account?"),
-                  const SizedBox(width: 8),
+                  Text(localizations.dont_have_account),
+                  // const SizedBox(width: 8),
                   TextButton(
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.signup);
                     },
-                    child: const Text(
-                      'Sign Up',
+                    child: Text(
+                      localizations.sign_up,
                       style: TextStyle(
                         color: Color(0xFF4CAF50),
                         fontWeight: FontWeight.bold,
