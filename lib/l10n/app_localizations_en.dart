@@ -455,6 +455,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get no_message_available => 'No message available';
 
   @override
+  String get aphids => 'Aphids';
+
+  @override
+  String get army_worm => 'Army Worm';
+
+  @override
+  String get rust_fungus => 'Rust Fungus';
+
+  @override
+  String get hessian_fly => 'Hessian Fly';
+
+  @override
+  String get bollworm => 'Bollworm';
+
+  @override
+  String get whitefly => 'Whitefly';
+
+  @override
+  String get spider_mites => 'Spider Mites';
+
+  @override
+  String get min => 'Min';
+
+  @override
+  String get max => 'Max';
+
+  @override
+  String get various_pests => 'Various Pests';
+
+  @override
   String get high_risk_pests => '🚨 High Risk Pests:';
 
   @override
@@ -1002,6 +1032,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get error_updating_first_time_status => 'Error updating first-time status';
+
+  @override
+  String get your_journey_begins_here => 'Your farming journey begins here';
+
+  @override
+  String get preparing_your_dashboard => 'Preparing your personalized dashboard...';
+
+  @override
+  String get tap_to_continue => 'Tap to continue';
 
   @override
   String get irrigation_schedule => '📅 Irrigation Schedule:';

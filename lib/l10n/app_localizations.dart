@@ -983,6 +983,66 @@ abstract class AppLocalizations {
   /// **'No message available'**
   String get no_message_available;
 
+  /// No description provided for @aphids.
+  ///
+  /// In en, this message translates to:
+  /// **'Aphids'**
+  String get aphids;
+
+  /// No description provided for @army_worm.
+  ///
+  /// In en, this message translates to:
+  /// **'Army Worm'**
+  String get army_worm;
+
+  /// No description provided for @rust_fungus.
+  ///
+  /// In en, this message translates to:
+  /// **'Rust Fungus'**
+  String get rust_fungus;
+
+  /// No description provided for @hessian_fly.
+  ///
+  /// In en, this message translates to:
+  /// **'Hessian Fly'**
+  String get hessian_fly;
+
+  /// No description provided for @bollworm.
+  ///
+  /// In en, this message translates to:
+  /// **'Bollworm'**
+  String get bollworm;
+
+  /// No description provided for @whitefly.
+  ///
+  /// In en, this message translates to:
+  /// **'Whitefly'**
+  String get whitefly;
+
+  /// No description provided for @spider_mites.
+  ///
+  /// In en, this message translates to:
+  /// **'Spider Mites'**
+  String get spider_mites;
+
+  /// No description provided for @min.
+  ///
+  /// In en, this message translates to:
+  /// **'Min'**
+  String get min;
+
+  /// No description provided for @max.
+  ///
+  /// In en, this message translates to:
+  /// **'Max'**
+  String get max;
+
+  /// No description provided for @various_pests.
+  ///
+  /// In en, this message translates to:
+  /// **'Various Pests'**
+  String get various_pests;
+
   /// No description provided for @high_risk_pests.
   ///
   /// In en, this message translates to:
@@ -2080,6 +2140,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error updating first-time status'**
   String get error_updating_first_time_status;
+
+  /// No description provided for @your_journey_begins_here.
+  ///
+  /// In en, this message translates to:
+  /// **'Your farming journey begins here'**
+  String get your_journey_begins_here;
+
+  /// No description provided for @preparing_your_dashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing your personalized dashboard...'**
+  String get preparing_your_dashboard;
+
+  /// No description provided for @tap_to_continue.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to continue'**
+  String get tap_to_continue;
 
   /// No description provided for @irrigation_schedule.
   ///

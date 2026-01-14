@@ -1102,7 +1102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 opacity: _showWelcomeMessage ? 1.0 : 0.0,
                 duration: const Duration(milliseconds: 1000),
                 child: Text(
-                  'Your farming journey begins here',
+                  AppLocalizations.of(context)!.your_journey_begins_here,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.white.withOpacity(0.8),
@@ -1123,7 +1123,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 opacity: _showWelcomeMessage ? 1.0 : 0.0,
                 duration: const Duration(milliseconds: 1200),
                 child: Text(
-                  'Preparing your personalized dashboard...',
+                  AppLocalizations.of(context)!.preparing_your_dashboard,
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.white.withOpacity(0.6),
@@ -1152,7 +1152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       border: Border.all(color: Colors.white.withOpacity(0.3)),
                     ),
                     child: Text(
-                      'Tap to continue',
+                      AppLocalizations.of(context)!.tap_to_continue,
                       style: TextStyle(
                         fontSize: 12,
                         color: Colors.white.withOpacity(0.7),
@@ -1223,7 +1223,7 @@ class _HomeScreenState extends State<HomeScreen> {
         await _fetchWeatherWithFallback();
       }
     } catch (e) {
-      print('Error fetching weather: $e');
+      print(AppLocalizations.of(context)!.error_fetching_weather);
       await _fetchWeatherWithFallback();
     }
   }
@@ -1270,13 +1270,14 @@ class _HomeScreenState extends State<HomeScreen> {
       }
 
       setState(() {
-        _errorMessage =
-            'Unable to fetch weather data. Please check your internet connection.';
+        _errorMessage = AppLocalizations.of(
+          context,
+        )!.unable_to_fetch_weather_data_please_check_internet;
         _isLoading = false;
       });
     } catch (e) {
       setState(() {
-        _errorMessage = 'Failed to load weather data: ${e.toString()}';
+        _errorMessage = AppLocalizations.of(context)!.error_fetching_weather;
         _isLoading = false;
       });
     }
@@ -1417,12 +1418,13 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Map<String, dynamic> _getPestPrediction() {
+    final loc = AppLocalizations.of(context)!;
     final currentWeather = getCurrentWeather();
     if (currentWeather == null) {
       return {
-        'riskLevel': AppLocalizations.of(context)!.unknown,
-        'message': AppLocalizations.of(context)!.weather_data_unavailable,
-        'pestType': 'Various pests',
+        'riskLevel': loc.unknown,
+        'message': loc.weather_data_unavailable,
+        'pestType': loc.various_pests,
         'isHighRisk': false,
         'cropSpecificRisks': [],
         'highRiskPests': [],
@@ -1437,12 +1439,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
     final Map<String, Map<String, dynamic>> _cropDatabase = {
       "Wheat": {
-        "name": "Wheat",
-        "pestTypes": ["Aphids", "Army Worm", "Rust Fungus", "Hessian Fly"],
+        "name": loc.wheat,
+        "pestTypes": [
+          loc.aphids,
+          loc.army_worm,
+          loc.rust_fungus,
+          loc.hessian_fly,
+        ],
         "optimalTemp": {"min": 15, "max": 25},
         "criticalTemp": {"min": 10, "max": 35},
         "waterRequirement": 4.0,
-        "growthStage": "Vegetative",
+        "growthStage": loc.vegetative,
         "fertilizerBase": 50.0,
         "pestRiskProfile": {
           "aphids": {
@@ -1460,12 +1467,12 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       },
       "Cotton": {
-        "name": "Cotton",
-        "pestTypes": ["Bollworm", "Whitefly", "Aphids", "Spider Mites"],
+        "name": loc.cotton,
+        "pestTypes": [loc.bollworm, loc.whitefly, loc.aphids, loc.spider_mites],
         "optimalTemp": {"min": 20, "max": 30},
         "criticalTemp": {"min": 15, "max": 40},
         "waterRequirement": 5.0,
-        "growthStage": "Flowering",
+        "growthStage": loc.flowering,
         "fertilizerBase": 60.0,
         "pestRiskProfile": {
           "bollworm": {
