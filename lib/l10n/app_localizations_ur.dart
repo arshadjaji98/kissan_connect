@@ -68,13 +68,13 @@ class AppLocalizationsUr extends AppLocalizations {
   String get signup_success_message => 'سائن اپ کامیاب! ہوم اسکرین پر منتقل ہو رہا ہے...';
 
   @override
-  String get email_already_in_use_code => 'email-already-in-use';
+  String get email_already_in_use_code => 'یہ ای میل پہلے سے استعمال میں ہے';
 
   @override
   String get email_already_in_use_message => 'یہ ای میل پہلے سے رجسٹرڈ ہے۔ براہ کرم کوئی دوسرا ای میل استعمال کریں یا لاگ ان کریں۔';
 
   @override
-  String get invalid_email_code => 'invalid-email';
+  String get invalid_email_code => 'غلط ای میل';
 
   @override
   String get invalid_email_message => 'براہ کرم درست ای میل پتہ درج کریں۔';
@@ -83,13 +83,13 @@ class AppLocalizationsUr extends AppLocalizations {
   String get weak_password_message => 'پاس ورڈ بہت کمزور ہے۔ براہ کرم کم از کم 8 حروف استعمال کریں۔';
 
   @override
-  String get operation_not_allowed_code => 'operation-not-allowed';
+  String get operation_not_allowed_code => 'یہ عمل اجازت یافتہ نہیں';
 
   @override
   String get operation_not_allowed_message => 'ای میل/پاس ورڈ اکاؤنٹس فعال نہیں ہیں۔ براہ کرم سپورٹ سے رابطہ کریں۔';
 
   @override
-  String get network_request_failed_code => 'network-request-failed';
+  String get network_request_failed_code => 'انٹرنیٹ کنکشن میں مسئلہ';
 
   @override
   String get network_error_message => 'نیٹ ورک کی خرابی۔ براہ کرم اپنے انٹرنیٹ کنکشن کو چیک کریں۔';
@@ -179,25 +179,25 @@ class AppLocalizationsUr extends AppLocalizations {
   String get user_not_found_message => 'اس ای میل کے ساتھ کوئی اکاؤنٹ نہیں ملا۔';
 
   @override
-  String get wrong_password_code => 'wrong-password';
+  String get wrong_password_code => 'غلط پاس ورڈ';
 
   @override
   String get wrong_password_message => 'غلط پاس ورڈ۔ دوبارہ کوشش کریں۔';
 
   @override
-  String get invalid_credential_code => 'invalid-credential';
+  String get invalid_credential_code => 'غلط معلومات';
 
   @override
   String get invalid_credential_message => 'غلط ای میل یا پاس ورڈ۔';
 
   @override
-  String get user_disabled_code => 'user-disabled';
+  String get user_disabled_code => 'اکاؤنٹ بند کر دیا گیا ہے';
 
   @override
   String get user_disabled_message => 'یہ اکاؤنٹ غیر فعال ہے۔';
 
   @override
-  String get too_many_requests_code => 'too-many-requests';
+  String get too_many_requests_code => 'بہت زیادہ درخواستیں بھیج دی گئی ہیں';
 
   @override
   String get too_many_requests_message => 'لاگ ان کی کوششیں بہت زیادہ ہیں۔ بعد میں دوبارہ کوشش کریں۔';
@@ -455,34 +455,123 @@ class AppLocalizationsUr extends AppLocalizations {
   String get no_message_available => 'کوئی پیغام دستیاب نہیں';
 
   @override
-  String get aphids => 'Aphids';
+  String get aphids => 'مہو';
 
   @override
-  String get army_worm => 'Army Worm';
+  String get army_worm => 'آرمی کیڑا';
 
   @override
-  String get rust_fungus => 'Rust Fungus';
+  String get rust_fungus => 'زنگ کی بیماری';
 
   @override
-  String get hessian_fly => 'Hessian Fly';
+  String get hessian_fly => 'ہیسیئن مکھی';
 
   @override
-  String get bollworm => 'Bollworm';
+  String get bollworm => 'بال ورم';
 
   @override
-  String get whitefly => 'Whitefly';
+  String get whitefly => 'سفید مکھی';
 
   @override
-  String get spider_mites => 'Spider Mites';
+  String get spider_mites => 'سرخ مکڑی';
 
   @override
-  String get min => 'Min';
+  String get min => 'کم از کم';
 
   @override
-  String get max => 'Max';
+  String get max => 'زیادہ سے زیادہ';
 
   @override
   String get various_pests => 'مختلف کیڑے';
+
+  @override
+  String get stem_borer => 'تنے کا کیڑا';
+
+  @override
+  String get leaf_folder => 'پتے لپیٹنے والا کیڑا';
+
+  @override
+  String get blast_fungus => 'بلاسٹ بیماری';
+
+  @override
+  String get brown_plant_hopper => 'بھورا پلانٹ ہوپر';
+
+  @override
+  String get corn_borer => 'مکئی کا تنے والا کیڑا';
+
+  @override
+  String get armyworm => 'آرمی کیڑا';
+
+  @override
+  String get earworm => 'بھٹے کا کیڑا';
+
+  @override
+  String get corn_leaf_aphid => 'مکئی کے پتے کی مہو';
+
+  @override
+  String warm_weather_increases_nutrients(Object crop) {
+    return 'گرم موسم $crop کے لیے غذائی اجزاء کی دستیابی بڑھاتا ہے';
+  }
+
+  @override
+  String cold_weather_slows_growth(Object crop) {
+    return 'سرد درجہ حرارت $crop کی نشوونما اور غذائی اجزاء کے جذب کو سست کر دیتا ہے';
+  }
+
+  @override
+  String optimal_temp_for_fertilizer(Object crop) {
+    return '$crop کے لیے کھاد ڈالنے کا موزوں درجہ حرارت';
+  }
+
+  @override
+  String adjustment_increased_for_rain(Object adjustment) {
+    return '$adjustment، بارش کی وجہ سے اضافہ کیا گیا';
+  }
+
+  @override
+  String rain_helps_nutrient_absorption(Object crop, Object reason) {
+    return '$reason۔ بارش $crop کو غذائی اجزاء بہتر طریقے سے جذب کرنے میں مدد دے گی';
+  }
+
+  @override
+  String adjustment_reduced_for_dryness(Object adjustment) {
+    return '$adjustment، خشکی کی وجہ سے کم کیا گیا';
+  }
+
+  @override
+  String dryness_requires_irrigation(Object crop, Object reason) {
+    return '$reason۔ $crop کو کھاد کے بعد آبپاشی کی ضرورت ہو سکتی ہے';
+  }
+
+  @override
+  String reason_with_growth_stage(Object growthStage, Object reason) {
+    return '$reason۔ موجودہ نشوونما کا مرحلہ: $growthStage';
+  }
+
+  @override
+  String natural_rainfall_sufficient_two(Object crop) {
+    return 'قدرتی بارش $crop کے لیے کافی نمی فراہم کرے گی';
+  }
+
+  @override
+  String storm_adequate_rainfall_two(Object crop) {
+    return '$crop کے لیے طوفانی بارش کافی ہوگی، پانی کھڑا ہونے سے بچائیں';
+  }
+
+  @override
+  String high_evaporation_requires_more_water(Object crop, Object evap) {
+    return 'زیادہ بخارات کی شرح ($evap ملی میٹر فی دن) $crop کے لیے زیادہ بار آبپاشی کی ضرورت ہے';
+  }
+
+  @override
+  String dry_warm_requires_careful_irrigation(Object crop) {
+    return 'خشک اور گرم حالات میں $crop کے لیے محتاط آبپاشی ضروری ہے';
+  }
+
+  @override
+  String moderate_conditions_regular_irrigation_two(Object crop, Object stage) {
+    return 'درمیانی حالات میں $crop کے لیے باقاعدہ آبپاشی برقرار رکھیں ($stage مرحلہ)';
+  }
 
   @override
   String get high_risk_pests => '🚨 اعلی خطرے کے کیڑے:';
@@ -495,6 +584,9 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get sunny_conditions_favor_pest_development => 'دھوپ والا موسم کیڑوں کی افزائش کے لیے موزوں ہوتا ہے';
+
+  @override
+  String get varies_with_conditions => 'شرائط کے مطابق مختلف ہوتا ہے';
 
   @override
   String get moderate_risk_pests => '⚠️ درمیانے خطرے کے کیڑے:';
@@ -791,6 +883,21 @@ class AppLocalizationsUr extends AppLocalizations {
   String get none => 'کوئی نہیں';
 
   @override
+  String get nitrogen => 'نائٹروجن';
+
+  @override
+  String get phosphorus => 'فاسفورس';
+
+  @override
+  String get potassium => 'پوٹاشیم';
+
+  @override
+  String get micronutrients => 'خرد غذائی اجزاء';
+
+  @override
+  String get active_in => '🕒چل رہا ہے: ';
+
+  @override
   String get application_guide => '📋 لگانے کی رہنمائی';
 
   @override
@@ -798,6 +905,12 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get recommended_fertilizer_types => '🧪 تجویز کردہ کھاد کی اقسام';
+
+  @override
+  String get no_description_available => 'کوئی تفصیل دستیاب نہیں';
+
+  @override
+  String get various_seasons => 'مختلف موسم';
 
   @override
   String get best_application_timing => '⏰ بہترین لگانے کا وقت';
@@ -929,19 +1042,19 @@ class AppLocalizationsUr extends AppLocalizations {
   String get avoid_root_contact_concentrated => 'مرکوز کھاد کے ساتھ جڑوں کا رابطہ نہ ہونے دیں';
 
   @override
-  String get apply_based_on_soil_test => 'Apply fertilizers based on soil test results';
+  String get apply_based_on_soil_test => 'مٹی کے ٹیسٹ کے مطابق کھاد ڈالیں';
 
   @override
-  String get split_applications_for_efficiency => 'Split applications for better efficiency';
+  String get split_applications_for_efficiency => 'بہتر اثر کے لیے کھاد قسطوں میں دیں';
 
   @override
-  String get incorporate_fertilizers_properly => 'Incorporate fertilizers properly into soil';
+  String get incorporate_fertilizers_properly => 'کھاد کو مٹی میں اچھی طرح ملائیں';
 
   @override
-  String get apply_when_plants_growing => 'Apply when plants are actively growing';
+  String get apply_when_plants_growing => 'جب پودے بڑھ رہے ہوں تب کھاد ڈالیں';
 
   @override
-  String get avoid_extreme_weather_application => 'Avoid application during extreme weather';
+  String get avoid_extreme_weather_application => 'شدید موسم میں کھاد ڈالنے سے گریز کریں';
 
   @override
   String get apply_fertilizers_based_on_soil_test => 'مٹی کے ٹیسٹ کی بنیاد پر کھاد لگائیں';
@@ -950,7 +1063,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get apply_during_active_growth => 'جب پودے فعال نمو میں ہوں تو لگائیں';
 
   @override
-  String get follow_recommended_dosage => 'Follow recommended dosage strictly';
+  String get follow_recommended_dosage => 'تجویز کردہ مقدار پر سختی سے عمل کریں';
 
   @override
   String get focus_on_nitrogen => 'نائٹروجن کی لگانے پر توجہ دیں';

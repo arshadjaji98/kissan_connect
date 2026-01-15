@@ -380,7 +380,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get weather_data_error => 'Weather data error';
 
   @override
-  String get recommendations_for => 'Recommendations for';
+  String get recommendations_for => 'Recommendations for ';
 
   @override
   String get tap_to_change => 'tap to change';
@@ -485,6 +485,95 @@ class AppLocalizationsEn extends AppLocalizations {
   String get various_pests => 'Various Pests';
 
   @override
+  String get stem_borer => 'Stem borer';
+
+  @override
+  String get leaf_folder => 'Leaf folder';
+
+  @override
+  String get blast_fungus => 'Blast fungus';
+
+  @override
+  String get brown_plant_hopper => 'Brown plant hopper';
+
+  @override
+  String get corn_borer => 'Corn borer';
+
+  @override
+  String get armyworm => 'Armyworm';
+
+  @override
+  String get earworm => 'Earworm';
+
+  @override
+  String get corn_leaf_aphid => 'Corn leaf aphid';
+
+  @override
+  String warm_weather_increases_nutrients(Object crop) {
+    return 'Warm weather increases nutrient availability for $crop';
+  }
+
+  @override
+  String cold_weather_slows_growth(Object crop) {
+    return 'Cold temperatures slow $crop growth and nutrient uptake';
+  }
+
+  @override
+  String optimal_temp_for_fertilizer(Object crop) {
+    return 'Optimal temperature for $crop fertilizer application';
+  }
+
+  @override
+  String adjustment_increased_for_rain(Object adjustment) {
+    return '$adjustment, increased for rain';
+  }
+
+  @override
+  String rain_helps_nutrient_absorption(Object crop, Object reason) {
+    return '$reason. Rain will help $crop absorb nutrients efficiently';
+  }
+
+  @override
+  String adjustment_reduced_for_dryness(Object adjustment) {
+    return '$adjustment, reduced for dryness';
+  }
+
+  @override
+  String dryness_requires_irrigation(Object crop, Object reason) {
+    return '$reason. $crop may require irrigation after application';
+  }
+
+  @override
+  String reason_with_growth_stage(Object growthStage, Object reason) {
+    return '$reason. Current growth stage: $growthStage';
+  }
+
+  @override
+  String natural_rainfall_sufficient_two(Object crop) {
+    return 'Natural rainfall will provide sufficient moisture for $crop';
+  }
+
+  @override
+  String storm_adequate_rainfall_two(Object crop) {
+    return 'Storm will provide adequate rainfall for $crop, avoid waterlogging';
+  }
+
+  @override
+  String high_evaporation_requires_more_water(Object crop, Object evap) {
+    return 'High evaporation rate ($evap mm/day) requires more frequent watering for $crop';
+  }
+
+  @override
+  String dry_warm_requires_careful_irrigation(Object crop) {
+    return 'Dry, warm conditions require careful water management for $crop';
+  }
+
+  @override
+  String moderate_conditions_regular_irrigation_two(Object crop, Object stage) {
+    return 'Moderate conditions - maintain regular irrigation for $crop ($stage stage)';
+  }
+
+  @override
   String get high_risk_pests => '🚨 High Risk Pests:';
 
   @override
@@ -495,6 +584,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sunny_conditions_favor_pest_development => 'Sunny conditions favor pest development';
+
+  @override
+  String get varies_with_conditions => 'Varies with conditions';
 
   @override
   String get moderate_risk_pests => '⚠️ Moderate Risk Pests:';
@@ -791,6 +883,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get none => 'None';
 
   @override
+  String get nitrogen => 'Nitrogen';
+
+  @override
+  String get phosphorus => 'Phosphorus';
+
+  @override
+  String get potassium => 'Potassium';
+
+  @override
+  String get micronutrients => 'Micronutrients';
+
+  @override
+  String get active_in => '🕒 Active in:';
+
+  @override
   String get application_guide => '📋 Application Guide:';
 
   @override
@@ -798,6 +905,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get recommended_fertilizer_types => '🧪 Recommended Fertilizer Types:';
+
+  @override
+  String get no_description_available => 'No description available';
+
+  @override
+  String get various_seasons => 'Various Seasons';
 
   @override
   String get best_application_timing => '⏰ Best Application Timing:';

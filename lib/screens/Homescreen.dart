@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:http/http.dart' as http;
-import 'package:kissan_connect_app_2/generated/l10n.dart';
 import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 import 'cropguide.dart';
 import 'WelcomeScreen.dart';
@@ -32,10 +31,10 @@ class PestPreventionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final highRiskPests = pestData['highRiskPests'] ?? [];
     final moderateRiskPests = pestData['moderateRiskPests'] ?? [];
-
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pest Prevention Guide'),
+        title: Text(loc.pest_prevention_guide),
         backgroundColor: isRiskHigh ? Colors.orange : Colors.green,
       ),
       body: SingleChildScrollView(
@@ -60,7 +59,7 @@ class PestPreventionScreen extends StatelessWidget {
                         ),
                         const SizedBox(width: 10),
                         Text(
-                          '${pestData['riskLevel'] ?? 'Unknown'} - ${pestData['cropName'] ?? 'Crop'}',
+                          '${pestData['riskLevel'] ?? loc.unknown} - ${pestData['cropName'] ?? loc.crop}',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -71,7 +70,7 @@ class PestPreventionScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      pestData['message'] ?? 'No message available',
+                      pestData['message'] ?? loc.no_message_available,
                       style: const TextStyle(fontSize: 16),
                     ),
                   ],
@@ -83,8 +82,8 @@ class PestPreventionScreen extends StatelessWidget {
 
             // High Risk Pests Section
             if (highRiskPests.isNotEmpty) ...[
-              const Text(
-                '🚨 High Risk Pests:',
+              Text(
+                loc.high_risk_pests,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -92,14 +91,16 @@ class PestPreventionScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              ...highRiskPests.map((pest) => _buildPestCard(pest, true)),
+              ...highRiskPests.map(
+                (pest) => _buildPestCard(pest, true, context),
+              ),
               const SizedBox(height: 20),
             ],
 
             // Moderate Risk Pests Section
             if (moderateRiskPests.isNotEmpty) ...[
-              const Text(
-                '⚠️ Moderate Risk Pests:',
+              Text(
+                loc.moderate_risk_pests,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -107,13 +108,15 @@ class PestPreventionScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              ...moderateRiskPests.map((pest) => _buildPestCard(pest, false)),
+              ...moderateRiskPests.map(
+                (pest) => _buildPestCard(pest, false, context),
+              ),
               const SizedBox(height: 20),
             ],
 
             // Prevention Measures
-            const Text(
-              '🛡️ Prevention Measures:',
+            Text(
+              loc.prevention_measures_title,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -121,15 +124,20 @@ class PestPreventionScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            _buildPreventionMeasures(pestData['cropName'] ?? 'General'),
+            _buildPreventionMeasures(pestData['cropName'] ?? loc.general),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildPestCard(String pestName, bool isHighRisk) {
-    final pestInfo = _getPestInformation(pestName);
+  Widget _buildPestCard(
+    String pestName,
+    bool isHighRisk,
+    BuildContext context,
+  ) {
+    final loc = AppLocalizations.of(context)!;
+    final pestInfo = _getPestInformation(pestName, context);
     return Card(
       color: isHighRisk ? Colors.red[50] : Colors.orange[50],
       child: Padding(
@@ -147,12 +155,12 @@ class PestPreventionScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              pestInfo['description'] ?? 'No description available',
+              pestInfo['description'] ?? loc.no_description_available,
               style: const TextStyle(fontSize: 14),
             ),
             const SizedBox(height: 8),
             Text(
-              '🕒 Active in: ${pestInfo['activeSeason'] ?? 'Various seasons'}',
+              '${loc.active_in} ${pestInfo['activeSeason'] ?? loc.various_seasons}',
               style: const TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
             ),
           ],
@@ -186,76 +194,67 @@ class PestPreventionScreen extends StatelessWidget {
     );
   }
 
-  Map<String, String> _getPestInformation(String pestName) {
+  Map<String, String> _getPestInformation(
+    String pestName,
+    BuildContext context,
+  ) {
+    final loc = AppLocalizations.of(context)!;
     final pestInfo = {
-      'Aphids': {
-        'description':
-            'Small sap-sucking insects that cause yellowing and curling of leaves.',
-        'activeSeason': 'Spring and Summer',
+      loc.aphids: {
+        'description': loc.aphids_description,
+        'activeSeason': loc.aphids_active_season,
       },
-      'Army Worm': {
-        'description':
-            'Caterpillars that feed on leaves and can defoliate entire plants.',
-        'activeSeason': 'Summer and Monsoon',
+      loc.army_worm: {
+        'description': loc.army_worm_description,
+        'activeSeason': loc.army_worm_active_season,
       },
       'Bollworm': {
-        'description':
-            'Larvae that bore into cotton bolls, causing significant yield loss.',
-        'activeSeason': 'Flowering season',
+        'description': loc.bollworm_description,
+        'activeSeason': loc.bollworm_active_season,
       },
       'Stem Borer': {
-        'description':
-            'Larvae that tunnel into stems, causing plants to wilt and die.',
-        'activeSeason': 'Throughout growing season',
+        'description': loc.stem_borer_description,
+        'activeSeason': loc.stem_borer_active_season,
       },
       'Whitefly': {
-        'description':
-            'Small white insects that suck sap and transmit viral diseases.',
-        'activeSeason': 'Warm and dry conditions',
+        'description': loc.whitefly_description,
+        'activeSeason': loc.whitefly_active_season,
       },
       'Rust Fungus': {
-        'description':
-            'Fungal disease causing orange-brown pustules on leaves and stems.',
-        'activeSeason': 'Cool, moist conditions',
+        'description': loc.rust_fungus_description,
+        'activeSeason': loc.rust_fungus_active_season,
       },
       'Hessian Fly': {
-        'description':
-            'Small flies whose larvae feed on wheat stems, stunting growth.',
-        'activeSeason': 'Fall and Spring',
+        'description': loc.hessian_fly_description,
+        'activeSeason': loc.hessian_fly_active_season,
       },
       'Spider Mites': {
-        'description':
-            'Tiny mites that suck plant juices, causing yellow stippling on leaves.',
-        'activeSeason': 'Hot, dry weather',
+        'description': loc.spider_mites_description,
+        'activeSeason': loc.spider_mites_active_season,
       },
       'Leaf Folder': {
-        'description':
-            'Larvae that fold and feed inside rice leaves, reducing photosynthesis.',
-        'activeSeason': 'Wet season',
+        'description': loc.leaf_folder_description,
+        'activeSeason': loc.leaf_folder_active_season,
       },
       'Blast Fungus': {
-        'description':
-            'Fungal disease causing lesions on leaves, nodes, and panicles.',
-        'activeSeason': 'High humidity conditions',
+        'description': loc.blast_fungus_description,
+        'activeSeason': loc.blast_fungus_active_season,
       },
       'Brown Plant Hopper': {
-        'description':
-            'Sap-sucking insects that cause "hopper burn" and transmit viruses.',
-        'activeSeason': 'Wet season',
+        'description': loc.brown_plant_hopper_description,
+        'activeSeason': loc.brown_plant_hopper_active_season,
       },
       'Corn Borer': {
-        'description':
-            'Larvae that tunnel into corn stalks and ears, reducing yield.',
-        'activeSeason': 'Summer months',
+        'description': loc.corn_borer_description,
+        'activeSeason': loc.corn_borer_active_season,
       },
       'Earworm': {
-        'description': 'Caterpillars that feed on corn ears, damaging kernels.',
-        'activeSeason': 'Silking to harvest',
+        'description': loc.earworm_description,
+        'activeSeason': loc.earworm_active_season,
       },
       'Corn Leaf Aphid': {
-        'description':
-            'Aphids that cluster on leaves and tassels, reducing plant vigor.',
-        'activeSeason': 'Cool weather',
+        'description': loc.corn_leaf_aphid_description,
+        'activeSeason': loc.corn_leaf_aphid_active_season,
       },
     };
     return {
@@ -263,7 +262,7 @@ class PestPreventionScreen extends StatelessWidget {
           pestInfo[pestName]?['description'] ??
           'General pest that affects crop health and yield.',
       'activeSeason':
-          pestInfo[pestName]?['activeSeason'] ?? 'Varies with conditions',
+          pestInfo[pestName]?['activeSeason'] ?? loc.varies_with_conditions,
     };
   }
 
@@ -294,12 +293,12 @@ class PestPreventionScreen extends StatelessWidget {
         'Remove weed hosts around fields',
       ],
       'Corn': [
-        loc.corn_prevention_1,
-        loc.corn_prevention_2,
-        loc.corn_prevention_3,
-        loc.corn_prevention_4,
-        loc.corn_prevention_5,
-        loc.corn_prevention_6,
+        'Plant early to avoid peak pest season',
+        'Use resistant hybrid varieties',
+        'Practice deep plowing after harvest',
+        'Apply soil insecticides at planting',
+        'Monitor for egg masses on leaves',
+        'Use biological control agents',
       ],
     };
     return measures[cropName] ??
@@ -381,7 +380,7 @@ class FertilizerGuideScreen extends StatelessWidget {
                     if ((fertilizerData['adjustment'] as String?) !=
                         localization.optimal_application_rate)
                       Text(
-                        'Adjustment: ${fertilizerData['adjustment'] ?? "None"}',
+                        '${localization.adjustment}: ${fertilizerData['adjustment'] ?? localization.none}',
                         style: TextStyle(
                           fontSize: 14,
                           fontStyle: FontStyle.italic,
@@ -598,6 +597,7 @@ class FertilizerGuideScreen extends StatelessWidget {
         'Micronutrients': 'Zinc, Iron',
       },
     };
+
     return types[cropName] ??
         {
           'Nitrogen': 'Urea or Ammonium-based',
@@ -1490,7 +1490,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       },
       "Rice": {
-        "name": "Rice",
+        "name": loc.rice,
         "pestTypes": [
           "Stem Borer",
           "Leaf Folder",
@@ -1653,7 +1653,7 @@ class _HomeScreenState extends State<HomeScreen> {
         'recommendation': AppLocalizations.of(
           context,
         )!.standard_application_needed,
-        'reason': 'Weather data unavailable - using standard recommendation',
+        'reason': AppLocalizations.of(context)!.network_error_message,
         'adjustment': AppLocalizations.of(context)!.no_adjustment_needed,
         'cropSpecific': true,
         'cropName': _currentDisplayCrop,

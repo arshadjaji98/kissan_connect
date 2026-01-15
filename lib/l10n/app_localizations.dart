@@ -836,7 +836,7 @@ abstract class AppLocalizations {
   /// No description provided for @recommendations_for.
   ///
   /// In en, this message translates to:
-  /// **'Recommendations for'**
+  /// **'Recommendations for '**
   String get recommendations_for;
 
   /// No description provided for @tap_to_change.
@@ -1043,6 +1043,132 @@ abstract class AppLocalizations {
   /// **'Various Pests'**
   String get various_pests;
 
+  /// No description provided for @stem_borer.
+  ///
+  /// In en, this message translates to:
+  /// **'Stem borer'**
+  String get stem_borer;
+
+  /// No description provided for @leaf_folder.
+  ///
+  /// In en, this message translates to:
+  /// **'Leaf folder'**
+  String get leaf_folder;
+
+  /// No description provided for @blast_fungus.
+  ///
+  /// In en, this message translates to:
+  /// **'Blast fungus'**
+  String get blast_fungus;
+
+  /// No description provided for @brown_plant_hopper.
+  ///
+  /// In en, this message translates to:
+  /// **'Brown plant hopper'**
+  String get brown_plant_hopper;
+
+  /// No description provided for @corn_borer.
+  ///
+  /// In en, this message translates to:
+  /// **'Corn borer'**
+  String get corn_borer;
+
+  /// No description provided for @armyworm.
+  ///
+  /// In en, this message translates to:
+  /// **'Armyworm'**
+  String get armyworm;
+
+  /// No description provided for @earworm.
+  ///
+  /// In en, this message translates to:
+  /// **'Earworm'**
+  String get earworm;
+
+  /// No description provided for @corn_leaf_aphid.
+  ///
+  /// In en, this message translates to:
+  /// **'Corn leaf aphid'**
+  String get corn_leaf_aphid;
+
+  /// No description provided for @warm_weather_increases_nutrients.
+  ///
+  /// In en, this message translates to:
+  /// **'Warm weather increases nutrient availability for {crop}'**
+  String warm_weather_increases_nutrients(Object crop);
+
+  /// No description provided for @cold_weather_slows_growth.
+  ///
+  /// In en, this message translates to:
+  /// **'Cold temperatures slow {crop} growth and nutrient uptake'**
+  String cold_weather_slows_growth(Object crop);
+
+  /// No description provided for @optimal_temp_for_fertilizer.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimal temperature for {crop} fertilizer application'**
+  String optimal_temp_for_fertilizer(Object crop);
+
+  /// No description provided for @adjustment_increased_for_rain.
+  ///
+  /// In en, this message translates to:
+  /// **'{adjustment}, increased for rain'**
+  String adjustment_increased_for_rain(Object adjustment);
+
+  /// No description provided for @rain_helps_nutrient_absorption.
+  ///
+  /// In en, this message translates to:
+  /// **'{reason}. Rain will help {crop} absorb nutrients efficiently'**
+  String rain_helps_nutrient_absorption(Object crop, Object reason);
+
+  /// No description provided for @adjustment_reduced_for_dryness.
+  ///
+  /// In en, this message translates to:
+  /// **'{adjustment}, reduced for dryness'**
+  String adjustment_reduced_for_dryness(Object adjustment);
+
+  /// No description provided for @dryness_requires_irrigation.
+  ///
+  /// In en, this message translates to:
+  /// **'{reason}. {crop} may require irrigation after application'**
+  String dryness_requires_irrigation(Object crop, Object reason);
+
+  /// No description provided for @reason_with_growth_stage.
+  ///
+  /// In en, this message translates to:
+  /// **'{reason}. Current growth stage: {growthStage}'**
+  String reason_with_growth_stage(Object growthStage, Object reason);
+
+  /// No description provided for @natural_rainfall_sufficient_two.
+  ///
+  /// In en, this message translates to:
+  /// **'Natural rainfall will provide sufficient moisture for {crop}'**
+  String natural_rainfall_sufficient_two(Object crop);
+
+  /// No description provided for @storm_adequate_rainfall_two.
+  ///
+  /// In en, this message translates to:
+  /// **'Storm will provide adequate rainfall for {crop}, avoid waterlogging'**
+  String storm_adequate_rainfall_two(Object crop);
+
+  /// No description provided for @high_evaporation_requires_more_water.
+  ///
+  /// In en, this message translates to:
+  /// **'High evaporation rate ({evap} mm/day) requires more frequent watering for {crop}'**
+  String high_evaporation_requires_more_water(Object crop, Object evap);
+
+  /// No description provided for @dry_warm_requires_careful_irrigation.
+  ///
+  /// In en, this message translates to:
+  /// **'Dry, warm conditions require careful water management for {crop}'**
+  String dry_warm_requires_careful_irrigation(Object crop);
+
+  /// No description provided for @moderate_conditions_regular_irrigation_two.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderate conditions - maintain regular irrigation for {crop} ({stage} stage)'**
+  String moderate_conditions_regular_irrigation_two(Object crop, Object stage);
+
   /// No description provided for @high_risk_pests.
   ///
   /// In en, this message translates to:
@@ -1066,6 +1192,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sunny conditions favor pest development'**
   String get sunny_conditions_favor_pest_development;
+
+  /// No description provided for @varies_with_conditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Varies with conditions'**
+  String get varies_with_conditions;
 
   /// No description provided for @moderate_risk_pests.
   ///
@@ -1655,6 +1787,36 @@ abstract class AppLocalizations {
   /// **'None'**
   String get none;
 
+  /// No description provided for @nitrogen.
+  ///
+  /// In en, this message translates to:
+  /// **'Nitrogen'**
+  String get nitrogen;
+
+  /// No description provided for @phosphorus.
+  ///
+  /// In en, this message translates to:
+  /// **'Phosphorus'**
+  String get phosphorus;
+
+  /// No description provided for @potassium.
+  ///
+  /// In en, this message translates to:
+  /// **'Potassium'**
+  String get potassium;
+
+  /// No description provided for @micronutrients.
+  ///
+  /// In en, this message translates to:
+  /// **'Micronutrients'**
+  String get micronutrients;
+
+  /// No description provided for @active_in.
+  ///
+  /// In en, this message translates to:
+  /// **'🕒 Active in:'**
+  String get active_in;
+
   /// No description provided for @application_guide.
   ///
   /// In en, this message translates to:
@@ -1672,6 +1834,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'🧪 Recommended Fertilizer Types:'**
   String get recommended_fertilizer_types;
+
+  /// No description provided for @no_description_available.
+  ///
+  /// In en, this message translates to:
+  /// **'No description available'**
+  String get no_description_available;
+
+  /// No description provided for @various_seasons.
+  ///
+  /// In en, this message translates to:
+  /// **'Various Seasons'**
+  String get various_seasons;
 
   /// No description provided for @best_application_timing.
   ///
