@@ -294,12 +294,12 @@ class PestPreventionScreen extends StatelessWidget {
         'Remove weed hosts around fields',
       ],
       'Corn': [
-        'Plant early to avoid peak pest season',
-        'Use resistant hybrid varieties',
-        'Practice deep plowing after harvest',
-        'Apply soil insecticides at planting',
-        'Monitor for egg masses on leaves',
-        'Use biological control agents',
+        loc.corn_prevention_1,
+        loc.corn_prevention_2,
+        loc.corn_prevention_3,
+        loc.corn_prevention_4,
+        loc.corn_prevention_5,
+        loc.corn_prevention_6,
       ],
     };
     return measures[cropName] ??
