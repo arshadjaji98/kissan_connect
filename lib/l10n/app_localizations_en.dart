@@ -281,6 +281,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password_reset_failed => 'Failed to send reset email. Please check the email address and try again.';
 
   @override
+  String password_sent_to_email(Object email) {
+    return 'A Password has been sent to $email, Please check your inbox.';
+  }
+
+  @override
   String get app_name => 'Kissan Connect';
 
   @override
@@ -547,6 +552,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String reason_with_growth_stage(Object growthStage, Object reason) {
     return '$reason. Current growth stage: $growthStage';
   }
+
+  @override
+  String get current_growth_rate => 'Current growth rate: ';
+
+  @override
+  String get temperature_optimal_for => 'Temperature optimal for';
 
   @override
   String natural_rainfall_sufficient_two(Object crop) {
@@ -838,7 +849,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get optimal_irrigation_needed_for => 'Optimal Irrigation Needed for';
 
   @override
-  String get critical_growth_stage_guide => 'Your crop is at a critical growth stage. Tap for a guide.';
+  String get critical_growth_stage_guide => 'crop is at a critical growth stage. Tap for a guide.';
+
+  @override
+  String get you => 'You';
 
   @override
   String get logout => 'Logout';
@@ -1081,6 +1095,69 @@ class AppLocalizationsEn extends AppLocalizations {
   String get evapotranspiration_rate => 'Evapotranspiration Rate:';
 
   @override
+  String get reduce_nitrogen_application => 'Reduce nitrogen application';
+
+  @override
+  String get increase_phosphorus_for_flowering => 'Increase phosphorus for flower formation';
+
+  @override
+  String get apply_before_flower_buds_open => 'Apply before flower buds open';
+
+  @override
+  String get avoid_full_bloom_application => 'Avoid application during full bloom';
+
+  @override
+  String get monitor_nutrient_deficiencies => 'Monitor for nutrient deficiencies';
+
+  @override
+  String get critical_for_nitrogen_application => 'Critical for nitrogen application';
+
+  @override
+  String get apply_when_tillers_develop => 'Apply when tillers start developing';
+
+  @override
+  String get split_application_recommended => 'Split application recommended';
+
+  @override
+  String get ensure_adequate_soil_moisture => 'Ensure adequate soil moisture';
+
+  @override
+  String get monitor_tiller_count => 'Monitor tiller count regularly';
+
+  @override
+  String get focus_on_potassium_application => 'Focus on potassium application';
+
+  @override
+  String get apply_early_silking_stage => 'Apply during early silking stage';
+
+  @override
+  String get reduce_nitrogen_excess_growth => 'Reduce nitrogen to prevent excessive growth';
+
+  @override
+  String get ensure_balanced_nutrition => 'Ensure balanced nutrition';
+
+  @override
+  String get monitor_ear_development => 'Monitor ear development';
+
+  @override
+  String get apply_early_pod_development => 'Apply during early pod development';
+
+  @override
+  String get monitor_pod_setting_rate => 'Monitor pod setting rate';
+
+  @override
+  String get avoid_stress_conditions => 'Avoid application during stress conditions';
+
+  @override
+  String get follow_crop_specific_schedule => 'Follow crop-specific schedules';
+
+  @override
+  String get consider_weather_conditions => 'Consider weather conditions';
+
+  @override
+  String get monitor_plant_response => 'Monitor plant response after application';
+
+  @override
   String get fertilizer_wheat_nitrogen => 'Urea (46-0-0)';
 
   @override
@@ -1159,130 +1236,220 @@ class AppLocalizationsEn extends AppLocalizations {
   String get irrigation_schedule => '📅 Irrigation Schedule:';
 
   @override
-  String get wheat_first_irrigation => 'First Irrigation: 21-25 days after sowing (Crown Root)';
+  String get wheat_first_irrigation => 'First Irrigation:';
 
   @override
-  String get wheat_second_irrigation => 'Second Irrigation: 45-50 days after sowing (Tillering)';
+  String get wheat_first_irrigation_value => '20-25 days after sowing (Crown root initiation)';
 
   @override
-  String get wheat_third_irrigation => 'Third Irrigation: 70-75 days after sowing (Jointing)';
+  String get wheat_second_irrigation => 'Second Irrigation:';
 
   @override
-  String get wheat_fourth_irrigation => 'Fourth Irrigation: 90-95 days after sowing (Flowering)';
+  String get wheat_second_irrigation_value => '45-50 days after sowing (Tillering)';
 
   @override
-  String get wheat_fifth_irrigation => 'Fifth Irrigation: 110-115 days after sowing (Grain filling)';
+  String get wheat_third_irrigation => 'Third Irrigation:';
 
   @override
-  String get cotton_first_irrigation => 'First Irrigation: 30-35 days after sowing';
+  String get wheat_third_irrigation_value => '70-75 days after sowing (Jointing)';
 
   @override
-  String get cotton_second_irrigation => 'Second Irrigation: During squaring stage';
+  String get wheat_fourth_irrigation => 'Fourth Irrigation: ';
 
   @override
-  String get cotton_third_irrigation => 'Third Irrigation: During flowering stage';
+  String get wheat_fourth_irrigation_value => '90-95 days after sowing (Booting)';
 
   @override
-  String get cotton_fourth_irrigation => 'Fourth Irrigation: Boll formation stage';
+  String get wheat_fifth_irrigation => 'Fifth Irrigation:';
 
   @override
-  String get cotton_fifth_irrigation => 'Fifth Irrigation: Boll development stage';
+  String get wheat_fifth_irrigation_value => '110-115 days after sowing (Grain filling)';
 
   @override
-  String get rice_initial_flooding => 'Initial Flooding: 3-5 cm standing water after transplanting';
+  String get cotton_first_irrigation => 'First Irrigation: ';
 
   @override
-  String get rice_vegetative_stage => 'Vegetative Stage: Maintain 2-5 cm standing water';
+  String get cotton_first_irrigation_value => '30-35 days after sowing (Vegetative stage)';
 
   @override
-  String get rice_reproductive_stage => 'Reproductive Stage: Maintain 5-10 cm standing water';
+  String get cotton_second_irrigation => 'Second Irrigation: ';
 
   @override
-  String get rice_ripening_stage => 'Ripening Stage: Gradually reduce water 2 weeks before harvest';
+  String get cotton_second_irrigation_value => 'During squaring stage';
+
+  @override
+  String get cotton_third_irrigation => 'Third Irrigation: ';
+
+  @override
+  String get cotton_third_irrigation_value => 'During flowering stage';
+
+  @override
+  String get cotton_fourth_irrigation => 'Fourth Irrigation: ';
+
+  @override
+  String get cotton_fourth_irrigation_value => 'Boll formation stage';
+
+  @override
+  String get cotton_fifth_irrigation => 'Fifth Irrigation: ';
+
+  @override
+  String get cotton_fifth_irrigation_value => 'Boll development stage';
+
+  @override
+  String get rice_initial_flooding => 'Initial Flooding: ';
+
+  @override
+  String get rice_initial_flooding_value => '3-5 cm standing water after transplanting';
+
+  @override
+  String get rice_vegetative_stage => 'Vegetative Stage:';
+
+  @override
+  String get rice_vegetative_stage_value => 'Maintain 2-5 cm standing water';
+
+  @override
+  String get rice_reproductive_stage => 'Reproductive Stage: ';
+
+  @override
+  String get rice_reproductive_stage_value => 'Maintain 5-10 cm standing water';
+
+  @override
+  String get rice_ripening_stage => 'Ripening Stage: ';
+
+  @override
+  String get rice_ripening_stage_value => 'Gradually reduce water 2 weeks before harvest';
 
   @override
   String get corn_first_irrigation => 'First Irrigation: Immediately after sowing';
 
   @override
+  String get corn_first_irrigation_value => 'Immediately after sowing';
+
+  @override
   String get corn_second_irrigation => 'Second Irrigation: Knee-high stage (30-45 cm)';
 
   @override
-  String get corn_third_irrigation => 'Third Irrigation: Tasseling stage';
+  String get corn_second_irrigation_value => 'Knee-high stage (30-45 cm)';
 
   @override
-  String get corn_fourth_irrigation => 'Fourth Irrigation: Silking stage';
+  String get corn_third_irrigation => 'Third Irrigation: ';
 
   @override
-  String get corn_fifth_irrigation => 'Fifth Irrigation: Grain filling stage';
+  String get corn_third_irrigation_value => 'Tasseling stage';
 
   @override
-  String get general_rule => 'General Rule: Irrigate when top 15 cm soil feels dry';
+  String get corn_fourth_irrigation => 'Fourth Irrigation: ';
 
   @override
-  String get critical_stages => 'Critical Stages: Ensure adequate moisture during flowering and fruit setting';
+  String get corn_fourth_irrigation_value => 'Silking stage';
 
   @override
-  String get water_quantity => 'Water Quantity: Apply 5-7 cm depth per irrigation';
+  String get corn_fifth_irrigation => 'Fifth Irrigation: ';
 
   @override
-  String get monitoring => 'Monitoring: Check soil moisture regularly';
+  String get corn_fifth_irrigation_value => 'Grain filling stage';
+
+  @override
+  String get general_rule => 'General Rule: ';
+
+  @override
+  String get general_rule_value => 'Irrigate when top 15 cm soil feels dry';
+
+  @override
+  String get general_pests_that_affect_crop => 'General pest that affects crop health and yield.';
+
+  @override
+  String get critical_stages => 'Critical Stages: ';
+
+  @override
+  String get critical_stages_value => 'Ensure adequate moisture during flowering and fruit setting';
+
+  @override
+  String get water_quantity => 'Water Quantity: ';
+
+  @override
+  String get water_quantity_value => 'Apply 5-7 cm depth per irrigation';
+
+  @override
+  String get monitoring => 'Monitoring: ';
+
+  @override
+  String get monitoring_value => 'RCheck soil moisture regularly';
 
   @override
   String get water_management_tips => '💧 Water Management Tips:';
 
   @override
-  String get high_tip_1 => 'Irrigate immediately if soil is dry';
+  String get high_tip_first => 'Irrigate immediately if soil is dry';
 
   @override
-  String get high_tip_2 => 'Use mulching to conserve soil moisture';
+  String get high_tip_second => 'Use mulching to conserve soil moisture';
 
   @override
-  String get high_tip_3 => 'Consider drip irrigation for efficiency';
+  String get high_tip_third => 'Consider drip irrigation for efficiency';
 
   @override
-  String get high_tip_4 => 'Monitor plants for wilting signs';
+  String get high_tip_fourth => 'Monitor plants for wilting signs';
 
   @override
-  String get high_tip_5 => 'Water in early morning or late evening';
+  String get high_tip_fifth => 'Water in early morning or late evening';
 
   @override
-  String get high_tip_6 => 'Check soil moisture daily';
+  String get high_tip_sixth => 'Check soil moisture daily';
 
   @override
-  String get medium_tip_1 => 'Follow regular irrigation schedule';
+  String get medium_tip_first => 'Follow regular irrigation schedule';
 
   @override
-  String get medium_tip_2 => 'Check soil moisture every 2-3 days';
+  String get medium_tip_second => 'Check soil moisture every 2-3 days';
 
   @override
-  String get medium_tip_3 => 'Adjust based on rainfall';
+  String get medium_tip_third => 'Adjust based on rainfall';
 
   @override
-  String get medium_tip_4 => 'Use water conservation techniques';
+  String get medium_tip_fourth => 'Use water conservation techniques';
 
   @override
-  String get medium_tip_5 => 'Monitor weather forecasts';
+  String get medium_tip_fifth => 'Monitor weather forecasts';
 
   @override
-  String get medium_tip_6 => 'Maintain irrigation records';
+  String get medium_tip_sixth => 'Maintain irrigation records';
 
   @override
-  String get low_tip_1 => 'Delay irrigation if rain is forecast';
+  String get low_tip_first => 'Delay irrigation if rain is forecast';
 
   @override
-  String get low_tip_2 => 'Check soil moisture before watering';
+  String get low_tip_second => 'Check soil moisture before watering';
 
   @override
-  String get low_tip_3 => 'Reduce irrigation frequency';
+  String get low_tip_third => 'Reduce irrigation frequency';
 
   @override
-  String get low_tip_4 => 'Use water-saving methods';
+  String get low_tip_fourth => 'Use water-saving methods';
 
   @override
-  String get low_tip_5 => 'Monitor for over-watering signs';
+  String get low_tip_fifth => 'Monitor for over-watering signs';
 
   @override
-  String get low_tip_6 => 'Collect rainwater if possible';
+  String get low_tip_sixth => 'Collect rainwater if possible';
+
+  @override
+  String get return_tip_first => 'Check soil moisture before irrigation';
+
+  @override
+  String get return_tip_second => 'Water based on plant needs, not fixed schedule';
+
+  @override
+  String get return_tip_third => 'Use efficient irrigation methods';
+
+  @override
+  String get return_tip_fourth => 'Monitor weather conditions';
+
+  @override
+  String get return_tip_fifth => 'Avoid waterlogging';
+
+  @override
+  String get return_tip_sixth => 'Maintain proper drainage';
 
   @override
   String get irrigation_methods => '⚙️ Irrigation Methods:';
@@ -1316,4 +1483,103 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get basin_irrigation_desc => 'Suitable for orchards and some field crops';
+
+  @override
+  String high_risk_message(Object cropName, Object pests) {
+    return 'High risk of $pests infestation in $cropName';
+  }
+
+  @override
+  String moderate_risk_message(Object cropName, Object pests) {
+    return 'Monitor $cropName for $pests';
+  }
+
+  @override
+  String low_risk_message(Object cropName) {
+    return 'Low pest risk for $cropName in current conditions';
+  }
+
+  @override
+  String get generic_pest => 'pest';
+
+  @override
+  String get potential_pests => 'potential pests';
+
+  @override
+  String high_temp_burn_risk(Object cropName) {
+    return 'High temperatures increase fertilizer burn risk for $cropName';
+  }
+
+  @override
+  String warm_weather_nutrient_availability(Object cropName) {
+    return 'Warm weather increases nutrient availability for $cropName';
+  }
+
+  @override
+  String cold_temp_slow_growth(Object cropName) {
+    return 'Cold temperatures slow $cropName growth and nutrient uptake';
+  }
+
+  @override
+  String optimal_temp_application(Object cropName) {
+    return 'Optimal temperature for $cropName fertilizer application';
+  }
+
+  @override
+  String rain_absorption_help(Object cropName) {
+    return 'Rain will help $cropName absorb nutrients efficiently';
+  }
+
+  @override
+  String irrigation_required_after_application(Object cropName) {
+    return '$cropName may require irrigation after application';
+  }
+
+  @override
+  String get as_per_soil_test => 'As per soil test recommendations';
+
+  @override
+  String natural_rainfall_sufficient_three(Object crop) {
+    return 'Natural rainfall will provide sufficient moisture for $crop';
+  }
+
+  @override
+  String storm_rainfall_avoid_waterlogging_three(Object crop) {
+    return 'Storm will provide adequate rainfall for $crop, avoid waterlogging';
+  }
+
+  @override
+  String high_evaporation_requires_more_water_three(Object crop, Object et) {
+    return 'High evaporation rate ($et mm/day) requires more frequent watering for $crop';
+  }
+
+  @override
+  String low_evaporation_less_water_three(Object crop, Object et) {
+    return 'Low evaporation rate ($et mm/day) - $crop needs less water';
+  }
+
+  @override
+  String dry_warm_conditions_water_management_three(Object crop) {
+    return 'Dry, warm conditions require careful water management for $crop';
+  }
+
+  @override
+  String get normal_irrigation_schedule_three => 'Normal irrigation schedule';
+
+  @override
+  String moderate_conditions_regular_irrigation_three(Object crop, Object stage) {
+    return 'Moderate conditions - maintain regular irrigation for $crop ($stage stage)';
+  }
+
+  @override
+  String get urgency_low => 'Low';
+
+  @override
+  String get urgency_medium => 'Medium';
+
+  @override
+  String get urgency_high => 'High';
+
+  @override
+  String get mm_day => 'mm/day';
 }

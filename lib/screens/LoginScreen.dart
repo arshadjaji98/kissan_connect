@@ -224,18 +224,19 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _resetPassword() async {
+    final loc = AppLocalizations.of(context)!;
     final email = _emailController.text.trim();
 
     if (email.isEmpty) {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Reset Password'),
-          content: const Text('Please enter your email address first.'),
+          title: Text(loc.reset_password),
+          content: Text(loc.please_enter_email),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
+              child: Text(loc.ok),
             ),
           ],
         ),
@@ -250,14 +251,12 @@ class _LoginScreenState extends State<LoginScreen> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Password Reset Email Sent'),
-          content: Text(
-            'A password reset link has been sent to $email. Please check your inbox.',
-          ),
+          title: Text(loc.password_reset_sent_message),
+          content: Text(loc.password_sent_to_email(email)),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
+              child: Text(loc.ok),
             ),
           ],
         ),
@@ -266,14 +265,12 @@ class _LoginScreenState extends State<LoginScreen> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Error'),
-          content: const Text(
-            'Failed to send reset email. Please check the email address and try again.',
-          ),
+          title: Text(loc.error),
+          content: Text(loc.password_reset_failed),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
+              child: Text(loc.ok),
             ),
           ],
         ),

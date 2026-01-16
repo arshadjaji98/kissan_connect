@@ -124,7 +124,10 @@ class PestPreventionScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            _buildPreventionMeasures(pestData['cropName'] ?? loc.general),
+            _buildPreventionMeasures(
+              pestData['cropName'] ?? loc.general,
+              context,
+            ),
           ],
         ),
       ),
@@ -169,8 +172,9 @@ class PestPreventionScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPreventionMeasures(String cropName) {
-    final measures = _getPreventionMeasures(cropName);
+  Widget _buildPreventionMeasures(String cropName, BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
+    final measures = _getPreventionMeasures(cropName, context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -208,51 +212,51 @@ class PestPreventionScreen extends StatelessWidget {
         'description': loc.army_worm_description,
         'activeSeason': loc.army_worm_active_season,
       },
-      'Bollworm': {
+      loc.bollworm: {
         'description': loc.bollworm_description,
         'activeSeason': loc.bollworm_active_season,
       },
-      'Stem Borer': {
+      loc.stem_borer: {
         'description': loc.stem_borer_description,
         'activeSeason': loc.stem_borer_active_season,
       },
-      'Whitefly': {
+      loc.whitefly: {
         'description': loc.whitefly_description,
         'activeSeason': loc.whitefly_active_season,
       },
-      'Rust Fungus': {
+      loc.rust_fungus: {
         'description': loc.rust_fungus_description,
         'activeSeason': loc.rust_fungus_active_season,
       },
-      'Hessian Fly': {
+      loc.hessian_fly: {
         'description': loc.hessian_fly_description,
         'activeSeason': loc.hessian_fly_active_season,
       },
-      'Spider Mites': {
+      loc.spider_mites: {
         'description': loc.spider_mites_description,
         'activeSeason': loc.spider_mites_active_season,
       },
-      'Leaf Folder': {
+      loc.leaf_folder: {
         'description': loc.leaf_folder_description,
         'activeSeason': loc.leaf_folder_active_season,
       },
-      'Blast Fungus': {
+      loc.blast_fungus: {
         'description': loc.blast_fungus_description,
         'activeSeason': loc.blast_fungus_active_season,
       },
-      'Brown Plant Hopper': {
+      loc.brown_plant_hopper: {
         'description': loc.brown_plant_hopper_description,
         'activeSeason': loc.brown_plant_hopper_active_season,
       },
-      'Corn Borer': {
+      loc.corn_borer: {
         'description': loc.corn_borer_description,
         'activeSeason': loc.corn_borer_active_season,
       },
-      'Earworm': {
+      loc.earworm: {
         'description': loc.earworm_description,
         'activeSeason': loc.earworm_active_season,
       },
-      'Corn Leaf Aphid': {
+      loc.corn_leaf_aphid: {
         'description': loc.corn_leaf_aphid_description,
         'activeSeason': loc.corn_leaf_aphid_active_season,
       },
@@ -260,55 +264,56 @@ class PestPreventionScreen extends StatelessWidget {
     return {
       'description':
           pestInfo[pestName]?['description'] ??
-          'General pest that affects crop health and yield.',
+          loc.general_pests_that_affect_crop,
       'activeSeason':
           pestInfo[pestName]?['activeSeason'] ?? loc.varies_with_conditions,
     };
   }
 
-  List<String> _getPreventionMeasures(String cropName) {
+  List<String> _getPreventionMeasures(String cropName, BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final measures = {
       'Wheat': [
-        'Use certified disease-free seeds',
-        'Practice crop rotation with legumes',
-        'Monitor fields regularly for early detection',
-        'Use neem-based organic pesticides',
-        'Remove and destroy infected plants',
-        'Maintain proper plant spacing for air circulation',
+        loc.wheat_prevention_1,
+        loc.wheat_prevention_2,
+        loc.wheat_prevention_3,
+        loc.wheat_prevention_4,
+        loc.wheat_prevention_5,
+        loc.wheat_prevention_6,
       ],
       'Cotton': [
-        'Install yellow sticky traps for whiteflies',
-        'Use pheromone traps for bollworms',
-        'Practice intercropping with marigold',
-        'Apply recommended insecticides at first sight',
-        'Remove crop residues after harvest',
-        'Use resistant varieties when available',
+        loc.cotton_prevention_1,
+        loc.cotton_prevention_2,
+        loc.cotton_prevention_3,
+        loc.cotton_prevention_4,
+        loc.cotton_prevention_5,
+        loc.cotton_prevention_6,
       ],
       'Rice': [
-        'Maintain proper water level in fields',
-        'Use light traps for monitoring',
-        'Release natural predators like spiders',
-        'Apply recommended pesticides at tillering stage',
-        'Practice synchronous planting in area',
-        'Remove weed hosts around fields',
+        loc.rice_prevention_1,
+        loc.rice_prevention_2,
+        loc.rice_prevention_3,
+        loc.rice_prevention_4,
+        loc.rice_prevention_5,
+        loc.rice_prevention_6,
       ],
       'Corn': [
-        'Plant early to avoid peak pest season',
-        'Use resistant hybrid varieties',
-        'Practice deep plowing after harvest',
-        'Apply soil insecticides at planting',
-        'Monitor for egg masses on leaves',
-        'Use biological control agents',
+        loc.corn_prevention_1,
+        loc.corn_prevention_2,
+        loc.corn_prevention_3,
+        loc.corn_prevention_4,
+        loc.corn_prevention_5,
+        loc.corn_prevention_6,
       ],
     };
     return measures[cropName] ??
         [
-          'Regular field monitoring',
-          'Use organic pesticides first',
-          'Practice crop rotation',
-          'Maintain field hygiene',
-          'Use resistant varieties',
-          'Consult local agriculture expert',
+          loc.regular_field_monitoring,
+          loc.use_organic_pesticides,
+          loc.practice_crop_rotation,
+          loc.maintain_field_hygiene,
+          loc.use_resistant_varieties,
+          loc.consult_local_agriculature_expert,
         ];
   }
 }
@@ -415,6 +420,7 @@ class FertilizerGuideScreen extends StatelessWidget {
             const SizedBox(height: 10),
             _buildFertilizerTypes(
               fertilizerData['cropName'] ?? localization.general,
+              context,
             ),
 
             const SizedBox(height: 20),
@@ -427,6 +433,7 @@ class FertilizerGuideScreen extends StatelessWidget {
             const SizedBox(height: 10),
             _buildTimingGuide(
               fertilizerData['growthStage'] ?? localization.general,
+              context,
             ),
           ],
         ),
@@ -460,8 +467,8 @@ class FertilizerGuideScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildFertilizerTypes(String cropName) {
-    final types = _getFertilizerTypes(cropName);
+  Widget _buildFertilizerTypes(String cropName, BuildContext context) {
+    final types = _getFertilizerTypes(cropName, context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -497,8 +504,8 @@ class FertilizerGuideScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildTimingGuide(String growthStage) {
-    final timing = _getTimingGuide(growthStage);
+  Widget _buildTimingGuide(String growthStage, BuildContext context) {
+    final timing = _getTimingGuide(growthStage, context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -570,88 +577,93 @@ class FertilizerGuideScreen extends StatelessWidget {
         ];
   }
 
-  Map<String, String> _getFertilizerTypes(String cropName) {
+  Map<String, String> _getFertilizerTypes(
+    String cropName,
+    BuildContext context,
+  ) {
+    final loc = AppLocalizations.of(context)!;
     final types = {
       'Wheat': {
-        'Nitrogen': 'Urea (46-0-0)',
-        'Phosphorus': 'DAP (18-46-0)',
-        'Potassium': 'MOP (0-0-60)',
-        'Micronutrients': 'Zinc Sulfate',
+        loc.nitrogen: 'Urea (46-0-0)',
+        loc.phosphorus: 'DAP (18-46-0)',
+        loc.potassium: 'MOP (0-0-60)',
+        loc.micronutrients: 'Zinc Sulfate',
       },
       'Cotton': {
-        'Nitrogen': 'Urea (46-0-0)',
-        'Phosphorus': 'SSP (0-16-0)',
-        'Potassium': 'MOP (0-0-60)',
-        'Micronutrients': 'Boron, Zinc',
+        loc.nitrogen: 'Urea (46-0-0)',
+        loc.phosphorus: 'SSP (0-16-0)',
+        loc.potassium: 'MOP (0-0-60)',
+        loc.micronutrients: 'Boron, Zinc',
       },
       'Rice': {
-        'Nitrogen': 'Urea (46-0-0)',
-        'Phosphorus': 'DAP (18-46-0)',
-        'Potassium': 'MOP (0-0-60)',
-        'Micronutrients': 'Zinc Sulfate',
+        loc.nitrogen: 'Urea (46-0-0)',
+        loc.phosphorus: 'DAP (18-46-0)',
+        loc.potassium: 'MOP (0-0-60)',
+        loc.micronutrients: 'Zinc Sulfate',
       },
       'Corn': {
-        'Nitrogen': 'Urea (46-0-0)',
-        'Phosphorus': 'NPK (17-17-17)',
-        'Potassium': 'MOP (0-0-60)',
-        'Micronutrients': 'Zinc, Iron',
+        loc.nitrogen: 'Urea (46-0-0)',
+        loc.phosphorus: 'NPK (17-17-17)',
+        loc.potassium: 'MOP (0-0-60)',
+        loc.micronutrients: 'Zinc, Iron',
       },
     };
 
     return types[cropName] ??
         {
-          'Nitrogen': 'Urea or Ammonium-based',
-          'Phosphorus': 'DAP or SSP',
-          'Potassium': 'MOP or SOP',
-          'Micronutrients': 'As per soil test',
+          loc.nitrogen: 'Urea or Ammonium-based',
+          loc.phosphorus: 'DAP or SSP',
+          loc.potassium: 'MOP or SOP',
+          loc.micronutrients: loc.as_per_soil_test,
         };
   }
 
-  List<String> _getTimingGuide(String growthStage) {
+  List<String> _getTimingGuide(String growthStage, BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final timing = {
       'Vegetative': [
-        'Focus on nitrogen application',
-        'Apply when plants show active growth',
-        'Avoid application during drought',
-        'Best applied before expected rainfall',
-        'Monitor leaf color for deficiencies',
+        loc.focus_on_nitrogen,
+        loc.apply_during_active_growth,
+        loc.avoid_drought_application,
+        loc.best_application_timing,
+        loc.monitor_leaf_color_deficiencies,
       ],
       'Flowering': [
-        'Reduce nitrogen application',
-        'Increase phosphorus for flower formation',
-        'Apply before flower buds open',
-        'Avoid application during full bloom',
-        'Monitor for nutrient deficiencies',
+        loc.reduce_nitrogen_application,
+        loc.increase_phosphorus_for_flowering,
+        loc.apply_before_flower_buds_open,
+        loc.avoid_full_bloom_application,
+        loc.monitor_nutrient_deficiencies,
       ],
       'Tillering': [
-        'Critical for nitrogen application',
-        'Apply when tillers start developing',
-        'Split application recommended',
-        'Ensure adequate soil moisture',
-        'Monitor tiller count regularly',
+        loc.critical_for_nitrogen_application,
+        loc.apply_when_tillers_develop,
+        loc.split_application_recommended,
+        loc.ensure_adequate_soil_moisture,
+        loc.monitor_tiller_count,
       ],
       'Silking': [
-        'Focus on potassium application',
-        'Apply during early silking stage',
-        'Reduce nitrogen to prevent excessive growth',
-        'Ensure balanced nutrition',
-        'Monitor ear development',
+        loc.focus_on_potassium_application,
+        loc.apply_early_silking_stage,
+        loc.reduce_nitrogen_excess_growth,
+        loc.ensure_balanced_nutrition,
+        loc.monitor_ear_development,
       ],
       'Pod Formation': [
-        'Focus on potassium application',
-        'Apply during early pod development',
-        'Reduce nitrogen to prevent excessive growth',
-        'Ensure balanced nutrition',
-        'Monitor pod setting rate',
+        loc.focus_on_potassium_application,
+        loc.apply_early_pod_development,
+        loc.reduce_nitrogen_excess_growth,
+        loc.ensure_balanced_nutrition,
+        loc.monitor_pod_setting_rate,
       ],
     };
     return timing[growthStage] ??
         [
-          'Apply during active growth phases',
-          'Avoid application during stress conditions',
-          'Follow crop-specific schedules',
-          'Consider weather conditions',
-          'Monitor plant response after application',
+          loc.apply_during_active_growth,
+          loc.avoid_stress_conditions,
+          loc.follow_crop_specific_schedule,
+          loc.consider_weather_conditions,
+          loc.monitor_plant_response,
         ];
   }
 }
@@ -721,7 +733,7 @@ class IrrigationGuideScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'Evapotranspiration Rate: ${irrigationData['evapotranspiration'] ?? 'N/A'} mm/day',
+                      '${loc.evapotranspiration_rate} ${irrigationData['evapotranspiration'] ?? 'N/A'} ${loc.mm_day}',
                       style: const TextStyle(
                         fontSize: 14,
                         fontStyle: FontStyle.italic,
@@ -740,7 +752,10 @@ class IrrigationGuideScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            _buildIrrigationSchedule(irrigationData['cropName'] ?? 'General'),
+            _buildIrrigationSchedule(
+              irrigationData['cropName'] ?? 'General',
+              context,
+            ),
 
             const SizedBox(height: 20),
 
@@ -750,7 +765,10 @@ class IrrigationGuideScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            _buildWaterManagementTips(irrigationData['urgency'] ?? 'Medium'),
+            _buildWaterManagementTips(
+              irrigationData['urgency'] ?? 'Medium',
+              context,
+            ),
 
             const SizedBox(height: 20),
 
@@ -760,15 +778,15 @@ class IrrigationGuideScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            _buildIrrigationMethods(),
+            _buildIrrigationMethods(context),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildIrrigationSchedule(String cropName) {
-    final schedule = _getIrrigationSchedule(cropName);
+  Widget _buildIrrigationSchedule(String cropName, BuildContext context) {
+    final schedule = _getIrrigationSchedule(cropName, context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -814,8 +832,8 @@ class IrrigationGuideScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildWaterManagementTips(String urgency) {
-    final tips = _getWaterManagementTips(urgency);
+  Widget _buildWaterManagementTips(String urgency, BuildContext context) {
+    final tips = _getWaterManagementTips(urgency, context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -840,8 +858,8 @@ class IrrigationGuideScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildIrrigationMethods() {
-    final methods = _getIrrigationMethods();
+  Widget _buildIrrigationMethods(BuildContext context) {
+    final methods = _getIrrigationMethods(context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -869,95 +887,96 @@ class IrrigationGuideScreen extends StatelessWidget {
     );
   }
 
-  Map<String, String> _getIrrigationSchedule(String cropName) {
+  Map<String, String> _getIrrigationSchedule(
+    String cropName,
+    BuildContext context,
+  ) {
+    final loc = AppLocalizations.of(context)!;
     final schedules = {
-      'Wheat': {
-        'First Irrigation': '21-25 days after sowing (Crown Root)',
-        'Second Irrigation': '45-50 days after sowing (Tillering)',
-        'Third Irrigation': '70-75 days after sowing (Jointing)',
-        'Fourth Irrigation': '90-95 days after sowing (Flowering)',
-        'Fifth Irrigation': '110-115 days after sowing (Grain filling)',
+      loc.wheat: {
+        loc.wheat_first_irrigation: loc.wheat_first_irrigation_value,
+        loc.wheat_second_irrigation: loc.wheat_second_irrigation_value,
+        loc.wheat_third_irrigation: loc.wheat_third_irrigation_value,
+        loc.wheat_fourth_irrigation: loc.wheat_fourth_irrigation_value,
+        loc.wheat_fifth_irrigation: loc.wheat_fifth_irrigation_value,
       },
       'Cotton': {
-        'First Irrigation': '30-35 days after sowing',
-        'Second Irrigation': 'During squaring stage',
-        'Third Irrigation': 'During flowering stage',
-        'Fourth Irrigation': 'Boll formation stage',
-        'Fifth Irrigation': 'Boll development stage',
+        loc.cotton_first_irrigation: loc.cotton_first_irrigation_value,
+        loc.cotton_second_irrigation: loc.cotton_second_irrigation_value,
+        loc.cotton_third_irrigation: loc.cotton_third_irrigation_value,
+        loc.cotton_fourth_irrigation: loc.cotton_fourth_irrigation_value,
+        loc.cotton_fifth_irrigation: loc.cotton_fifth_irrigation_value,
       },
       'Rice': {
-        'Initial Flooding': '3-5 cm standing water after transplanting',
-        'Vegetative Stage': 'Maintain 2-5 cm standing water',
-        'Reproductive Stage': 'Maintain 5-10 cm standing water',
-        'Ripening Stage': 'Gradually reduce water 2 weeks before harvest',
+        loc.rice_initial_flooding: loc.rice_initial_flooding_value,
+        loc.rice_vegetative_stage: loc.rice_vegetative_stage_value,
+        loc.rice_reproductive_stage: loc.rice_reproductive_stage_value,
+        loc.rice_ripening_stage: loc.rice_ripening_stage_value,
       },
       'Corn': {
-        'First Irrigation': 'Immediately after sowing',
-        'Second Irrigation': 'Knee-high stage (30-45 cm)',
-        'Third Irrigation': 'Tasseling stage',
-        'Fourth Irrigation': 'Silking stage',
-        'Fifth Irrigation': 'Grain filling stage',
+        loc.corn_first_irrigation: loc.corn_first_irrigation_value,
+        loc.corn_second_irrigation: loc.corn_second_irrigation_value,
+        loc.corn_third_irrigation: loc.corn_third_irrigation_value,
+        loc.corn_fourth_irrigation: loc.corn_fourth_irrigation_value,
+        loc.corn_fifth_irrigation: loc.corn_fifth_irrigation_value,
       },
     };
     return schedules[cropName] ??
         {
-          'General Rule': 'Irrigate when top 15 cm soil feels dry',
-          'Critical Stages':
-              'Ensure adequate moisture during flowering and fruit setting',
-          'Water Quantity': 'Apply 5-7 cm depth per irrigation',
-          'Monitoring': 'Check soil moisture regularly',
+          loc.general_rule: loc.general_rule_value,
+          loc.critical_stages: loc.critical_stages_value,
+          loc.water_quantity: loc.water_quantity_value,
+          loc.monitoring: loc.monitoring_value,
         };
   }
 
-  List<String> _getWaterManagementTips(String urgency) {
+  List<String> _getWaterManagementTips(String urgency, BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final tips = {
       'High': [
-        'Irrigate immediately if soil is dry',
-        'Use mulching to conserve soil moisture',
-        'Consider drip irrigation for efficiency',
-        'Monitor plants for wilting signs',
-        'Water in early morning or late evening',
-        'Check soil moisture daily',
+        loc.high_tip_first,
+        loc.high_tip_second,
+        loc.high_tip_third,
+        loc.high_tip_fourth,
+        loc.high_tip_fifth,
+        loc.high_tip_sixth,
       ],
       'Medium': [
-        'Follow regular irrigation schedule',
-        'Check soil moisture every 2-3 days',
-        'Adjust based on rainfall',
-        'Use water conservation techniques',
-        'Monitor weather forecasts',
-        'Maintain irrigation records',
+        loc.medium_tip_first,
+        loc.medium_tip_second,
+        loc.medium_tip_third,
+        loc.medium_tip_fourth,
+        loc.medium_tip_fifth,
+        loc.medium_tip_sixth,
       ],
       'Low': [
-        'Delay irrigation if rain is forecast',
-        'Check soil moisture before watering',
-        'Reduce irrigation frequency',
-        'Use water-saving methods',
-        'Monitor for over-watering signs',
-        'Collect rainwater if possible',
+        loc.low_tip_first,
+        loc.low_tip_second,
+        loc.low_tip_third,
+        loc.low_tip_fourth,
+        loc.low_tip_fifth,
+        loc.low_tip_sixth,
       ],
     };
     return tips[urgency] ??
         [
-          'Check soil moisture before irrigation',
-          'Water based on plant needs, not fixed schedule',
-          'Use efficient irrigation methods',
-          'Monitor weather conditions',
-          'Avoid waterlogging',
-          'Maintain proper drainage',
+          loc.return_tip_first,
+          loc.return_tip_second,
+          loc.return_tip_third,
+          loc.return_tip_fourth,
+          loc.return_tip_fifth,
+          loc.return_tip_sixth,
         ];
   }
 
-  Map<String, String> _getIrrigationMethods() {
+  Map<String, String> _getIrrigationMethods(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return {
-      'Drip Irrigation':
-          'Most efficient method, saves 30-50% water, ideal for row crops',
-      'Sprinkler Irrigation':
-          'Good for uniform coverage, suitable for most field crops',
-      'Furrow Irrigation':
-          'Traditional method for row crops, moderate efficiency',
-      'Flood Irrigation':
-          'Used for rice and some field crops, lower efficiency',
-      'Basin Irrigation': 'Suitable for orchards and some field crops',
+      loc.drip_irrigation: loc.drip_irrigation_desc,
+      loc.sprinkler_irrigation: loc.sprinkler_irrigation_desc,
+      loc.furrow_irrigation: loc.furrow_irrigation_desc,
+      loc.flood_irrigation: loc.flood_irrigation_desc,
+      loc.basin_irrigation: loc.basin_irrigation_desc,
     };
   }
 }
@@ -1555,7 +1574,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
     if (temp >= optimalTemp['min']! && temp <= optimalTemp['max']!) {
       riskScore += 3;
-      message = 'Temperature optimal for ${cropName.toLowerCase()} pests';
+      message =
+          '${loc.temperature_optimal_for} ${cropName.toLowerCase()} pests';
     } else if (temp < criticalTemp['min']! || temp > criticalTemp['max']!) {
       riskScore += 0;
       message = AppLocalizations.of(context)!.temperature_extremes;
@@ -1605,8 +1625,14 @@ class _HomeScreenState extends State<HomeScreen> {
       pestType = highRiskPests.isNotEmpty
           ? highRiskPests.join(', ')
           : cropData['pestTypes'][0];
+
       message = message.isEmpty
-          ? 'High risk of ${highRiskPests.isNotEmpty ? highRiskPests.join(', ') : 'pest'} infestation in $cropName'
+          ? AppLocalizations.of(context)!.high_risk_message(
+              cropName,
+              highRiskPests.isNotEmpty
+                  ? highRiskPests.join(', ')
+                  : AppLocalizations.of(context)!.generic_pest,
+            )
           : message;
     } else if (riskScore >= 3 || moderateRiskPests.isNotEmpty) {
       riskLevel = AppLocalizations.of(context)!.moderate_risk;
@@ -1614,15 +1640,22 @@ class _HomeScreenState extends State<HomeScreen> {
       pestType = moderateRiskPests.isNotEmpty
           ? moderateRiskPests.join(', ')
           : cropData['pestTypes'][0];
+
       message = message.isEmpty
-          ? 'Monitor $cropName for ${moderateRiskPests.isNotEmpty ? moderateRiskPests.join(', ') : 'potential pests'}'
+          ? AppLocalizations.of(context)!.moderate_risk_message(
+              cropName,
+              moderateRiskPests.isNotEmpty
+                  ? moderateRiskPests.join(', ')
+                  : AppLocalizations.of(context)!.potential_pests,
+            )
           : message;
     } else {
       riskLevel = AppLocalizations.of(context)!.low_risk;
       isHighRisk = false;
       pestType = cropData['pestTypes'][0];
+
       message = message.isEmpty
-          ? 'Low pest risk for $cropName in current conditions'
+          ? AppLocalizations.of(context)!.low_risk_message(cropName)
           : message;
     }
 
@@ -1663,30 +1696,30 @@ class _HomeScreenState extends State<HomeScreen> {
 
     final temp = currentWeather['main']['temp'];
     final weatherCondition = currentWeather['weather'][0]['main'];
-
+    final loc = AppLocalizations.of(context)!;
     final Map<String, Map<String, dynamic>> _cropDatabase = {
       "Wheat": {
-        "name": AppLocalizations.of(context)!.wheat,
+        "name": loc.wheat,
         "optimalTemp": {"min": 15, "max": 25},
         "growthStage": AppLocalizations.of(context)!.vegetative,
         "fertilizerBase": 50.0,
       },
       "Cotton": {
-        "name": AppLocalizations.of(context)!.cotton,
+        "name": loc.cotton,
         "optimalTemp": {"min": 20, "max": 30},
-        "growthStage": AppLocalizations.of(context)!.flowering,
+        "growthStage": loc.flowering,
         "fertilizerBase": 60.0,
       },
       "Rice": {
-        "name": AppLocalizations.of(context)!.rice,
+        "name": loc.rice,
         "optimalTemp": {"min": 20, "max": 35},
-        "growthStage": AppLocalizations.of(context)!.tillering,
+        "growthStage": loc.tillering,
         "fertilizerBase": 70.0,
       },
       "Corn": {
-        "name": AppLocalizations.of(context)!.corn,
+        "name": loc.corn,
         "optimalTemp": {"min": 18, "max": 32},
-        "growthStage": AppLocalizations.of(context)!.silking,
+        "growthStage": loc.silking,
         "fertilizerBase": 65.0,
       },
     };
@@ -1705,46 +1738,60 @@ class _HomeScreenState extends State<HomeScreen> {
       adjustment = AppLocalizations.of(
         context,
       )!.reduced_due_to_high_temperature;
-      reason = 'High temperatures increase fertilizer burn risk for $cropName';
+
+      reason = AppLocalizations.of(context)!.high_temp_burn_risk(cropName);
     } else if (temp > optimalTemp['max']!) {
       baseAmount *= 0.85;
       adjustment = AppLocalizations.of(
         context,
       )!.slightly_increased_due_to_optimal_temp;
-      reason = 'Warm weather increases nutrient availability for $cropName';
+
+      reason = AppLocalizations.of(
+        context,
+      )!.warm_weather_nutrient_availability(cropName);
     } else if (temp < optimalTemp['min']!) {
       baseAmount *= 0.6;
       adjustment = AppLocalizations.of(
         context,
       )!.reduced_due_to_high_temperature;
-      reason = 'Cold temperatures slow $cropName growth and nutrient uptake';
+
+      reason = AppLocalizations.of(context)!.cold_temp_slow_growth(cropName);
     } else {
-      reason = 'Optimal temperature for $cropName fertilizer application';
+      reason = AppLocalizations.of(context)!.optimal_temp_application(cropName);
     }
 
     if (weatherCondition.contains('Rain')) {
       baseAmount *= 1.1;
       adjustment = adjustment.isEmpty
           ? AppLocalizations.of(context)!.increased_before_expected_rain
-          : '$adjustment, increased for rain';
-      reason = '$reason. Rain will help $cropName absorb nutrients efficiently';
+          : AppLocalizations.of(
+              context,
+            )!.adjustment_increased_for_rain(adjustment);
+
+      reason =
+          '${reason}. ${AppLocalizations.of(context)!.rain_absorption_help(cropName)}';
     } else if (weatherCondition.contains('Clear') &&
         temp > optimalTemp['max']!) {
       baseAmount *= 0.9;
       adjustment = adjustment.isEmpty
           ? AppLocalizations.of(context)!.reduced_due_to_high_temperature
-          : '$adjustment, reduced for dryness';
-      reason = '$reason. $cropName may require irrigation after application';
+          : AppLocalizations.of(
+              context,
+            )!.adjustment_reduced_for_dryness(adjustment);
+
+      reason =
+          '${reason}. ${AppLocalizations.of(context)!.irrigation_required_after_application(cropName)}';
     }
 
     final growthStage = cropData['growthStage'];
-    reason = '$reason. Current growth stage: $growthStage';
+    reason =
+        '$reason. ${AppLocalizations.of(context)!.current_growth_rate} $growthStage';
 
     return {
       'recommendation': '${baseAmount.round()}kg $fertilizerType/acre',
       'reason': reason,
       'adjustment': adjustment.isEmpty
-          ? 'Optimal application rate'
+          ? AppLocalizations.of(context)!.no_adjustment_needed
           : adjustment,
       'cropSpecific': true,
       'fertilizerType': fertilizerType,
@@ -1774,12 +1821,12 @@ class _HomeScreenState extends State<HomeScreen> {
       return {
         'recommendation': AppLocalizations.of(
           context,
-        )!.normal_irrigation_schedule,
+        )!.normal_irrigation_schedule_three,
         'reason': AppLocalizations.of(context)!.weather_data_unavailable,
-        'urgency': 'Medium',
+        'urgency': AppLocalizations.of(context)!.medium,
         'cropSpecific': true,
         'cropName': _currentDisplayCrop,
-        'growthStage': 'General',
+        'growthStage': AppLocalizations.of(context)!.general,
       };
     }
 
@@ -1852,40 +1899,51 @@ class _HomeScreenState extends State<HomeScreen> {
       recommendation = AppLocalizations.of(
         context,
       )!.delay_irrigation_rain_expected;
-      reason =
-          'Natural rainfall will provide sufficient moisture for $cropName';
-      urgency = 'Low';
+      reason = AppLocalizations.of(
+        context,
+      )!.natural_rainfall_sufficient_three(cropName);
+      urgency = AppLocalizations.of(context)!.urgency_low;
     } else if (weatherCondition.contains('Thunderstorm')) {
       recommendation = AppLocalizations.of(
         context,
       )!.delay_irrigation_heavy_rain;
-      reason =
-          'Storm will provide adequate rainfall for $cropName, avoid waterlogging';
-      urgency = 'Low';
+      reason = AppLocalizations.of(
+        context,
+      )!.storm_rainfall_avoid_waterlogging_three(cropName);
+      urgency = AppLocalizations.of(context)!.urgency_low;
     } else if (evapotranspiration > baseET * 1.5) {
       recommendation = AppLocalizations.of(
         context,
       )!.increase_irrigation_frequency;
-      reason =
-          'High evaporation rate (${evapotranspiration.toStringAsFixed(1)}mm/day) requires more frequent watering for $cropName';
-      urgency = 'High';
+      reason = AppLocalizations.of(context)!
+          .high_evaporation_requires_more_water_three(
+            evapotranspiration.toStringAsFixed(1),
+            cropName,
+          );
+      urgency = AppLocalizations.of(context)!.urgency_high;
     } else if (evapotranspiration < baseET * 0.7) {
       recommendation = AppLocalizations.of(
         context,
       )!.reduce_irrigation_frequency;
-      reason =
-          'Low evaporation rate (${evapotranspiration.toStringAsFixed(1)}mm/day) - $cropName needs less water';
-      urgency = 'Low';
+      reason = AppLocalizations.of(context)!.low_evaporation_less_water_three(
+        evapotranspiration.toStringAsFixed(1),
+        cropName,
+      );
+      urgency = AppLocalizations.of(context)!.urgency_low;
     } else if (humidity < 35 && temp > optimalTemp['max']!) {
       recommendation = AppLocalizations.of(context)!.monitor_soil_moisture;
-      reason =
-          'Dry, warm conditions require careful water management for $cropName';
-      urgency = 'Medium';
+      reason = AppLocalizations.of(
+        context,
+      )!.dry_warm_conditions_water_management_three(cropName);
+      urgency = AppLocalizations.of(context)!.urgency_medium;
     } else {
-      recommendation = 'Normal irrigation schedule';
-      reason =
-          'Moderate conditions - maintain regular irrigation for $cropName ($growthStage stage)';
-      urgency = 'Medium';
+      recommendation = AppLocalizations.of(
+        context,
+      )!.normal_irrigation_schedule_three;
+      reason = AppLocalizations.of(
+        context,
+      )!.moderate_conditions_regular_irrigation_three(cropName, growthStage);
+      urgency = AppLocalizations.of(context)!.urgency_medium;
     }
 
     return {
@@ -2695,15 +2753,15 @@ class _HomeScreenState extends State<HomeScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Optimal Irrigation Needed for $_currentDisplayCrop',
+                                  ' $_currentDisplayCrop, ${localization.optimal_irrigation_needed_for}',
                                   style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(height: 4),
+                                SizedBox(height: 4),
                                 Text(
-                                  'Your $_currentDisplayCrop crop is at a critical growth stage. Tap for a guide.',
+                                  '${localization.you} $_currentDisplayCrop ${localization.critical_growth_stage_guide}',
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(

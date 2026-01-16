@@ -635,6 +635,12 @@ abstract class AppLocalizations {
   /// **'Failed to send reset email. Please check the email address and try again.'**
   String get password_reset_failed;
 
+  /// No description provided for @password_sent_to_email.
+  ///
+  /// In en, this message translates to:
+  /// **'A Password has been sent to {email}, Please check your inbox.'**
+  String password_sent_to_email(Object email);
+
   /// No description provided for @app_name.
   ///
   /// In en, this message translates to:
@@ -1138,6 +1144,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{reason}. Current growth stage: {growthStage}'**
   String reason_with_growth_stage(Object growthStage, Object reason);
+
+  /// No description provided for @current_growth_rate.
+  ///
+  /// In en, this message translates to:
+  /// **'Current growth rate: '**
+  String get current_growth_rate;
+
+  /// No description provided for @temperature_optimal_for.
+  ///
+  /// In en, this message translates to:
+  /// **'Temperature optimal for'**
+  String get temperature_optimal_for;
 
   /// No description provided for @natural_rainfall_sufficient_two.
   ///
@@ -1700,8 +1718,14 @@ abstract class AppLocalizations {
   /// No description provided for @critical_growth_stage_guide.
   ///
   /// In en, this message translates to:
-  /// **'Your crop is at a critical growth stage. Tap for a guide.'**
+  /// **'crop is at a critical growth stage. Tap for a guide.'**
   String get critical_growth_stage_guide;
+
+  /// No description provided for @you.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get you;
 
   /// No description provided for @logout.
   ///
@@ -2183,6 +2207,132 @@ abstract class AppLocalizations {
   /// **'Evapotranspiration Rate:'**
   String get evapotranspiration_rate;
 
+  /// No description provided for @reduce_nitrogen_application.
+  ///
+  /// In en, this message translates to:
+  /// **'Reduce nitrogen application'**
+  String get reduce_nitrogen_application;
+
+  /// No description provided for @increase_phosphorus_for_flowering.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase phosphorus for flower formation'**
+  String get increase_phosphorus_for_flowering;
+
+  /// No description provided for @apply_before_flower_buds_open.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply before flower buds open'**
+  String get apply_before_flower_buds_open;
+
+  /// No description provided for @avoid_full_bloom_application.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid application during full bloom'**
+  String get avoid_full_bloom_application;
+
+  /// No description provided for @monitor_nutrient_deficiencies.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor for nutrient deficiencies'**
+  String get monitor_nutrient_deficiencies;
+
+  /// No description provided for @critical_for_nitrogen_application.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical for nitrogen application'**
+  String get critical_for_nitrogen_application;
+
+  /// No description provided for @apply_when_tillers_develop.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply when tillers start developing'**
+  String get apply_when_tillers_develop;
+
+  /// No description provided for @split_application_recommended.
+  ///
+  /// In en, this message translates to:
+  /// **'Split application recommended'**
+  String get split_application_recommended;
+
+  /// No description provided for @ensure_adequate_soil_moisture.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensure adequate soil moisture'**
+  String get ensure_adequate_soil_moisture;
+
+  /// No description provided for @monitor_tiller_count.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor tiller count regularly'**
+  String get monitor_tiller_count;
+
+  /// No description provided for @focus_on_potassium_application.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus on potassium application'**
+  String get focus_on_potassium_application;
+
+  /// No description provided for @apply_early_silking_stage.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply during early silking stage'**
+  String get apply_early_silking_stage;
+
+  /// No description provided for @reduce_nitrogen_excess_growth.
+  ///
+  /// In en, this message translates to:
+  /// **'Reduce nitrogen to prevent excessive growth'**
+  String get reduce_nitrogen_excess_growth;
+
+  /// No description provided for @ensure_balanced_nutrition.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensure balanced nutrition'**
+  String get ensure_balanced_nutrition;
+
+  /// No description provided for @monitor_ear_development.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor ear development'**
+  String get monitor_ear_development;
+
+  /// No description provided for @apply_early_pod_development.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply during early pod development'**
+  String get apply_early_pod_development;
+
+  /// No description provided for @monitor_pod_setting_rate.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor pod setting rate'**
+  String get monitor_pod_setting_rate;
+
+  /// No description provided for @avoid_stress_conditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid application during stress conditions'**
+  String get avoid_stress_conditions;
+
+  /// No description provided for @follow_crop_specific_schedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow crop-specific schedules'**
+  String get follow_crop_specific_schedule;
+
+  /// No description provided for @consider_weather_conditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Consider weather conditions'**
+  String get consider_weather_conditions;
+
+  /// No description provided for @monitor_plant_response.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor plant response after application'**
+  String get monitor_plant_response;
+
   /// No description provided for @fertilizer_wheat_nitrogen.
   ///
   /// In en, this message translates to:
@@ -2342,86 +2492,170 @@ abstract class AppLocalizations {
   /// No description provided for @wheat_first_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'First Irrigation: 21-25 days after sowing (Crown Root)'**
+  /// **'First Irrigation:'**
   String get wheat_first_irrigation;
+
+  /// No description provided for @wheat_first_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'20-25 days after sowing (Crown root initiation)'**
+  String get wheat_first_irrigation_value;
 
   /// No description provided for @wheat_second_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Second Irrigation: 45-50 days after sowing (Tillering)'**
+  /// **'Second Irrigation:'**
   String get wheat_second_irrigation;
+
+  /// No description provided for @wheat_second_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'45-50 days after sowing (Tillering)'**
+  String get wheat_second_irrigation_value;
 
   /// No description provided for @wheat_third_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Third Irrigation: 70-75 days after sowing (Jointing)'**
+  /// **'Third Irrigation:'**
   String get wheat_third_irrigation;
+
+  /// No description provided for @wheat_third_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'70-75 days after sowing (Jointing)'**
+  String get wheat_third_irrigation_value;
 
   /// No description provided for @wheat_fourth_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Fourth Irrigation: 90-95 days after sowing (Flowering)'**
+  /// **'Fourth Irrigation: '**
   String get wheat_fourth_irrigation;
+
+  /// No description provided for @wheat_fourth_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'90-95 days after sowing (Booting)'**
+  String get wheat_fourth_irrigation_value;
 
   /// No description provided for @wheat_fifth_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Fifth Irrigation: 110-115 days after sowing (Grain filling)'**
+  /// **'Fifth Irrigation:'**
   String get wheat_fifth_irrigation;
+
+  /// No description provided for @wheat_fifth_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'110-115 days after sowing (Grain filling)'**
+  String get wheat_fifth_irrigation_value;
 
   /// No description provided for @cotton_first_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'First Irrigation: 30-35 days after sowing'**
+  /// **'First Irrigation: '**
   String get cotton_first_irrigation;
+
+  /// No description provided for @cotton_first_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'30-35 days after sowing (Vegetative stage)'**
+  String get cotton_first_irrigation_value;
 
   /// No description provided for @cotton_second_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Second Irrigation: During squaring stage'**
+  /// **'Second Irrigation: '**
   String get cotton_second_irrigation;
+
+  /// No description provided for @cotton_second_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'During squaring stage'**
+  String get cotton_second_irrigation_value;
 
   /// No description provided for @cotton_third_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Third Irrigation: During flowering stage'**
+  /// **'Third Irrigation: '**
   String get cotton_third_irrigation;
+
+  /// No description provided for @cotton_third_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'During flowering stage'**
+  String get cotton_third_irrigation_value;
 
   /// No description provided for @cotton_fourth_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Fourth Irrigation: Boll formation stage'**
+  /// **'Fourth Irrigation: '**
   String get cotton_fourth_irrigation;
+
+  /// No description provided for @cotton_fourth_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Boll formation stage'**
+  String get cotton_fourth_irrigation_value;
 
   /// No description provided for @cotton_fifth_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Fifth Irrigation: Boll development stage'**
+  /// **'Fifth Irrigation: '**
   String get cotton_fifth_irrigation;
+
+  /// No description provided for @cotton_fifth_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Boll development stage'**
+  String get cotton_fifth_irrigation_value;
 
   /// No description provided for @rice_initial_flooding.
   ///
   /// In en, this message translates to:
-  /// **'Initial Flooding: 3-5 cm standing water after transplanting'**
+  /// **'Initial Flooding: '**
   String get rice_initial_flooding;
+
+  /// No description provided for @rice_initial_flooding_value.
+  ///
+  /// In en, this message translates to:
+  /// **'3-5 cm standing water after transplanting'**
+  String get rice_initial_flooding_value;
 
   /// No description provided for @rice_vegetative_stage.
   ///
   /// In en, this message translates to:
-  /// **'Vegetative Stage: Maintain 2-5 cm standing water'**
+  /// **'Vegetative Stage:'**
   String get rice_vegetative_stage;
+
+  /// No description provided for @rice_vegetative_stage_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintain 2-5 cm standing water'**
+  String get rice_vegetative_stage_value;
 
   /// No description provided for @rice_reproductive_stage.
   ///
   /// In en, this message translates to:
-  /// **'Reproductive Stage: Maintain 5-10 cm standing water'**
+  /// **'Reproductive Stage: '**
   String get rice_reproductive_stage;
+
+  /// No description provided for @rice_reproductive_stage_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintain 5-10 cm standing water'**
+  String get rice_reproductive_stage_value;
 
   /// No description provided for @rice_ripening_stage.
   ///
   /// In en, this message translates to:
-  /// **'Ripening Stage: Gradually reduce water 2 weeks before harvest'**
+  /// **'Ripening Stage: '**
   String get rice_ripening_stage;
+
+  /// No description provided for @rice_ripening_stage_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Gradually reduce water 2 weeks before harvest'**
+  String get rice_ripening_stage_value;
 
   /// No description provided for @corn_first_irrigation.
   ///
@@ -2429,53 +2663,113 @@ abstract class AppLocalizations {
   /// **'First Irrigation: Immediately after sowing'**
   String get corn_first_irrigation;
 
+  /// No description provided for @corn_first_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Immediately after sowing'**
+  String get corn_first_irrigation_value;
+
   /// No description provided for @corn_second_irrigation.
   ///
   /// In en, this message translates to:
   /// **'Second Irrigation: Knee-high stage (30-45 cm)'**
   String get corn_second_irrigation;
 
+  /// No description provided for @corn_second_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Knee-high stage (30-45 cm)'**
+  String get corn_second_irrigation_value;
+
   /// No description provided for @corn_third_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Third Irrigation: Tasseling stage'**
+  /// **'Third Irrigation: '**
   String get corn_third_irrigation;
+
+  /// No description provided for @corn_third_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasseling stage'**
+  String get corn_third_irrigation_value;
 
   /// No description provided for @corn_fourth_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Fourth Irrigation: Silking stage'**
+  /// **'Fourth Irrigation: '**
   String get corn_fourth_irrigation;
+
+  /// No description provided for @corn_fourth_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Silking stage'**
+  String get corn_fourth_irrigation_value;
 
   /// No description provided for @corn_fifth_irrigation.
   ///
   /// In en, this message translates to:
-  /// **'Fifth Irrigation: Grain filling stage'**
+  /// **'Fifth Irrigation: '**
   String get corn_fifth_irrigation;
+
+  /// No description provided for @corn_fifth_irrigation_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Grain filling stage'**
+  String get corn_fifth_irrigation_value;
 
   /// No description provided for @general_rule.
   ///
   /// In en, this message translates to:
-  /// **'General Rule: Irrigate when top 15 cm soil feels dry'**
+  /// **'General Rule: '**
   String get general_rule;
+
+  /// No description provided for @general_rule_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigate when top 15 cm soil feels dry'**
+  String get general_rule_value;
+
+  /// No description provided for @general_pests_that_affect_crop.
+  ///
+  /// In en, this message translates to:
+  /// **'General pest that affects crop health and yield.'**
+  String get general_pests_that_affect_crop;
 
   /// No description provided for @critical_stages.
   ///
   /// In en, this message translates to:
-  /// **'Critical Stages: Ensure adequate moisture during flowering and fruit setting'**
+  /// **'Critical Stages: '**
   String get critical_stages;
+
+  /// No description provided for @critical_stages_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensure adequate moisture during flowering and fruit setting'**
+  String get critical_stages_value;
 
   /// No description provided for @water_quantity.
   ///
   /// In en, this message translates to:
-  /// **'Water Quantity: Apply 5-7 cm depth per irrigation'**
+  /// **'Water Quantity: '**
   String get water_quantity;
+
+  /// No description provided for @water_quantity_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply 5-7 cm depth per irrigation'**
+  String get water_quantity_value;
 
   /// No description provided for @monitoring.
   ///
   /// In en, this message translates to:
-  /// **'Monitoring: Check soil moisture regularly'**
+  /// **'Monitoring: '**
   String get monitoring;
+
+  /// No description provided for @monitoring_value.
+  ///
+  /// In en, this message translates to:
+  /// **'RCheck soil moisture regularly'**
+  String get monitoring_value;
 
   /// No description provided for @water_management_tips.
   ///
@@ -2483,113 +2777,149 @@ abstract class AppLocalizations {
   /// **'💧 Water Management Tips:'**
   String get water_management_tips;
 
-  /// No description provided for @high_tip_1.
+  /// No description provided for @high_tip_first.
   ///
   /// In en, this message translates to:
   /// **'Irrigate immediately if soil is dry'**
-  String get high_tip_1;
+  String get high_tip_first;
 
-  /// No description provided for @high_tip_2.
+  /// No description provided for @high_tip_second.
   ///
   /// In en, this message translates to:
   /// **'Use mulching to conserve soil moisture'**
-  String get high_tip_2;
+  String get high_tip_second;
 
-  /// No description provided for @high_tip_3.
+  /// No description provided for @high_tip_third.
   ///
   /// In en, this message translates to:
   /// **'Consider drip irrigation for efficiency'**
-  String get high_tip_3;
+  String get high_tip_third;
 
-  /// No description provided for @high_tip_4.
+  /// No description provided for @high_tip_fourth.
   ///
   /// In en, this message translates to:
   /// **'Monitor plants for wilting signs'**
-  String get high_tip_4;
+  String get high_tip_fourth;
 
-  /// No description provided for @high_tip_5.
+  /// No description provided for @high_tip_fifth.
   ///
   /// In en, this message translates to:
   /// **'Water in early morning or late evening'**
-  String get high_tip_5;
+  String get high_tip_fifth;
 
-  /// No description provided for @high_tip_6.
+  /// No description provided for @high_tip_sixth.
   ///
   /// In en, this message translates to:
   /// **'Check soil moisture daily'**
-  String get high_tip_6;
+  String get high_tip_sixth;
 
-  /// No description provided for @medium_tip_1.
+  /// No description provided for @medium_tip_first.
   ///
   /// In en, this message translates to:
   /// **'Follow regular irrigation schedule'**
-  String get medium_tip_1;
+  String get medium_tip_first;
 
-  /// No description provided for @medium_tip_2.
+  /// No description provided for @medium_tip_second.
   ///
   /// In en, this message translates to:
   /// **'Check soil moisture every 2-3 days'**
-  String get medium_tip_2;
+  String get medium_tip_second;
 
-  /// No description provided for @medium_tip_3.
+  /// No description provided for @medium_tip_third.
   ///
   /// In en, this message translates to:
   /// **'Adjust based on rainfall'**
-  String get medium_tip_3;
+  String get medium_tip_third;
 
-  /// No description provided for @medium_tip_4.
+  /// No description provided for @medium_tip_fourth.
   ///
   /// In en, this message translates to:
   /// **'Use water conservation techniques'**
-  String get medium_tip_4;
+  String get medium_tip_fourth;
 
-  /// No description provided for @medium_tip_5.
+  /// No description provided for @medium_tip_fifth.
   ///
   /// In en, this message translates to:
   /// **'Monitor weather forecasts'**
-  String get medium_tip_5;
+  String get medium_tip_fifth;
 
-  /// No description provided for @medium_tip_6.
+  /// No description provided for @medium_tip_sixth.
   ///
   /// In en, this message translates to:
   /// **'Maintain irrigation records'**
-  String get medium_tip_6;
+  String get medium_tip_sixth;
 
-  /// No description provided for @low_tip_1.
+  /// No description provided for @low_tip_first.
   ///
   /// In en, this message translates to:
   /// **'Delay irrigation if rain is forecast'**
-  String get low_tip_1;
+  String get low_tip_first;
 
-  /// No description provided for @low_tip_2.
+  /// No description provided for @low_tip_second.
   ///
   /// In en, this message translates to:
   /// **'Check soil moisture before watering'**
-  String get low_tip_2;
+  String get low_tip_second;
 
-  /// No description provided for @low_tip_3.
+  /// No description provided for @low_tip_third.
   ///
   /// In en, this message translates to:
   /// **'Reduce irrigation frequency'**
-  String get low_tip_3;
+  String get low_tip_third;
 
-  /// No description provided for @low_tip_4.
+  /// No description provided for @low_tip_fourth.
   ///
   /// In en, this message translates to:
   /// **'Use water-saving methods'**
-  String get low_tip_4;
+  String get low_tip_fourth;
 
-  /// No description provided for @low_tip_5.
+  /// No description provided for @low_tip_fifth.
   ///
   /// In en, this message translates to:
   /// **'Monitor for over-watering signs'**
-  String get low_tip_5;
+  String get low_tip_fifth;
 
-  /// No description provided for @low_tip_6.
+  /// No description provided for @low_tip_sixth.
   ///
   /// In en, this message translates to:
   /// **'Collect rainwater if possible'**
-  String get low_tip_6;
+  String get low_tip_sixth;
+
+  /// No description provided for @return_tip_first.
+  ///
+  /// In en, this message translates to:
+  /// **'Check soil moisture before irrigation'**
+  String get return_tip_first;
+
+  /// No description provided for @return_tip_second.
+  ///
+  /// In en, this message translates to:
+  /// **'Water based on plant needs, not fixed schedule'**
+  String get return_tip_second;
+
+  /// No description provided for @return_tip_third.
+  ///
+  /// In en, this message translates to:
+  /// **'Use efficient irrigation methods'**
+  String get return_tip_third;
+
+  /// No description provided for @return_tip_fourth.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor weather conditions'**
+  String get return_tip_fourth;
+
+  /// No description provided for @return_tip_fifth.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid waterlogging'**
+  String get return_tip_fifth;
+
+  /// No description provided for @return_tip_sixth.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintain proper drainage'**
+  String get return_tip_sixth;
 
   /// No description provided for @irrigation_methods.
   ///
@@ -2656,6 +2986,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Suitable for orchards and some field crops'**
   String get basin_irrigation_desc;
+
+  /// No description provided for @high_risk_message.
+  ///
+  /// In en, this message translates to:
+  /// **'High risk of {pests} infestation in {cropName}'**
+  String high_risk_message(Object cropName, Object pests);
+
+  /// No description provided for @moderate_risk_message.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor {cropName} for {pests}'**
+  String moderate_risk_message(Object cropName, Object pests);
+
+  /// No description provided for @low_risk_message.
+  ///
+  /// In en, this message translates to:
+  /// **'Low pest risk for {cropName} in current conditions'**
+  String low_risk_message(Object cropName);
+
+  /// No description provided for @generic_pest.
+  ///
+  /// In en, this message translates to:
+  /// **'pest'**
+  String get generic_pest;
+
+  /// No description provided for @potential_pests.
+  ///
+  /// In en, this message translates to:
+  /// **'potential pests'**
+  String get potential_pests;
+
+  /// No description provided for @high_temp_burn_risk.
+  ///
+  /// In en, this message translates to:
+  /// **'High temperatures increase fertilizer burn risk for {cropName}'**
+  String high_temp_burn_risk(Object cropName);
+
+  /// No description provided for @warm_weather_nutrient_availability.
+  ///
+  /// In en, this message translates to:
+  /// **'Warm weather increases nutrient availability for {cropName}'**
+  String warm_weather_nutrient_availability(Object cropName);
+
+  /// No description provided for @cold_temp_slow_growth.
+  ///
+  /// In en, this message translates to:
+  /// **'Cold temperatures slow {cropName} growth and nutrient uptake'**
+  String cold_temp_slow_growth(Object cropName);
+
+  /// No description provided for @optimal_temp_application.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimal temperature for {cropName} fertilizer application'**
+  String optimal_temp_application(Object cropName);
+
+  /// No description provided for @rain_absorption_help.
+  ///
+  /// In en, this message translates to:
+  /// **'Rain will help {cropName} absorb nutrients efficiently'**
+  String rain_absorption_help(Object cropName);
+
+  /// No description provided for @irrigation_required_after_application.
+  ///
+  /// In en, this message translates to:
+  /// **'{cropName} may require irrigation after application'**
+  String irrigation_required_after_application(Object cropName);
+
+  /// No description provided for @as_per_soil_test.
+  ///
+  /// In en, this message translates to:
+  /// **'As per soil test recommendations'**
+  String get as_per_soil_test;
+
+  /// No description provided for @natural_rainfall_sufficient_three.
+  ///
+  /// In en, this message translates to:
+  /// **'Natural rainfall will provide sufficient moisture for {crop}'**
+  String natural_rainfall_sufficient_three(Object crop);
+
+  /// No description provided for @storm_rainfall_avoid_waterlogging_three.
+  ///
+  /// In en, this message translates to:
+  /// **'Storm will provide adequate rainfall for {crop}, avoid waterlogging'**
+  String storm_rainfall_avoid_waterlogging_three(Object crop);
+
+  /// No description provided for @high_evaporation_requires_more_water_three.
+  ///
+  /// In en, this message translates to:
+  /// **'High evaporation rate ({et} mm/day) requires more frequent watering for {crop}'**
+  String high_evaporation_requires_more_water_three(Object crop, Object et);
+
+  /// No description provided for @low_evaporation_less_water_three.
+  ///
+  /// In en, this message translates to:
+  /// **'Low evaporation rate ({et} mm/day) - {crop} needs less water'**
+  String low_evaporation_less_water_three(Object crop, Object et);
+
+  /// No description provided for @dry_warm_conditions_water_management_three.
+  ///
+  /// In en, this message translates to:
+  /// **'Dry, warm conditions require careful water management for {crop}'**
+  String dry_warm_conditions_water_management_three(Object crop);
+
+  /// No description provided for @normal_irrigation_schedule_three.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal irrigation schedule'**
+  String get normal_irrigation_schedule_three;
+
+  /// No description provided for @moderate_conditions_regular_irrigation_three.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderate conditions - maintain regular irrigation for {crop} ({stage} stage)'**
+  String moderate_conditions_regular_irrigation_three(Object crop, Object stage);
+
+  /// No description provided for @urgency_low.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get urgency_low;
+
+  /// No description provided for @urgency_medium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get urgency_medium;
+
+  /// No description provided for @urgency_high.
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get urgency_high;
+
+  /// No description provided for @mm_day.
+  ///
+  /// In en, this message translates to:
+  /// **'mm/day'**
+  String get mm_day;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
