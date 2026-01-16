@@ -1,0 +1,27 @@
+{
+  "ur": [
+    "user_not_found_code",
+    "reduced_due_to_high_temperature",
+    "fertilizer_wheat_nitrogen",
+    "fertilizer_wheat_phosphorus",
+    "fertilizer_wheat_potassium",
+    "fertilizer_wheat_micronutrients",
+    "fertilizer_cotton_nitrogen",
+    "fertilizer_cotton_phosphorus",
+    "fertilizer_cotton_potassium",
+    "fertilizer_cotton_micronutrients",
+    "fertilizer_rice_nitrogen",
+    "fertilizer_rice_phosphorus",
+    "fertilizer_rice_potassium",
+    "fertilizer_rice_micronutrients",
+    "fertilizer_corn_nitrogen",
+    "fertilizer_corn_phosphorus",
+    "fertilizer_corn_potassium",
+    "fertilizer_corn_micronutrients",
+    "fertilizer_default_nitrogen",
+    "fertilizer_default_phosphorus",
+    "fertilizer_default_potassium",
+    "fertilizer_default_micronutrients",
+    "error_updating_first_time_status"
+  ]
+}

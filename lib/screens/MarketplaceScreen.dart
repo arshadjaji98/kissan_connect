@@ -58,7 +58,9 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
           setState(() {
             _userLocation = userData['location'] ?? widget.userLocation;
             _userName = userData['name'] ?? widget.userName;
-            _selectedCrops = List<String>.from(userData['selectedCrops'] ?? ['Wheat']);
+            _selectedCrops = List<String>.from(
+              userData['selectedCrops'] ?? ['Wheat'],
+            );
             _primaryCrop = userData['primaryCrop'] ?? 'Wheat';
           });
         }
@@ -85,7 +87,7 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
           primaryCrop: _primaryCrop,
         ),
       ),
-          (route) => false,
+      (route) => false,
     );
   }
 
@@ -93,10 +95,8 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => WeatherScreen(
-          weatherData: {},
-          cityName: _userLocation,
-        ),
+        builder: (context) =>
+            WeatherScreen(weatherData: {}, cityName: _userLocation),
       ),
     ).then((_) {
       if (mounted) {
@@ -110,9 +110,7 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
   void _navigateToCropGuide(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => const CropGuideScreen(),
-      ),
+      MaterialPageRoute(builder: (context) => const CropGuideScreen()),
     ).then((_) {
       if (mounted) {
         setState(() {
@@ -126,10 +124,8 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ActiveAdScreen(
-          userName: _userName,
-          userLocation: _userLocation,
-        ),
+        builder: (context) =>
+            ActiveAdScreen(userName: _userName, userLocation: _userLocation),
       ),
     ).then((_) {
       if (mounted) {
@@ -196,13 +192,14 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                 onChanged: _filterListings,
                 decoration: InputDecoration(
                   hintText: "Search crops, sellers, locations...",
-                  hintStyle: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14,
-                  ),
+                  hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
                   prefixIcon: const Padding(
                     padding: EdgeInsets.only(left: 16.0, right: 8.0),
-                    child: Icon(Icons.search, color: Color(0xFF4CAF50), size: 20),
+                    child: Icon(
+                      Icons.search,
+                      color: Color(0xFF4CAF50),
+                      size: 20,
+                    ),
                   ),
                   border: InputBorder.none,
                   contentPadding: const EdgeInsets.symmetric(
@@ -211,10 +208,14 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                   ),
                   suffixIcon: _searchQuery.isNotEmpty
                       ? IconButton(
-                    icon: const Icon(Icons.clear, size: 18, color: Colors.grey),
-                    onPressed: _clearSearch,
-                    padding: const EdgeInsets.only(right: 8),
-                  )
+                          icon: const Icon(
+                            Icons.clear,
+                            size: 18,
+                            color: Colors.grey,
+                          ),
+                          onPressed: _clearSearch,
+                          padding: const EdgeInsets.only(right: 8),
+                        )
                       : null,
                 ),
               ),
@@ -290,18 +291,12 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
           }
         },
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.wb_sunny_outlined),
             label: 'Weather',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.grass),
-            label: 'Crop Guide',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.grass), label: 'Crop Guide'),
           BottomNavigationBarItem(
             icon: Icon(Icons.storefront),
             label: 'Marketplace',
@@ -326,18 +321,11 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(
-                  Icons.error_outline,
-                  size: 60,
-                  color: Colors.red,
-                ),
+                const Icon(Icons.error_outline, size: 60, color: Colors.red),
                 const SizedBox(height: 16),
                 const Text(
                   'Error loading listings',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.grey,
-                  ),
+                  style: TextStyle(fontSize: 18, color: Colors.grey),
                 ),
               ],
             ),
@@ -349,18 +337,11 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(
-                  Icons.inventory_2,
-                  size: 60,
-                  color: Colors.grey,
-                ),
+                const Icon(Icons.inventory_2, size: 60, color: Colors.grey),
                 const SizedBox(height: 16),
                 const Text(
                   'No listings available',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.grey,
-                  ),
+                  style: TextStyle(fontSize: 18, color: Colors.grey),
                 ),
                 const SizedBox(height: 8),
                 ElevatedButton(
@@ -421,10 +402,7 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                 SizedBox(height: 16),
                 Text(
                   'Searching...',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14,
-                  ),
+                  style: TextStyle(color: Colors.grey, fontSize: 14),
                 ),
               ],
             ),
@@ -436,18 +414,11 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(
-                  Icons.error_outline,
-                  size: 60,
-                  color: Colors.red,
-                ),
+                const Icon(Icons.error_outline, size: 60, color: Colors.red),
                 const SizedBox(height: 16),
                 const Text(
                   'Search error',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.grey,
-                  ),
+                  style: TextStyle(fontSize: 18, color: Colors.grey),
                 ),
                 const SizedBox(height: 8),
                 ElevatedButton(
@@ -475,18 +446,11 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(
-                  Icons.search_off,
-                  size: 60,
-                  color: Colors.grey,
-                ),
+                const Icon(Icons.search_off, size: 60, color: Colors.grey),
                 const SizedBox(height: 16),
                 Text(
                   'No results for "$_searchQuery"',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    color: Colors.grey,
-                  ),
+                  style: const TextStyle(fontSize: 18, color: Colors.grey),
                 ),
                 const SizedBox(height: 8),
                 ElevatedButton(
@@ -540,10 +504,8 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ListingDetailsScreen(
-              listingId: listing.id,
-              listingData: data,
-            ),
+            builder: (context) =>
+                ListingDetailsScreen(listingId: listing.id, listingData: data),
           ),
         );
       },
@@ -587,9 +549,11 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                             if (loadingProgress == null) return child;
                             return Center(
                               child: CircularProgressIndicator(
-                                value: loadingProgress.expectedTotalBytes != null
+                                value:
+                                    loadingProgress.expectedTotalBytes != null
                                     ? loadingProgress.cumulativeBytesLoaded /
-                                    (loadingProgress.expectedTotalBytes ?? 1)
+                                          (loadingProgress.expectedTotalBytes ??
+                                              1)
                                     : null,
                                 color: const Color(0xFF2E7D32),
                               ),
@@ -643,15 +607,16 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                   const SizedBox(height: 4),
                   Text(
                     quantityFormatted,
-                    style: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12,
-                    ),
+                    style: const TextStyle(color: Colors.grey, fontSize: 12),
                   ),
                   const SizedBox(height: 4),
                   Row(
                     children: [
-                      const Icon(Icons.location_on, size: 10, color: Colors.grey),
+                      const Icon(
+                        Icons.location_on,
+                        size: 10,
+                        color: Colors.grey,
+                      ),
                       const SizedBox(width: 4),
                       Expanded(
                         child: Text(

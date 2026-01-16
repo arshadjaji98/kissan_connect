@@ -131,6 +131,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get vegetables => 'Vegetables';
 
   @override
+  String get mango => 'Mango';
+
+  @override
+  String get potato => 'Potato';
+
+  @override
+  String get chilli => 'Chilli';
+
+  @override
   String get welcome_back => 'Welcome Back!';
 
   @override
@@ -1582,4 +1591,739 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mm_day => 'mm/day';
+
+  @override
+  String get wheat_summary => 'Wheat is a staple Rabi crop requiring cool weather (15-25°C) during growth and moderate rainfall. Ideal sowing season is October-December.';
+
+  @override
+  String get wheat_p_title => 'Planting';
+
+  @override
+  String get wheat_p1 => 'Sow from October to December for Rabi season';
+
+  @override
+  String get wheat_p2 => 'Use certified seeds like Punjab-2011, Galaxy-2013';
+
+  @override
+  String get wheat_p3 => 'Optimal seed rate: 40-50 kg/acre';
+
+  @override
+  String get wheat_p4 => 'Row spacing: 22-25 cm';
+
+  @override
+  String get wheat_p5 => 'Sow at depth of 4-5 cm';
+
+  @override
+  String get wheat_i_title => 'Irrigation';
+
+  @override
+  String get wheat_i1 => 'First irrigation: 21-25 days after sowing';
+
+  @override
+  String get wheat_i2 => 'Second irrigation: 45-50 days (Tillering stage)';
+
+  @override
+  String get wheat_i3 => 'Third irrigation: 70-75 days (Jointing stage)';
+
+  @override
+  String get wheat_i4 => 'Fourth irrigation: 90-95 days (Flowering)';
+
+  @override
+  String get wheat_i5 => 'Fifth irrigation: 110-115 days (Grain filling)';
+
+  @override
+  String get wheat_f_title => 'Fertilization';
+
+  @override
+  String get wheat_f1 => 'Basal dose: 2 bags DAP + 1 bag SOP/acre';
+
+  @override
+  String get wheat_f2 => 'First split: 1 bag Urea at tillering';
+
+  @override
+  String get wheat_f3 => 'Second split: 1 bag Urea at jointing';
+
+  @override
+  String get wheat_f4 => 'Apply Zinc sulfate @ 5 kg/acre if deficient';
+
+  @override
+  String get wheat_f5 => 'Foliar spray of boron at flowering';
+
+  @override
+  String get wheat_pc_title => 'Pest Control';
+
+  @override
+  String get wheat_pc1 => 'Monitor for aphids during Feb-March';
+
+  @override
+  String get wheat_pc2 => 'Use neem oil spray @ 5% for early infestation';
+
+  @override
+  String get wheat_pc3 => 'For army worm: Chlorpyrifos @ 1.5 L/acre';
+
+  @override
+  String get wheat_pc4 => 'Rust control: Propiconazole @ 200 ml/acre';
+
+  @override
+  String get wheat_pc5 => 'Remove volunteer plants to break disease cycle';
+
+  @override
+  String get wheat_y_title => 'Yield Optimization';
+
+  @override
+  String get wheat_y1 => 'Target yield: 40-50 maunds/acre';
+
+  @override
+  String get wheat_y2 => 'Harvest when grains harden (30-35% moisture)';
+
+  @override
+  String get wheat_y3 => 'Use combine harvester for efficient harvesting';
+
+  @override
+  String get wheat_y4 => 'Dry to 12% moisture before storage';
+
+  @override
+  String get wheat_y5 => 'Store in clean, rodent-proof godowns';
+
+  @override
+  String get sugar_summary => 'Sugarcane is a tropical perennial cash crop needing high heat (25-32°C) and moisture. It has a 12-18 month growing season.';
+
+  @override
+  String get sugar_p_title => 'Planting';
+
+  @override
+  String get sugar_p1 => 'Plant from February to March (Spring crop)';
+
+  @override
+  String get sugar_p2 => 'Use 3-bud setts from healthy canes';
+
+  @override
+  String get sugar_p3 => 'Seed rate: 30-35,000 setts/acre';
+
+  @override
+  String get sugar_p4 => 'Row spacing: 90-120 cm';
+
+  @override
+  String get sugar_p5 => 'Planting depth: 5-7 cm in furrows';
+
+  @override
+  String get sugar_i_title => 'Irrigation';
+
+  @override
+  String get sugar_i1 => 'Initial: Irrigate immediately after planting';
+
+  @override
+  String get sugar_i2 => 'Critical stage: Grand growth period';
+
+  @override
+  String get sugar_i3 => 'Irrigation interval: 10-12 days in summer';
+
+  @override
+  String get sugar_i4 => 'Stop irrigation 30 days before harvest';
+
+  @override
+  String get sugar_i5 => 'Total water requirement: 180-200 cm/season';
+
+  @override
+  String get sugar_f_title => 'Fertilization';
+
+  @override
+  String get sugar_f1 => 'Basal: 2 bags DAP + 1 bag SOP/acre';
+
+  @override
+  String get sugar_f2 => 'Top dressing: 3 bags Urea in 3 splits';
+
+  @override
+  String get sugar_f3 => 'First split: 30 days after planting';
+
+  @override
+  String get sugar_f4 => 'Second split: 60 days after planting';
+
+  @override
+  String get sugar_f5 => 'Third split: 90 days after planting';
+
+  @override
+  String get sugar_pc_title => 'Pest Control';
+
+  @override
+  String get sugar_pc1 => 'For borers: Furadan @ 10 kg/acre at planting';
+
+  @override
+  String get sugar_pc2 => 'For termites: Chlorpyrifos @ 2 L/acre';
+
+  @override
+  String get sugar_pc3 => 'For red rot: Use resistant varieties';
+
+  @override
+  String get sugar_pc4 => 'Remove and destroy infected plants';
+
+  @override
+  String get sugar_pc5 => 'Practice crop rotation with legumes';
+
+  @override
+  String get sugar_y_title => 'Yield Optimization';
+
+  @override
+  String get sugar_y1 => 'Target yield: 700-800 maunds/acre';
+
+  @override
+  String get sugar_y2 => 'Harvest when canes mature (12-18 months)';
+
+  @override
+  String get sugar_y3 => 'Cut close to ground level';
+
+  @override
+  String get sugar_y4 => 'Mill within 24 hours of harvest';
+
+  @override
+  String get sugar_y5 => 'Ratoon management for 2-3 cycles';
+
+  @override
+  String get cotton_summary => 'Cotton thrives in dry, warm climates and needs plenty of sunshine. Proper pest management is key.';
+
+  @override
+  String get cotton_p_title => 'Planting';
+
+  @override
+  String get cotton_p1 => 'Sow from April to May';
+
+  @override
+  String get cotton_p2 => 'Seed rate: 4-5 kg/acre for Bt cotton';
+
+  @override
+  String get cotton_p3 => 'Row spacing: 75-90 cm';
+
+  @override
+  String get cotton_p4 => 'Plant-to-plant distance: 30-45 cm';
+
+  @override
+  String get cotton_p5 => 'Treat seeds with fungicide before sowing';
+
+  @override
+  String get cotton_i_title => 'Irrigation';
+
+  @override
+  String get cotton_i1 => 'First irrigation: 30-35 days after sowing';
+
+  @override
+  String get cotton_i2 => 'Critical stage: Flowering and boll formation';
+
+  @override
+  String get cotton_i3 => 'Irrigation interval: 12-15 days';
+
+  @override
+  String get cotton_i4 => 'Stop irrigation 90-100 days after sowing';
+
+  @override
+  String get cotton_i5 => 'Avoid waterlogging';
+
+  @override
+  String get cotton_f_title => 'Fertilization';
+
+  @override
+  String get cotton_f1 => 'Basal: 2 bags DAP + 1 bag SOP/acre';
+
+  @override
+  String get cotton_f2 => 'Top dressing: 2 bags Urea in 2 splits';
+
+  @override
+  String get cotton_f3 => 'First split: 30 days after sowing';
+
+  @override
+  String get cotton_f4 => 'Second split: 60 days after sowing';
+
+  @override
+  String get cotton_f5 => 'Apply boron @ 1 kg/acre during flowering';
+
+  @override
+  String get cotton_pc_title => 'Pest Control';
+
+  @override
+  String get cotton_pc1 => 'For bollworms: Emamectin benzoate @ 150 ml/acre';
+
+  @override
+  String get cotton_pc2 => 'For whitefly: Acetamiprid @ 80g/acre';
+
+  @override
+  String get cotton_pc3 => 'For mealybug: Chlorpyrifos @ 1.5 L/acre';
+
+  @override
+  String get cotton_pc4 => 'Monitor with pheromone traps';
+
+  @override
+  String get cotton_pc5 => 'Practice crop rotation';
+
+  @override
+  String get cotton_y_title => 'Yield Optimization';
+
+  @override
+  String get cotton_y1 => 'Target yield: 25-30 maunds/acre';
+
+  @override
+  String get cotton_y2 => 'Harvest in 3-4 pickings';
+
+  @override
+  String get cotton_y3 => 'Pick when bolls fully open';
+
+  @override
+  String get cotton_y4 => 'Dry in shade to maintain fiber quality';
+
+  @override
+  String get cotton_y5 => 'Store in dry place';
+
+  @override
+  String get maize_summary => 'Maize is versatile and requires moderate temperatures. It is often grown as a Kharif crop.';
+
+  @override
+  String get maize_p_title => 'Planting';
+
+  @override
+  String get maize_p1 => 'Sow from June to July for Kharif';
+
+  @override
+  String get maize_p2 => 'Seed rate: 8-10 kg/acre';
+
+  @override
+  String get maize_p3 => 'Row spacing: 60-75 cm';
+
+  @override
+  String get maize_p4 => 'Plant-to-plant: 20-25 cm';
+
+  @override
+  String get maize_p5 => 'Sow at depth of 5-7 cm';
+
+  @override
+  String get maize_i_title => 'Irrigation';
+
+  @override
+  String get maize_i1 => 'Critical stages: Knee-high and tasseling';
+
+  @override
+  String get maize_i2 => 'Irrigation every 10-12 days in summer';
+
+  @override
+  String get maize_i3 => 'Avoid water stress during pollination';
+
+  @override
+  String get maize_i4 => 'Last irrigation 15 days before harvest';
+
+  @override
+  String get maize_i5 => 'Total water: 50-60 cm';
+
+  @override
+  String get maize_f_title => 'Fertilization';
+
+  @override
+  String get maize_f1 => 'Basal: 2 bags DAP + 1 bag SOP/acre';
+
+  @override
+  String get maize_f2 => 'Top dressing: 2 bags Urea in 2 splits';
+
+  @override
+  String get maize_f3 => 'First split: 25-30 days after sowing';
+
+  @override
+  String get maize_f4 => 'Second split: 45-50 days after sowing';
+
+  @override
+  String get maize_f5 => 'Apply Zinc @ 10 kg/acre if deficient';
+
+  @override
+  String get maize_pc_title => 'Pest Control';
+
+  @override
+  String get maize_pc1 => 'For stem borer: Carbofuran @ 10 kg/acre';
+
+  @override
+  String get maize_pc2 => 'For fall armyworm: Spinetoram @ 100 ml/acre';
+
+  @override
+  String get maize_pc3 => 'For downy mildew: Metalaxyl @ 2g/kg seed';
+
+  @override
+  String get maize_pc4 => 'Use bird perches for pest control';
+
+  @override
+  String get maize_pc5 => 'Remove infected plants';
+
+  @override
+  String get maize_y_title => 'Yield Optimization';
+
+  @override
+  String get maize_y1 => 'Target yield: 40-50 maunds/acre';
+
+  @override
+  String get maize_y2 => 'Harvest when grains harden';
+
+  @override
+  String get maize_y3 => 'Harvest at 20-25% moisture';
+
+  @override
+  String get maize_y4 => 'Dry to 14% moisture for storage';
+
+  @override
+  String get maize_y5 => 'Store in well-ventilated bins';
+
+  @override
+  String get mango_summary => 'Mango is a tropical fruit tree. It requires careful pruning and protection from frost during flowering.';
+
+  @override
+  String get mango_p_title => 'Planting';
+
+  @override
+  String get mango_p1 => 'Plant in July-August or February-March';
+
+  @override
+  String get mango_p2 => 'Spacing: 10 x 10 meters';
+
+  @override
+  String get mango_p3 => 'Dig pits of 1 x 1 x 1 meter';
+
+  @override
+  String get mango_p4 => 'Mix soil with 30-40 kg FYM per pit';
+
+  @override
+  String get mango_p5 => 'Graft preferred varieties (Sindhri, Anwar Ratol)';
+
+  @override
+  String get mango_i_title => 'Irrigation';
+
+  @override
+  String get mango_i1 => 'Young plants: Irrigate every 3-4 days';
+
+  @override
+  String get mango_i2 => 'Mature trees: Irrigate every 10-15 days';
+
+  @override
+  String get mango_i3 => 'Critical stage: Fruit setting and development';
+
+  @override
+  String get mango_i4 => 'Stop irrigation 15 days before harvest';
+
+  @override
+  String get mango_i5 => 'Use basin or drip irrigation';
+
+  @override
+  String get mango_f_title => 'Fertilization';
+
+  @override
+  String get mango_f1 => 'Young trees: 10-20 kg FYM + 250g NPK/year';
+
+  @override
+  String get mango_f2 => 'Mature trees: 50-100 kg FYM + 1-2 kg NPK/year';
+
+  @override
+  String get mango_f3 => 'Apply after harvest (June-July)';
+
+  @override
+  String get mango_f4 => 'Apply before flowering (December-January)';
+
+  @override
+  String get mango_f5 => 'Foliar spray of micronutrients during flowering';
+
+  @override
+  String get mango_pc_title => 'Pest Control';
+
+  @override
+  String get mango_pc1 => 'For fruit fly: Bait spray (Malathion + jaggery)';
+
+  @override
+  String get mango_pc2 => 'For mango hopper: Imidacloprid @ 50 ml/acre';
+
+  @override
+  String get mango_pc3 => 'For anthracnose: Copper oxychloride @ 500g/acre';
+
+  @override
+  String get mango_pc4 => 'Bag fruits for protection';
+
+  @override
+  String get mango_pc5 => 'Maintain orchard sanitation';
+
+  @override
+  String get mango_y_title => 'Yield Optimization';
+
+  @override
+  String get mango_y1 => 'Target yield: 100-200 kg/tree (mature)';
+
+  @override
+  String get mango_y2 => 'Harvest when fruits develop shoulder';
+
+  @override
+  String get mango_y3 => 'Harvest in morning hours';
+
+  @override
+  String get mango_y4 => 'Handle fruits carefully to avoid damage';
+
+  @override
+  String get mango_y5 => 'Pack in ventilated boxes';
+
+  @override
+  String get potato_summary => 'Potato is a cool-season crop grown in winter. Proper soil preparation and seed treatment are crucial.';
+
+  @override
+  String get potato_p_title => 'Planting';
+
+  @override
+  String get potato_p1 => 'Plant from October to November';
+
+  @override
+  String get potato_p2 => 'Use disease-free certified tubers';
+
+  @override
+  String get potato_p3 => 'Seed rate: 800-1000 kg/acre';
+
+  @override
+  String get potato_p4 => 'Row spacing: 60 cm';
+
+  @override
+  String get potato_p5 => 'Plant spacing: 20-25 cm';
+
+  @override
+  String get potato_p6 => 'Plant at depth of 5-7 cm';
+
+  @override
+  String get potato_i_title => 'Irrigation';
+
+  @override
+  String get potato_i1 => 'First irrigation: Immediately after planting';
+
+  @override
+  String get potato_i2 => 'Critical stage: Tuber initiation and bulking';
+
+  @override
+  String get potato_i3 => 'Irrigation every 7-10 days';
+
+  @override
+  String get potato_i4 => 'Stop irrigation 15-20 days before harvest';
+
+  @override
+  String get potato_i5 => 'Avoid waterlogging';
+
+  @override
+  String get potato_f_title => 'Fertilization';
+
+  @override
+  String get potato_f1 => 'Basal: 3 bags DAP + 2 bags SOP/acre';
+
+  @override
+  String get potato_f2 => 'Top dressing: 2 bags Urea in 2 splits';
+
+  @override
+  String get potato_f3 => 'First split: 25-30 days after planting';
+
+  @override
+  String get potato_f4 => 'Second split: 45-50 days after planting';
+
+  @override
+  String get potato_f5 => 'Apply boron @ 1 kg/acre if needed';
+
+  @override
+  String get potato_pc_title => 'Pest Control';
+
+  @override
+  String get potato_pc1 => 'For cutworm: Chlorpyrifos @ 2 L/acre in soil';
+
+  @override
+  String get potato_pc2 => 'For aphids: Imidacloprid @ 50 ml/acre';
+
+  @override
+  String get potato_pc3 => 'For late blight: Mancozeb @ 500g/acre';
+
+  @override
+  String get potato_pc4 => 'Use resistant varieties';
+
+  @override
+  String get potato_pc5 => 'Practice crop rotation with cereals';
+
+  @override
+  String get potato_y_title => 'Yield Optimization';
+
+  @override
+  String get potato_y1 => 'Target yield: 200-250 maunds/acre';
+
+  @override
+  String get potato_y2 => 'Harvest when vines dry';
+
+  @override
+  String get potato_y3 => 'Harvest in cool weather';
+
+  @override
+  String get potato_y4 => 'Cure tubers for 10-15 days before storage';
+
+  @override
+  String get potato_y5 => 'Store at 4-5°C with high humidity';
+
+  @override
+  String get chilli_summary => 'Chilli is a warm-season crop sensitive to frost. Requires well-drained soil and careful water management.';
+
+  @override
+  String get chilli_p_title => 'Planting';
+
+  @override
+  String get chilli_p1 => 'Transplant 30-35 day old seedlings';
+
+  @override
+  String get chilli_p2 => 'Spacing: 45 x 30 cm';
+
+  @override
+  String get chilli_p3 => 'Plant 2 seedlings per hill';
+
+  @override
+  String get chilli_p4 => 'Best time: February-March for spring crop';
+
+  @override
+  String get chilli_p5 => 'Raised beds for better drainage';
+
+  @override
+  String get chilli_i_title => 'Irrigation';
+
+  @override
+  String get chilli_i1 => 'Light irrigation after transplanting';
+
+  @override
+  String get chilli_i2 => 'Irrigation every 5-7 days in summer';
+
+  @override
+  String get chilli_i3 => 'Critical stage: Flowering and fruit set';
+
+  @override
+  String get chilli_i4 => 'Avoid overhead irrigation to prevent disease';
+
+  @override
+  String get chilli_i5 => 'Drip irrigation recommended';
+
+  @override
+  String get chilli_f_title => 'Fertilization';
+
+  @override
+  String get chilli_f1 => 'Basal: 2 bags DAP + 1 bag SOP/acre';
+
+  @override
+  String get chilli_f2 => 'Top dressing: 1.5 bags Urea in 3 splits';
+
+  @override
+  String get chilli_f3 => 'First split: 30 days after transplanting';
+
+  @override
+  String get chilli_f4 => 'Second split: 60 days after transplanting';
+
+  @override
+  String get chilli_f5 => 'Third split: During fruit set';
+
+  @override
+  String get chilli_pc_title => 'Pest Control';
+
+  @override
+  String get chilli_pc1 => 'For thrips: Spinosad @ 100 ml/acre';
+
+  @override
+  String get chilli_pc2 => 'For mites: Abamectin @ 100 ml/acre';
+
+  @override
+  String get chilli_pc3 => 'For fruit rot: Carbendazim @ 250g/acre';
+
+  @override
+  String get chilli_pc4 => 'Use yellow sticky traps';
+
+  @override
+  String get chilli_pc5 => 'Remove infected plants immediately';
+
+  @override
+  String get chilli_y_title => 'Yield Optimization';
+
+  @override
+  String get chilli_y1 => 'Target yield: 40-50 maunds/acre (dry)';
+
+  @override
+  String get chilli_y2 => 'Harvest when fruits turn red';
+
+  @override
+  String get chilli_y3 => 'Pick regularly to encourage more fruiting';
+
+  @override
+  String get chilli_y4 => 'Dry in shade to retain color and pungency';
+
+  @override
+  String get chilli_y5 => 'Store in airtight containers';
+
+  @override
+  String get rice_summary => 'Rice needs standing water for most of its growing period. The Kharif season is the best time for cultivation.';
+
+  @override
+  String get rice_p_title => 'Planting';
+
+  @override
+  String get rice_p1 => 'Transplant seedlings 20-25 days old';
+
+  @override
+  String get rice_p2 => 'Optimal spacing: 20 x 15 cm';
+
+  @override
+  String get rice_p3 => 'Plant 2-3 seedlings per hill';
+
+  @override
+  String get rice_p4 => 'Transplant in puddled soil';
+
+  @override
+  String get rice_p5 => 'Best time: June-July for Kharif season';
+
+  @override
+  String get rice_i_title => 'Irrigation';
+
+  @override
+  String get rice_i1 => 'Maintain 2-5 cm standing water';
+
+  @override
+  String get rice_i2 => 'Drain field 15 days before harvest';
+
+  @override
+  String get rice_i3 => 'Critical stages: Tillering and flowering';
+
+  @override
+  String get rice_i4 => 'Avoid water stress during panicle initiation';
+
+  @override
+  String get rice_i5 => 'Total water requirement: 100-150 cm';
+
+  @override
+  String get rice_f_title => 'Fertilization';
+
+  @override
+  String get rice_f1 => 'Basal: 1.5 bags DAP/acre';
+
+  @override
+  String get rice_f2 => 'First top dressing: 1 bag Urea at tillering';
+
+  @override
+  String get rice_f3 => 'Second top dressing: 0.5 bag Urea at panicle initiation';
+
+  @override
+  String get rice_f4 => 'Apply Zinc sulfate @ 10 kg/acre if needed';
+
+  @override
+  String get rice_f5 => 'Silicon application improves stem strength';
+
+  @override
+  String get rice_pc_title => 'Pest Control';
+
+  @override
+  String get rice_pc1 => 'For stem borer: Cartap hydrochloride @ 500g/acre';
+
+  @override
+  String get rice_pc2 => 'For leaf folder: Fipronil @ 200 ml/acre';
+
+  @override
+  String get rice_pc3 => 'For blast disease: Tricyclazole @ 300g/acre';
+
+  @override
+  String get rice_pc4 => 'Use light traps for moth monitoring';
+
+  @override
+  String get rice_pc5 => 'Practice clean cultivation';
+
+  @override
+  String get rice_y_title => 'Yield Optimization';
+
+  @override
+  String get rice_y1 => 'Target yield: 30-40 maunds/acre';
 }

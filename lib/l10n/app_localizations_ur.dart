@@ -131,6 +131,15 @@ class AppLocalizationsUr extends AppLocalizations {
   String get vegetables => 'سبزیاں';
 
   @override
+  String get mango => 'آم';
+
+  @override
+  String get potato => 'آلو';
+
+  @override
+  String get chilli => 'مرچ';
+
+  @override
   String get welcome_back => 'واپسی پر خوش آمدید';
 
   @override
@@ -1582,4 +1591,739 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get mm_day => 'ملی میٹر فی دن';
+
+  @override
+  String get wheat_summary => 'گندم ربیع کی ایک اہم فصل ہے جسے بڑھوتری کے دوران ٹھنڈے موسم (15-25°C) اور مناسب بارش کی ضرورت ہوتی ہے۔ بوائی کا بہترین وقت اکتوبر سے دسمبر ہے۔';
+
+  @override
+  String get wheat_p_title => 'کاشت';
+
+  @override
+  String get wheat_p1 => 'ربیع کے سیزن کے لیے اکتوبر سے دسمبر تک کاشت کریں';
+
+  @override
+  String get wheat_p2 => 'تصدیق شدہ بیج استعمال کریں جیسے پنجاب-2011، گلیکسی-2013';
+
+  @override
+  String get wheat_p3 => 'بیج کی مثالی شرح: 40-50 کلوگرام فی ایکڑ';
+
+  @override
+  String get wheat_p4 => 'قطاروں کا درمیانی فاصلہ: 22-25 سینٹی میٹر';
+
+  @override
+  String get wheat_p5 => '4-5 سینٹی میٹر کی گہرائی پر بوائی کریں';
+
+  @override
+  String get wheat_i_title => 'آبپاشی';
+
+  @override
+  String get wheat_i1 => 'پہلی آبپاشی: بوائی کے 21-25 دن بعد';
+
+  @override
+  String get wheat_i2 => 'دوسری آبپاشی: 45-50 دن (شگوفے نکلنے کا مرحلہ)';
+
+  @override
+  String get wheat_i3 => 'تیسری آبپاشی: 70-75 دن (گانٹھ بننے کا مرحلہ)';
+
+  @override
+  String get wheat_i4 => 'چوتھی آبپاشی: 90-95 دن (پھول آنے کا مرحلہ)';
+
+  @override
+  String get wheat_i5 => 'پانچویں آبپاشی: 110-115 دن (دانہ بننے کا مرحلہ)';
+
+  @override
+  String get wheat_f_title => 'کھاد کا استعمال';
+
+  @override
+  String get wheat_f1 => 'بنیادی خوراک: 2 بوری ڈی اے پی + 1 بوری ایس او پی فی ایکڑ';
+
+  @override
+  String get wheat_f2 => 'پہلی قسط: شگوفے نکلتے وقت 1 بوری یوریا';
+
+  @override
+  String get wheat_f3 => 'دوسری قسط: گانٹھ بنتے وقت 1 بوری یوریا';
+
+  @override
+  String get wheat_f4 => 'زنک کی کمی کی صورت میں 5 کلو زنک سلفیٹ فی ایکڑ ڈالیں';
+
+  @override
+  String get wheat_f5 => 'پھول آنے پر بوران کا فولیر سپرے کریں';
+
+  @override
+  String get wheat_pc_title => 'کیڑوں کی روک تھام';
+
+  @override
+  String get wheat_pc1 => 'فروری-مارچ میں سست تیلے کی نگرانی کریں';
+
+  @override
+  String get wheat_pc2 => 'ابتدائی حملے پر 5٪ نیم کے تیل کا سپرے کریں';
+
+  @override
+  String get wheat_pc3 => 'لشکری سنڈی کے لیے: کلورپائریفوس 1.5 لیٹر فی ایکڑ';
+
+  @override
+  String get wheat_pc4 => 'کنگی (Rust) کے لیے: پروپیکونازول 200 ملی لیٹر فی ایکڑ';
+
+  @override
+  String get wheat_pc5 => 'بیماری کے چکر کو توڑنے کے لیے خود رو پودوں کو ختم کریں';
+
+  @override
+  String get wheat_y_title => 'پیداوار میں اضافہ';
+
+  @override
+  String get wheat_y1 => 'ہدف شدہ پیداوار: 40-50 من فی ایکڑ';
+
+  @override
+  String get wheat_y2 => 'کٹائی تب کریں جب دانے سخت ہو جائیں (30-35٪ نمی)';
+
+  @override
+  String get wheat_y3 => 'موثر کٹائی کے لیے کمبائن ہارویسٹر استعمال کریں';
+
+  @override
+  String get wheat_y4 => 'ذخیرہ کرنے سے پہلے نمی کو 12٪ تک خشک کریں';
+
+  @override
+  String get wheat_y5 => 'صاف ستھرے اور چوہوں سے محفوظ گوداموں میں رکھیں';
+
+  @override
+  String get sugar_summary => 'گنا ایک نقد آور فصل ہے جسے زیادہ درجہ حرارت (25-32°C) اور نمی درکار ہوتی ہے۔ اس کا دورانیہ 12-18 ماہ ہے۔';
+
+  @override
+  String get sugar_p_title => 'کاشت';
+
+  @override
+  String get sugar_p1 => 'فروری سے مارچ تک کاشت کریں (بہاریہ فصل)';
+
+  @override
+  String get sugar_p2 => 'صحت مند گنے سے 3 آنکھوں والے سمے استعمال کریں';
+
+  @override
+  String get sugar_p3 => 'بیج کی شرح: 30,000 سے 35,000 سمے فی ایکڑ';
+
+  @override
+  String get sugar_p4 => 'قطاروں کا فاصلہ: 90-120 سینٹی میٹر';
+
+  @override
+  String get sugar_p5 => 'کھیلیوں میں 5-7 سینٹی میٹر گہرائی پر لگائیں';
+
+  @override
+  String get sugar_i_title => 'آبپاشی';
+
+  @override
+  String get sugar_i1 => 'پہلی آبپاشی: کاشت کے فوراً بعد کریں';
+
+  @override
+  String get sugar_i2 => 'اہم مرحلہ: زیادہ بڑھوتری کا دورانیہ (Grand growth period)';
+
+  @override
+  String get sugar_i3 => 'آبپاشی کا وقفہ: گرمیوں میں 10-12 دن';
+
+  @override
+  String get sugar_i4 => 'کٹائی سے 30 دن پہلے پانی بند کر دیں';
+
+  @override
+  String get sugar_i5 => 'کل پانی کی ضرورت: 180-200 سینٹی میٹر فی سیزن';
+
+  @override
+  String get sugar_f_title => 'کھاد کا استعمال';
+
+  @override
+  String get sugar_f1 => 'بنیادی خوراک: 2 بوری ڈی اے پی + 1 بوری ایس او پی فی ایکڑ';
+
+  @override
+  String get sugar_f2 => 'اوپری خوراک: 3 بوری یوریا (3 اقساط میں)';
+
+  @override
+  String get sugar_f3 => 'پہلی قسط: کاشت کے 30 دن بعد';
+
+  @override
+  String get sugar_f4 => 'دوسری قسط: کاشت کے 60 دن بعد';
+
+  @override
+  String get sugar_f5 => 'تیسری قسط: کاشت کے 90 دن بعد';
+
+  @override
+  String get sugar_pc_title => 'کیڑوں کی روک تھام';
+
+  @override
+  String get sugar_pc1 => 'سنڈیوں (Borers) کے لیے: فیوراڈان 10 کلو فی ایکڑ (کاشت کے وقت)';
+
+  @override
+  String get sugar_pc2 => 'دیمک کے لیے: کلورپائریفوس 2 لیٹر فی ایکڑ';
+
+  @override
+  String get sugar_pc3 => 'رتو مرض (Red rot) کے لیے: قوت مدافعت والی اقسام استعمال کریں';
+
+  @override
+  String get sugar_pc4 => 'بیمار پودوں کو نکال کر تلف کریں';
+
+  @override
+  String get sugar_pc5 => 'پھلی دار فصلوں کے ساتھ ہیر پھیر (Crop rotation) کریں';
+
+  @override
+  String get sugar_y_title => 'پیداوار میں اضافہ';
+
+  @override
+  String get sugar_y1 => 'ہدف شدہ پیداوار: 700-800 من فی ایکڑ';
+
+  @override
+  String get sugar_y2 => 'کٹائی تب کریں جب گنا پک جائے (12-18 ماہ)';
+
+  @override
+  String get sugar_y3 => 'زمین کے بالکل قریب سے کٹائی کریں';
+
+  @override
+  String get sugar_y4 => 'کٹائی کے 24 گھنٹوں کے اندر مل تک پہنچائیں';
+
+  @override
+  String get sugar_y5 => 'منڈھری (Ratoon) کا انتظام 2-3 چکروں تک کریں';
+
+  @override
+  String get cotton_summary => 'کپاس خشک اور گرم آب و ہوا میں بہتر ہوتی ہے اور اسے کافی دھوپ کی ضرورت ہوتی ہے۔ کیڑوں کا مناسب تدارک کلیدی حیثیت رکھتا ہے۔';
+
+  @override
+  String get cotton_p_title => 'کاشت';
+
+  @override
+  String get cotton_p1 => 'اپریل سے مئی تک بوائی کریں';
+
+  @override
+  String get cotton_p2 => 'بیج کی شرح: بی ٹی کپاس کے لیے 4-5 کلو فی ایکڑ';
+
+  @override
+  String get cotton_p3 => 'قطاروں کا فاصلہ: 75-90 سینٹی میٹر';
+
+  @override
+  String get cotton_p4 => 'پودوں کا درمیانی فاصلہ: 30-45 سینٹی میٹر';
+
+  @override
+  String get cotton_p5 => 'بوائی سے پہلے بیج کو پھپھوندی کش زہر لگائیں';
+
+  @override
+  String get cotton_i_title => 'آبپاشی';
+
+  @override
+  String get cotton_i1 => 'پہلی آبپاشی: بوائی کے 30-35 دن بعد';
+
+  @override
+  String get cotton_i2 => 'اہم مرحلہ: پھول آنے اور ٹینڈے بننے کا وقت';
+
+  @override
+  String get cotton_i3 => 'آبپاشی کا وقفہ: 12-15 دن';
+
+  @override
+  String get cotton_i4 => 'بوائی کے 90-100 دن بعد آبپاشی بند کر دیں';
+
+  @override
+  String get cotton_i5 => 'کھیت میں پانی کھڑا ہونے سے بچائیں';
+
+  @override
+  String get cotton_f_title => 'کھاد کا استعمال';
+
+  @override
+  String get cotton_f1 => 'بنیادی خوراک: 2 بوری ڈی اے پی + 1 بوری ایس او پی فی ایکڑ';
+
+  @override
+  String get cotton_f2 => 'اوپری خوراک: 2 بوری یوریا (دو اقساط میں)';
+
+  @override
+  String get cotton_f3 => 'پہلی قسط: بوائی کے 30 دن بعد';
+
+  @override
+  String get cotton_f4 => 'دوسری قسط: بوائی کے 60 دن بعد';
+
+  @override
+  String get cotton_f5 => 'پھول آنے کے دوران 1 کلو فی ایکڑ بوران ڈالیں';
+
+  @override
+  String get cotton_pc_title => 'کیڑوں کی روک تھام';
+
+  @override
+  String get cotton_pc1 => 'ٹینڈے کی سنڈیوں کے لیے: ایما میکٹن بینزویٹ 150 ملی لیٹر فی ایکڑ';
+
+  @override
+  String get cotton_pc2 => 'سفید مکھی کے لیے: ایسیٹامیپرڈ 80 گرام فی ایکڑ';
+
+  @override
+  String get cotton_pc3 => 'ملی بگ کے لیے: کلورپائریفوس 1.5 لیٹر فی ایکڑ';
+
+  @override
+  String get cotton_pc4 => 'فیرومون ٹریپس (Pheromone traps) کے ذریعے نگرانی کریں';
+
+  @override
+  String get cotton_pc5 => 'فصلوں کے ہیر پھیر کی مشق کریں';
+
+  @override
+  String get cotton_y_title => 'پیداوار میں اضافہ';
+
+  @override
+  String get cotton_y1 => 'ہدف شدہ پیداوار: 25-30 من فی ایکڑ';
+
+  @override
+  String get cotton_y2 => 'چنائی 3-4 بار کریں';
+
+  @override
+  String get cotton_y3 => 'چنائی تب کریں جب ٹینڈے مکمل کھل جائیں';
+
+  @override
+  String get cotton_y4 => 'ریشے کی کوالٹی برقرار رکھنے کے لیے سائے میں خشک کریں';
+
+  @override
+  String get cotton_y5 => 'خشک جگہ پر ذخیرہ کریں';
+
+  @override
+  String get maize_summary => 'مکئی ایک ہمہ گیر فصل ہے اور اسے معتدل درجہ حرارت درکار ہوتا ہے۔ یہ اکثر خریف کی فصل کے طور پر اگائی جاتی ہے۔';
+
+  @override
+  String get maize_p_title => 'کاشت';
+
+  @override
+  String get maize_p1 => 'خریف کے لیے جون سے جولائی تک بوائی کریں';
+
+  @override
+  String get maize_p2 => 'بیج کی شرح: 8-10 کلوگرام فی ایکڑ';
+
+  @override
+  String get maize_p3 => 'قطاروں کا درمیانی فاصلہ: 60-75 سینٹی میٹر';
+
+  @override
+  String get maize_p4 => 'پودوں کا درمیانی فاصلہ: 20-25 سینٹی میٹر';
+
+  @override
+  String get maize_p5 => '5-7 سینٹی میٹر گہرائی پر بوائی کریں';
+
+  @override
+  String get maize_i_title => 'آبپاشی';
+
+  @override
+  String get maize_i1 => 'اہم مراحل: گھٹنے تک اونچائی اور بور (Tasseling) آنا';
+
+  @override
+  String get maize_i2 => 'گرمیوں میں ہر 10-12 دن بعد آبپاشی کریں';
+
+  @override
+  String get maize_i3 => 'پولی نیشن کے دوران پانی کی کمی نہ ہونے دیں';
+
+  @override
+  String get maize_i4 => 'آخری آبپاشی کٹائی سے 15 دن پہلے کریں';
+
+  @override
+  String get maize_i5 => 'کل پانی: 50-60 سینٹی میٹر';
+
+  @override
+  String get maize_f_title => 'کھاد کا استعمال';
+
+  @override
+  String get maize_f1 => 'بنیادی خوراک: 2 بوری ڈی اے پی + 1 بوری ایس او پی فی ایکڑ';
+
+  @override
+  String get maize_f2 => 'اوپری خوراک: 2 بوری یوریا (دو اقساط میں)';
+
+  @override
+  String get maize_f3 => 'پہلی قسط: بوائی کے 25-30 دن بعد';
+
+  @override
+  String get maize_f4 => 'دوسری قسط: بوائی کے 45-50 دن بعد';
+
+  @override
+  String get maize_f5 => 'زنک کی کمی کی صورت میں 10 کلو گرام فی ایکڑ ڈالیں';
+
+  @override
+  String get maize_pc_title => 'کیڑوں کی روک تھام';
+
+  @override
+  String get maize_pc1 => 'تنے کی سنڈی کے لیے: کاربوفیوران 10 کلوگرام فی ایکڑ';
+
+  @override
+  String get maize_pc2 => 'فال آرمی ورم کے لیے: سپائنیٹورم 100 ملی لیٹر فی ایکڑ';
+
+  @override
+  String get maize_pc3 => 'ڈاؤنی ملڈیو کے لیے: میٹالیکسل 2 گرام فی کلو بیج';
+
+  @override
+  String get maize_pc4 => 'کیڑوں کے کنٹرول کے لیے پرندوں کے بیٹھنے کی جگہیں بنائیں';
+
+  @override
+  String get maize_pc5 => 'متاثرہ پودوں کو نکال دیں';
+
+  @override
+  String get maize_y_title => 'پیداوار میں اضافہ';
+
+  @override
+  String get maize_y1 => 'ہدف شدہ پیداوار: 40-50 من فی ایکڑ';
+
+  @override
+  String get maize_y2 => 'کٹائی تب کریں جب دانے سخت ہو جائیں';
+
+  @override
+  String get maize_y3 => 'کٹائی کے وقت نمی 20-25٪ ہونی چاہیے';
+
+  @override
+  String get maize_y4 => 'ذخیرہ کرنے کے لیے 14٪ نمی تک خشک کریں';
+
+  @override
+  String get maize_y5 => 'ہوا دار گوداموں میں ذخیرہ کریں';
+
+  @override
+  String get mango_summary => 'آم ایک ٹراپیکل پھل دار درخت ہے۔ اسے کانٹ چھانٹ اور پھول آنے کے دوران کورے سے تحفظ کی ضرورت ہوتی ہے۔';
+
+  @override
+  String get mango_p_title => 'کاشت';
+
+  @override
+  String get mango_p1 => 'جولائی-اگست یا فروری-مارچ میں لگائیں';
+
+  @override
+  String get mango_p2 => 'فاصلہ: 10 x 10 میٹر';
+
+  @override
+  String get mango_p3 => '1 x 1 x 1 میٹر کے گڑھے کھودیں';
+
+  @override
+  String get mango_p4 => 'مٹی میں 30-40 کلو گوبر کی کھاد (FYM) فی گڑھا ملائیں';
+
+  @override
+  String get mango_p5 => 'پسندیدہ اقسام (سندھڑی، انور رٹول) کی پیوند لگائیں';
+
+  @override
+  String get mango_i_title => 'آبپاشی';
+
+  @override
+  String get mango_i1 => 'چھوٹے پودے: ہر 3-4 دن بعد پانی دیں';
+
+  @override
+  String get mango_i2 => 'بڑے درخت: ہر 10-15 دن بعد پانی دیں';
+
+  @override
+  String get mango_i3 => 'اہم مرحلہ: پھل بننا اور بڑھوتری';
+
+  @override
+  String get mango_i4 => 'کٹائی سے 15 دن پہلے پانی بند کر دیں';
+
+  @override
+  String get mango_i5 => 'تھالا (Basin) یا ڈرپ آبپاشی استعمال کریں';
+
+  @override
+  String get mango_f_title => 'کھاد کا استعمال';
+
+  @override
+  String get mango_f1 => 'چھوٹے درخت: 10-20 کلو گوبر + 250 گرام این پی کے سالانہ';
+
+  @override
+  String get mango_f2 => 'بڑے درخت: 50-100 کلو گوبر + 1-2 کلو این پی کے سالانہ';
+
+  @override
+  String get mango_f3 => 'کٹائی کے بعد (جون-جولائی) کھاد ڈالیں';
+
+  @override
+  String get mango_f4 => 'پھول آنے سے پہلے (دسمبر-جنوری) کھاد ڈالیں';
+
+  @override
+  String get mango_f5 => 'پھول آنے پر مائیکرو نیوٹرینٹس کا فولیر سپرے کریں';
+
+  @override
+  String get mango_pc_title => 'کیڑوں کی روک تھام';
+
+  @override
+  String get mango_pc1 => 'پھل کی مکھی: زہریلا طعمہ (میلتھیان + گڑ)';
+
+  @override
+  String get mango_pc2 => 'آم کا تیلا: امیڈا کلوپرڈ 50 ملی لیٹر فی ایکڑ';
+
+  @override
+  String get mango_pc3 => 'اینتھراکنوز (Anthracnose): کاپر آکسی کلورائیڈ 500 گرام فی ایکڑ';
+
+  @override
+  String get mango_pc4 => 'تحفظ کے لیے پھلوں کی بیگنگ کریں';
+
+  @override
+  String get mango_pc5 => 'باغ کی صفائی ستھرائی برقرار رکھیں';
+
+  @override
+  String get mango_y_title => 'پیداوار میں اضافہ';
+
+  @override
+  String get mango_y1 => 'ہدف شدہ پیداوار: 100-200 کلو فی درخت (بڑے درخت)';
+
+  @override
+  String get mango_y2 => 'کٹائی تب کریں جب پھل کے شانے (Shoulder) نکل آئیں';
+
+  @override
+  String get mango_y3 => 'صبح کے اوقات میں کٹائی کریں';
+
+  @override
+  String get mango_y4 => 'نقصان سے بچنے کے لیے پھلوں کو احتیاط سے سنبھالیں';
+
+  @override
+  String get mango_y5 => 'ہوا دار ڈبوں میں پیک کریں';
+
+  @override
+  String get potato_summary => 'آلو ٹھنڈے موسم کی فصل ہے جو سردیوں میں اگائی جاتی ہے۔ زمین کی صحیح تیاری اور بیج کا علاج بہت ضروری ہے۔';
+
+  @override
+  String get potato_p_title => 'کاشت';
+
+  @override
+  String get potato_p1 => 'اکتوبر سے نومبر تک کاشت کریں';
+
+  @override
+  String get potato_p2 => 'بیماری سے پاک تصدیق شدہ ٹیوبر استعمال کریں';
+
+  @override
+  String get potato_p3 => 'بیج کی شرح: 800-1000 کلوگرام فی ایکڑ';
+
+  @override
+  String get potato_p4 => 'قطاروں کا فاصلہ: 60 سینٹی میٹر';
+
+  @override
+  String get potato_p5 => 'پودوں کا فاصلہ: 20-25 سینٹی میٹر';
+
+  @override
+  String get potato_p6 => '5-7 سینٹی میٹر کی گہرائی پر لگائیں';
+
+  @override
+  String get potato_i_title => 'آبپاشی';
+
+  @override
+  String get potato_i1 => 'پہلی آبپاشی: کاشت کے فوراً بعد';
+
+  @override
+  String get potato_i2 => 'اہم مرحلہ: ٹیوبر بننے اور بڑھنے کا وقت';
+
+  @override
+  String get potato_i3 => 'ہر 7-10 دن بعد آبپاشی کریں';
+
+  @override
+  String get potato_i4 => 'کٹائی سے 15-20 دن پہلے پانی بند کر دیں';
+
+  @override
+  String get potato_i5 => 'کھیت میں پانی کھڑا ہونے سے بچائیں';
+
+  @override
+  String get potato_f_title => 'کھاد کا استعمال';
+
+  @override
+  String get potato_f1 => 'بنیادی خوراک: 3 بوری ڈی اے پی + 2 بوری ایس او پی فی ایکڑ';
+
+  @override
+  String get potato_f2 => 'اوپری خوراک: 2 بوری یوریا (دو اقساط میں)';
+
+  @override
+  String get potato_f3 => 'پہلی قسط: کاشت کے 25-30 دن بعد';
+
+  @override
+  String get potato_f4 => 'دوسری قسط: کاشت کے 45-50 دن بعد';
+
+  @override
+  String get potato_f5 => 'ضرورت پڑنے پر 1 کلو فی ایکڑ بوران ڈالیں';
+
+  @override
+  String get potato_pc_title => 'کیڑوں کی روک تھام';
+
+  @override
+  String get potato_pc1 => 'کٹ ورم کے لیے: کلورپائریفوس 2 لیٹر فی ایکڑ (مٹی میں)';
+
+  @override
+  String get potato_pc2 => 'سست تیلے کے لیے: امیڈا کلوپرڈ 50 ملی لیٹر فی ایکڑ';
+
+  @override
+  String get potato_pc3 => 'جھلساؤ (Late blight) کے لیے: مینکوزیب 500 گرام فی ایکڑ';
+
+  @override
+  String get potato_pc4 => 'قوت مدافعت والی اقسام استعمال کریں';
+
+  @override
+  String get potato_pc5 => 'اناج والی فصلوں کے ساتھ ہیر پھیر کریں';
+
+  @override
+  String get potato_y_title => 'پیداوار میں اضافہ';
+
+  @override
+  String get potato_y1 => 'ہدف شدہ پیداوار: 200-250 من فی ایکڑ';
+
+  @override
+  String get potato_y2 => 'کٹائی تب کریں جب بیلیں خشک ہو جائیں';
+
+  @override
+  String get potato_y3 => 'ٹھنڈے موسم میں کٹائی کریں';
+
+  @override
+  String get potato_y4 => 'ذخیرہ کرنے سے پہلے 10-15 دن کیورنگ (Cure) کریں';
+
+  @override
+  String get potato_y5 => '4-5°C پر زیادہ نمی کے ساتھ اسٹور کریں';
+
+  @override
+  String get chilli_summary => 'مرچ گرم موسم کی فصل ہے جو کورے سے حساس ہے۔ اسے بہتر نکاس والی زمین اور پانی کے محتاط انتظام کی ضرورت ہے۔';
+
+  @override
+  String get chilli_p_title => 'کاشت';
+
+  @override
+  String get chilli_p1 => '30-35 دن پرانی پنیری منتقل کریں';
+
+  @override
+  String get chilli_p2 => 'فاصلہ: 45 x 30 سینٹی میٹر';
+
+  @override
+  String get chilli_p3 => 'ایک جگہ پر 2 پودے لگائیں';
+
+  @override
+  String get chilli_p4 => 'بہترین وقت: بہاریہ فصل کے لیے فروری-مارچ';
+
+  @override
+  String get chilli_p5 => 'بہتر نکاس کے لیے اونچی بیڈز (Raised beds) بنائیں';
+
+  @override
+  String get chilli_i_title => 'آبپاشی';
+
+  @override
+  String get chilli_i1 => 'منتقلی کے بعد ہلکی آبپاشی کریں';
+
+  @override
+  String get chilli_i2 => 'گرمیوں میں ہر 5-7 دن بعد پانی دیں';
+
+  @override
+  String get chilli_i3 => 'اہم مرحلہ: پھول اور پھل بننے کا وقت';
+
+  @override
+  String get chilli_i4 => 'بیماری سے بچنے کے لیے اوپر سے پانی ڈالنے سے گریز کریں';
+
+  @override
+  String get chilli_i5 => 'ڈرپ آبپاشی کی سفارش کی جاتی ہے';
+
+  @override
+  String get chilli_f_title => 'کھاد کا استعمال';
+
+  @override
+  String get chilli_f1 => 'بنیادی خوراک: 2 بوری ڈی اے پی + 1 بوری ایس او پی فی ایکڑ';
+
+  @override
+  String get chilli_f2 => 'اوپری خوراک: 1.5 بوری یوریا (تین اقساط میں)';
+
+  @override
+  String get chilli_f3 => 'پہلی قسط: منتقلی کے 30 دن بعد';
+
+  @override
+  String get chilli_f4 => 'دوسری قسط: منتقلی کے 60 دن بعد';
+
+  @override
+  String get chilli_f5 => 'تیسری قسط: پھل بننے کے دوران';
+
+  @override
+  String get chilli_pc_title => 'کیڑوں کی روک تھام';
+
+  @override
+  String get chilli_pc1 => 'تھرپس کے لیے: سپینوسڈ 100 ملی لیٹر فی ایکڑ';
+
+  @override
+  String get chilli_pc2 => 'جوؤں (Mites) کے لیے: ابامیکٹن 100 ملی لیٹر فی ایکڑ';
+
+  @override
+  String get chilli_pc3 => 'پھل سڑنے کی بیماری: کاربینڈازم 250 گرام فی ایکڑ';
+
+  @override
+  String get chilli_pc4 => 'پیلی چپکنے والی ٹریپس (Yellow sticky traps) استعمال کریں';
+
+  @override
+  String get chilli_pc5 => 'متاثرہ پودوں کو فوری طور پر نکال دیں';
+
+  @override
+  String get chilli_y_title => 'پیداوار میں اضافہ';
+
+  @override
+  String get chilli_y1 => 'ہدف شدہ پیداوار: 40-50 من فی ایکڑ (خشک)';
+
+  @override
+  String get chilli_y2 => 'کٹائی تب کریں جب پھل سرخ ہو جائیں';
+
+  @override
+  String get chilli_y3 => 'زیادہ پھل لینے کے لیے باقاعدگی سے تڑائی کریں';
+
+  @override
+  String get chilli_y4 => 'رنگ اور تیزی برقرار رکھنے کے لیے سائے میں خشک کریں';
+
+  @override
+  String get chilli_y5 => 'ہوا بند برتنوں میں ذخیرہ کریں';
+
+  @override
+  String get rice_summary => 'چاول کو بڑھوتری کے زیادہ تر حصے میں کھڑے پانی کی ضرورت ہوتی ہے۔ خریف کاشت کا بہترین وقت ہے۔';
+
+  @override
+  String get rice_p_title => 'کاشت';
+
+  @override
+  String get rice_p1 => '20-25 دن پرانی پنیری منتقل کریں';
+
+  @override
+  String get rice_p2 => 'مثالی فاصلہ: 20 x 15 سینٹی میٹر';
+
+  @override
+  String get rice_p3 => 'ایک جگہ پر 2-3 پودے لگائیں';
+
+  @override
+  String get rice_p4 => 'کدو (Puddled) کی ہوئی زمین میں منتقل کریں';
+
+  @override
+  String get rice_p5 => 'بہترین وقت: خریف کے لیے جون-جولائی';
+
+  @override
+  String get rice_i_title => 'آبپاشی';
+
+  @override
+  String get rice_i1 => '2-5 سینٹی میٹر کھڑا پانی برقرار رکھیں';
+
+  @override
+  String get rice_i2 => 'کٹائی سے 15 دن پہلے پانی نکال دیں';
+
+  @override
+  String get rice_i3 => 'اہم مراحل: شگوفے نکلنا اور پھول آنا';
+
+  @override
+  String get rice_i4 => 'سٹہ بننے کے وقت پانی کی کمی نہ ہونے دیں';
+
+  @override
+  String get rice_i5 => 'کل پانی کی ضرورت: 100-150 سینٹی میٹر';
+
+  @override
+  String get rice_f_title => 'کھاد کا استعمال';
+
+  @override
+  String get rice_f1 => 'بنیادی خوراک: 1.5 بوری ڈی اے پی فی ایکڑ';
+
+  @override
+  String get rice_f2 => 'پہلی قسط: شگوفے نکلتے وقت 1 بوری یوریا';
+
+  @override
+  String get rice_f3 => 'دوسری قسط: سٹہ بنتے وقت آدھی بوری یوریا';
+
+  @override
+  String get rice_f4 => 'ضرورت پڑنے پر زنک سلفیٹ 10 کلو فی ایکڑ ڈالیں';
+
+  @override
+  String get rice_f5 => 'سلیکون کے استعمال سے تنا مضبوط ہوتا ہے';
+
+  @override
+  String get rice_pc_title => 'کیڑوں کی روک تھام';
+
+  @override
+  String get rice_pc1 => 'تنے کی سنڈی: کارٹاپ ہائیڈرو کلورائڈ 500 گرام فی ایکڑ';
+
+  @override
+  String get rice_pc2 => 'پتا لپیٹ سنڈی: فپرونل 200 ملی لیٹر فی ایکڑ';
+
+  @override
+  String get rice_pc3 => 'بلاسٹ کی بیماری: ٹرائی سائیکلازول 300 گرام فی ایکڑ';
+
+  @override
+  String get rice_pc4 => 'پروانوں کی نگرانی کے لیے لائٹ ٹریپ لگائیں';
+
+  @override
+  String get rice_pc5 => 'کھیتوں کی صفائی کا خاص خیال رکھیں';
+
+  @override
+  String get rice_y_title => 'پیداوار میں اضافہ';
+
+  @override
+  String get rice_y1 => 'ہدف شدہ پیداوار: 30-40 من فی ایکڑ';
 }

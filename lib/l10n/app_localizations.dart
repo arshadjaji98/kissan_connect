@@ -335,6 +335,24 @@ abstract class AppLocalizations {
   /// **'Vegetables'**
   String get vegetables;
 
+  /// No description provided for @mango.
+  ///
+  /// In en, this message translates to:
+  /// **'Mango'**
+  String get mango;
+
+  /// No description provided for @potato.
+  ///
+  /// In en, this message translates to:
+  /// **'Potato'**
+  String get potato;
+
+  /// No description provided for @chilli.
+  ///
+  /// In en, this message translates to:
+  /// **'Chilli'**
+  String get chilli;
+
   /// No description provided for @welcome_back.
   ///
   /// In en, this message translates to:
@@ -3124,6 +3142,1476 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'mm/day'**
   String get mm_day;
+
+  /// No description provided for @wheat_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Wheat is a staple Rabi crop requiring cool weather (15-25°C) during growth and moderate rainfall. Ideal sowing season is October-December.'**
+  String get wheat_summary;
+
+  /// No description provided for @wheat_p_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting'**
+  String get wheat_p_title;
+
+  /// No description provided for @wheat_p1.
+  ///
+  /// In en, this message translates to:
+  /// **'Sow from October to December for Rabi season'**
+  String get wheat_p1;
+
+  /// No description provided for @wheat_p2.
+  ///
+  /// In en, this message translates to:
+  /// **'Use certified seeds like Punjab-2011, Galaxy-2013'**
+  String get wheat_p2;
+
+  /// No description provided for @wheat_p3.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimal seed rate: 40-50 kg/acre'**
+  String get wheat_p3;
+
+  /// No description provided for @wheat_p4.
+  ///
+  /// In en, this message translates to:
+  /// **'Row spacing: 22-25 cm'**
+  String get wheat_p4;
+
+  /// No description provided for @wheat_p5.
+  ///
+  /// In en, this message translates to:
+  /// **'Sow at depth of 4-5 cm'**
+  String get wheat_p5;
+
+  /// No description provided for @wheat_i_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation'**
+  String get wheat_i_title;
+
+  /// No description provided for @wheat_i1.
+  ///
+  /// In en, this message translates to:
+  /// **'First irrigation: 21-25 days after sowing'**
+  String get wheat_i1;
+
+  /// No description provided for @wheat_i2.
+  ///
+  /// In en, this message translates to:
+  /// **'Second irrigation: 45-50 days (Tillering stage)'**
+  String get wheat_i2;
+
+  /// No description provided for @wheat_i3.
+  ///
+  /// In en, this message translates to:
+  /// **'Third irrigation: 70-75 days (Jointing stage)'**
+  String get wheat_i3;
+
+  /// No description provided for @wheat_i4.
+  ///
+  /// In en, this message translates to:
+  /// **'Fourth irrigation: 90-95 days (Flowering)'**
+  String get wheat_i4;
+
+  /// No description provided for @wheat_i5.
+  ///
+  /// In en, this message translates to:
+  /// **'Fifth irrigation: 110-115 days (Grain filling)'**
+  String get wheat_i5;
+
+  /// No description provided for @wheat_f_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilization'**
+  String get wheat_f_title;
+
+  /// No description provided for @wheat_f1.
+  ///
+  /// In en, this message translates to:
+  /// **'Basal dose: 2 bags DAP + 1 bag SOP/acre'**
+  String get wheat_f1;
+
+  /// No description provided for @wheat_f2.
+  ///
+  /// In en, this message translates to:
+  /// **'First split: 1 bag Urea at tillering'**
+  String get wheat_f2;
+
+  /// No description provided for @wheat_f3.
+  ///
+  /// In en, this message translates to:
+  /// **'Second split: 1 bag Urea at jointing'**
+  String get wheat_f3;
+
+  /// No description provided for @wheat_f4.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply Zinc sulfate @ 5 kg/acre if deficient'**
+  String get wheat_f4;
+
+  /// No description provided for @wheat_f5.
+  ///
+  /// In en, this message translates to:
+  /// **'Foliar spray of boron at flowering'**
+  String get wheat_f5;
+
+  /// No description provided for @wheat_pc_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Pest Control'**
+  String get wheat_pc_title;
+
+  /// No description provided for @wheat_pc1.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor for aphids during Feb-March'**
+  String get wheat_pc1;
+
+  /// No description provided for @wheat_pc2.
+  ///
+  /// In en, this message translates to:
+  /// **'Use neem oil spray @ 5% for early infestation'**
+  String get wheat_pc2;
+
+  /// No description provided for @wheat_pc3.
+  ///
+  /// In en, this message translates to:
+  /// **'For army worm: Chlorpyrifos @ 1.5 L/acre'**
+  String get wheat_pc3;
+
+  /// No description provided for @wheat_pc4.
+  ///
+  /// In en, this message translates to:
+  /// **'Rust control: Propiconazole @ 200 ml/acre'**
+  String get wheat_pc4;
+
+  /// No description provided for @wheat_pc5.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove volunteer plants to break disease cycle'**
+  String get wheat_pc5;
+
+  /// No description provided for @wheat_y_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Yield Optimization'**
+  String get wheat_y_title;
+
+  /// No description provided for @wheat_y1.
+  ///
+  /// In en, this message translates to:
+  /// **'Target yield: 40-50 maunds/acre'**
+  String get wheat_y1;
+
+  /// No description provided for @wheat_y2.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest when grains harden (30-35% moisture)'**
+  String get wheat_y2;
+
+  /// No description provided for @wheat_y3.
+  ///
+  /// In en, this message translates to:
+  /// **'Use combine harvester for efficient harvesting'**
+  String get wheat_y3;
+
+  /// No description provided for @wheat_y4.
+  ///
+  /// In en, this message translates to:
+  /// **'Dry to 12% moisture before storage'**
+  String get wheat_y4;
+
+  /// No description provided for @wheat_y5.
+  ///
+  /// In en, this message translates to:
+  /// **'Store in clean, rodent-proof godowns'**
+  String get wheat_y5;
+
+  /// No description provided for @sugar_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Sugarcane is a tropical perennial cash crop needing high heat (25-32°C) and moisture. It has a 12-18 month growing season.'**
+  String get sugar_summary;
+
+  /// No description provided for @sugar_p_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting'**
+  String get sugar_p_title;
+
+  /// No description provided for @sugar_p1.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant from February to March (Spring crop)'**
+  String get sugar_p1;
+
+  /// No description provided for @sugar_p2.
+  ///
+  /// In en, this message translates to:
+  /// **'Use 3-bud setts from healthy canes'**
+  String get sugar_p2;
+
+  /// No description provided for @sugar_p3.
+  ///
+  /// In en, this message translates to:
+  /// **'Seed rate: 30-35,000 setts/acre'**
+  String get sugar_p3;
+
+  /// No description provided for @sugar_p4.
+  ///
+  /// In en, this message translates to:
+  /// **'Row spacing: 90-120 cm'**
+  String get sugar_p4;
+
+  /// No description provided for @sugar_p5.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting depth: 5-7 cm in furrows'**
+  String get sugar_p5;
+
+  /// No description provided for @sugar_i_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation'**
+  String get sugar_i_title;
+
+  /// No description provided for @sugar_i1.
+  ///
+  /// In en, this message translates to:
+  /// **'Initial: Irrigate immediately after planting'**
+  String get sugar_i1;
+
+  /// No description provided for @sugar_i2.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical stage: Grand growth period'**
+  String get sugar_i2;
+
+  /// No description provided for @sugar_i3.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation interval: 10-12 days in summer'**
+  String get sugar_i3;
+
+  /// No description provided for @sugar_i4.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop irrigation 30 days before harvest'**
+  String get sugar_i4;
+
+  /// No description provided for @sugar_i5.
+  ///
+  /// In en, this message translates to:
+  /// **'Total water requirement: 180-200 cm/season'**
+  String get sugar_i5;
+
+  /// No description provided for @sugar_f_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilization'**
+  String get sugar_f_title;
+
+  /// No description provided for @sugar_f1.
+  ///
+  /// In en, this message translates to:
+  /// **'Basal: 2 bags DAP + 1 bag SOP/acre'**
+  String get sugar_f1;
+
+  /// No description provided for @sugar_f2.
+  ///
+  /// In en, this message translates to:
+  /// **'Top dressing: 3 bags Urea in 3 splits'**
+  String get sugar_f2;
+
+  /// No description provided for @sugar_f3.
+  ///
+  /// In en, this message translates to:
+  /// **'First split: 30 days after planting'**
+  String get sugar_f3;
+
+  /// No description provided for @sugar_f4.
+  ///
+  /// In en, this message translates to:
+  /// **'Second split: 60 days after planting'**
+  String get sugar_f4;
+
+  /// No description provided for @sugar_f5.
+  ///
+  /// In en, this message translates to:
+  /// **'Third split: 90 days after planting'**
+  String get sugar_f5;
+
+  /// No description provided for @sugar_pc_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Pest Control'**
+  String get sugar_pc_title;
+
+  /// No description provided for @sugar_pc1.
+  ///
+  /// In en, this message translates to:
+  /// **'For borers: Furadan @ 10 kg/acre at planting'**
+  String get sugar_pc1;
+
+  /// No description provided for @sugar_pc2.
+  ///
+  /// In en, this message translates to:
+  /// **'For termites: Chlorpyrifos @ 2 L/acre'**
+  String get sugar_pc2;
+
+  /// No description provided for @sugar_pc3.
+  ///
+  /// In en, this message translates to:
+  /// **'For red rot: Use resistant varieties'**
+  String get sugar_pc3;
+
+  /// No description provided for @sugar_pc4.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove and destroy infected plants'**
+  String get sugar_pc4;
+
+  /// No description provided for @sugar_pc5.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice crop rotation with legumes'**
+  String get sugar_pc5;
+
+  /// No description provided for @sugar_y_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Yield Optimization'**
+  String get sugar_y_title;
+
+  /// No description provided for @sugar_y1.
+  ///
+  /// In en, this message translates to:
+  /// **'Target yield: 700-800 maunds/acre'**
+  String get sugar_y1;
+
+  /// No description provided for @sugar_y2.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest when canes mature (12-18 months)'**
+  String get sugar_y2;
+
+  /// No description provided for @sugar_y3.
+  ///
+  /// In en, this message translates to:
+  /// **'Cut close to ground level'**
+  String get sugar_y3;
+
+  /// No description provided for @sugar_y4.
+  ///
+  /// In en, this message translates to:
+  /// **'Mill within 24 hours of harvest'**
+  String get sugar_y4;
+
+  /// No description provided for @sugar_y5.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratoon management for 2-3 cycles'**
+  String get sugar_y5;
+
+  /// No description provided for @cotton_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Cotton thrives in dry, warm climates and needs plenty of sunshine. Proper pest management is key.'**
+  String get cotton_summary;
+
+  /// No description provided for @cotton_p_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting'**
+  String get cotton_p_title;
+
+  /// No description provided for @cotton_p1.
+  ///
+  /// In en, this message translates to:
+  /// **'Sow from April to May'**
+  String get cotton_p1;
+
+  /// No description provided for @cotton_p2.
+  ///
+  /// In en, this message translates to:
+  /// **'Seed rate: 4-5 kg/acre for Bt cotton'**
+  String get cotton_p2;
+
+  /// No description provided for @cotton_p3.
+  ///
+  /// In en, this message translates to:
+  /// **'Row spacing: 75-90 cm'**
+  String get cotton_p3;
+
+  /// No description provided for @cotton_p4.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant-to-plant distance: 30-45 cm'**
+  String get cotton_p4;
+
+  /// No description provided for @cotton_p5.
+  ///
+  /// In en, this message translates to:
+  /// **'Treat seeds with fungicide before sowing'**
+  String get cotton_p5;
+
+  /// No description provided for @cotton_i_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation'**
+  String get cotton_i_title;
+
+  /// No description provided for @cotton_i1.
+  ///
+  /// In en, this message translates to:
+  /// **'First irrigation: 30-35 days after sowing'**
+  String get cotton_i1;
+
+  /// No description provided for @cotton_i2.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical stage: Flowering and boll formation'**
+  String get cotton_i2;
+
+  /// No description provided for @cotton_i3.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation interval: 12-15 days'**
+  String get cotton_i3;
+
+  /// No description provided for @cotton_i4.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop irrigation 90-100 days after sowing'**
+  String get cotton_i4;
+
+  /// No description provided for @cotton_i5.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid waterlogging'**
+  String get cotton_i5;
+
+  /// No description provided for @cotton_f_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilization'**
+  String get cotton_f_title;
+
+  /// No description provided for @cotton_f1.
+  ///
+  /// In en, this message translates to:
+  /// **'Basal: 2 bags DAP + 1 bag SOP/acre'**
+  String get cotton_f1;
+
+  /// No description provided for @cotton_f2.
+  ///
+  /// In en, this message translates to:
+  /// **'Top dressing: 2 bags Urea in 2 splits'**
+  String get cotton_f2;
+
+  /// No description provided for @cotton_f3.
+  ///
+  /// In en, this message translates to:
+  /// **'First split: 30 days after sowing'**
+  String get cotton_f3;
+
+  /// No description provided for @cotton_f4.
+  ///
+  /// In en, this message translates to:
+  /// **'Second split: 60 days after sowing'**
+  String get cotton_f4;
+
+  /// No description provided for @cotton_f5.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply boron @ 1 kg/acre during flowering'**
+  String get cotton_f5;
+
+  /// No description provided for @cotton_pc_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Pest Control'**
+  String get cotton_pc_title;
+
+  /// No description provided for @cotton_pc1.
+  ///
+  /// In en, this message translates to:
+  /// **'For bollworms: Emamectin benzoate @ 150 ml/acre'**
+  String get cotton_pc1;
+
+  /// No description provided for @cotton_pc2.
+  ///
+  /// In en, this message translates to:
+  /// **'For whitefly: Acetamiprid @ 80g/acre'**
+  String get cotton_pc2;
+
+  /// No description provided for @cotton_pc3.
+  ///
+  /// In en, this message translates to:
+  /// **'For mealybug: Chlorpyrifos @ 1.5 L/acre'**
+  String get cotton_pc3;
+
+  /// No description provided for @cotton_pc4.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor with pheromone traps'**
+  String get cotton_pc4;
+
+  /// No description provided for @cotton_pc5.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice crop rotation'**
+  String get cotton_pc5;
+
+  /// No description provided for @cotton_y_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Yield Optimization'**
+  String get cotton_y_title;
+
+  /// No description provided for @cotton_y1.
+  ///
+  /// In en, this message translates to:
+  /// **'Target yield: 25-30 maunds/acre'**
+  String get cotton_y1;
+
+  /// No description provided for @cotton_y2.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest in 3-4 pickings'**
+  String get cotton_y2;
+
+  /// No description provided for @cotton_y3.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick when bolls fully open'**
+  String get cotton_y3;
+
+  /// No description provided for @cotton_y4.
+  ///
+  /// In en, this message translates to:
+  /// **'Dry in shade to maintain fiber quality'**
+  String get cotton_y4;
+
+  /// No description provided for @cotton_y5.
+  ///
+  /// In en, this message translates to:
+  /// **'Store in dry place'**
+  String get cotton_y5;
+
+  /// No description provided for @maize_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Maize is versatile and requires moderate temperatures. It is often grown as a Kharif crop.'**
+  String get maize_summary;
+
+  /// No description provided for @maize_p_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting'**
+  String get maize_p_title;
+
+  /// No description provided for @maize_p1.
+  ///
+  /// In en, this message translates to:
+  /// **'Sow from June to July for Kharif'**
+  String get maize_p1;
+
+  /// No description provided for @maize_p2.
+  ///
+  /// In en, this message translates to:
+  /// **'Seed rate: 8-10 kg/acre'**
+  String get maize_p2;
+
+  /// No description provided for @maize_p3.
+  ///
+  /// In en, this message translates to:
+  /// **'Row spacing: 60-75 cm'**
+  String get maize_p3;
+
+  /// No description provided for @maize_p4.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant-to-plant: 20-25 cm'**
+  String get maize_p4;
+
+  /// No description provided for @maize_p5.
+  ///
+  /// In en, this message translates to:
+  /// **'Sow at depth of 5-7 cm'**
+  String get maize_p5;
+
+  /// No description provided for @maize_i_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation'**
+  String get maize_i_title;
+
+  /// No description provided for @maize_i1.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical stages: Knee-high and tasseling'**
+  String get maize_i1;
+
+  /// No description provided for @maize_i2.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation every 10-12 days in summer'**
+  String get maize_i2;
+
+  /// No description provided for @maize_i3.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid water stress during pollination'**
+  String get maize_i3;
+
+  /// No description provided for @maize_i4.
+  ///
+  /// In en, this message translates to:
+  /// **'Last irrigation 15 days before harvest'**
+  String get maize_i4;
+
+  /// No description provided for @maize_i5.
+  ///
+  /// In en, this message translates to:
+  /// **'Total water: 50-60 cm'**
+  String get maize_i5;
+
+  /// No description provided for @maize_f_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilization'**
+  String get maize_f_title;
+
+  /// No description provided for @maize_f1.
+  ///
+  /// In en, this message translates to:
+  /// **'Basal: 2 bags DAP + 1 bag SOP/acre'**
+  String get maize_f1;
+
+  /// No description provided for @maize_f2.
+  ///
+  /// In en, this message translates to:
+  /// **'Top dressing: 2 bags Urea in 2 splits'**
+  String get maize_f2;
+
+  /// No description provided for @maize_f3.
+  ///
+  /// In en, this message translates to:
+  /// **'First split: 25-30 days after sowing'**
+  String get maize_f3;
+
+  /// No description provided for @maize_f4.
+  ///
+  /// In en, this message translates to:
+  /// **'Second split: 45-50 days after sowing'**
+  String get maize_f4;
+
+  /// No description provided for @maize_f5.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply Zinc @ 10 kg/acre if deficient'**
+  String get maize_f5;
+
+  /// No description provided for @maize_pc_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Pest Control'**
+  String get maize_pc_title;
+
+  /// No description provided for @maize_pc1.
+  ///
+  /// In en, this message translates to:
+  /// **'For stem borer: Carbofuran @ 10 kg/acre'**
+  String get maize_pc1;
+
+  /// No description provided for @maize_pc2.
+  ///
+  /// In en, this message translates to:
+  /// **'For fall armyworm: Spinetoram @ 100 ml/acre'**
+  String get maize_pc2;
+
+  /// No description provided for @maize_pc3.
+  ///
+  /// In en, this message translates to:
+  /// **'For downy mildew: Metalaxyl @ 2g/kg seed'**
+  String get maize_pc3;
+
+  /// No description provided for @maize_pc4.
+  ///
+  /// In en, this message translates to:
+  /// **'Use bird perches for pest control'**
+  String get maize_pc4;
+
+  /// No description provided for @maize_pc5.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove infected plants'**
+  String get maize_pc5;
+
+  /// No description provided for @maize_y_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Yield Optimization'**
+  String get maize_y_title;
+
+  /// No description provided for @maize_y1.
+  ///
+  /// In en, this message translates to:
+  /// **'Target yield: 40-50 maunds/acre'**
+  String get maize_y1;
+
+  /// No description provided for @maize_y2.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest when grains harden'**
+  String get maize_y2;
+
+  /// No description provided for @maize_y3.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest at 20-25% moisture'**
+  String get maize_y3;
+
+  /// No description provided for @maize_y4.
+  ///
+  /// In en, this message translates to:
+  /// **'Dry to 14% moisture for storage'**
+  String get maize_y4;
+
+  /// No description provided for @maize_y5.
+  ///
+  /// In en, this message translates to:
+  /// **'Store in well-ventilated bins'**
+  String get maize_y5;
+
+  /// No description provided for @mango_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Mango is a tropical fruit tree. It requires careful pruning and protection from frost during flowering.'**
+  String get mango_summary;
+
+  /// No description provided for @mango_p_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting'**
+  String get mango_p_title;
+
+  /// No description provided for @mango_p1.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant in July-August or February-March'**
+  String get mango_p1;
+
+  /// No description provided for @mango_p2.
+  ///
+  /// In en, this message translates to:
+  /// **'Spacing: 10 x 10 meters'**
+  String get mango_p2;
+
+  /// No description provided for @mango_p3.
+  ///
+  /// In en, this message translates to:
+  /// **'Dig pits of 1 x 1 x 1 meter'**
+  String get mango_p3;
+
+  /// No description provided for @mango_p4.
+  ///
+  /// In en, this message translates to:
+  /// **'Mix soil with 30-40 kg FYM per pit'**
+  String get mango_p4;
+
+  /// No description provided for @mango_p5.
+  ///
+  /// In en, this message translates to:
+  /// **'Graft preferred varieties (Sindhri, Anwar Ratol)'**
+  String get mango_p5;
+
+  /// No description provided for @mango_i_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation'**
+  String get mango_i_title;
+
+  /// No description provided for @mango_i1.
+  ///
+  /// In en, this message translates to:
+  /// **'Young plants: Irrigate every 3-4 days'**
+  String get mango_i1;
+
+  /// No description provided for @mango_i2.
+  ///
+  /// In en, this message translates to:
+  /// **'Mature trees: Irrigate every 10-15 days'**
+  String get mango_i2;
+
+  /// No description provided for @mango_i3.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical stage: Fruit setting and development'**
+  String get mango_i3;
+
+  /// No description provided for @mango_i4.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop irrigation 15 days before harvest'**
+  String get mango_i4;
+
+  /// No description provided for @mango_i5.
+  ///
+  /// In en, this message translates to:
+  /// **'Use basin or drip irrigation'**
+  String get mango_i5;
+
+  /// No description provided for @mango_f_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilization'**
+  String get mango_f_title;
+
+  /// No description provided for @mango_f1.
+  ///
+  /// In en, this message translates to:
+  /// **'Young trees: 10-20 kg FYM + 250g NPK/year'**
+  String get mango_f1;
+
+  /// No description provided for @mango_f2.
+  ///
+  /// In en, this message translates to:
+  /// **'Mature trees: 50-100 kg FYM + 1-2 kg NPK/year'**
+  String get mango_f2;
+
+  /// No description provided for @mango_f3.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply after harvest (June-July)'**
+  String get mango_f3;
+
+  /// No description provided for @mango_f4.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply before flowering (December-January)'**
+  String get mango_f4;
+
+  /// No description provided for @mango_f5.
+  ///
+  /// In en, this message translates to:
+  /// **'Foliar spray of micronutrients during flowering'**
+  String get mango_f5;
+
+  /// No description provided for @mango_pc_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Pest Control'**
+  String get mango_pc_title;
+
+  /// No description provided for @mango_pc1.
+  ///
+  /// In en, this message translates to:
+  /// **'For fruit fly: Bait spray (Malathion + jaggery)'**
+  String get mango_pc1;
+
+  /// No description provided for @mango_pc2.
+  ///
+  /// In en, this message translates to:
+  /// **'For mango hopper: Imidacloprid @ 50 ml/acre'**
+  String get mango_pc2;
+
+  /// No description provided for @mango_pc3.
+  ///
+  /// In en, this message translates to:
+  /// **'For anthracnose: Copper oxychloride @ 500g/acre'**
+  String get mango_pc3;
+
+  /// No description provided for @mango_pc4.
+  ///
+  /// In en, this message translates to:
+  /// **'Bag fruits for protection'**
+  String get mango_pc4;
+
+  /// No description provided for @mango_pc5.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintain orchard sanitation'**
+  String get mango_pc5;
+
+  /// No description provided for @mango_y_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Yield Optimization'**
+  String get mango_y_title;
+
+  /// No description provided for @mango_y1.
+  ///
+  /// In en, this message translates to:
+  /// **'Target yield: 100-200 kg/tree (mature)'**
+  String get mango_y1;
+
+  /// No description provided for @mango_y2.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest when fruits develop shoulder'**
+  String get mango_y2;
+
+  /// No description provided for @mango_y3.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest in morning hours'**
+  String get mango_y3;
+
+  /// No description provided for @mango_y4.
+  ///
+  /// In en, this message translates to:
+  /// **'Handle fruits carefully to avoid damage'**
+  String get mango_y4;
+
+  /// No description provided for @mango_y5.
+  ///
+  /// In en, this message translates to:
+  /// **'Pack in ventilated boxes'**
+  String get mango_y5;
+
+  /// No description provided for @potato_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Potato is a cool-season crop grown in winter. Proper soil preparation and seed treatment are crucial.'**
+  String get potato_summary;
+
+  /// No description provided for @potato_p_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting'**
+  String get potato_p_title;
+
+  /// No description provided for @potato_p1.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant from October to November'**
+  String get potato_p1;
+
+  /// No description provided for @potato_p2.
+  ///
+  /// In en, this message translates to:
+  /// **'Use disease-free certified tubers'**
+  String get potato_p2;
+
+  /// No description provided for @potato_p3.
+  ///
+  /// In en, this message translates to:
+  /// **'Seed rate: 800-1000 kg/acre'**
+  String get potato_p3;
+
+  /// No description provided for @potato_p4.
+  ///
+  /// In en, this message translates to:
+  /// **'Row spacing: 60 cm'**
+  String get potato_p4;
+
+  /// No description provided for @potato_p5.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant spacing: 20-25 cm'**
+  String get potato_p5;
+
+  /// No description provided for @potato_p6.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant at depth of 5-7 cm'**
+  String get potato_p6;
+
+  /// No description provided for @potato_i_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation'**
+  String get potato_i_title;
+
+  /// No description provided for @potato_i1.
+  ///
+  /// In en, this message translates to:
+  /// **'First irrigation: Immediately after planting'**
+  String get potato_i1;
+
+  /// No description provided for @potato_i2.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical stage: Tuber initiation and bulking'**
+  String get potato_i2;
+
+  /// No description provided for @potato_i3.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation every 7-10 days'**
+  String get potato_i3;
+
+  /// No description provided for @potato_i4.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop irrigation 15-20 days before harvest'**
+  String get potato_i4;
+
+  /// No description provided for @potato_i5.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid waterlogging'**
+  String get potato_i5;
+
+  /// No description provided for @potato_f_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilization'**
+  String get potato_f_title;
+
+  /// No description provided for @potato_f1.
+  ///
+  /// In en, this message translates to:
+  /// **'Basal: 3 bags DAP + 2 bags SOP/acre'**
+  String get potato_f1;
+
+  /// No description provided for @potato_f2.
+  ///
+  /// In en, this message translates to:
+  /// **'Top dressing: 2 bags Urea in 2 splits'**
+  String get potato_f2;
+
+  /// No description provided for @potato_f3.
+  ///
+  /// In en, this message translates to:
+  /// **'First split: 25-30 days after planting'**
+  String get potato_f3;
+
+  /// No description provided for @potato_f4.
+  ///
+  /// In en, this message translates to:
+  /// **'Second split: 45-50 days after planting'**
+  String get potato_f4;
+
+  /// No description provided for @potato_f5.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply boron @ 1 kg/acre if needed'**
+  String get potato_f5;
+
+  /// No description provided for @potato_pc_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Pest Control'**
+  String get potato_pc_title;
+
+  /// No description provided for @potato_pc1.
+  ///
+  /// In en, this message translates to:
+  /// **'For cutworm: Chlorpyrifos @ 2 L/acre in soil'**
+  String get potato_pc1;
+
+  /// No description provided for @potato_pc2.
+  ///
+  /// In en, this message translates to:
+  /// **'For aphids: Imidacloprid @ 50 ml/acre'**
+  String get potato_pc2;
+
+  /// No description provided for @potato_pc3.
+  ///
+  /// In en, this message translates to:
+  /// **'For late blight: Mancozeb @ 500g/acre'**
+  String get potato_pc3;
+
+  /// No description provided for @potato_pc4.
+  ///
+  /// In en, this message translates to:
+  /// **'Use resistant varieties'**
+  String get potato_pc4;
+
+  /// No description provided for @potato_pc5.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice crop rotation with cereals'**
+  String get potato_pc5;
+
+  /// No description provided for @potato_y_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Yield Optimization'**
+  String get potato_y_title;
+
+  /// No description provided for @potato_y1.
+  ///
+  /// In en, this message translates to:
+  /// **'Target yield: 200-250 maunds/acre'**
+  String get potato_y1;
+
+  /// No description provided for @potato_y2.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest when vines dry'**
+  String get potato_y2;
+
+  /// No description provided for @potato_y3.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest in cool weather'**
+  String get potato_y3;
+
+  /// No description provided for @potato_y4.
+  ///
+  /// In en, this message translates to:
+  /// **'Cure tubers for 10-15 days before storage'**
+  String get potato_y4;
+
+  /// No description provided for @potato_y5.
+  ///
+  /// In en, this message translates to:
+  /// **'Store at 4-5°C with high humidity'**
+  String get potato_y5;
+
+  /// No description provided for @chilli_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Chilli is a warm-season crop sensitive to frost. Requires well-drained soil and careful water management.'**
+  String get chilli_summary;
+
+  /// No description provided for @chilli_p_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting'**
+  String get chilli_p_title;
+
+  /// No description provided for @chilli_p1.
+  ///
+  /// In en, this message translates to:
+  /// **'Transplant 30-35 day old seedlings'**
+  String get chilli_p1;
+
+  /// No description provided for @chilli_p2.
+  ///
+  /// In en, this message translates to:
+  /// **'Spacing: 45 x 30 cm'**
+  String get chilli_p2;
+
+  /// No description provided for @chilli_p3.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant 2 seedlings per hill'**
+  String get chilli_p3;
+
+  /// No description provided for @chilli_p4.
+  ///
+  /// In en, this message translates to:
+  /// **'Best time: February-March for spring crop'**
+  String get chilli_p4;
+
+  /// No description provided for @chilli_p5.
+  ///
+  /// In en, this message translates to:
+  /// **'Raised beds for better drainage'**
+  String get chilli_p5;
+
+  /// No description provided for @chilli_i_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation'**
+  String get chilli_i_title;
+
+  /// No description provided for @chilli_i1.
+  ///
+  /// In en, this message translates to:
+  /// **'Light irrigation after transplanting'**
+  String get chilli_i1;
+
+  /// No description provided for @chilli_i2.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation every 5-7 days in summer'**
+  String get chilli_i2;
+
+  /// No description provided for @chilli_i3.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical stage: Flowering and fruit set'**
+  String get chilli_i3;
+
+  /// No description provided for @chilli_i4.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid overhead irrigation to prevent disease'**
+  String get chilli_i4;
+
+  /// No description provided for @chilli_i5.
+  ///
+  /// In en, this message translates to:
+  /// **'Drip irrigation recommended'**
+  String get chilli_i5;
+
+  /// No description provided for @chilli_f_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilization'**
+  String get chilli_f_title;
+
+  /// No description provided for @chilli_f1.
+  ///
+  /// In en, this message translates to:
+  /// **'Basal: 2 bags DAP + 1 bag SOP/acre'**
+  String get chilli_f1;
+
+  /// No description provided for @chilli_f2.
+  ///
+  /// In en, this message translates to:
+  /// **'Top dressing: 1.5 bags Urea in 3 splits'**
+  String get chilli_f2;
+
+  /// No description provided for @chilli_f3.
+  ///
+  /// In en, this message translates to:
+  /// **'First split: 30 days after transplanting'**
+  String get chilli_f3;
+
+  /// No description provided for @chilli_f4.
+  ///
+  /// In en, this message translates to:
+  /// **'Second split: 60 days after transplanting'**
+  String get chilli_f4;
+
+  /// No description provided for @chilli_f5.
+  ///
+  /// In en, this message translates to:
+  /// **'Third split: During fruit set'**
+  String get chilli_f5;
+
+  /// No description provided for @chilli_pc_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Pest Control'**
+  String get chilli_pc_title;
+
+  /// No description provided for @chilli_pc1.
+  ///
+  /// In en, this message translates to:
+  /// **'For thrips: Spinosad @ 100 ml/acre'**
+  String get chilli_pc1;
+
+  /// No description provided for @chilli_pc2.
+  ///
+  /// In en, this message translates to:
+  /// **'For mites: Abamectin @ 100 ml/acre'**
+  String get chilli_pc2;
+
+  /// No description provided for @chilli_pc3.
+  ///
+  /// In en, this message translates to:
+  /// **'For fruit rot: Carbendazim @ 250g/acre'**
+  String get chilli_pc3;
+
+  /// No description provided for @chilli_pc4.
+  ///
+  /// In en, this message translates to:
+  /// **'Use yellow sticky traps'**
+  String get chilli_pc4;
+
+  /// No description provided for @chilli_pc5.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove infected plants immediately'**
+  String get chilli_pc5;
+
+  /// No description provided for @chilli_y_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Yield Optimization'**
+  String get chilli_y_title;
+
+  /// No description provided for @chilli_y1.
+  ///
+  /// In en, this message translates to:
+  /// **'Target yield: 40-50 maunds/acre (dry)'**
+  String get chilli_y1;
+
+  /// No description provided for @chilli_y2.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest when fruits turn red'**
+  String get chilli_y2;
+
+  /// No description provided for @chilli_y3.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick regularly to encourage more fruiting'**
+  String get chilli_y3;
+
+  /// No description provided for @chilli_y4.
+  ///
+  /// In en, this message translates to:
+  /// **'Dry in shade to retain color and pungency'**
+  String get chilli_y4;
+
+  /// No description provided for @chilli_y5.
+  ///
+  /// In en, this message translates to:
+  /// **'Store in airtight containers'**
+  String get chilli_y5;
+
+  /// No description provided for @rice_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Rice needs standing water for most of its growing period. The Kharif season is the best time for cultivation.'**
+  String get rice_summary;
+
+  /// No description provided for @rice_p_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting'**
+  String get rice_p_title;
+
+  /// No description provided for @rice_p1.
+  ///
+  /// In en, this message translates to:
+  /// **'Transplant seedlings 20-25 days old'**
+  String get rice_p1;
+
+  /// No description provided for @rice_p2.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimal spacing: 20 x 15 cm'**
+  String get rice_p2;
+
+  /// No description provided for @rice_p3.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant 2-3 seedlings per hill'**
+  String get rice_p3;
+
+  /// No description provided for @rice_p4.
+  ///
+  /// In en, this message translates to:
+  /// **'Transplant in puddled soil'**
+  String get rice_p4;
+
+  /// No description provided for @rice_p5.
+  ///
+  /// In en, this message translates to:
+  /// **'Best time: June-July for Kharif season'**
+  String get rice_p5;
+
+  /// No description provided for @rice_i_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation'**
+  String get rice_i_title;
+
+  /// No description provided for @rice_i1.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintain 2-5 cm standing water'**
+  String get rice_i1;
+
+  /// No description provided for @rice_i2.
+  ///
+  /// In en, this message translates to:
+  /// **'Drain field 15 days before harvest'**
+  String get rice_i2;
+
+  /// No description provided for @rice_i3.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical stages: Tillering and flowering'**
+  String get rice_i3;
+
+  /// No description provided for @rice_i4.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid water stress during panicle initiation'**
+  String get rice_i4;
+
+  /// No description provided for @rice_i5.
+  ///
+  /// In en, this message translates to:
+  /// **'Total water requirement: 100-150 cm'**
+  String get rice_i5;
+
+  /// No description provided for @rice_f_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilization'**
+  String get rice_f_title;
+
+  /// No description provided for @rice_f1.
+  ///
+  /// In en, this message translates to:
+  /// **'Basal: 1.5 bags DAP/acre'**
+  String get rice_f1;
+
+  /// No description provided for @rice_f2.
+  ///
+  /// In en, this message translates to:
+  /// **'First top dressing: 1 bag Urea at tillering'**
+  String get rice_f2;
+
+  /// No description provided for @rice_f3.
+  ///
+  /// In en, this message translates to:
+  /// **'Second top dressing: 0.5 bag Urea at panicle initiation'**
+  String get rice_f3;
+
+  /// No description provided for @rice_f4.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply Zinc sulfate @ 10 kg/acre if needed'**
+  String get rice_f4;
+
+  /// No description provided for @rice_f5.
+  ///
+  /// In en, this message translates to:
+  /// **'Silicon application improves stem strength'**
+  String get rice_f5;
+
+  /// No description provided for @rice_pc_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Pest Control'**
+  String get rice_pc_title;
+
+  /// No description provided for @rice_pc1.
+  ///
+  /// In en, this message translates to:
+  /// **'For stem borer: Cartap hydrochloride @ 500g/acre'**
+  String get rice_pc1;
+
+  /// No description provided for @rice_pc2.
+  ///
+  /// In en, this message translates to:
+  /// **'For leaf folder: Fipronil @ 200 ml/acre'**
+  String get rice_pc2;
+
+  /// No description provided for @rice_pc3.
+  ///
+  /// In en, this message translates to:
+  /// **'For blast disease: Tricyclazole @ 300g/acre'**
+  String get rice_pc3;
+
+  /// No description provided for @rice_pc4.
+  ///
+  /// In en, this message translates to:
+  /// **'Use light traps for moth monitoring'**
+  String get rice_pc4;
+
+  /// No description provided for @rice_pc5.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice clean cultivation'**
+  String get rice_pc5;
+
+  /// No description provided for @rice_y_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Yield Optimization'**
+  String get rice_y_title;
+
+  /// No description provided for @rice_y1.
+  ///
+  /// In en, this message translates to:
+  /// **'Target yield: 30-40 maunds/acre'**
+  String get rice_y1;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

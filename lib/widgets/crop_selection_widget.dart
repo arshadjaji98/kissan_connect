@@ -19,15 +19,43 @@ class CropSelectionWidget extends StatefulWidget {
 class _CropSelectionWidgetState extends State<CropSelectionWidget> {
   late List<String> _selectedCrops; // Change to late
 
+  final List<String> _cropKeys = [
+    'wheat',
+    'rice',
+    'cotton',
+    'sugarcane',
+    'maize',
+    'vegetables',
+  ];
+
+  String _getLocalizedCropName(AppLocalizations localizations, String key) {
+    switch (key) {
+      case 'wheat':
+        return localizations.wheat;
+      case 'rice':
+        return localizations.rice;
+      case 'cotton':
+        return localizations.cotton;
+      case 'sugarcane':
+        return localizations.sugarcane;
+      case 'maize':
+        return localizations.maize;
+      case 'vegetables':
+        return localizations.vegetables;
+      default:
+        return key; // fallback
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    // Initialize with initialSelectedCrops if provided, otherwise default to ["Wheat"]
-    _selectedCrops = List.from(widget.initialSelectedCrops ?? ["Wheat"]);
+    // Initialize with initialSelectedCrops if provided, otherwise default to ["wheat"]
+    _selectedCrops = List.from(widget.initialSelectedCrops ?? ["wheat"]);
 
     // Ensure at least one crop is always selected
     if (_selectedCrops.isEmpty) {
-      _selectedCrops = ["Wheat"];
+      _selectedCrops = ["wheat"];
     }
 
     // Notify parent about initial selection
@@ -38,17 +66,17 @@ class _CropSelectionWidgetState extends State<CropSelectionWidget> {
     });
   }
 
-  void _toggleCropSelection(String crop) {
+  void _toggleCropSelection(String cropKey) {
     setState(() {
-      if (_selectedCrops.contains(crop)) {
-        _selectedCrops.remove(crop);
+      if (_selectedCrops.contains(cropKey)) {
+        _selectedCrops.remove(cropKey);
       } else {
-        _selectedCrops.add(crop);
+        _selectedCrops.add(cropKey);
       }
 
       // Ensure at least one crop is always selected
       if (_selectedCrops.isEmpty) {
-        _selectedCrops.add("Wheat");
+        _selectedCrops.add("wheat");
       }
 
       // Notify parent about selection changes
@@ -60,14 +88,7 @@ class _CropSelectionWidgetState extends State<CropSelectionWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> _crops = [
-      AppLocalizations.of(context)!.wheat,
-      AppLocalizations.of(context)!.rice,
-      AppLocalizations.of(context)!.cotton,
-      AppLocalizations.of(context)!.sugarcane,
-      AppLocalizations.of(context)!.maize,
-      AppLocalizations.of(context)!.vegetables,
-    ];
+    final localizations = AppLocalizations.of(context)!;
 
     return Container(
       width: double.infinity,
@@ -85,14 +106,15 @@ class _CropSelectionWidgetState extends State<CropSelectionWidget> {
               mainAxisSpacing: 12,
               childAspectRatio: 2.5,
             ),
-            itemCount: _crops.length,
+            itemCount: _cropKeys.length,
             itemBuilder: (context, index) {
-              final crop = _crops[index];
-              final isSelected = _selectedCrops.contains(crop);
+              final cropKey = _cropKeys[index];
+              final cropName = _getLocalizedCropName(localizations, cropKey);
+              final isSelected = _selectedCrops.contains(cropKey);
 
               return GestureDetector(
                 onTap: () {
-                  _toggleCropSelection(crop);
+                  _toggleCropSelection(cropKey);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -114,7 +136,7 @@ class _CropSelectionWidgetState extends State<CropSelectionWidget> {
                   ),
                   child: Center(
                     child: Text(
-                      crop,
+                      cropName,
                       style: TextStyle(
                         color: isSelected ? Colors.white : Colors.black87,
                         fontSize: 14,
@@ -129,7 +151,7 @@ class _CropSelectionWidgetState extends State<CropSelectionWidget> {
           Padding(
             padding: EdgeInsets.zero,
             child: Text(
-              AppLocalizations.of(context)!.selectMultipleCrops,
+              localizations.selectMultipleCrops,
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.grey,
