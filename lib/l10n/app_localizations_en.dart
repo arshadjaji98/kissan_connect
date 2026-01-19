@@ -16,7 +16,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String languageChangedTo(Object language) {
-    return 'Language changed to $language';
+    return 'زبان تبدیل ہو گئی: $language';
   }
 
   @override
@@ -2500,4 +2500,124 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get account => 'Account';
+
+  @override
+  String get myActiveListings => 'My Active Listings';
+
+  @override
+  String get newestFirst => 'Newest First';
+
+  @override
+  String get oldestFirst => 'Oldest First';
+
+  @override
+  String get priceLowToHigh => 'Price: Low to High';
+
+  @override
+  String get priceHighToLow => 'Price: High to Low';
+
+  @override
+  String get quantityAvailable => 'Quantity Available';
+
+  @override
+  String get streamError => 'Stream Error:';
+
+  @override
+  String get processingError => 'Processing Error:';
+
+  @override
+  String get queryError => 'Query Error:';
+
+  @override
+  String get buildCardError => 'Build Card Error:';
+
+  @override
+  String get errorProcessingData => 'Error processing data:';
+
+  @override
+  String get errorDisplayingListing => 'Error displaying listing';
+
+  @override
+  String get noDataAvailable => 'No data available';
+
+  @override
+  String get noActiveListings => 'No Active Listings';
+
+  @override
+  String get noListingsYet => 'You haven\'t created any listings yet';
+
+  @override
+  String get userNotLoggedIn => 'User not logged in';
+
+  @override
+  String get listed => 'Listed:';
+
+  @override
+  String get views => 'Views';
+
+  @override
+  String get saves => 'Saves';
+
+  @override
+  String get view => 'View';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get editListing => 'Edit Listing';
+
+  @override
+  String get whatToEdit => 'What would you like to edit?';
+
+  @override
+  String get editDetails => 'Edit Details';
+
+  @override
+  String get editDetailsHint => 'Change price, quantity, description';
+
+  @override
+  String get editListingDetails => 'Edit Listing Details';
+
+  @override
+  String get price => 'Price';
+
+  @override
+  String get quantity => 'Quantity';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get fillRequiredFields => 'Please fill all required fields';
+
+  @override
+  String get listingUpdated => 'Listing updated successfully';
+
+  @override
+  String get errorUpdatingListing => 'Error updating listing:';
+
+  @override
+  String get deleteListingTitle => 'Delete Listing?';
+
+  @override
+  String get deleteListingWarning => 'This listing will be permanently deleted. This action cannot be undone.';
+
+  @override
+  String get listingDeleted => 'Listing deleted successfully';
+
+  @override
+  String get errorDeletingListing => 'Error deleting listing:';
+
+  @override
+  String get donthave_active_listings => 'You haven\'t created any listings yet';
+
+  @override
+  String get create_first_listing => 'Create Your First Listing';
+
+  @override
+  String get active => 'Active';
 }

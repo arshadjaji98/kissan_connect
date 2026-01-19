@@ -110,7 +110,7 @@ abstract class AppLocalizations {
   /// No description provided for @languageChangedTo.
   ///
   /// In en, this message translates to:
-  /// **'Language changed to {language}'**
+  /// **'زبان تبدیل ہو گئی: {language}'**
   String languageChangedTo(Object language);
 
   /// No description provided for @english.
@@ -4960,6 +4960,246 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Account'**
   String get account;
+
+  /// No description provided for @myActiveListings.
+  ///
+  /// In en, this message translates to:
+  /// **'My Active Listings'**
+  String get myActiveListings;
+
+  /// No description provided for @newestFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Newest First'**
+  String get newestFirst;
+
+  /// No description provided for @oldestFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Oldest First'**
+  String get oldestFirst;
+
+  /// No description provided for @priceLowToHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'Price: Low to High'**
+  String get priceLowToHigh;
+
+  /// No description provided for @priceHighToLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Price: High to Low'**
+  String get priceHighToLow;
+
+  /// No description provided for @quantityAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity Available'**
+  String get quantityAvailable;
+
+  /// No description provided for @streamError.
+  ///
+  /// In en, this message translates to:
+  /// **'Stream Error:'**
+  String get streamError;
+
+  /// No description provided for @processingError.
+  ///
+  /// In en, this message translates to:
+  /// **'Processing Error:'**
+  String get processingError;
+
+  /// No description provided for @queryError.
+  ///
+  /// In en, this message translates to:
+  /// **'Query Error:'**
+  String get queryError;
+
+  /// No description provided for @buildCardError.
+  ///
+  /// In en, this message translates to:
+  /// **'Build Card Error:'**
+  String get buildCardError;
+
+  /// No description provided for @errorProcessingData.
+  ///
+  /// In en, this message translates to:
+  /// **'Error processing data:'**
+  String get errorProcessingData;
+
+  /// No description provided for @errorDisplayingListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Error displaying listing'**
+  String get errorDisplayingListing;
+
+  /// No description provided for @noDataAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No data available'**
+  String get noDataAvailable;
+
+  /// No description provided for @noActiveListings.
+  ///
+  /// In en, this message translates to:
+  /// **'No Active Listings'**
+  String get noActiveListings;
+
+  /// No description provided for @noListingsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t created any listings yet'**
+  String get noListingsYet;
+
+  /// No description provided for @userNotLoggedIn.
+  ///
+  /// In en, this message translates to:
+  /// **'User not logged in'**
+  String get userNotLoggedIn;
+
+  /// No description provided for @listed.
+  ///
+  /// In en, this message translates to:
+  /// **'Listed:'**
+  String get listed;
+
+  /// No description provided for @views.
+  ///
+  /// In en, this message translates to:
+  /// **'Views'**
+  String get views;
+
+  /// No description provided for @saves.
+  ///
+  /// In en, this message translates to:
+  /// **'Saves'**
+  String get saves;
+
+  /// No description provided for @view.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get view;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @editListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Listing'**
+  String get editListing;
+
+  /// No description provided for @whatToEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'What would you like to edit?'**
+  String get whatToEdit;
+
+  /// No description provided for @editDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Details'**
+  String get editDetails;
+
+  /// No description provided for @editDetailsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Change price, quantity, description'**
+  String get editDetailsHint;
+
+  /// No description provided for @editListingDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Listing Details'**
+  String get editListingDetails;
+
+  /// No description provided for @price.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get price;
+
+  /// No description provided for @quantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get quantity;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get description;
+
+  /// No description provided for @fillRequiredFields.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill all required fields'**
+  String get fillRequiredFields;
+
+  /// No description provided for @listingUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing updated successfully'**
+  String get listingUpdated;
+
+  /// No description provided for @errorUpdatingListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Error updating listing:'**
+  String get errorUpdatingListing;
+
+  /// No description provided for @deleteListingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Listing?'**
+  String get deleteListingTitle;
+
+  /// No description provided for @deleteListingWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'This listing will be permanently deleted. This action cannot be undone.'**
+  String get deleteListingWarning;
+
+  /// No description provided for @listingDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing deleted successfully'**
+  String get listingDeleted;
+
+  /// No description provided for @errorDeletingListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Error deleting listing:'**
+  String get errorDeletingListing;
+
+  /// No description provided for @donthave_active_listings.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t created any listings yet'**
+  String get donthave_active_listings;
+
+  /// No description provided for @create_first_listing.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Your First Listing'**
+  String get create_first_listing;
+
+  /// No description provided for @active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get active;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

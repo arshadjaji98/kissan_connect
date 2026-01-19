@@ -39,14 +39,16 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
     super.initState();
     _quantityController.text = '1000';
     _priceController.text = '2500';
-    _harvestDateController.text = DateFormat('MMMM yyyy').format(DateTime.now());
+    _harvestDateController.text = DateFormat(
+      'MMMM yyyy',
+    ).format(DateTime.now());
   }
 
   Future<void> _pickImages() async {
     if (_selectedImages.length >= 5) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Maximum 5 images allowed')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Maximum 5 images allowed')));
       return;
     }
 
@@ -70,9 +72,9 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
       }
     } catch (e) {
       print('Error picking images: $e');
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Failed to pick images')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Failed to pick images')));
     }
   }
 
@@ -83,12 +85,14 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
       return;
     }
 
-    if (_quantityController.text.isEmpty || double.tryParse(_quantityController.text) == null) {
+    if (_quantityController.text.isEmpty ||
+        double.tryParse(_quantityController.text) == null) {
       _showError('Please enter valid quantity');
       return;
     }
 
-    if (_priceController.text.isEmpty || double.tryParse(_priceController.text) == null) {
+    if (_priceController.text.isEmpty ||
+        double.tryParse(_priceController.text) == null) {
       _showError('Please enter valid price');
       return;
     }
@@ -166,7 +170,6 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
 
       // Navigate back to marketplace
       Navigator.pop(context, true);
-
     } catch (e) {
       print('❌ Error creating listing: $e');
       _showError('Failed to create listing: ${e.toString()}');
@@ -279,16 +282,26 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                   ),
                   child: Column(
                     children: [
-                      const Icon(Icons.add_photo_alternate, size: 40, color: Color(0xFF4CAF50)),
+                      const Icon(
+                        Icons.add_photo_alternate,
+                        size: 40,
+                        color: Color(0xFF4CAF50),
+                      ),
                       const SizedBox(height: 8),
                       const Text(
                         "Upload Crop Photos",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
                       ),
                       const SizedBox(height: 4),
                       Text(
                         "Add up to ${5 - _selectedImages.length} photos of your crop",
-                        style: const TextStyle(color: Colors.grey, fontSize: 12),
+                        style: const TextStyle(
+                          color: Colors.grey,
+                          fontSize: 12,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 4),
@@ -303,7 +316,9 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                         Wrap(
                           spacing: 8,
                           runSpacing: 8,
-                          children: _selectedImages.asMap().entries.map((entry) {
+                          children: _selectedImages.asMap().entries.map((
+                            entry,
+                          ) {
                             final index = entry.key;
                             final image = entry.value;
                             return Stack(
@@ -317,7 +332,10 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                                       image: FileImage(File(image.path)),
                                       fit: BoxFit.cover,
                                     ),
-                                    border: Border.all(color: Colors.green, width: 2),
+                                    border: Border.all(
+                                      color: Colors.green,
+                                      width: 2,
+                                    ),
                                   ),
                                 ),
                                 Positioned(
@@ -327,14 +345,22 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                                     icon: const CircleAvatar(
                                       radius: 12,
                                       backgroundColor: Colors.red,
-                                      child: Icon(Icons.close, size: 12, color: Colors.white),
+                                      child: Icon(
+                                        Icons.close,
+                                        size: 12,
+                                        color: Colors.white,
+                                      ),
                                     ),
                                     onPressed: () {
                                       setState(() {
                                         _selectedImages.removeAt(index);
                                       });
-                                      ScaffoldMessenger.of(context).showSnackBar(
-                                        const SnackBar(content: Text('Image removed')),
+                                      ScaffoldMessenger.of(
+                                        context,
+                                      ).showSnackBar(
+                                        const SnackBar(
+                                          content: Text('Image removed'),
+                                        ),
                                       );
                                     },
                                   ),
@@ -343,7 +369,10 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                                   bottom: 4,
                                   right: 4,
                                   child: Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 4,
+                                      vertical: 2,
+                                    ),
                                     decoration: BoxDecoration(
                                       color: Colors.green,
                                       borderRadius: BorderRadius.circular(4),
@@ -371,8 +400,13 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                           backgroundColor: const Color(0xFF4CAF50),
                           foregroundColor: Colors.white,
                           elevation: 0,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 24,
+                            vertical: 12,
+                          ),
                         ),
                         child: const Row(
                           mainAxisSize: MainAxisSize.min,
@@ -417,7 +451,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                   controller: _descriptionController,
                   maxLines: 4,
                   decoration: InputDecoration(
-                    hintText: "Describe the quality, variety, and any other details.",
+                    hintText:
+                        "Describe the quality, variety, and any other details.",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(color: Colors.grey.shade300),
@@ -451,15 +486,21 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                               hintText: "1000",
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
-                                borderSide: BorderSide(color: Colors.grey.shade300),
+                                borderSide: BorderSide(
+                                  color: Colors.grey.shade300,
+                                ),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
-                                borderSide: BorderSide(color: Colors.grey.shade300),
+                                borderSide: BorderSide(
+                                  color: Colors.grey.shade300,
+                                ),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
-                                borderSide: const BorderSide(color: Colors.green),
+                                borderSide: const BorderSide(
+                                  color: Colors.green,
+                                ),
                               ),
                             ),
                           ),
@@ -481,15 +522,21 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                               suffixText: "PKR/kg",
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
-                                borderSide: BorderSide(color: Colors.grey.shade300),
+                                borderSide: BorderSide(
+                                  color: Colors.grey.shade300,
+                                ),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
-                                borderSide: BorderSide(color: Colors.grey.shade300),
+                                borderSide: BorderSide(
+                                  color: Colors.grey.shade300,
+                                ),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
-                                borderSide: const BorderSide(color: Colors.green),
+                                borderSide: const BorderSide(
+                                  color: Colors.green,
+                                ),
                               ),
                             ),
                           ),
@@ -568,7 +615,10 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                       borderRadius: BorderRadius.circular(12),
                       borderSide: const BorderSide(color: Colors.green),
                     ),
-                    suffixIcon: const Icon(Icons.calendar_today, color: Colors.grey),
+                    suffixIcon: const Icon(
+                      Icons.calendar_today,
+                      color: Colors.grey,
+                    ),
                   ),
                 ),
 
@@ -592,11 +642,16 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                           children: [
                             Text(
                               widget.userLocation,
-                              style: const TextStyle(fontWeight: FontWeight.bold),
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             const Text(
                               "Your listing will be visible to buyers in this area.",
-                              style: TextStyle(fontSize: 12, color: Colors.grey),
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                              ),
                             ),
                           ],
                         ),
@@ -614,26 +669,28 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                     onPressed: _isUploading ? null : _submitListing,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF4CAF50),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
                       elevation: 0,
                     ),
                     child: _isUploading
                         ? const SizedBox(
-                      width: 24,
-                      height: 24,
-                      child: CircularProgressIndicator(
-                        color: Colors.white,
-                        strokeWidth: 3,
-                      ),
-                    )
+                            width: 24,
+                            height: 24,
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                              strokeWidth: 3,
+                            ),
+                          )
                         : const Text(
-                      "Post Listing",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                            "Post Listing",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -687,10 +744,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                       const SizedBox(height: 10),
                       const Text(
                         'This may take a few moments...',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.grey,
-                        ),
+                        style: TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                     ],
                   ),

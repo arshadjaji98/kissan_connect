@@ -16,7 +16,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String languageChangedTo(Object language) {
-    return 'زبان تبدیل ہو گئی: $language';
+    return 'Language changed to $language';
   }
 
   @override
@@ -2418,7 +2418,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get chooseCrops => 'وہ فصلیں منتخب کریں جو آپ اگاتے ہیں';
 
   @override
-  String get saveChanges => 'تبدیلیاں محفوظ کریں';
+  String get saveChanges => 'درست کریں';
 
   @override
   String get done => 'مکمل';
@@ -2500,4 +2500,124 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get account => 'اکاؤنٹ';
+
+  @override
+  String get myActiveListings => 'میری فعال فہرستیں';
+
+  @override
+  String get newestFirst => 'نئی سے پرانی';
+
+  @override
+  String get oldestFirst => 'پرانی سے نئی';
+
+  @override
+  String get priceLowToHigh => 'قیمت: کم سے زیادہ';
+
+  @override
+  String get priceHighToLow => 'قیمت: زیادہ سے کم';
+
+  @override
+  String get quantityAvailable => 'دستیاب مقدار';
+
+  @override
+  String get streamError => 'اسٹریم میں خرابی:';
+
+  @override
+  String get processingError => 'پروسیسنگ میں خرابی:';
+
+  @override
+  String get queryError => 'کوئری میں خرابی:';
+
+  @override
+  String get buildCardError => 'کارڈ بنانے میں خرابی:';
+
+  @override
+  String get errorProcessingData => 'ڈیٹا پراسیس کرنے میں خرابی:';
+
+  @override
+  String get errorDisplayingListing => 'فہرست دکھانے میں خرابی';
+
+  @override
+  String get noDataAvailable => 'کوئی ڈیٹا دستیاب نہیں';
+
+  @override
+  String get noActiveListings => 'کوئی فعال فہرست نہیں';
+
+  @override
+  String get noListingsYet => 'آپ نے ابھی تک کوئی فہرست نہیں بنائی';
+
+  @override
+  String get userNotLoggedIn => 'صارف لاگ ان نہیں ہے';
+
+  @override
+  String get listed => 'فہرست شدہ:';
+
+  @override
+  String get views => 'دیکھا گیا';
+
+  @override
+  String get saves => 'محفوظ';
+
+  @override
+  String get view => 'دیکھیں';
+
+  @override
+  String get edit => 'ترمیم';
+
+  @override
+  String get delete => 'حذف کریں';
+
+  @override
+  String get editListing => 'فہرست میں ترمیم';
+
+  @override
+  String get whatToEdit => 'آپ کیا ترمیم کرنا چاہتے ہیں؟';
+
+  @override
+  String get editDetails => 'تفصیلات میں ترمیم';
+
+  @override
+  String get editDetailsHint => 'قیمت، مقدار، تفصیل تبدیل کریں';
+
+  @override
+  String get editListingDetails => 'فہرست کی تفصیلات میں ترمیم';
+
+  @override
+  String get price => 'قیمت';
+
+  @override
+  String get quantity => 'مقدار';
+
+  @override
+  String get description => 'تفصیل';
+
+  @override
+  String get fillRequiredFields => 'براہ کرم تمام ضروری فیلڈز مکمل کریں';
+
+  @override
+  String get listingUpdated => 'فہرست کامیابی سے اپڈیٹ ہو گئی';
+
+  @override
+  String get errorUpdatingListing => 'فہرست اپڈیٹ کرنے میں خرابی:';
+
+  @override
+  String get deleteListingTitle => 'فہرست حذف کریں؟';
+
+  @override
+  String get deleteListingWarning => 'یہ فہرست مستقل طور پر حذف ہو جائے گی۔ یہ عمل واپس نہیں ہو سکتا۔';
+
+  @override
+  String get listingDeleted => 'فہرست کامیابی سے حذف ہو گئی';
+
+  @override
+  String get errorDeletingListing => 'فہرست حذف کرنے میں خرابی:';
+
+  @override
+  String get donthave_active_listings => 'آپ کے پاس کوئی فعال فہرستیں نہیں ہیں۔';
+
+  @override
+  String get create_first_listing => 'پہلی فہرست بنائیں۔';
+
+  @override
+  String get active => 'فعال';
 }

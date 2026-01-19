@@ -2,7 +2,7 @@
   "@@locale": "en",
   "selectLanguage": "Select Language",
   "choosePreferredLanguage": "Choose your preferred language",
-  "languageChangedTo": "Language changed to {language}",
+  "languageChangedTo": "زبان تبدیل ہو گئی: {language}",
   "english": "English",
   "urdu": "Urdu",
   "cancel": "Cancel",
@@ -833,5 +833,56 @@
 
   "preferences": "Preferences",
   "language": "Language",
-  "account": "Account"  
+  "account": "Account" ,
+  
+  "myActiveListings": "My Active Listings",
+  "newestFirst": "Newest First",
+  "oldestFirst": "Oldest First",
+  "priceLowToHigh": "Price: Low to High",
+  "priceHighToLow": "Price: High to Low",
+  "quantityAvailable": "Quantity Available",
+
+  "streamError": "Stream Error:",
+  "processingError": "Processing Error:",
+  "queryError": "Query Error:",
+  "buildCardError": "Build Card Error:",
+  "errorProcessingData": "Error processing data:",
+  "errorDisplayingListing": "Error displaying listing",
+
+  "noDataAvailable": "No data available",
+  "noActiveListings": "No Active Listings",
+  "noListingsYet": "You haven't created any listings yet",
+
+  "userNotLoggedIn": "User not logged in",
+
+  "listed": "Listed:",
+  "views": "Views",
+  "saves": "Saves",
+  "view": "View",
+  "edit": "Edit",
+  "delete": "Delete",
+
+  "editListing": "Edit Listing",
+  "whatToEdit": "What would you like to edit?",
+  "editDetails": "Edit Details",
+  "editDetailsHint": "Change price, quantity, description",
+
+  "editListingDetails": "Edit Listing Details",
+  "price": "Price",
+  "quantity": "Quantity",
+  "description": "Description",
+
+  "fillRequiredFields": "Please fill all required fields",
+  "listingUpdated": "Listing updated successfully",
+  "errorUpdatingListing": "Error updating listing:",
+
+
+  "deleteListingTitle": "Delete Listing?",
+  "deleteListingWarning": "This listing will be permanently deleted. This action cannot be undone.",
+  "listingDeleted": "Listing deleted successfully",
+  "errorDeletingListing": "Error deleting listing:",
+  "donthave_active_listings": "You haven't created any listings yet",
+  "create_first_listing": "Create Your First Listing",
+  "active": "Active"
+
 }

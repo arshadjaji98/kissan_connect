@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
+import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 import '../helpers/firebase_helper.dart';
 import 'CreateListingScreen.dart';
 import 'ListingDetailsScreen.dart';
@@ -44,13 +45,14 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FA),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
-        title: const Text(
-          'My Active Listings',
+        title: Text(
+          loc.myActiveListings,
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
@@ -80,19 +82,19 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                   String displayText = '';
                   switch (value) {
                     case 'newest':
-                      displayText = 'Newest First';
+                      displayText = loc.newestFirst;
                       break;
                     case 'oldest':
-                      displayText = 'Oldest First';
+                      displayText = loc.oldestFirst;
                       break;
                     case 'price_low':
-                      displayText = 'Price: Low to High';
+                      displayText = loc.priceLowToHigh;
                       break;
                     case 'price_high':
-                      displayText = 'Price: High to Low';
+                      displayText = loc.priceHighToLow;
                       break;
                     case 'quantity':
-                      displayText = 'Quantity Available';
+                      displayText = loc.quantityAvailable;
                       break;
                   }
                   return DropdownMenuItem<String>(
@@ -116,8 +118,8 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                 children: [
                   const Icon(Icons.error_outline, size: 60, color: Colors.red),
                   const SizedBox(height: 16),
-                  const Text(
-                    'Error loading listings',
+                  Text(
+                    loc.errorLoadingListings,
                     style: TextStyle(fontSize: 18, color: Colors.grey),
                   ),
                   if (_errorMessage != null) ...[
@@ -148,8 +150,8 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    child: const Text(
-                      'Retry',
+                    child: Text(
+                      loc.retry,
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -166,12 +168,12 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                 }
 
                 if (snapshot.hasError) {
-                  print('Stream Error: ${snapshot.error}');
-                  return _buildErrorState('Error: ${snapshot.error}');
+                  print('${loc.streamError} ${snapshot.error}');
+                  return _buildErrorState('${loc.error} ${snapshot.error}');
                 }
 
                 if (!snapshot.hasData) {
-                  return _buildErrorState('No data available');
+                  return _buildErrorState(loc.noDataAvailable);
                 }
 
                 try {
@@ -196,8 +198,8 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                             color: Colors.grey,
                           ),
                           const SizedBox(height: 20),
-                          const Text(
-                            'No Active Listings',
+                          Text(
+                            loc.noActiveListings,
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
@@ -205,8 +207,8 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                             ),
                           ),
                           const SizedBox(height: 8),
-                          const Text(
-                            'You haven\'t created any listings yet',
+                          Text(
+                            loc.donthave_active_listings,
                             style: TextStyle(fontSize: 14, color: Colors.grey),
                             textAlign: TextAlign.center,
                           ),
@@ -233,8 +235,8 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                             ),
-                            child: const Text(
-                              'Create Your First Listing',
+                            child: Text(
+                              loc.createFirstListing,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -254,8 +256,8 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                         _buildListingCard(listings[index]),
                   );
                 } catch (e) {
-                  print('Processing Error: $e');
-                  return _buildErrorState('Error processing data: $e');
+                  print('${loc.errorProcessingData} $e');
+                  return _buildErrorState('${loc.errorProcessingData}: $e');
                 }
               },
             ),
@@ -263,14 +265,15 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
   }
 
   Widget _buildErrorState(String error) {
+    final loc = AppLocalizations.of(context)!;
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Icon(Icons.error_outline, size: 60, color: Colors.red),
           const SizedBox(height: 16),
-          const Text(
-            'Error loading listings',
+          Text(
+            loc.errorLoadingListings,
             style: TextStyle(fontSize: 18, color: Colors.grey),
           ),
           const SizedBox(height: 8),
@@ -296,7 +299,10 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                 borderRadius: BorderRadius.circular(12),
               ),
             ),
-            child: const Text('Retry', style: TextStyle(color: Colors.white)),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(loc.retry, style: TextStyle(color: Colors.white)),
+            ),
           ),
         ],
       ),
@@ -304,10 +310,11 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
   }
 
   Stream<QuerySnapshot> _getUserListingsStream() {
+    final loc = AppLocalizations.of(context)!;
     try {
       final userId = _auth.currentUser?.uid;
       if (userId == null) {
-        throw Exception('User not logged in');
+        throw Exception(loc.userNotLoggedIn);
       }
 
       // Query WITHOUT status filter to avoid index requirement
@@ -384,16 +391,18 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
       final data = listing.data() as Map<String, dynamic>;
       final imageUrls = data['imageUrls'] as List<dynamic>? ?? [];
       final imageUrl = FirebaseHelper.getImageUrl(imageUrls);
-      final cropName = data['cropName']?.toString() ?? 'Unknown Crop';
+      final cropName =
+          data['cropName']?.toString() ??
+          AppLocalizations.of(context)!.unknownCrop;
       final price = (data['price'] as num?)?.toDouble() ?? 0.0;
       final quantity = (data['quantity'] as num?)?.toDouble() ?? 0.0;
-      final location = data['location']?.toString() ?? 'Unknown';
       final description = data['description']?.toString() ?? '';
       final createdAt =
           (data['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now();
       final views = (data['views'] as num?)?.toInt() ?? 0;
       final saves = (data['saves'] as num?)?.toInt() ?? 0;
-      final status = data['status']?.toString() ?? 'active';
+      final status =
+          data['status']?.toString() ?? AppLocalizations.of(context)!.active;
 
       // If status is not active, don't show or show differently
       if (status != 'active') {
@@ -512,7 +521,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                             ),
                             const SizedBox(width: 6),
                             Text(
-                              'Listed: $dateFormatted',
+                              '${AppLocalizations.of(context)!.listed} $dateFormatted',
                               style: const TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey,
@@ -530,7 +539,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                             ),
                             const SizedBox(width: 6),
                             Text(
-                              '$views views',
+                              '$views ${AppLocalizations.of(context)!.views}',
                               style: const TextStyle(
                                 fontSize: 12,
                                 color: Colors.blue,
@@ -544,7 +553,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                             ),
                             const SizedBox(width: 6),
                             Text(
-                              '$saves saves',
+                              '$saves ${AppLocalizations.of(context)!.saves}',
                               style: const TextStyle(
                                 fontSize: 12,
                                 color: Colors.pink,
@@ -607,7 +616,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                         );
                       },
                       icon: const Icon(Icons.visibility, size: 18),
-                      label: const Text('View'),
+                      label: Text(AppLocalizations.of(context)!.view),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: const Color(0xFF555555),
                         side: const BorderSide(color: Color(0xFFDDDDDD)),
@@ -625,7 +634,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                     child: ElevatedButton.icon(
                       onPressed: () => _editListing(listing),
                       icon: const Icon(Icons.edit, size: 18),
-                      label: const Text('Edit'),
+                      label: Text(AppLocalizations.of(context)!.edit),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF4CAF50),
                         foregroundColor: Colors.white,
@@ -643,7 +652,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                     child: ElevatedButton.icon(
                       onPressed: () => _deleteListing(listing),
                       icon: const Icon(Icons.delete_outline, size: 18),
-                      label: const Text('Delete'),
+                      label: Text(AppLocalizations.of(context)!.delete),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFFFEEBEE),
                         foregroundColor: const Color(0xFFD32F2F),
@@ -661,7 +670,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
         ),
       );
     } catch (e) {
-      print('Build Card Error: $e');
+      print('${AppLocalizations.of(context)!.buildCardError} $e');
       return Container(
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         padding: const EdgeInsets.all(16),
@@ -676,7 +685,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
             const SizedBox(width: 12),
             Expanded(
               child: Text(
-                'Error displaying listing',
+                AppLocalizations.of(context)!.errorDisplayingListing,
                 style: const TextStyle(color: Colors.grey),
               ),
             ),
@@ -701,8 +710,8 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
-                'Edit Listing',
+              Text(
+                AppLocalizations.of(context)!.editListing,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -710,8 +719,8 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              const Text(
-                'What would you like to edit?',
+              Text(
+                AppLocalizations.of(context)!.whatToEdit,
                 style: TextStyle(fontSize: 14, color: Colors.grey),
               ),
               const SizedBox(height: 24),
@@ -719,8 +728,8 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
               // Edit Details
               ListTile(
                 leading: const Icon(Icons.edit_note, color: Color(0xFF4CAF50)),
-                title: const Text('Edit Details'),
-                subtitle: const Text('Change price, quantity, description'),
+                title: Text(AppLocalizations.of(context)!.editDetails),
+                subtitle: Text(AppLocalizations.of(context)!.editDetailsHint),
                 onTap: () async {
                   Navigator.pop(context);
                   await _editListingDetails(listing);
@@ -742,7 +751,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 14),
                   ),
-                  child: const Text('Cancel'),
+                  child: Text(AppLocalizations.of(context)!.cancel),
                 ),
               ),
             ],
@@ -773,15 +782,16 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
-          title: const Text('Edit Listing Details'),
+          title: Text(AppLocalizations.of(context)!.editListingDetails),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 TextField(
                   controller: priceController,
-                  decoration: const InputDecoration(
-                    labelText: 'Price (PKR/kg)',
+                  decoration: InputDecoration(
+                    labelText:
+                        '${AppLocalizations.of(context)!.price} (PKR/kg)',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(12)),
                     ),
@@ -792,8 +802,9 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                 const SizedBox(height: 16),
                 TextField(
                   controller: quantityController,
-                  decoration: const InputDecoration(
-                    labelText: 'Quantity (kg)',
+                  decoration: InputDecoration(
+                    labelText:
+                        '${AppLocalizations.of(context)!.quantity} ${AppLocalizations.of(context)!.unitKg}',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(12)),
                     ),
@@ -804,8 +815,8 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                 const SizedBox(height: 16),
                 TextField(
                   controller: descriptionController,
-                  decoration: const InputDecoration(
-                    labelText: 'Description',
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.description,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(12)),
                     ),
@@ -819,15 +830,20 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Cancel', style: TextStyle(color: Colors.grey)),
+              child: Text(
+                AppLocalizations.of(context)!.cancel,
+                style: TextStyle(color: Colors.grey),
+              ),
             ),
             ElevatedButton(
               onPressed: () async {
                 if (priceController.text.isEmpty ||
                     quantityController.text.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Please fill all required fields'),
+                    SnackBar(
+                      content: Text(
+                        AppLocalizations.of(context)!.fillRequiredFields,
+                      ),
                       backgroundColor: Colors.red,
                     ),
                   );
@@ -844,15 +860,19 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                   });
                   Navigator.pop(context);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Listing updated successfully'),
+                    SnackBar(
+                      content: Text(
+                        AppLocalizations.of(context)!.listingUpdated,
+                      ),
                       backgroundColor: Colors.green,
                     ),
                   );
                 } catch (e) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Error updating listing: $e'),
+                      content: Text(
+                        '${AppLocalizations.of(context)!.errorUpdatingListing}: $e',
+                      ),
                       backgroundColor: Colors.red,
                     ),
                   );
@@ -868,7 +888,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              child: const Text('Save Changes'),
+              child: Text(AppLocalizations.of(context)!.saveChanges),
             ),
           ],
         );
@@ -884,14 +904,15 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
-          title: const Text('Delete Listing?'),
-          content: const Text(
-            'This listing will be permanently deleted. This action cannot be undone.',
-          ),
+          title: Text(AppLocalizations.of(context)!.deleteListingTitle),
+          content: Text(AppLocalizations.of(context)!.deleteListingWarning),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Cancel', style: TextStyle(color: Colors.grey)),
+              child: Text(
+                AppLocalizations.of(context)!.cancel,
+                style: TextStyle(color: Colors.grey),
+              ),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -900,15 +921,19 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                   setState(() => _isLoading = true);
                   await FirebaseHelper.deleteListing(listing.id);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Listing deleted successfully'),
+                    SnackBar(
+                      content: Text(
+                        AppLocalizations.of(context)!.listingDeleted,
+                      ),
                       backgroundColor: Colors.green,
                     ),
                   );
                 } catch (e) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Error deleting listing: $e'),
+                      content: Text(
+                        '${AppLocalizations.of(context)!.errorDeletingListing}: $e',
+                      ),
                       backgroundColor: Colors.red,
                     ),
                   );
@@ -924,7 +949,7 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              child: const Text('Delete'),
+              child: Text(AppLocalizations.of(context)!.delete),
             ),
           ],
         );

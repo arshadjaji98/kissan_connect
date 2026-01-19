@@ -200,8 +200,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ),
                                 side: BorderSide(color: Colors.grey[300]!),
                               ),
-                              child: const Text(
-                                'Cancel',
+                              child: Text(
+                                loc.cancel,
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.black87,
@@ -217,19 +217,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 if (nameController.text.isEmpty ||
                                     locationController.text.isEmpty) {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                      content: Text('Please fill all fields'),
-                                    ),
+                                    SnackBar(content: Text(loc.fillAllFields)),
                                   );
                                   return;
                                 }
 
                                 if (tempSelectedCrops.isEmpty) {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                      content: Text(
-                                        'Please select at least one crop',
-                                      ),
+                                    SnackBar(
+                                      content: Text(loc.selectAtLeastOneCrop),
                                     ),
                                   );
                                   return;
@@ -272,10 +268,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                                     Navigator.pop(context);
                                     ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                        content: Text(
-                                          'Profile updated successfully',
-                                        ),
+                                      SnackBar(
+                                        content: Text(loc.profileUpdated),
                                         backgroundColor: Colors.green,
                                       ),
                                     );
@@ -284,7 +278,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(
-                                        'Error updating profile: $e',
+                                        '${loc.errorUpdatingProfile} $e',
                                       ),
                                       backgroundColor: Colors.red,
                                     ),
@@ -308,8 +302,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ),
                                 elevation: 0,
                               ),
-                              child: const Text(
-                                'Save Changes',
+                              child: Text(
+                                loc.saveChanges,
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -331,6 +325,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<void> _showChangePasswordDialog() async {
+    final loc = AppLocalizations.of(context)!;
     final TextEditingController oldPasswordController = TextEditingController();
     final TextEditingController newPasswordController = TextEditingController();
     final TextEditingController confirmPasswordController =
@@ -357,8 +352,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Change Password',
+                      Text(
+                        loc.changePassword,
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -366,8 +361,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       ),
                       const SizedBox(height: 4),
-                      const Text(
-                        'Enter your current and new password',
+                      Text(
+                        loc.enterNewPassword,
                         style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                       const SizedBox(height: 24),
@@ -408,7 +403,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         controller: oldPasswordController,
                         obscureText: obscureOldPassword,
                         decoration: InputDecoration(
-                          labelText: 'Current Password',
+                          labelText: loc.currentPassword,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: const BorderSide(color: Colors.grey),
@@ -441,7 +436,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         controller: newPasswordController,
                         obscureText: obscureNewPassword,
                         decoration: InputDecoration(
-                          labelText: 'New Password',
+                          labelText: loc.newPassword,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: const BorderSide(color: Colors.grey),
@@ -473,8 +468,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         },
                       ),
                       const SizedBox(height: 8),
-                      const Text(
-                        'Use at least 8 characters',
+                      Text(
+                        loc.passwordHint,
                         style: TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                       const SizedBox(height: 16),
@@ -484,7 +479,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         controller: confirmPasswordController,
                         obscureText: obscureConfirmPassword,
                         decoration: InputDecoration(
-                          labelText: 'Confirm New Password',
+                          labelText: loc.confirmNewPassword,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: const BorderSide(color: Colors.grey),
@@ -536,8 +531,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ),
                                 side: BorderSide(color: Colors.grey[300]!),
                               ),
-                              child: const Text(
-                                'Cancel',
+                              child: Text(
+                                loc.cancel,
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.black87,
@@ -558,24 +553,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 // Validation
                                 if (oldPasswordController.text.isEmpty) {
                                   setStateDialog(() {
-                                    errorMessage =
-                                        'Please enter your current password';
+                                    errorMessage = loc.enterCurrentPassword;
                                   });
                                   return;
                                 }
 
                                 if (newPasswordController.text.isEmpty) {
                                   setStateDialog(() {
-                                    errorMessage =
-                                        'Please enter a new password';
+                                    errorMessage = loc.enterNewPassword;
                                   });
                                   return;
                                 }
 
                                 if (newPasswordController.text.length < 8) {
                                   setStateDialog(() {
-                                    errorMessage =
-                                        'New password must be at least 8 characters';
+                                    errorMessage = loc.passwordMinLength;
                                   });
                                   return;
                                 }
@@ -583,7 +575,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 if (newPasswordController.text !=
                                     confirmPasswordController.text) {
                                   setStateDialog(() {
-                                    errorMessage = 'New passwords do not match';
+                                    errorMessage = loc.passwordNotMatch;
                                   });
                                   return;
                                 }
@@ -614,10 +606,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                                     Navigator.pop(context);
                                     ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                        content: Text(
-                                          'Password updated successfully',
-                                        ),
+                                      SnackBar(
+                                        content: Text(loc.passwordUpdated),
                                         backgroundColor: Colors.green,
                                       ),
                                     );
@@ -625,12 +615,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 } on FirebaseAuthException catch (e) {
                                   if (e.code == 'wrong-password') {
                                     setStateDialog(() {
-                                      errorMessage =
-                                          'Incorrect password entered';
+                                      errorMessage = loc.incorrectPassword;
                                     });
                                   } else if (e.code == 'weak-password') {
                                     setStateDialog(() {
-                                      errorMessage = 'New password is too weak';
+                                      errorMessage = loc.weakPassword;
                                     });
                                   } else {
                                     setStateDialog(() {
@@ -639,8 +628,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   }
                                 } catch (e) {
                                   setStateDialog(() {
-                                    errorMessage =
-                                        'An unexpected error occurred';
+                                    errorMessage = loc.unexpectedError;
                                   });
                                 } finally {
                                   if (mounted) {
@@ -658,8 +646,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
-                              child: const Text(
-                                'Done',
+                              child: Text(
+                                loc.done,
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
@@ -827,7 +815,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(
-                                        'Error changing language: $e',
+                                        '${AppLocalizations.of(context)!.errorChangingLanguage} $e',
                                       ),
                                       backgroundColor: Colors.red,
                                     ),
@@ -925,10 +913,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Settings',
+        title: Text(
+          loc.settings,
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.transparent,
@@ -1027,12 +1016,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     ),
                                   ),
                                 )
-                              : const Row(
+                              : Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Icon(Icons.edit, size: 16),
                                     SizedBox(width: 8),
-                                    Text('Edit Profile'),
+                                    Text(loc.editProfile),
                                   ],
                                 ),
                         ),
@@ -1055,10 +1044,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         // Title
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.only(bottom: 16),
                           child: Text(
-                            'Farm Information',
+                            loc.farmInformation,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -1070,7 +1059,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         // Location
                         _buildInfoRow(
                           icon: Icons.location_on,
-                          title: 'Location',
+                          title: loc.location,
                           value: _currentLocation,
                           showDivider: true,
                         ),
@@ -1078,20 +1067,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         // Chosen Crops
                         _buildInfoRow(
                           icon: Icons.agriculture,
-                          title: 'Chosen Crops',
+                          title: loc.chosenCrops,
                           value: _currentSelectedCrops.isNotEmpty
                               ? _currentSelectedCrops.join(', ')
-                              : 'No crops selected',
+                              : loc.noCropsSelected,
                           showDivider: true,
                         ),
 
                         // Primary Crop
                         _buildInfoRow(
                           icon: Icons.star,
-                          title: 'Primary Crop',
+                          title: loc.primaryCrop,
                           value: _currentPrimaryCrop.isNotEmpty
                               ? _currentPrimaryCrop
-                              : 'Not set',
+                              : loc.notSet,
                           showDivider: false,
                         ),
                       ],
@@ -1113,10 +1102,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         // Title
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.only(bottom: 16),
                           child: Text(
-                            'Preferences',
+                            loc.preferences,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -1128,7 +1117,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         // Language Preference
                         _buildActionTile(
                           icon: Icons.language,
-                          title: 'Language',
+                          title: loc.language,
                           subtitle: _selectedLanguage,
                           onTap: _isLoading ? null : _showLanguageDialog,
                           showDivider: false,
@@ -1152,10 +1141,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         // Title
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.only(bottom: 16),
                           child: Text(
-                            'Account',
+                            loc.account,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -1167,7 +1156,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         // Change Password
                         _buildActionTile(
                           icon: Icons.lock_outline,
-                          title: 'Change Password',
+                          title: loc.changePassword,
                           subtitle: null,
                           onTap: _isLoading ? null : _showChangePasswordDialog,
                           showDivider: false,

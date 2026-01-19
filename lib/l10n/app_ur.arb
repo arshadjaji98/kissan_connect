@@ -4,7 +4,7 @@
   "choosePreferredLanguage": "اپنی پسندیدہ زبان منتخب کریں",
   "cancel": "منسوخ کریں",
   "save": "محفوظ کریں",
-  "languageChangedTo": "زبان تبدیل ہو گئی: {language}",
+  "languageChangedTo": "Language changed to {language}",
   "english": "انگریزی",
   "urdu": "اردو",
   "welcome": "خوش آمدید",
@@ -801,7 +801,7 @@
   "farmLocation": "کھیت کا مقام",
   "selectCrops": "فصلیں منتخب کریں",
   "chooseCrops": "وہ فصلیں منتخب کریں جو آپ اگاتے ہیں",
-  "saveChanges": "تبدیلیاں محفوظ کریں",
+  "saveChanges": "درست کریں",
   "done": "مکمل",
 
   "fillAllFields": "براہ کرم تمام فیلڈز مکمل کریں",
@@ -834,6 +834,54 @@
 
   "preferences": "ترجیحات",
   "language": "زبان",
-  "account": "اکاؤنٹ"
+  "account": "اکاؤنٹ",
+
+  "myActiveListings": "میری فعال فہرستیں",
+  "newestFirst": "نئی سے پرانی",
+  "oldestFirst": "پرانی سے نئی",
+  "priceLowToHigh": "قیمت: کم سے زیادہ",
+  "priceHighToLow": "قیمت: زیادہ سے کم",
+  "quantityAvailable": "دستیاب مقدار",
+
+  "streamError": "اسٹریم میں خرابی:",
+  "processingError": "پروسیسنگ میں خرابی:",
+  "queryError": "کوئری میں خرابی:",
+  "buildCardError": "کارڈ بنانے میں خرابی:",
+  "errorProcessingData": "ڈیٹا پراسیس کرنے میں خرابی:",
+  "errorDisplayingListing": "فہرست دکھانے میں خرابی",
+
+  "noDataAvailable": "کوئی ڈیٹا دستیاب نہیں",
+  "noActiveListings": "کوئی فعال فہرست نہیں",
+  "noListingsYet": "آپ نے ابھی تک کوئی فہرست نہیں بنائی",
+
+  "userNotLoggedIn": "صارف لاگ ان نہیں ہے",
+
+  "listed": "فہرست شدہ:",
+  "views": "دیکھا گیا",
+  "saves": "محفوظ",
+  "view": "دیکھیں",
+  "edit": "ترمیم",
+  "delete": "حذف کریں",
+
+  "editListing": "فہرست میں ترمیم",
+  "whatToEdit": "آپ کیا ترمیم کرنا چاہتے ہیں؟",
+  "editDetails": "تفصیلات میں ترمیم",
+  "editDetailsHint": "قیمت، مقدار، تفصیل تبدیل کریں",
+
+  "editListingDetails": "فہرست کی تفصیلات میں ترمیم",
+  "price": "قیمت",
+  "quantity": "مقدار",
+  "description": "تفصیل",
+
+  "fillRequiredFields": "براہ کرم تمام ضروری فیلڈز مکمل کریں",
+  "listingUpdated": "فہرست کامیابی سے اپڈیٹ ہو گئی",
+  "errorUpdatingListing": "فہرست اپڈیٹ کرنے میں خرابی:",
+  "deleteListingTitle": "فہرست حذف کریں؟",
+  "deleteListingWarning": "یہ فہرست مستقل طور پر حذف ہو جائے گی۔ یہ عمل واپس نہیں ہو سکتا۔",
+  "listingDeleted": "فہرست کامیابی سے حذف ہو گئی",
+  "errorDeletingListing": "فہرست حذف کرنے میں خرابی:",
+  "donthave_active_listings": "آپ کے پاس کوئی فعال فہرستیں نہیں ہیں۔",
+  "create_first_listing": "پہلی فہرست بنائیں۔",
+  "active": "فعال"
 }
 
