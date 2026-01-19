@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
-import 'package:kissan_connect_app_2/localization/app_localizations.dart';
 import 'package:kissan_connect_app_2/main.dart';
 import '../widgets/crop_selection_widget.dart';
 
@@ -75,6 +74,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<void> _showEditProfileDialog() async {
+    final loc = AppLocalizations.of(context)!;
     final TextEditingController nameController = TextEditingController(
       text: _currentName,
     );
@@ -99,8 +99,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Edit Profile',
+                      Text(
+                        loc.editProfile,
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -108,8 +108,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       ),
                       const SizedBox(height: 4),
-                      const Text(
-                        'Update your profile information',
+                      Text(
+                        loc.updateProfileInfo,
                         style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                       const SizedBox(height: 24),
@@ -118,7 +118,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       TextFormField(
                         controller: nameController,
                         decoration: InputDecoration(
-                          labelText: 'Full Name',
+                          labelText: loc.fullName,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: const BorderSide(color: Colors.grey),
@@ -137,7 +137,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       TextFormField(
                         controller: locationController,
                         decoration: InputDecoration(
-                          labelText: 'Farm Location',
+                          labelText: loc.farmLocation,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: const BorderSide(color: Colors.grey),
@@ -153,8 +153,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       const SizedBox(height: 16),
 
                       // Crop Selection
-                      const Text(
-                        'Select Crops',
+                      Text(
+                        loc.selectCrops,
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -162,9 +162,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       ),
                       const SizedBox(height: 8),
-                      const Text(
-                        'Choose the crops you grow on your farm',
-                        style: TextStyle(fontSize: 14, color: Colors.grey),
+                      Text(
+                        loc.chooseCrops,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey,
+                        ),
                       ),
                       const SizedBox(height: 12),
 

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 import '../helpers/firebase_helper.dart';
 import 'CreateListingScreen.dart';
 import 'ListingDetailsScreen.dart';
@@ -26,7 +27,6 @@ class MarketplaceScreen extends StatefulWidget {
 
 class _MarketplaceScreenState extends State<MarketplaceScreen> {
   final TextEditingController _searchController = TextEditingController();
-  bool _isLoading = false;
   int _bottomNavIndex = 3;
   String _searchQuery = '';
 
@@ -61,11 +61,12 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
             _selectedCrops = List<String>.from(
               userData['selectedCrops'] ?? ['Wheat'],
             );
-            _primaryCrop = userData['primaryCrop'] ?? 'Wheat';
+            _primaryCrop =
+                userData['primaryCrop'] ?? AppLocalizations.of(context)!.wheat;
           });
         }
       } catch (e) {
-        print('Error loading user data: $e');
+        print('${AppLocalizations.of(context)!.errorLoadingUserData} $e');
       }
     }
   }
@@ -149,6 +150,7 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FA),
       appBar: AppBar(
@@ -156,19 +158,17 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
         elevation: 0,
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: const Text(
-          "Marketplace",
+        title: Text(
+          loc.marketplace,
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 22,
           ),
         ),
-        // Settings button removed from here
       ),
       body: Column(
         children: [
-          // Search Bar
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 20.0,
@@ -191,7 +191,7 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                 controller: _searchController,
                 onChanged: _filterListings,
                 decoration: InputDecoration(
-                  hintText: "Search crops, sellers, locations...",
+                  hintText: loc.searchHint,
                   hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
                   prefixIcon: const Padding(
                     padding: EdgeInsets.only(left: 16.0, right: 8.0),
@@ -290,16 +290,19 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
               break;
           }
         },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: loc.home),
           BottomNavigationBarItem(
             icon: Icon(Icons.wb_sunny_outlined),
-            label: 'Weather',
+            label: loc.weather,
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.grass), label: 'Crop Guide'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.grass),
+            label: loc.crop_guide,
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.storefront),
-            label: 'Marketplace',
+            label: loc.marketplace,
           ),
         ],
       ),
@@ -323,8 +326,8 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
               children: [
                 const Icon(Icons.error_outline, size: 60, color: Colors.red),
                 const SizedBox(height: 16),
-                const Text(
-                  'Error loading listings',
+                Text(
+                  AppLocalizations.of(context)!.errorLoadingListings,
                   style: TextStyle(fontSize: 18, color: Colors.grey),
                 ),
               ],
@@ -339,8 +342,8 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
               children: [
                 const Icon(Icons.inventory_2, size: 60, color: Colors.grey),
                 const SizedBox(height: 16),
-                const Text(
-                  'No listings available',
+                Text(
+                  AppLocalizations.of(context)!.noListingsAvailable,
                   style: TextStyle(fontSize: 18, color: Colors.grey),
                 ),
                 const SizedBox(height: 8),
@@ -362,8 +365,8 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  child: const Text(
-                    'Create First Listing',
+                  child: Text(
+                    AppLocalizations.of(context)!.createFirstListing,
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -394,14 +397,14 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
       future: FirebaseHelper.searchListings(_searchQuery),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(
+          return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircularProgressIndicator(color: Color(0xFF2E7D32)),
                 SizedBox(height: 16),
                 Text(
-                  'Searching...',
+                  AppLocalizations.of(context)!.searching,
                   style: TextStyle(color: Colors.grey, fontSize: 14),
                 ),
               ],
@@ -416,8 +419,8 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
               children: [
                 const Icon(Icons.error_outline, size: 60, color: Colors.red),
                 const SizedBox(height: 16),
-                const Text(
-                  'Search error',
+                Text(
+                  AppLocalizations.of(context)!.searchError,
                   style: TextStyle(fontSize: 18, color: Colors.grey),
                 ),
                 const SizedBox(height: 8),
@@ -429,8 +432,8 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  child: const Text(
-                    'Clear Search',
+                  child: Text(
+                    AppLocalizations.of(context)!.clearSearch,
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -449,7 +452,7 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                 const Icon(Icons.search_off, size: 60, color: Colors.grey),
                 const SizedBox(height: 16),
                 Text(
-                  'No results for "$_searchQuery"',
+                  '${AppLocalizations.of(context)!.noResultsFor} $_searchQuery',
                   style: const TextStyle(fontSize: 18, color: Colors.grey),
                 ),
                 const SizedBox(height: 8),
@@ -461,8 +464,8 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  child: const Text(
-                    'Clear Search',
+                  child: Text(
+                    AppLocalizations.of(context)!.clearSearch,
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -490,14 +493,18 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
     final data = listing.data() as Map<String, dynamic>;
     final imageUrls = data['imageUrls'] as List<dynamic>? ?? [];
     final imageUrl = FirebaseHelper.getImageUrl(imageUrls);
-    final cropName = data['cropName']?.toString() ?? 'Unknown Crop';
+    final cropName =
+        data['cropName']?.toString() ??
+        AppLocalizations.of(context)!.unknownCrop;
     final price = (data['price'] as num?)?.toDouble() ?? 0.0;
     final quantity = (data['quantity'] as num?)?.toDouble() ?? 0.0;
-    final location = data['location']?.toString() ?? 'Unknown';
-    final sellerName = data['sellerName']?.toString() ?? 'Unknown Seller';
+    final location =
+        data['location']?.toString() ?? AppLocalizations.of(context)!.unknown;
 
-    final priceFormatted = 'PKR ${price.toStringAsFixed(0)}/kg';
-    final quantityFormatted = '${quantity.toStringAsFixed(0)} kg available';
+    final priceFormatted =
+        'PKR ${price.toStringAsFixed(0)}/${AppLocalizations.of(context)!.unitKg}';
+    final quantityFormatted =
+        '${quantity.toStringAsFixed(0)} ${AppLocalizations.of(context)!.kgAvailable}';
 
     return GestureDetector(
       onTap: () {

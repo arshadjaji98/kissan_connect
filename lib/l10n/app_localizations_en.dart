@@ -131,15 +131,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get vegetables => 'Vegetables';
 
   @override
-  String get mango => 'Mango';
-
-  @override
-  String get potato => 'Potato';
-
-  @override
-  String get chilli => 'Chilli';
-
-  @override
   String get welcome_back => 'Welcome Back!';
 
   @override
@@ -1779,6 +1770,99 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sugar_y5 => 'Ratoon management for 2-3 cycles';
 
   @override
+  String get rice_summary => 'Rice needs standing water for most of its growing period. The Kharif season is the best time for cultivation.';
+
+  @override
+  String get rice_p_title => 'Planting';
+
+  @override
+  String get rice_p1 => 'Transplant seedlings 20-25 days old';
+
+  @override
+  String get rice_p2 => 'Optimal spacing: 20 x 15 cm';
+
+  @override
+  String get rice_p3 => 'Plant 2-3 seedlings per hill';
+
+  @override
+  String get rice_p4 => 'Transplant in puddled soil';
+
+  @override
+  String get rice_p5 => 'Best time: June-July for Kharif season';
+
+  @override
+  String get rice_i_title => 'Irrigation';
+
+  @override
+  String get rice_i1 => 'Maintain 2-5 cm standing water';
+
+  @override
+  String get rice_i2 => 'Drain field 15 days before harvest';
+
+  @override
+  String get rice_i3 => 'Critical stages: Tillering and flowering';
+
+  @override
+  String get rice_i4 => 'Avoid water stress during panicle initiation';
+
+  @override
+  String get rice_i5 => 'Total water requirement: 100-150 cm';
+
+  @override
+  String get rice_f_title => 'Fertilization';
+
+  @override
+  String get rice_f1 => 'Basal: 1.5 bags DAP/acre';
+
+  @override
+  String get rice_f2 => 'First top dressing: 1 bag Urea at tillering';
+
+  @override
+  String get rice_f3 => 'Second top dressing: 0.5 bag Urea at panicle initiation';
+
+  @override
+  String get rice_f4 => 'Apply Zinc sulfate @ 10 kg/acre if needed';
+
+  @override
+  String get rice_f5 => 'Silicon application improves stem strength';
+
+  @override
+  String get rice_pc_title => 'Pest Control';
+
+  @override
+  String get rice_pc1 => 'For stem borer: Cartap hydrochloride @ 500g/acre';
+
+  @override
+  String get rice_pc2 => 'For leaf folder: Fipronil @ 200 ml/acre';
+
+  @override
+  String get rice_pc3 => 'For blast disease: Tricyclazole @ 300g/acre';
+
+  @override
+  String get rice_pc4 => 'Use light traps for moth monitoring';
+
+  @override
+  String get rice_pc5 => 'Practice clean cultivation';
+
+  @override
+  String get rice_y_title => 'Yield Optimization';
+
+  @override
+  String get rice_y1 => 'Target yield: 30-40 maunds/acre';
+
+  @override
+  String get rice_y2 => 'Harvest when 80% grains turn golden yellow';
+
+  @override
+  String get rice_y3 => 'Thresh within 2-3 days of harvest';
+
+  @override
+  String get rice_y4 => 'Dry to 14% moisture content';
+
+  @override
+  String get rice_y5 => 'Store in aerated containers';
+
+  @override
   String get cotton_summary => 'Cotton thrives in dry, warm climates and needs plenty of sunshine. Proper pest management is key.';
 
   @override
@@ -2247,83 +2331,173 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chilli_y5 => 'Store in airtight containers';
 
   @override
-  String get rice_summary => 'Rice needs standing water for most of its growing period. The Kharif season is the best time for cultivation.';
+  String get errorLoadingCrops => 'Error loading crops';
 
   @override
-  String get rice_p_title => 'Planting';
+  String get errorFetchingCrops => 'Error fetching crops';
 
   @override
-  String get rice_p1 => 'Transplant seedlings 20-25 days old';
+  String get yourCrops => 'Your Crops';
 
   @override
-  String get rice_p2 => 'Optimal spacing: 20 x 15 cm';
+  String get allOtherCrops => 'All Other Crops';
 
   @override
-  String get rice_p3 => 'Plant 2-3 seedlings per hill';
+  String get noCropsFound => 'No crops found';
 
   @override
-  String get rice_p4 => 'Transplant in puddled soil';
+  String get searchResults => 'Search Results';
 
   @override
-  String get rice_p5 => 'Best time: June-July for Kharif season';
+  String get noCropsSelected => 'You have not selected any crops yet.';
 
   @override
-  String get rice_i_title => 'Irrigation';
+  String get allCropsSelected => 'You have selected all available crops!';
 
   @override
-  String get rice_i1 => 'Maintain 2-5 cm standing water';
+  String get errorLoadingUserData => 'Error loading user data';
 
   @override
-  String get rice_i2 => 'Drain field 15 days before harvest';
+  String get searchHint => 'Search crops';
 
   @override
-  String get rice_i3 => 'Critical stages: Tillering and flowering';
+  String get seller_location => 'Seller Location';
 
   @override
-  String get rice_i4 => 'Avoid water stress during panicle initiation';
+  String get errorLoadingListings => 'Error loading listings';
 
   @override
-  String get rice_i5 => 'Total water requirement: 100-150 cm';
+  String get noListingsAvailable => 'No listings available';
 
   @override
-  String get rice_f_title => 'Fertilization';
+  String get createFirstListing => 'Create First Listing';
 
   @override
-  String get rice_f1 => 'Basal: 1.5 bags DAP/acre';
+  String get searching => 'Searching...';
 
   @override
-  String get rice_f2 => 'First top dressing: 1 bag Urea at tillering';
+  String get searchError => 'Search error';
 
   @override
-  String get rice_f3 => 'Second top dressing: 0.5 bag Urea at panicle initiation';
+  String get clearSearch => 'Clear Search';
 
   @override
-  String get rice_f4 => 'Apply Zinc sulfate @ 10 kg/acre if needed';
+  String get noResultsFor => 'No results for';
 
   @override
-  String get rice_f5 => 'Silicon application improves stem strength';
+  String get unknownCrop => 'Unknown Crop';
 
   @override
-  String get rice_pc_title => 'Pest Control';
+  String get unknownSeller => 'Unknown Seller';
 
   @override
-  String get rice_pc1 => 'For stem borer: Cartap hydrochloride @ 500g/acre';
+  String get unitKg => 'kg';
 
   @override
-  String get rice_pc2 => 'For leaf folder: Fipronil @ 200 ml/acre';
+  String get kgAvailable => 'kg available';
 
   @override
-  String get rice_pc3 => 'For blast disease: Tricyclazole @ 300g/acre';
+  String get settings => 'Settings';
 
   @override
-  String get rice_pc4 => 'Use light traps for moth monitoring';
+  String get editProfile => 'Edit Profile';
 
   @override
-  String get rice_pc5 => 'Practice clean cultivation';
+  String get updateProfileInfo => 'Update your profile information';
 
   @override
-  String get rice_y_title => 'Yield Optimization';
+  String get fullName => 'Full Name';
 
   @override
-  String get rice_y1 => 'Target yield: 30-40 maunds/acre';
+  String get farmLocation => 'Farm Location';
+
+  @override
+  String get selectCrops => 'Select Crops';
+
+  @override
+  String get chooseCrops => 'Choose the crops you grow on your farm';
+
+  @override
+  String get saveChanges => 'Save Changes';
+
+  @override
+  String get done => 'Done';
+
+  @override
+  String get fillAllFields => 'Please fill all fields';
+
+  @override
+  String get selectAtLeastOneCrop => 'Please select at least one crop';
+
+  @override
+  String get profileUpdated => 'Profile updated successfully';
+
+  @override
+  String get errorUpdatingProfile => 'Error updating profile:';
+
+  @override
+  String get changePassword => 'Change Password';
+
+  @override
+  String get enterPasswordInfo => 'Enter your current and new password';
+
+  @override
+  String get currentPassword => 'Current Password';
+
+  @override
+  String get newPassword => 'New Password';
+
+  @override
+  String get confirmNewPassword => 'Confirm New Password';
+
+  @override
+  String get passwordHint => 'Use at least 8 characters';
+
+  @override
+  String get enterCurrentPassword => 'Please enter your current password';
+
+  @override
+  String get enterNewPassword => 'Please enter a new password';
+
+  @override
+  String get passwordMinLength => 'New password must be at least 8 characters';
+
+  @override
+  String get passwordNotMatch => 'New passwords do not match';
+
+  @override
+  String get passwordUpdated => 'Password updated successfully';
+
+  @override
+  String get incorrectPassword => 'Incorrect password entered';
+
+  @override
+  String get weakPassword => 'New password is too weak';
+
+  @override
+  String get unexpectedError => 'An unexpected error occurred';
+
+  @override
+  String get errorChangingLanguage => 'Error changing language:';
+
+  @override
+  String get farmInformation => 'Farm Information';
+
+  @override
+  String get chosenCrops => 'Chosen Crops';
+
+  @override
+  String get primaryCrop => 'Primary Crop';
+
+  @override
+  String get notSet => 'Not Set';
+
+  @override
+  String get preferences => 'Preferences';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get account => 'Account';
 }

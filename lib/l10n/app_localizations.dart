@@ -335,24 +335,6 @@ abstract class AppLocalizations {
   /// **'Vegetables'**
   String get vegetables;
 
-  /// No description provided for @mango.
-  ///
-  /// In en, this message translates to:
-  /// **'Mango'**
-  String get mango;
-
-  /// No description provided for @potato.
-  ///
-  /// In en, this message translates to:
-  /// **'Potato'**
-  String get potato;
-
-  /// No description provided for @chilli.
-  ///
-  /// In en, this message translates to:
-  /// **'Chilli'**
-  String get chilli;
-
   /// No description provided for @welcome_back.
   ///
   /// In en, this message translates to:
@@ -3515,6 +3497,192 @@ abstract class AppLocalizations {
   /// **'Ratoon management for 2-3 cycles'**
   String get sugar_y5;
 
+  /// No description provided for @rice_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Rice needs standing water for most of its growing period. The Kharif season is the best time for cultivation.'**
+  String get rice_summary;
+
+  /// No description provided for @rice_p_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Planting'**
+  String get rice_p_title;
+
+  /// No description provided for @rice_p1.
+  ///
+  /// In en, this message translates to:
+  /// **'Transplant seedlings 20-25 days old'**
+  String get rice_p1;
+
+  /// No description provided for @rice_p2.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimal spacing: 20 x 15 cm'**
+  String get rice_p2;
+
+  /// No description provided for @rice_p3.
+  ///
+  /// In en, this message translates to:
+  /// **'Plant 2-3 seedlings per hill'**
+  String get rice_p3;
+
+  /// No description provided for @rice_p4.
+  ///
+  /// In en, this message translates to:
+  /// **'Transplant in puddled soil'**
+  String get rice_p4;
+
+  /// No description provided for @rice_p5.
+  ///
+  /// In en, this message translates to:
+  /// **'Best time: June-July for Kharif season'**
+  String get rice_p5;
+
+  /// No description provided for @rice_i_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Irrigation'**
+  String get rice_i_title;
+
+  /// No description provided for @rice_i1.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintain 2-5 cm standing water'**
+  String get rice_i1;
+
+  /// No description provided for @rice_i2.
+  ///
+  /// In en, this message translates to:
+  /// **'Drain field 15 days before harvest'**
+  String get rice_i2;
+
+  /// No description provided for @rice_i3.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical stages: Tillering and flowering'**
+  String get rice_i3;
+
+  /// No description provided for @rice_i4.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid water stress during panicle initiation'**
+  String get rice_i4;
+
+  /// No description provided for @rice_i5.
+  ///
+  /// In en, this message translates to:
+  /// **'Total water requirement: 100-150 cm'**
+  String get rice_i5;
+
+  /// No description provided for @rice_f_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilization'**
+  String get rice_f_title;
+
+  /// No description provided for @rice_f1.
+  ///
+  /// In en, this message translates to:
+  /// **'Basal: 1.5 bags DAP/acre'**
+  String get rice_f1;
+
+  /// No description provided for @rice_f2.
+  ///
+  /// In en, this message translates to:
+  /// **'First top dressing: 1 bag Urea at tillering'**
+  String get rice_f2;
+
+  /// No description provided for @rice_f3.
+  ///
+  /// In en, this message translates to:
+  /// **'Second top dressing: 0.5 bag Urea at panicle initiation'**
+  String get rice_f3;
+
+  /// No description provided for @rice_f4.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply Zinc sulfate @ 10 kg/acre if needed'**
+  String get rice_f4;
+
+  /// No description provided for @rice_f5.
+  ///
+  /// In en, this message translates to:
+  /// **'Silicon application improves stem strength'**
+  String get rice_f5;
+
+  /// No description provided for @rice_pc_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Pest Control'**
+  String get rice_pc_title;
+
+  /// No description provided for @rice_pc1.
+  ///
+  /// In en, this message translates to:
+  /// **'For stem borer: Cartap hydrochloride @ 500g/acre'**
+  String get rice_pc1;
+
+  /// No description provided for @rice_pc2.
+  ///
+  /// In en, this message translates to:
+  /// **'For leaf folder: Fipronil @ 200 ml/acre'**
+  String get rice_pc2;
+
+  /// No description provided for @rice_pc3.
+  ///
+  /// In en, this message translates to:
+  /// **'For blast disease: Tricyclazole @ 300g/acre'**
+  String get rice_pc3;
+
+  /// No description provided for @rice_pc4.
+  ///
+  /// In en, this message translates to:
+  /// **'Use light traps for moth monitoring'**
+  String get rice_pc4;
+
+  /// No description provided for @rice_pc5.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice clean cultivation'**
+  String get rice_pc5;
+
+  /// No description provided for @rice_y_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Yield Optimization'**
+  String get rice_y_title;
+
+  /// No description provided for @rice_y1.
+  ///
+  /// In en, this message translates to:
+  /// **'Target yield: 30-40 maunds/acre'**
+  String get rice_y1;
+
+  /// No description provided for @rice_y2.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest when 80% grains turn golden yellow'**
+  String get rice_y2;
+
+  /// No description provided for @rice_y3.
+  ///
+  /// In en, this message translates to:
+  /// **'Thresh within 2-3 days of harvest'**
+  String get rice_y3;
+
+  /// No description provided for @rice_y4.
+  ///
+  /// In en, this message translates to:
+  /// **'Dry to 14% moisture content'**
+  String get rice_y4;
+
+  /// No description provided for @rice_y5.
+  ///
+  /// In en, this message translates to:
+  /// **'Store in aerated containers'**
+  String get rice_y5;
+
   /// No description provided for @cotton_summary.
   ///
   /// In en, this message translates to:
@@ -4451,167 +4619,347 @@ abstract class AppLocalizations {
   /// **'Store in airtight containers'**
   String get chilli_y5;
 
-  /// No description provided for @rice_summary.
+  /// No description provided for @errorLoadingCrops.
   ///
   /// In en, this message translates to:
-  /// **'Rice needs standing water for most of its growing period. The Kharif season is the best time for cultivation.'**
-  String get rice_summary;
+  /// **'Error loading crops'**
+  String get errorLoadingCrops;
 
-  /// No description provided for @rice_p_title.
+  /// No description provided for @errorFetchingCrops.
   ///
   /// In en, this message translates to:
-  /// **'Planting'**
-  String get rice_p_title;
+  /// **'Error fetching crops'**
+  String get errorFetchingCrops;
 
-  /// No description provided for @rice_p1.
+  /// No description provided for @yourCrops.
   ///
   /// In en, this message translates to:
-  /// **'Transplant seedlings 20-25 days old'**
-  String get rice_p1;
+  /// **'Your Crops'**
+  String get yourCrops;
 
-  /// No description provided for @rice_p2.
+  /// No description provided for @allOtherCrops.
   ///
   /// In en, this message translates to:
-  /// **'Optimal spacing: 20 x 15 cm'**
-  String get rice_p2;
+  /// **'All Other Crops'**
+  String get allOtherCrops;
 
-  /// No description provided for @rice_p3.
+  /// No description provided for @noCropsFound.
   ///
   /// In en, this message translates to:
-  /// **'Plant 2-3 seedlings per hill'**
-  String get rice_p3;
+  /// **'No crops found'**
+  String get noCropsFound;
 
-  /// No description provided for @rice_p4.
+  /// No description provided for @searchResults.
   ///
   /// In en, this message translates to:
-  /// **'Transplant in puddled soil'**
-  String get rice_p4;
+  /// **'Search Results'**
+  String get searchResults;
 
-  /// No description provided for @rice_p5.
+  /// No description provided for @noCropsSelected.
   ///
   /// In en, this message translates to:
-  /// **'Best time: June-July for Kharif season'**
-  String get rice_p5;
+  /// **'You have not selected any crops yet.'**
+  String get noCropsSelected;
 
-  /// No description provided for @rice_i_title.
+  /// No description provided for @allCropsSelected.
   ///
   /// In en, this message translates to:
-  /// **'Irrigation'**
-  String get rice_i_title;
+  /// **'You have selected all available crops!'**
+  String get allCropsSelected;
 
-  /// No description provided for @rice_i1.
+  /// No description provided for @errorLoadingUserData.
   ///
   /// In en, this message translates to:
-  /// **'Maintain 2-5 cm standing water'**
-  String get rice_i1;
+  /// **'Error loading user data'**
+  String get errorLoadingUserData;
 
-  /// No description provided for @rice_i2.
+  /// No description provided for @searchHint.
   ///
   /// In en, this message translates to:
-  /// **'Drain field 15 days before harvest'**
-  String get rice_i2;
+  /// **'Search crops'**
+  String get searchHint;
 
-  /// No description provided for @rice_i3.
+  /// No description provided for @seller_location.
   ///
   /// In en, this message translates to:
-  /// **'Critical stages: Tillering and flowering'**
-  String get rice_i3;
+  /// **'Seller Location'**
+  String get seller_location;
 
-  /// No description provided for @rice_i4.
+  /// No description provided for @errorLoadingListings.
   ///
   /// In en, this message translates to:
-  /// **'Avoid water stress during panicle initiation'**
-  String get rice_i4;
+  /// **'Error loading listings'**
+  String get errorLoadingListings;
 
-  /// No description provided for @rice_i5.
+  /// No description provided for @noListingsAvailable.
   ///
   /// In en, this message translates to:
-  /// **'Total water requirement: 100-150 cm'**
-  String get rice_i5;
+  /// **'No listings available'**
+  String get noListingsAvailable;
 
-  /// No description provided for @rice_f_title.
+  /// No description provided for @createFirstListing.
   ///
   /// In en, this message translates to:
-  /// **'Fertilization'**
-  String get rice_f_title;
+  /// **'Create First Listing'**
+  String get createFirstListing;
 
-  /// No description provided for @rice_f1.
+  /// No description provided for @searching.
   ///
   /// In en, this message translates to:
-  /// **'Basal: 1.5 bags DAP/acre'**
-  String get rice_f1;
+  /// **'Searching...'**
+  String get searching;
 
-  /// No description provided for @rice_f2.
+  /// No description provided for @searchError.
   ///
   /// In en, this message translates to:
-  /// **'First top dressing: 1 bag Urea at tillering'**
-  String get rice_f2;
+  /// **'Search error'**
+  String get searchError;
 
-  /// No description provided for @rice_f3.
+  /// No description provided for @clearSearch.
   ///
   /// In en, this message translates to:
-  /// **'Second top dressing: 0.5 bag Urea at panicle initiation'**
-  String get rice_f3;
+  /// **'Clear Search'**
+  String get clearSearch;
 
-  /// No description provided for @rice_f4.
+  /// No description provided for @noResultsFor.
   ///
   /// In en, this message translates to:
-  /// **'Apply Zinc sulfate @ 10 kg/acre if needed'**
-  String get rice_f4;
+  /// **'No results for'**
+  String get noResultsFor;
 
-  /// No description provided for @rice_f5.
+  /// No description provided for @unknownCrop.
   ///
   /// In en, this message translates to:
-  /// **'Silicon application improves stem strength'**
-  String get rice_f5;
+  /// **'Unknown Crop'**
+  String get unknownCrop;
 
-  /// No description provided for @rice_pc_title.
+  /// No description provided for @unknownSeller.
   ///
   /// In en, this message translates to:
-  /// **'Pest Control'**
-  String get rice_pc_title;
+  /// **'Unknown Seller'**
+  String get unknownSeller;
 
-  /// No description provided for @rice_pc1.
+  /// No description provided for @unitKg.
   ///
   /// In en, this message translates to:
-  /// **'For stem borer: Cartap hydrochloride @ 500g/acre'**
-  String get rice_pc1;
+  /// **'kg'**
+  String get unitKg;
 
-  /// No description provided for @rice_pc2.
+  /// No description provided for @kgAvailable.
   ///
   /// In en, this message translates to:
-  /// **'For leaf folder: Fipronil @ 200 ml/acre'**
-  String get rice_pc2;
+  /// **'kg available'**
+  String get kgAvailable;
 
-  /// No description provided for @rice_pc3.
+  /// No description provided for @settings.
   ///
   /// In en, this message translates to:
-  /// **'For blast disease: Tricyclazole @ 300g/acre'**
-  String get rice_pc3;
+  /// **'Settings'**
+  String get settings;
 
-  /// No description provided for @rice_pc4.
+  /// No description provided for @editProfile.
   ///
   /// In en, this message translates to:
-  /// **'Use light traps for moth monitoring'**
-  String get rice_pc4;
+  /// **'Edit Profile'**
+  String get editProfile;
 
-  /// No description provided for @rice_pc5.
+  /// No description provided for @updateProfileInfo.
   ///
   /// In en, this message translates to:
-  /// **'Practice clean cultivation'**
-  String get rice_pc5;
+  /// **'Update your profile information'**
+  String get updateProfileInfo;
 
-  /// No description provided for @rice_y_title.
+  /// No description provided for @fullName.
   ///
   /// In en, this message translates to:
-  /// **'Yield Optimization'**
-  String get rice_y_title;
+  /// **'Full Name'**
+  String get fullName;
 
-  /// No description provided for @rice_y1.
+  /// No description provided for @farmLocation.
   ///
   /// In en, this message translates to:
-  /// **'Target yield: 30-40 maunds/acre'**
-  String get rice_y1;
+  /// **'Farm Location'**
+  String get farmLocation;
+
+  /// No description provided for @selectCrops.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Crops'**
+  String get selectCrops;
+
+  /// No description provided for @chooseCrops.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the crops you grow on your farm'**
+  String get chooseCrops;
+
+  /// No description provided for @saveChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Changes'**
+  String get saveChanges;
+
+  /// No description provided for @done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// No description provided for @fillAllFields.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill all fields'**
+  String get fillAllFields;
+
+  /// No description provided for @selectAtLeastOneCrop.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select at least one crop'**
+  String get selectAtLeastOneCrop;
+
+  /// No description provided for @profileUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile updated successfully'**
+  String get profileUpdated;
+
+  /// No description provided for @errorUpdatingProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Error updating profile:'**
+  String get errorUpdatingProfile;
+
+  /// No description provided for @changePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Password'**
+  String get changePassword;
+
+  /// No description provided for @enterPasswordInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your current and new password'**
+  String get enterPasswordInfo;
+
+  /// No description provided for @currentPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Password'**
+  String get currentPassword;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'New Password'**
+  String get newPassword;
+
+  /// No description provided for @confirmNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm New Password'**
+  String get confirmNewPassword;
+
+  /// No description provided for @passwordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Use at least 8 characters'**
+  String get passwordHint;
+
+  /// No description provided for @enterCurrentPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your current password'**
+  String get enterCurrentPassword;
+
+  /// No description provided for @enterNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a new password'**
+  String get enterNewPassword;
+
+  /// No description provided for @passwordMinLength.
+  ///
+  /// In en, this message translates to:
+  /// **'New password must be at least 8 characters'**
+  String get passwordMinLength;
+
+  /// No description provided for @passwordNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'New passwords do not match'**
+  String get passwordNotMatch;
+
+  /// No description provided for @passwordUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Password updated successfully'**
+  String get passwordUpdated;
+
+  /// No description provided for @incorrectPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect password entered'**
+  String get incorrectPassword;
+
+  /// No description provided for @weakPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'New password is too weak'**
+  String get weakPassword;
+
+  /// No description provided for @unexpectedError.
+  ///
+  /// In en, this message translates to:
+  /// **'An unexpected error occurred'**
+  String get unexpectedError;
+
+  /// No description provided for @errorChangingLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Error changing language:'**
+  String get errorChangingLanguage;
+
+  /// No description provided for @farmInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Farm Information'**
+  String get farmInformation;
+
+  /// No description provided for @chosenCrops.
+  ///
+  /// In en, this message translates to:
+  /// **'Chosen Crops'**
+  String get chosenCrops;
+
+  /// No description provided for @primaryCrop.
+  ///
+  /// In en, this message translates to:
+  /// **'Primary Crop'**
+  String get primaryCrop;
+
+  /// No description provided for @notSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not Set'**
+  String get notSet;
+
+  /// No description provided for @preferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get preferences;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @account.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

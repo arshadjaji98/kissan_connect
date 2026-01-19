@@ -577,7 +577,7 @@
   "sugar_y4": "کٹائی کے 24 گھنٹوں کے اندر مل تک پہنچائیں",
   "sugar_y5": "منڈھری (Ratoon) کا انتظام 2-3 چکروں تک کریں",
 
-"rice_summary": "چاول کو بڑھوتری کے زیادہ تر حصے میں کھڑے پانی کی ضرورت ہوتی ہے۔ خریف کاشت کا بہترین وقت ہے۔",
+  "rice_summary": "چاول کو بڑھوتری کے زیادہ تر حصے میں کھڑے پانی کی ضرورت ہوتی ہے۔ خریف کاشت کا بہترین وقت ہے۔",
   "rice_p_title": "کاشت",
   "rice_p1": "20-25 دن پرانی پنیری منتقل کریں",
   "rice_p2": "مثالی فاصلہ: 20 x 15 سینٹی میٹر",
@@ -769,7 +769,17 @@
   "chilli_y3": "زیادہ پھل لینے کے لیے باقاعدگی سے تڑائی کریں",
   "chilli_y4": "رنگ اور تیزی برقرار رکھنے کے لیے سائے میں خشک کریں",
   "chilli_y5": "ہوا بند برتنوں میں ذخیرہ کریں",
-  
+  "errorLoadingCrops": "فصلیں لوڈ کرنے میں خرابی",
+  "errorFetchingCrops": "فصلیں حاصل کرنے میں خرابی",
+  "seller_location": "فروخت کنندہ کا مقام",
+
+  "yourCrops": "آپ کی فصلیں",
+  "allOtherCrops": "دیگر تمام فصلیں",
+  "noCropsFound": "کوئی فصل نہیں ملی",
+  "searchResults": "تلاش کے نتائج",
+  "noCropsSelected": "آپ نے ابھی تک کسی فصل کا انتخاب نہیں کیا۔",
+  "allCropsSelected": "آپ نے تمام دستیاب فصلوں کا انتخاب کر لیا ہے!",
+
   "errorLoadingUserData": "صارف کا ڈیٹا لوڈ کرنے میں خرابی",
   "searchHint": "فصلیں، فروخت کنندگان، مقامات تلاش کریں...",
   "errorLoadingListings": "لسٹنگ لوڈ کرنے میں خرابی",
@@ -782,7 +792,48 @@
   "unknownCrop": "نامعلوم فصل",
   "unknownSeller": "نامعلوم فروخت کنندہ",
   "unitKg": "کلو",
-  "kgAvailable": "کلو دستیاب ہے"
+  "kgAvailable": "کلو دستیاب ہے",
 
+  "settings": "ترتیبات",
+  "editProfile": "پروفائل میں ترمیم",
+  "updateProfileInfo": "اپنی پروفائل کی معلومات اپڈیٹ کریں",
+  "fullName": "پورا نام",
+  "farmLocation": "کھیت کا مقام",
+  "selectCrops": "فصلیں منتخب کریں",
+  "chooseCrops": "وہ فصلیں منتخب کریں جو آپ اگاتے ہیں",
+  "saveChanges": "تبدیلیاں محفوظ کریں",
+  "done": "مکمل",
+
+  "fillAllFields": "براہ کرم تمام فیلڈز مکمل کریں",
+  "selectAtLeastOneCrop": "براہ کرم کم از کم ایک فصل منتخب کریں",
+  "profileUpdated": "پروفائل کامیابی سے اپڈیٹ ہو گئی",
+  "errorUpdatingProfile": "پروفائل اپڈیٹ کرنے میں خرابی:",
+
+  "changePassword": "پاس ورڈ تبدیل کریں",
+  "enterPasswordInfo": "موجودہ اور نیا پاس ورڈ درج کریں",
+  "currentPassword": "موجودہ پاس ورڈ",
+  "newPassword": "نیا پاس ورڈ",
+  "confirmNewPassword": "نئے پاس ورڈ کی تصدیق",
+  "passwordHint": "کم از کم 8 حروف استعمال کریں",
+
+  "enterCurrentPassword": "براہ کرم موجودہ پاس ورڈ درج کریں",
+  "enterNewPassword": "براہ کرم نیا پاس ورڈ درج کریں",
+  "passwordMinLength": "نیا پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے",
+  "passwordNotMatch": "نئے پاس ورڈ ایک جیسے نہیں ہیں",
+  "passwordUpdated": "پاس ورڈ کامیابی سے تبدیل ہو گیا",
+  "incorrectPassword": "غلط پاس ورڈ درج کیا گیا",
+  "weakPassword": "نیا پاس ورڈ کمزور ہے",
+  "unexpectedError": "ایک غیر متوقع خرابی پیش آ گئی",
+
+  "errorChangingLanguage": "زبان تبدیل کرنے میں خرابی:",
+
+  "farmInformation": "کھیت کی معلومات",
+  "chosenCrops": "منتخب فصلیں",
+  "primaryCrop": "اہم فصل",
+  "notSet": "مقرر نہیں",
+
+  "preferences": "ترجیحات",
+  "language": "زبان",
+  "account": "اکاؤنٹ"
 }
 

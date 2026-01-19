@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 import 'HomeScreen.dart';
 import 'WeatherScreen.dart';
 import 'MarketplaceScreen.dart';
@@ -27,361 +28,415 @@ class Crop {
 // ---------------------------------------------------------------------------
 // MASTER CROP DATA WITH SPECIALIZED RECOMMENDATIONS
 // ---------------------------------------------------------------------------
-final List<Crop> allAvailableCrops = [
-  Crop(
-    nameEn: 'Wheat',
-    nameUr: 'گندم',
-    imagePath: 'assets/images/wheat.png',
-    description:
-        'Wheat is a staple Rabi crop requiring cool weather (15-25°C) during growth and moderate rainfall. Ideal sowing season is October-December.',
-    recommendations: {
-      '🌱 Planting': [
-        'Sow from October to December for Rabi season',
-        'Use certified seeds like Punjab-2011, Galaxy-2013',
-        'Optimal seed rate: 40-50 kg/acre',
-        'Row spacing: 22-25 cm',
-        'Sow at depth of 4-5 cm',
-      ],
-      '💧 Irrigation': [
-        'First irrigation: 21-25 days after sowing',
-        'Second irrigation: 45-50 days (Tillering stage)',
-        'Third irrigation: 70-75 days (Jointing stage)',
-        'Fourth irrigation: 90-95 days (Flowering)',
-        'Fifth irrigation: 110-115 days (Grain filling)',
-      ],
-      '🧪 Fertilization': [
-        'Basal dose: 2 bags DAP + 1 bag SOP/acre',
-        'First split: 1 bag Urea at tillering',
-        'Second split: 1 bag Urea at jointing',
-        'Apply Zinc sulfate @ 5 kg/acre if deficient',
-        'Foliar spray of boron at flowering',
-      ],
-      '🐛 Pest Control': [
-        'Monitor for aphids during Feb-March',
-        'Use neem oil spray @ 5% for early infestation',
-        'For army worm: Chlorpyrifos @ 1.5 L/acre',
-        'Rust control: Propiconazole @ 200 ml/acre',
-        'Remove volunteer plants to break disease cycle',
-      ],
-      '📊 Yield Optimization': [
-        'Target yield: 40-50 maunds/acre',
-        'Harvest when grains harden (30-35% moisture)',
-        'Use combine harvester for efficient harvesting',
-        'Dry to 12% moisture before storage',
-        'Store in clean, rodent-proof godowns',
-      ],
-    },
-  ),
-  Crop(
-    nameEn: 'Sugarcane',
-    nameUr: 'گنا',
-    imagePath: 'assets/images/sugarcane.png',
-    description:
-        'Sugarcane is a tropical perennial cash crop needing high heat (25-32°C) and moisture. It has a 12-18 month growing season.',
-    recommendations: {
-      '🌱 Planting': [
-        'Plant from February to March (Spring crop)',
-        'Use 3-bud setts from healthy canes',
-        'Seed rate: 30-35,000 setts/acre',
-        'Row spacing: 90-120 cm',
-        'Planting depth: 5-7 cm in furrows',
-      ],
-      '💧 Irrigation': [
-        'Initial: Irrigate immediately after planting',
-        'Critical stage: Grand growth period',
-        'Irrigation interval: 10-12 days in summer',
-        'Stop irrigation 30 days before harvest',
-        'Total water requirement: 180-200 cm/season',
-      ],
-      '🧪 Fertilization': [
-        'Basal: 2 bags DAP + 1 bag SOP/acre',
-        'Top dressing: 3 bags Urea in 3 splits',
-        'First split: 30 days after planting',
-        'Second split: 60 days after planting',
-        'Third split: 90 days after planting',
-      ],
-      '🐛 Pest Control': [
-        'For borers: Furadan @ 10 kg/acre at planting',
-        'For termites: Chlorpyrifos @ 2 L/acre',
-        'For red rot: Use resistant varieties',
-        'Remove and destroy infected plants',
-        'Practice crop rotation with legumes',
-      ],
-      '📊 Yield Optimization': [
-        'Target yield: 700-800 maunds/acre',
-        'Harvest when canes mature (12-18 months)',
-        'Cut close to ground level',
-        'Mill within 24 hours of harvest',
-        'Ratoon management for 2-3 cycles',
-      ],
-    },
-  ),
-  Crop(
-    nameEn: 'Rice',
-    nameUr: 'چاول',
-    imagePath: 'assets/images/rice.png',
-    description:
-        'Rice needs standing water for most of its growing period. The Kharif season is the best time for cultivation.',
-    recommendations: {
-      '🌱 Planting': [
-        'Transplant seedlings 20-25 days old',
-        'Optimal spacing: 20 x 15 cm',
-        'Plant 2-3 seedlings per hill',
-        'Transplant in puddled soil',
-        'Best time: June-July for Kharif season',
-      ],
-      '💧 Irrigation': [
-        'Maintain 2-5 cm standing water',
-        'Drain field 15 days before harvest',
-        'Critical stages: Tillering and flowering',
-        'Avoid water stress during panicle initiation',
-        'Total water requirement: 100-150 cm',
-      ],
-      '🧪 Fertilization': [
-        'Basal: 1.5 bags DAP/acre',
-        'First top dressing: 1 bag Urea at tillering',
-        'Second top dressing: 0.5 bag Urea at panicle initiation',
-        'Apply Zinc sulfate @ 10 kg/acre if needed',
-        'Silicon application improves stem strength',
-      ],
-      '🐛 Pest Control': [
-        'For stem borer: Cartap hydrochloride @ 500g/acre',
-        'For leaf folder: Fipronil @ 200 ml/acre',
-        'For blast disease: Tricyclazole @ 300g/acre',
-        'Use light traps for moth monitoring',
-        'Practice clean cultivation',
-      ],
-      '📊 Yield Optimization': [
-        'Target yield: 30-40 maunds/acre',
-        'Harvest when 80% grains turn golden yellow',
-        'Thresh within 2-3 days of harvest',
-        'Dry to 14% moisture content',
-        'Store in aerated containers',
-      ],
-    },
-  ),
-  Crop(
-    nameEn: 'Cotton',
-    nameUr: 'کپاس',
-    imagePath: 'assets/images/cotton.png',
-    description:
-        'Cotton thrives in dry, warm climates and needs plenty of sunshine. Proper pest management is key.',
-    recommendations: {
-      '🌱 Planting': [
-        'Sow from April to May',
-        'Seed rate: 4-5 kg/acre for Bt cotton',
-        'Row spacing: 75-90 cm',
-        'Plant-to-plant distance: 30-45 cm',
-        'Treat seeds with fungicide before sowing',
-      ],
-      '💧 Irrigation': [
-        'First irrigation: 30-35 days after sowing',
-        'Critical stage: Flowering and boll formation',
-        'Irrigation interval: 12-15 days',
-        'Stop irrigation 90-100 days after sowing',
-        'Avoid waterlogging',
-      ],
-      '🧪 Fertilization': [
-        'Basal: 2 bags DAP + 1 bag SOP/acre',
-        'Top dressing: 2 bags Urea in 2 splits',
-        'First split: 30 days after sowing',
-        'Second split: 60 days after sowing',
-        'Apply boron @ 1 kg/acre during flowering',
-      ],
-      '🐛 Pest Control': [
-        'For bollworms: Emamectin benzoate @ 150 ml/acre',
-        'For whitefly: Acetamiprid @ 80g/acre',
-        'For mealybug: Chlorpyrifos @ 1.5 L/acre',
-        'Monitor with pheromone traps',
-        'Practice crop rotation',
-      ],
-      '📊 Yield Optimization': [
-        'Target yield: 25-30 maunds/acre',
-        'Harvest in 3-4 pickings',
-        'Pick when bolls fully open',
-        'Dry in shade to maintain fiber quality',
-        'Store in dry place',
-      ],
-    },
-  ),
-  Crop(
-    nameEn: 'Maize',
-    nameUr: 'مکئی',
-    imagePath: 'assets/images/maize.png',
-    description:
-        'Maize is versatile and requires moderate temperatures. It is often grown as a Kharif crop.',
-    recommendations: {
-      '🌱 Planting': [
-        'Sow from June to July for Kharif',
-        'Seed rate: 8-10 kg/acre',
-        'Row spacing: 60-75 cm',
-        'Plant-to-plant: 20-25 cm',
-        'Sow at depth of 5-7 cm',
-      ],
-      '💧 Irrigation': [
-        'Critical stages: Knee-high and tasseling',
-        'Irrigation every 10-12 days in summer',
-        'Avoid water stress during pollination',
-        'Last irrigation 15 days before harvest',
-        'Total water: 50-60 cm',
-      ],
-      '🧪 Fertilization': [
-        'Basal: 2 bags DAP + 1 bag SOP/acre',
-        'Top dressing: 2 bags Urea in 2 splits',
-        'First split: 25-30 days after sowing',
-        'Second split: 45-50 days after sowing',
-        'Apply Zinc @ 10 kg/acre if deficient',
-      ],
-      '🐛 Pest Control': [
-        'For stem borer: Carbofuran @ 10 kg/acre',
-        'For fall armyworm: Spinetoram @ 100 ml/acre',
-        'For downy mildew: Metalaxyl @ 2g/kg seed',
-        'Use bird perches for pest control',
-        'Remove infected plants',
-      ],
-      '📊 Yield Optimization': [
-        'Target yield: 40-50 maunds/acre',
-        'Harvest when grains harden',
-        'Harvest at 20-25% moisture',
-        'Dry to 14% moisture for storage',
-        'Store in well-ventilated bins',
-      ],
-    },
-  ),
-  Crop(
-    nameEn: 'Mango',
-    nameUr: 'آم',
-    imagePath: 'assets/images/mango.png',
-    description:
-        'Mango is a tropical fruit tree. It requires careful pruning and protection from frost during flowering.',
-    recommendations: {
-      '🌱 Planting': [
-        'Plant in July-August or February-March',
-        'Spacing: 10 x 10 meters',
-        'Dig pits of 1 x 1 x 1 meter',
-        'Mix soil with 30-40 kg FYM per pit',
-        'Graft preferred varieties (Sindhri, Anwar Ratol)',
-      ],
-      '💧 Irrigation': [
-        'Young plants: Irrigate every 3-4 days',
-        'Mature trees: Irrigate every 10-15 days',
-        'Critical stage: Fruit setting and development',
-        'Stop irrigation 15 days before harvest',
-        'Use basin or drip irrigation',
-      ],
-      '🧪 Fertilization': [
-        'Young trees: 10-20 kg FYM + 250g NPK/year',
-        'Mature trees: 50-100 kg FYM + 1-2 kg NPK/year',
-        'Apply after harvest (June-July)',
-        'Apply before flowering (December-January)',
-        'Foliar spray of micronutrients during flowering',
-      ],
-      '🐛 Pest Control': [
-        'For fruit fly: Bait spray (Malathion + jaggery)',
-        'For mango hopper: Imidacloprid @ 50 ml/acre',
-        'For anthracnose: Copper oxychloride @ 500g/acre',
-        'Bag fruits for protection',
-        'Maintain orchard sanitation',
-      ],
-      '📊 Yield Optimization': [
-        'Target yield: 100-200 kg/tree (mature)',
-        'Harvest when fruits develop shoulder',
-        'Harvest in morning hours',
-        'Handle fruits carefully to avoid damage',
-        'Pack in ventilated boxes',
-      ],
-    },
-  ),
-  Crop(
-    nameEn: 'Potato',
-    nameUr: 'آلو',
-    imagePath: 'assets/images/potato.png',
-    description:
-        'Potato is a cool-season crop grown in winter. Proper soil preparation and seed treatment are crucial.',
-    recommendations: {
-      '🌱 Planting': [
-        'Plant from October to November',
-        'Use disease-free certified tubers',
-        'Seed rate: 800-1000 kg/acre',
-        'Row spacing: 60 cm',
-        'Plant spacing: 20-25 cm',
-        'Plant at depth of 5-7 cm',
-      ],
-      '💧 Irrigation': [
-        'First irrigation: Immediately after planting',
-        'Critical stage: Tuber initiation and bulking',
-        'Irrigation every 7-10 days',
-        'Stop irrigation 15-20 days before harvest',
-        'Avoid waterlogging',
-      ],
-      '🧪 Fertilization': [
-        'Basal: 3 bags DAP + 2 bags SOP/acre',
-        'Top dressing: 2 bags Urea in 2 splits',
-        'First split: 25-30 days after planting',
-        'Second split: 45-50 days after planting',
-        'Apply boron @ 1 kg/acre if needed',
-      ],
-      '🐛 Pest Control': [
-        'For cutworm: Chlorpyrifos @ 2 L/acre in soil',
-        'For aphids: Imidacloprid @ 50 ml/acre',
-        'For late blight: Mancozeb @ 500g/acre',
-        'Use resistant varieties',
-        'Practice crop rotation with cereals',
-      ],
-      '📊 Yield Optimization': [
-        'Target yield: 200-250 maunds/acre',
-        'Harvest when vines dry',
-        'Harvest in cool weather',
-        'Cure tubers for 10-15 days before storage',
-        'Store at 4-5°C with high humidity',
-      ],
-    },
-  ),
-  Crop(
-    nameEn: 'Chilli',
-    nameUr: 'مرچ',
-    imagePath: 'assets/images/chilli.png',
-    description:
-        'Chilli is a warm-season crop sensitive to frost. Requires well-drained soil and careful water management.',
-    recommendations: {
-      '🌱 Planting': [
-        'Transplant 30-35 day old seedlings',
-        'Spacing: 45 x 30 cm',
-        'Plant 2 seedlings per hill',
-        'Best time: February-March for spring crop',
-        'Raised beds for better drainage',
-      ],
-      '💧 Irrigation': [
-        'Light irrigation after transplanting',
-        'Irrigation every 5-7 days in summer',
-        'Critical stage: Flowering and fruit set',
-        'Avoid overhead irrigation to prevent disease',
-        'Drip irrigation recommended',
-      ],
-      '🧪 Fertilization': [
-        'Basal: 2 bags DAP + 1 bag SOP/acre',
-        'Top dressing: 1.5 bags Urea in 3 splits',
-        'First split: 30 days after transplanting',
-        'Second split: 60 days after transplanting',
-        'Third split: During fruit set',
-      ],
-      '🐛 Pest Control': [
-        'For thrips: Spinosad @ 100 ml/acre',
-        'For mites: Abamectin @ 100 ml/acre',
-        'For fruit rot: Carbendazim @ 250g/acre',
-        'Use yellow sticky traps',
-        'Remove infected plants immediately',
-      ],
-      '📊 Yield Optimization': [
-        'Target yield: 40-50 maunds/acre (dry)',
-        'Harvest when fruits turn red',
-        'Pick regularly to encourage more fruiting',
-        'Dry in shade to retain color and pungency',
-        'Store in airtight containers',
-      ],
-    },
-  ),
-];
+List<Crop> allAvailableCrops(BuildContext context) {
+  final loc = AppLocalizations.of(context)!;
+  return [
+    Crop(
+      nameEn: 'Wheat',
+      nameUr: 'گندم',
+      imagePath: 'assets/images/wheat.png',
+      description: loc.wheat_summary,
+      recommendations: {
+        loc.wheat_p_title: [
+          loc.wheat_p1,
+          loc.wheat_p2,
+          loc.wheat_p3,
+          loc.wheat_p4,
+          loc.wheat_p5,
+        ],
+        loc.wheat_i_title: [
+          loc.wheat_i1,
+          loc.wheat_i2,
+          loc.wheat_i3,
+          loc.wheat_i4,
+          loc.wheat_i5,
+        ],
+        loc.wheat_f_title: [
+          loc.wheat_f1,
+          loc.wheat_f2,
+          loc.wheat_f3,
+          loc.wheat_f4,
+          loc.wheat_f5,
+        ],
+        loc.wheat_pc_title: [
+          loc.wheat_pc1,
+          loc.wheat_pc2,
+          loc.wheat_pc3,
+          loc.wheat_pc4,
+          loc.wheat_pc5,
+        ],
+        loc.wheat_y_title: [
+          loc.wheat_y1,
+          loc.wheat_y2,
+          loc.wheat_y3,
+          loc.wheat_y4,
+          loc.wheat_y5,
+        ],
+      },
+    ),
+    Crop(
+      nameEn: 'Sugarcane',
+      nameUr: 'گنا',
+      imagePath: 'assets/images/sugarcane.png',
+      description: loc.sugar_summary,
+      recommendations: {
+        loc.sugar_p_title: [
+          loc.sugar_p1,
+          loc.sugar_p2,
+          loc.sugar_p3,
+          loc.sugar_p4,
+          loc.sugar_p5,
+        ],
+        loc.sugar_i_title: [
+          loc.sugar_i1,
+          loc.sugar_i2,
+          loc.sugar_i3,
+          loc.sugar_i4,
+          loc.sugar_i5,
+        ],
+        loc.sugar_f_title: [
+          loc.sugar_f1,
+          loc.sugar_f2,
+          loc.sugar_f3,
+          loc.sugar_f4,
+          loc.sugar_f5,
+        ],
+        loc.sugar_pc_title: [
+          loc.sugar_pc1,
+          loc.sugar_pc2,
+          loc.sugar_pc3,
+          loc.sugar_pc4,
+          loc.sugar_pc5,
+        ],
+        loc.sugar_y_title: [loc.sugar_p5],
+        loc.sugar_i_title: [
+          loc.sugar_i1,
+          loc.sugar_i2,
+          loc.sugar_i3,
+          loc.sugar_i4,
+          loc.sugar_i5,
+        ],
+        loc.sugar_f_title: [
+          loc.sugar_f1,
+          loc.sugar_f2,
+          loc.sugar_f3,
+          loc.sugar_f4,
+          loc.sugar_f5,
+        ],
+        loc.sugar_pc_title: [
+          loc.sugar_pc1,
+          loc.sugar_pc2,
+          loc.sugar_pc3,
+          loc.sugar_pc4,
+          loc.sugar_pc5,
+        ],
+
+        loc.sugar_y_title: [
+          loc.sugar_y1,
+          loc.sugar_y2,
+          loc.sugar_y3,
+          loc.sugar_y4,
+          loc.sugar_y5,
+        ],
+      },
+    ),
+    Crop(
+      nameEn: 'Rice',
+      nameUr: 'چاول',
+      imagePath: 'assets/images/rice.png',
+      description: loc.rice_summary,
+      recommendations: {
+        loc.rice_p_title: [
+          loc.rice_p1,
+          loc.rice_p2,
+          loc.rice_p3,
+          loc.rice_p4,
+          loc.rice_p5,
+        ],
+        loc.rice_i_title: [
+          loc.rice_i1,
+          loc.rice_i2,
+          loc.rice_i3,
+          loc.rice_i4,
+          loc.rice_i5,
+        ],
+
+        loc.rice_f_title: [
+          loc.rice_f1,
+          loc.rice_f2,
+          loc.rice_f3,
+          loc.rice_f4,
+          loc.rice_f5,
+        ],
+
+        loc.rice_pc_title: [
+          loc.rice_pc1,
+          loc.rice_pc2,
+          loc.rice_pc3,
+          loc.rice_pc4,
+          loc.rice_pc5,
+        ],
+
+        loc.rice_y_title: [
+          loc.rice_y1,
+          loc.rice_y2,
+          loc.rice_y3,
+          loc.rice_y4,
+          loc.rice_y5,
+        ],
+      },
+    ),
+    Crop(
+      nameEn: 'Cotton',
+      nameUr: 'کپاس',
+      imagePath: 'assets/images/cotton.png',
+      description: loc.cotton_summary,
+      recommendations: {
+        loc.cotton_p_title: [
+          loc.cotton_p1,
+          loc.cotton_p2,
+          loc.cotton_p3,
+          loc.cotton_p4,
+          loc.cotton_p5,
+        ],
+        loc.cotton_i_title: [
+          loc.cotton_i1,
+          loc.cotton_i2,
+          loc.cotton_i3,
+          loc.cotton_i4,
+          loc.cotton_i5,
+        ],
+        loc.cotton_f_title: [
+          loc.cotton_f1,
+          loc.cotton_f2,
+          loc.cotton_f3,
+          loc.cotton_f4,
+          loc.cotton_f5,
+        ],
+        loc.cotton_pc_title: [
+          loc.cotton_pc1,
+          loc.cotton_pc2,
+          loc.cotton_pc3,
+          loc.cotton_pc4,
+          loc.cotton_pc5,
+        ],
+        loc.cotton_y_title: [
+          loc.cotton_y1,
+          loc.cotton_y2,
+          loc.cotton_y3,
+          loc.cotton_y4,
+          loc.cotton_y5,
+        ],
+
+        loc.cotton_p_title: [
+          loc.cotton_p1,
+          loc.cotton_p2,
+          loc.cotton_p3,
+          loc.cotton_p4,
+          loc.cotton_p5,
+        ],
+        loc.cotton_i_title: [
+          loc.cotton_i1,
+          loc.cotton_i2,
+          loc.cotton_i3,
+          loc.cotton_i4,
+          loc.cotton_i5,
+        ],
+        loc.cotton_f_title: [
+          loc.cotton_f1,
+          loc.cotton_f2,
+          loc.cotton_f3,
+          loc.cotton_f4,
+          loc.cotton_f5,
+        ],
+        loc.cotton_pc_title: [
+          loc.cotton_pc1,
+          loc.cotton_pc2,
+          loc.cotton_pc3,
+          loc.cotton_pc4,
+          loc.cotton_pc5,
+        ],
+        loc.cotton_y_title: [
+          loc.cotton_y1,
+          loc.cotton_y2,
+          loc.cotton_y3,
+          loc.cotton_y4,
+          loc.cotton_y5,
+        ],
+      },
+    ),
+    Crop(
+      nameEn: 'Maize',
+      nameUr: 'مکئی',
+      imagePath: 'assets/images/maize.png',
+      description: loc.maize_summary,
+      recommendations: {
+        loc.maize_p_title: [
+          loc.maize_p1,
+          loc.maize_p2,
+          loc.maize_p3,
+          loc.maize_p4,
+          loc.maize_p5,
+        ],
+        loc.maize_i_title: [
+          loc.maize_i1,
+          loc.maize_i2,
+          loc.maize_i3,
+          loc.maize_i4,
+          loc.maize_i5,
+        ],
+        loc.maize_f_title: [
+          loc.maize_f1,
+          loc.maize_f2,
+          loc.maize_f3,
+          loc.maize_f4,
+          loc.maize_f5,
+        ],
+        loc.maize_pc_title: [
+          loc.maize_pc1,
+          loc.maize_pc2,
+          loc.maize_pc3,
+          loc.maize_pc4,
+          loc.maize_pc5,
+        ],
+      },
+    ),
+    Crop(
+      nameEn: 'Mango',
+      nameUr: 'آم',
+      imagePath: 'assets/images/mango.png',
+      description: loc.mango_summary,
+      recommendations: {
+        loc.mango_p_title: [
+          loc.mango_p1,
+          loc.mango_p2,
+          loc.mango_p3,
+          loc.mango_p4,
+          loc.mango_p5,
+        ],
+        loc.mango_i_title: [
+          loc.mango_i1,
+          loc.mango_i2,
+          loc.mango_i3,
+          loc.mango_i4,
+          loc.mango_i5,
+        ],
+        loc.mango_f_title: [
+          loc.mango_f1,
+          loc.mango_f2,
+          loc.mango_f3,
+          loc.mango_f4,
+          loc.mango_f5,
+        ],
+        loc.mango_pc_title: [
+          loc.mango_pc1,
+          loc.mango_pc2,
+          loc.mango_pc3,
+          loc.mango_pc4,
+          loc.mango_pc5,
+        ],
+        loc.mango_y_title: [
+          loc.mango_y1,
+          loc.mango_y2,
+          loc.mango_y3,
+          loc.mango_y4,
+          loc.mango_y5,
+        ],
+      },
+    ),
+    Crop(
+      nameEn: 'Potato',
+      nameUr: 'آلو',
+      imagePath: 'assets/images/potato.png',
+      description: loc.potato_summary,
+      recommendations: {
+        loc.potato_p_title: [
+          loc.potato_p1,
+          loc.potato_p2,
+          loc.potato_p3,
+          loc.potato_p4,
+          loc.potato_p5,
+          loc.potato_p6,
+        ],
+        loc.potato_i_title: [
+          loc.potato_i1,
+          loc.potato_i2,
+          loc.potato_i3,
+          loc.potato_i4,
+          loc.potato_i5,
+        ],
+        loc.potato_f_title: [
+          loc.potato_f1,
+          loc.potato_f2,
+          loc.potato_f3,
+          loc.potato_f4,
+          loc.potato_f5,
+        ],
+        loc.potato_pc_title: [
+          loc.potato_pc1,
+          loc.potato_pc2,
+          loc.potato_pc3,
+          loc.potato_pc4,
+          loc.potato_pc5,
+        ],
+
+        loc.potato_y_title: [
+          loc.potato_y1,
+          loc.potato_y2,
+          loc.potato_y3,
+          loc.potato_y4,
+          loc.potato_y5,
+        ],
+      },
+    ),
+    Crop(
+      nameEn: 'Chilli',
+      nameUr: 'مرچ',
+      imagePath: 'assets/images/chilli.png',
+      description: loc.chilli_summary,
+      recommendations: {
+        loc.chilli_summary: [
+          loc.chilli_p1,
+          loc.chilli_p2,
+          loc.chilli_p3,
+          loc.chilli_p4,
+          loc.chilli_p5,
+        ],
+        loc.chilli_i1: [
+          loc.chilli_i1,
+          loc.chilli_i2,
+          loc.chilli_i3,
+          loc.chilli_i4,
+          loc.chilli_i5,
+        ],
+        loc.chilli_f1: [
+          loc.chilli_f1,
+          loc.chilli_f2,
+          loc.chilli_f3,
+          loc.chilli_f4,
+          loc.chilli_f5,
+        ],
+        loc.chilli_pc_title: [
+          loc.chilli_pc1,
+          loc.chilli_pc2,
+          loc.chilli_pc3,
+          loc.chilli_pc4,
+          loc.chilli_pc5,
+        ],
+        loc.chilli_y_title: [
+          loc.chilli_y1,
+          loc.chilli_y2,
+          loc.chilli_y3,
+          loc.chilli_y4,
+          loc.chilli_y5,
+        ],
+      },
+    ),
+  ];
+}
+
+// ---------------------------------------------------------------------------
+// CROP DETAIL SCREEN
 
 // ---------------------------------------------------------------------------
 // CROP DETAIL SCREEN
@@ -393,6 +448,7 @@ class CropDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FA),
       appBar: AppBar(
@@ -630,30 +686,31 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
             _selectedCrops = List<String>.from(
               userData['selectedCrops'] ?? ['Wheat'],
             );
-            _primaryCrop = userData['primaryCrop'] ?? 'Wheat';
+            _primaryCrop =
+                userData['primaryCrop'] ?? AppLocalizations.of(context)!.wheat;
           });
         }
 
         // Get selected crops from database
         final selectedCropNames = await _getUserCropsFromFirebase(user.uid);
 
-        _userCrops = allAvailableCrops
-            .where((crop) => selectedCropNames.contains(crop.nameEn))
-            .toList();
+        _userCrops = allAvailableCrops(
+          context,
+        ).where((crop) => selectedCropNames.contains(crop.nameEn)).toList();
 
-        _allOtherCrops = allAvailableCrops
-            .where((crop) => !selectedCropNames.contains(crop.nameEn))
-            .toList();
+        _allOtherCrops = allAvailableCrops(
+          context,
+        ).where((crop) => !selectedCropNames.contains(crop.nameEn)).toList();
 
         _filteredUserCrops = _userCrops;
         _filteredOtherCrops = _allOtherCrops;
       }
     } catch (e) {
-      print('Error loading crops: $e');
+      print('${AppLocalizations.of(context)!.errorLoadingCrops} $e');
       _userCrops = [];
-      _allOtherCrops = allAvailableCrops;
+      _allOtherCrops = allAvailableCrops(context);
       _filteredUserCrops = [];
-      _filteredOtherCrops = allAvailableCrops;
+      _filteredOtherCrops = allAvailableCrops(context);
     } finally {
       setState(() {
         _isLoading = false;
@@ -688,7 +745,7 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
         return [];
       }
     } catch (e) {
-      print('Error fetching crops: $e');
+      print('${AppLocalizations.of(context)!.errorFetchingCrops} $e');
       return [];
     }
   }
@@ -779,8 +836,8 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
         elevation: 0,
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: const Text(
-          "Crop Guide",
+        title: Text(
+          AppLocalizations.of(context)!.crop_guide,
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
@@ -813,7 +870,7 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
                 controller: _searchController,
                 onChanged: (_) => _filterCrops(),
                 decoration: InputDecoration(
-                  hintText: "Search crops...",
+                  hintText: AppLocalizations.of(context)!.searchHint,
                   hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
                   prefixIcon: const Padding(
                     padding: EdgeInsets.only(left: 16.0, right: 8.0),
@@ -899,16 +956,22 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
               break;
           }
         },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: AppLocalizations.of(context)!.home,
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.wb_sunny_outlined),
-            label: 'Weather',
+            label: AppLocalizations.of(context)!.weather,
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.grass), label: 'Crop Guide'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.grass),
+            label: AppLocalizations.of(context)!.crop_guide,
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.storefront),
-            label: 'Marketplace',
+            label: AppLocalizations.of(context)!.marketplace,
           ),
         ],
       ),
@@ -925,8 +988,8 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 10),
-              const Text(
-                'Your Crops',
+              Text(
+                AppLocalizations.of(context)!.yourCrops,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -940,8 +1003,8 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
           ),
 
         // All Other Crops Section
-        const Text(
-          'All Other Crops',
+        Text(
+          AppLocalizations.of(context)!.allOtherCrops,
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -960,12 +1023,12 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
     if (allSearchResults.isEmpty) {
       return Container(
         padding: const EdgeInsets.all(40),
-        child: const Column(
+        child: Column(
           children: [
             Icon(Icons.search_off, size: 60, color: Colors.grey),
             SizedBox(height: 16),
             Text(
-              'No crops found',
+              AppLocalizations.of(context)!.noCropsFound,
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
           ],
@@ -977,7 +1040,7 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Search Results (${allSearchResults.length})',
+          '${AppLocalizations.of(context)!.searchResults} (${allSearchResults.length})',
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -992,11 +1055,11 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
 
   Widget _buildCropGrid(List<Crop> crops, bool isUserCropSection) {
     if (crops.isEmpty && isUserCropSection) {
-      return const Padding(
+      return Padding(
         padding: EdgeInsets.symmetric(vertical: 30.0),
         child: Center(
           child: Text(
-            'You have not selected any crops yet.',
+            AppLocalizations.of(context)!.noCropsSelected,
             style: TextStyle(fontSize: 16, color: Colors.grey),
           ),
         ),
@@ -1004,11 +1067,11 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
     }
 
     if (crops.isEmpty && !isUserCropSection) {
-      return const Padding(
+      return Padding(
         padding: EdgeInsets.symmetric(vertical: 30.0),
         child: Center(
           child: Text(
-            'You have selected all available crops!',
+            AppLocalizations.of(context)!.allOtherCrops,
             style: TextStyle(fontSize: 16, color: Colors.grey),
           ),
         ),
@@ -1110,8 +1173,8 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
                             color: const Color(0xFFE8F5E9),
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: const Text(
-                            'Your Crop',
+                          child: Text(
+                            AppLocalizations.of(context)!.yourCrops,
                             style: TextStyle(
                               color: Color(0xFF4CAF50),
                               fontSize: 10,
@@ -1125,35 +1188,30 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
               ),
 
               // Text Section with proper constraints
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        crop.nameEn,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: Colors.black87,
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      crop.nameEn,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.black87,
                       ),
-                      const SizedBox(height: 4),
-                      Text(
-                        crop.nameUr,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      crop.nameUr,
+                      style: const TextStyle(fontSize: 14, color: Colors.grey),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
               ),
             ],

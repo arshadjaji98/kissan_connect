@@ -131,15 +131,6 @@ class AppLocalizationsUr extends AppLocalizations {
   String get vegetables => 'سبزیاں';
 
   @override
-  String get mango => 'آم';
-
-  @override
-  String get potato => 'آلو';
-
-  @override
-  String get chilli => 'مرچ';
-
-  @override
   String get welcome_back => 'واپسی پر خوش آمدید';
 
   @override
@@ -1779,6 +1770,99 @@ class AppLocalizationsUr extends AppLocalizations {
   String get sugar_y5 => 'منڈھری (Ratoon) کا انتظام 2-3 چکروں تک کریں';
 
   @override
+  String get rice_summary => 'چاول کو بڑھوتری کے زیادہ تر حصے میں کھڑے پانی کی ضرورت ہوتی ہے۔ خریف کاشت کا بہترین وقت ہے۔';
+
+  @override
+  String get rice_p_title => 'کاشت';
+
+  @override
+  String get rice_p1 => '20-25 دن پرانی پنیری منتقل کریں';
+
+  @override
+  String get rice_p2 => 'مثالی فاصلہ: 20 x 15 سینٹی میٹر';
+
+  @override
+  String get rice_p3 => 'ایک جگہ پر 2-3 پودے لگائیں';
+
+  @override
+  String get rice_p4 => 'کدو (Puddled) کی ہوئی زمین میں منتقل کریں';
+
+  @override
+  String get rice_p5 => 'بہترین وقت: خریف کے لیے جون-جولائی';
+
+  @override
+  String get rice_i_title => 'آبپاشی';
+
+  @override
+  String get rice_i1 => '2-5 سینٹی میٹر کھڑا پانی برقرار رکھیں';
+
+  @override
+  String get rice_i2 => 'کٹائی سے 15 دن پہلے پانی نکال دیں';
+
+  @override
+  String get rice_i3 => 'اہم مراحل: شگوفے نکلنا اور پھول آنا';
+
+  @override
+  String get rice_i4 => 'سٹہ بننے کے وقت پانی کی کمی نہ ہونے دیں';
+
+  @override
+  String get rice_i5 => 'کل پانی کی ضرورت: 100-150 سینٹی میٹر';
+
+  @override
+  String get rice_f_title => 'کھاد کا استعمال';
+
+  @override
+  String get rice_f1 => 'بنیادی خوراک: 1.5 بوری ڈی اے پی فی ایکڑ';
+
+  @override
+  String get rice_f2 => 'پہلی قسط: شگوفے نکلتے وقت 1 بوری یوریا';
+
+  @override
+  String get rice_f3 => 'دوسری قسط: سٹہ بنتے وقت آدھی بوری یوریا';
+
+  @override
+  String get rice_f4 => 'ضرورت پڑنے پر زنک سلفیٹ 10 کلو فی ایکڑ ڈالیں';
+
+  @override
+  String get rice_f5 => 'سلیکون کے استعمال سے تنا مضبوط ہوتا ہے';
+
+  @override
+  String get rice_pc_title => 'کیڑوں کی روک تھام';
+
+  @override
+  String get rice_pc1 => 'تنے کی سنڈی: کارٹاپ ہائیڈرو کلورائڈ 500 گرام فی ایکڑ';
+
+  @override
+  String get rice_pc2 => 'پتا لپیٹ سنڈی: فپرونل 200 ملی لیٹر فی ایکڑ';
+
+  @override
+  String get rice_pc3 => 'بلاسٹ کی بیماری: ٹرائی سائیکلازول 300 گرام فی ایکڑ';
+
+  @override
+  String get rice_pc4 => 'پروانوں کی نگرانی کے لیے لائٹ ٹریپ لگائیں';
+
+  @override
+  String get rice_pc5 => 'کھیتوں کی صفائی کا خاص خیال رکھیں';
+
+  @override
+  String get rice_y_title => 'پیداوار میں اضافہ';
+
+  @override
+  String get rice_y1 => 'ہدف شدہ پیداوار: 30-40 من فی ایکڑ';
+
+  @override
+  String get rice_y2 => 'کٹائی تب کریں جب 80٪ دانے سنہری ہو جائیں';
+
+  @override
+  String get rice_y3 => 'کٹائی کے 2-3 دن کے اندر گہائی کریں';
+
+  @override
+  String get rice_y4 => 'نمی کو 14٪ تک خشک کریں';
+
+  @override
+  String get rice_y5 => 'ہوا دار برتنوں میں ذخیرہ کریں';
+
+  @override
   String get cotton_summary => 'کپاس خشک اور گرم آب و ہوا میں بہتر ہوتی ہے اور اسے کافی دھوپ کی ضرورت ہوتی ہے۔ کیڑوں کا مناسب تدارک کلیدی حیثیت رکھتا ہے۔';
 
   @override
@@ -2247,83 +2331,173 @@ class AppLocalizationsUr extends AppLocalizations {
   String get chilli_y5 => 'ہوا بند برتنوں میں ذخیرہ کریں';
 
   @override
-  String get rice_summary => 'چاول کو بڑھوتری کے زیادہ تر حصے میں کھڑے پانی کی ضرورت ہوتی ہے۔ خریف کاشت کا بہترین وقت ہے۔';
+  String get errorLoadingCrops => 'فصلیں لوڈ کرنے میں خرابی';
 
   @override
-  String get rice_p_title => 'کاشت';
+  String get errorFetchingCrops => 'فصلیں حاصل کرنے میں خرابی';
 
   @override
-  String get rice_p1 => '20-25 دن پرانی پنیری منتقل کریں';
+  String get yourCrops => 'آپ کی فصلیں';
 
   @override
-  String get rice_p2 => 'مثالی فاصلہ: 20 x 15 سینٹی میٹر';
+  String get allOtherCrops => 'دیگر تمام فصلیں';
 
   @override
-  String get rice_p3 => 'ایک جگہ پر 2-3 پودے لگائیں';
+  String get noCropsFound => 'کوئی فصل نہیں ملی';
 
   @override
-  String get rice_p4 => 'کدو (Puddled) کی ہوئی زمین میں منتقل کریں';
+  String get searchResults => 'تلاش کے نتائج';
 
   @override
-  String get rice_p5 => 'بہترین وقت: خریف کے لیے جون-جولائی';
+  String get noCropsSelected => 'آپ نے ابھی تک کسی فصل کا انتخاب نہیں کیا۔';
 
   @override
-  String get rice_i_title => 'آبپاشی';
+  String get allCropsSelected => 'آپ نے تمام دستیاب فصلوں کا انتخاب کر لیا ہے!';
 
   @override
-  String get rice_i1 => '2-5 سینٹی میٹر کھڑا پانی برقرار رکھیں';
+  String get errorLoadingUserData => 'صارف کا ڈیٹا لوڈ کرنے میں خرابی';
 
   @override
-  String get rice_i2 => 'کٹائی سے 15 دن پہلے پانی نکال دیں';
+  String get searchHint => 'فصلیں، فروخت کنندگان، مقامات تلاش کریں...';
 
   @override
-  String get rice_i3 => 'اہم مراحل: شگوفے نکلنا اور پھول آنا';
+  String get seller_location => 'فروخت کنندہ کا مقام';
 
   @override
-  String get rice_i4 => 'سٹہ بننے کے وقت پانی کی کمی نہ ہونے دیں';
+  String get errorLoadingListings => 'لسٹنگ لوڈ کرنے میں خرابی';
 
   @override
-  String get rice_i5 => 'کل پانی کی ضرورت: 100-150 سینٹی میٹر';
+  String get noListingsAvailable => 'کوئی لسٹنگ دستیاب نہیں ہے';
 
   @override
-  String get rice_f_title => 'کھاد کا استعمال';
+  String get createFirstListing => 'پہلی لسٹنگ بنائیں';
 
   @override
-  String get rice_f1 => 'بنیادی خوراک: 1.5 بوری ڈی اے پی فی ایکڑ';
+  String get searching => 'تلاش جاری ہے...';
 
   @override
-  String get rice_f2 => 'پہلی قسط: شگوفے نکلتے وقت 1 بوری یوریا';
+  String get searchError => 'تلاش میں خرابی';
 
   @override
-  String get rice_f3 => 'دوسری قسط: سٹہ بنتے وقت آدھی بوری یوریا';
+  String get clearSearch => 'تلاش ختم کریں';
 
   @override
-  String get rice_f4 => 'ضرورت پڑنے پر زنک سلفیٹ 10 کلو فی ایکڑ ڈالیں';
+  String get noResultsFor => 'اس کے لیے کوئی نتیجہ نہیں ملا:';
 
   @override
-  String get rice_f5 => 'سلیکون کے استعمال سے تنا مضبوط ہوتا ہے';
+  String get unknownCrop => 'نامعلوم فصل';
 
   @override
-  String get rice_pc_title => 'کیڑوں کی روک تھام';
+  String get unknownSeller => 'نامعلوم فروخت کنندہ';
 
   @override
-  String get rice_pc1 => 'تنے کی سنڈی: کارٹاپ ہائیڈرو کلورائڈ 500 گرام فی ایکڑ';
+  String get unitKg => 'کلو';
 
   @override
-  String get rice_pc2 => 'پتا لپیٹ سنڈی: فپرونل 200 ملی لیٹر فی ایکڑ';
+  String get kgAvailable => 'کلو دستیاب ہے';
 
   @override
-  String get rice_pc3 => 'بلاسٹ کی بیماری: ٹرائی سائیکلازول 300 گرام فی ایکڑ';
+  String get settings => 'ترتیبات';
 
   @override
-  String get rice_pc4 => 'پروانوں کی نگرانی کے لیے لائٹ ٹریپ لگائیں';
+  String get editProfile => 'پروفائل میں ترمیم';
 
   @override
-  String get rice_pc5 => 'کھیتوں کی صفائی کا خاص خیال رکھیں';
+  String get updateProfileInfo => 'اپنی پروفائل کی معلومات اپڈیٹ کریں';
 
   @override
-  String get rice_y_title => 'پیداوار میں اضافہ';
+  String get fullName => 'پورا نام';
 
   @override
-  String get rice_y1 => 'ہدف شدہ پیداوار: 30-40 من فی ایکڑ';
+  String get farmLocation => 'کھیت کا مقام';
+
+  @override
+  String get selectCrops => 'فصلیں منتخب کریں';
+
+  @override
+  String get chooseCrops => 'وہ فصلیں منتخب کریں جو آپ اگاتے ہیں';
+
+  @override
+  String get saveChanges => 'تبدیلیاں محفوظ کریں';
+
+  @override
+  String get done => 'مکمل';
+
+  @override
+  String get fillAllFields => 'براہ کرم تمام فیلڈز مکمل کریں';
+
+  @override
+  String get selectAtLeastOneCrop => 'براہ کرم کم از کم ایک فصل منتخب کریں';
+
+  @override
+  String get profileUpdated => 'پروفائل کامیابی سے اپڈیٹ ہو گئی';
+
+  @override
+  String get errorUpdatingProfile => 'پروفائل اپڈیٹ کرنے میں خرابی:';
+
+  @override
+  String get changePassword => 'پاس ورڈ تبدیل کریں';
+
+  @override
+  String get enterPasswordInfo => 'موجودہ اور نیا پاس ورڈ درج کریں';
+
+  @override
+  String get currentPassword => 'موجودہ پاس ورڈ';
+
+  @override
+  String get newPassword => 'نیا پاس ورڈ';
+
+  @override
+  String get confirmNewPassword => 'نئے پاس ورڈ کی تصدیق';
+
+  @override
+  String get passwordHint => 'کم از کم 8 حروف استعمال کریں';
+
+  @override
+  String get enterCurrentPassword => 'براہ کرم موجودہ پاس ورڈ درج کریں';
+
+  @override
+  String get enterNewPassword => 'براہ کرم نیا پاس ورڈ درج کریں';
+
+  @override
+  String get passwordMinLength => 'نیا پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے';
+
+  @override
+  String get passwordNotMatch => 'نئے پاس ورڈ ایک جیسے نہیں ہیں';
+
+  @override
+  String get passwordUpdated => 'پاس ورڈ کامیابی سے تبدیل ہو گیا';
+
+  @override
+  String get incorrectPassword => 'غلط پاس ورڈ درج کیا گیا';
+
+  @override
+  String get weakPassword => 'نیا پاس ورڈ کمزور ہے';
+
+  @override
+  String get unexpectedError => 'ایک غیر متوقع خرابی پیش آ گئی';
+
+  @override
+  String get errorChangingLanguage => 'زبان تبدیل کرنے میں خرابی:';
+
+  @override
+  String get farmInformation => 'کھیت کی معلومات';
+
+  @override
+  String get chosenCrops => 'منتخب فصلیں';
+
+  @override
+  String get primaryCrop => 'اہم فصل';
+
+  @override
+  String get notSet => 'مقرر نہیں';
+
+  @override
+  String get preferences => 'ترجیحات';
+
+  @override
+  String get language => 'زبان';
+
+  @override
+  String get account => 'اکاؤنٹ';
 }
