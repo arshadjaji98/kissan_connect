@@ -2731,4 +2731,64 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pleaseWait => 'This may take a few moments...';
+
+  @override
+  String get errorCheckingSavedStatus => 'Error checking saved status:';
+
+  @override
+  String get errorIncrementingViews => 'Error incrementing views:';
+
+  @override
+  String get listingSaved => 'Listing saved!';
+
+  @override
+  String get listingRemoved => 'Listing removed';
+
+  @override
+  String get notAvailable => 'Not available';
+
+  @override
+  String get sellerPhoneNumber => 'Seller Phone Number';
+
+  @override
+  String get contactSellerPrompt => 'You can call or message this number to contact the seller';
+
+  @override
+  String get unknownLocation => 'Unknown Location';
+
+  @override
+  String get notSpecified => 'Not specified';
+
+  @override
+  String get notProvided => 'Not provided';
+
+  @override
+  String get recent => 'Recent';
+
+  @override
+  String get listingDetails => 'Listing Details';
+
+  @override
+  String get cropImage => 'Crop Image';
+
+  @override
+  String get posted => 'Posted:';
+
+  @override
+  String get verified => 'Verified';
+
+  @override
+  String get noDescriptionProvided => 'No description provided.';
+
+  @override
+  String get specifications => 'Specifications';
+
+  @override
+  String get contact => 'Contact';
+
+  @override
+  String get variety => 'Variety';
+
+  @override
+  String get viewSellerPhone => 'View Seller Phone Number';
 }

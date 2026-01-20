@@ -930,7 +930,29 @@
 
   "postListing": "Post Listing",
   "creatingYourListing": "Creating Your Listing",
-  "pleaseWait": "This may take a few moments..."
+  "pleaseWait": "This may take a few moments...",
+
+
+  "errorCheckingSavedStatus": "Error checking saved status:",
+  "errorIncrementingViews": "Error incrementing views:",
+  "listingSaved": "Listing saved!",
+  "listingRemoved": "Listing removed",
+  "notAvailable": "Not available",
+  "sellerPhoneNumber": "Seller Phone Number",
+  "contactSellerPrompt": "You can call or message this number to contact the seller",
+  "unknownLocation": "Unknown Location",
+  "notSpecified": "Not specified",
+  "notProvided": "Not provided",
+  "recent": "Recent",
+  "listingDetails": "Listing Details",
+  "cropImage": "Crop Image",
+  "posted": "Posted:",
+  "verified": "Verified",
+  "noDescriptionProvided": "No description provided.",
+  "specifications": "Specifications",
+  "contact":"Contact",
+  "variety": "Variety",
+  "viewSellerPhone": "View Seller Phone Number"
 
 
 }

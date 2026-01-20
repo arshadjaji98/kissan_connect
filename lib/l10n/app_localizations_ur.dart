@@ -2553,7 +2553,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get listed => 'فہرست شدہ:';
 
   @override
-  String get views => 'دیکھا گیا';
+  String get views => 'دیکھا';
 
   @override
   String get saves => 'محفوظ';
@@ -2731,4 +2731,64 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get pleaseWait => 'اس میں چند لمحے لگ سکتے ہیں...';
+
+  @override
+  String get errorCheckingSavedStatus => 'محفوظ شدہ حیثیت چیک کرنے میں خرابی:';
+
+  @override
+  String get errorIncrementingViews => 'ویوز بڑھانے میں خرابی:';
+
+  @override
+  String get listingSaved => 'لسٹنگ محفوظ ہوگئی!';
+
+  @override
+  String get listingRemoved => 'لسٹنگ ہٹا دی گئی';
+
+  @override
+  String get notAvailable => 'دستیاب نہیں ہے';
+
+  @override
+  String get sellerPhoneNumber => 'فروخت کنندہ کا فون نمبر';
+
+  @override
+  String get contactSellerPrompt => 'آپ فروخت کنندہ سے رابطہ کرنے کے لیے اس نمبر پر کال یا میسج کر سکتے ہیں';
+
+  @override
+  String get unknownLocation => 'نامعلوم مقام';
+
+  @override
+  String get notSpecified => 'واضح نہیں کیا گیا';
+
+  @override
+  String get notProvided => 'فراہم نہیں کیا گیا';
+
+  @override
+  String get recent => 'حالیہ';
+
+  @override
+  String get listingDetails => 'لسٹنگ کی تفصیلات';
+
+  @override
+  String get cropImage => 'فصل کی تصویر';
+
+  @override
+  String get posted => 'شائع';
+
+  @override
+  String get verified => 'تصدیق شدہ';
+
+  @override
+  String get noDescriptionProvided => 'کوئی تفصیل فراہم نہیں کی گئی۔';
+
+  @override
+  String get specifications => 'وضاحتیں';
+
+  @override
+  String get contact => 'رابطہ';
+
+  @override
+  String get variety => 'قسم';
+
+  @override
+  String get viewSellerPhone => 'فروخت کنندہ کا نمبر دیکھیں';
 }

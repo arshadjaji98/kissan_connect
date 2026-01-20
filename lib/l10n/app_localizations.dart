@@ -5422,6 +5422,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This may take a few moments...'**
   String get pleaseWait;
+
+  /// No description provided for @errorCheckingSavedStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Error checking saved status:'**
+  String get errorCheckingSavedStatus;
+
+  /// No description provided for @errorIncrementingViews.
+  ///
+  /// In en, this message translates to:
+  /// **'Error incrementing views:'**
+  String get errorIncrementingViews;
+
+  /// No description provided for @listingSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing saved!'**
+  String get listingSaved;
+
+  /// No description provided for @listingRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing removed'**
+  String get listingRemoved;
+
+  /// No description provided for @notAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Not available'**
+  String get notAvailable;
+
+  /// No description provided for @sellerPhoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Seller Phone Number'**
+  String get sellerPhoneNumber;
+
+  /// No description provided for @contactSellerPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'You can call or message this number to contact the seller'**
+  String get contactSellerPrompt;
+
+  /// No description provided for @unknownLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown Location'**
+  String get unknownLocation;
+
+  /// No description provided for @notSpecified.
+  ///
+  /// In en, this message translates to:
+  /// **'Not specified'**
+  String get notSpecified;
+
+  /// No description provided for @notProvided.
+  ///
+  /// In en, this message translates to:
+  /// **'Not provided'**
+  String get notProvided;
+
+  /// No description provided for @recent.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent'**
+  String get recent;
+
+  /// No description provided for @listingDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing Details'**
+  String get listingDetails;
+
+  /// No description provided for @cropImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Crop Image'**
+  String get cropImage;
+
+  /// No description provided for @posted.
+  ///
+  /// In en, this message translates to:
+  /// **'Posted:'**
+  String get posted;
+
+  /// No description provided for @verified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get verified;
+
+  /// No description provided for @noDescriptionProvided.
+  ///
+  /// In en, this message translates to:
+  /// **'No description provided.'**
+  String get noDescriptionProvided;
+
+  /// No description provided for @specifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Specifications'**
+  String get specifications;
+
+  /// No description provided for @contact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact'**
+  String get contact;
+
+  /// No description provided for @variety.
+  ///
+  /// In en, this message translates to:
+  /// **'Variety'**
+  String get variety;
+
+  /// No description provided for @viewSellerPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'View Seller Phone Number'**
+  String get viewSellerPhone;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

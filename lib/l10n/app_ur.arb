@@ -857,7 +857,7 @@
   "userNotLoggedIn": "صارف لاگ ان نہیں ہے",
 
   "listed": "فہرست شدہ:",
-  "views": "دیکھا گیا",
+  "views": "دیکھا",
   "saves": "محفوظ",
   "view": "دیکھیں",
   "edit": "ترمیم",
@@ -928,7 +928,28 @@
 
   "postListing": "فہرست شائع کریں",
   "creatingYourListing": "آپ کی فہرست بنائی جا رہی ہے",
-  "pleaseWait": "اس میں چند لمحے لگ سکتے ہیں..."
+  "pleaseWait": "اس میں چند لمحے لگ سکتے ہیں...",
+
+  "errorCheckingSavedStatus": "محفوظ شدہ حیثیت چیک کرنے میں خرابی:",
+  "errorIncrementingViews": "ویوز بڑھانے میں خرابی:",
+  "listingSaved": "لسٹنگ محفوظ ہوگئی!",
+  "listingRemoved": "لسٹنگ ہٹا دی گئی",
+  "notAvailable": "دستیاب نہیں ہے",
+  "sellerPhoneNumber": "فروخت کنندہ کا فون نمبر",
+  "contactSellerPrompt": "آپ فروخت کنندہ سے رابطہ کرنے کے لیے اس نمبر پر کال یا میسج کر سکتے ہیں",
+  "unknownLocation": "نامعلوم مقام",
+  "notSpecified": "واضح نہیں کیا گیا",
+  "notProvided": "فراہم نہیں کیا گیا",
+  "recent": "حالیہ",
+  "listingDetails": "لسٹنگ کی تفصیلات",
+  "cropImage": "فصل کی تصویر",
+  "posted": "شائع",
+  "verified": "تصدیق شدہ",
+  "noDescriptionProvided": "کوئی تفصیل فراہم نہیں کی گئی۔",
+  "specifications": "وضاحتیں",
+  "variety": "قسم",
+  "contact": "رابطہ",
+  "viewSellerPhone": "فروخت کنندہ کا نمبر دیکھیں"
 
 }
 
