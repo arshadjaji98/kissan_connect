@@ -29,7 +29,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   String _userEmail = '';
   bool _isLoading = false;
-  String _selectedLanguage = 'English'; // Default language
+  String _selectedLanguage = 'English';
 
   // State for editable fields
   late String _currentName;
@@ -81,7 +81,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final TextEditingController locationController = TextEditingController(
       text: _currentLocation,
     );
-    List<String> tempSelectedCrops = List.from(_currentSelectedCrops);
+    List<String> tempSelectedCrops = ['English'];
 
     await showDialog(
       context: context,
@@ -176,8 +176,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         key: ValueKey(
                           'edit_profile_${tempSelectedCrops.join(',')}',
                         ),
-                        initialSelectedCrops:
-                            tempSelectedCrops, // PASS INITIAL CROPS HERE
+                        initialSelectedCrops: tempSelectedCrops,
                         onCropsSelected: (crops) {
                           tempSelectedCrops = crops;
                         },

@@ -321,16 +321,20 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
 
         if (snapshot.hasError) {
           return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(Icons.error_outline, size: 60, color: Colors.red),
-                const SizedBox(height: 16),
-                Text(
-                  AppLocalizations.of(context)!.errorLoadingListings,
-                  style: TextStyle(fontSize: 18, color: Colors.grey),
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.error_outline, size: 60, color: Colors.red),
+                  const SizedBox(height: 16),
+                  Text(
+                    AppLocalizations.of(context)!.errorLoadingListings +
+                        snapshot.error.toString(),
+                    style: TextStyle(fontSize: 16, color: Colors.grey),
+                  ),
+                ],
+              ),
             ),
           );
         }
