@@ -9,7 +9,6 @@ import 'screens/LoginScreen.dart';
 import 'screens/HomeScreen.dart';
 import 'screens/auth_wrapper.dart';
 import 'services/firebase_service.dart';
-import 'localization/app_localizations.dart'; // generated localization
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

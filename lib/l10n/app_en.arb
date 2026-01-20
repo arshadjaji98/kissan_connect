@@ -883,6 +883,54 @@
   "errorDeletingListing": "Error deleting listing:",
   "donthave_active_listings": "You haven't created any listings yet",
   "create_first_listing": "Create Your First Listing",
-  "active": "Active"
+  "active": "Active",
+
+  "maxImagesAllowed": "Maximum 5 images allowed",
+  "errorPickingImages": "Error picking images:",
+  "image": "Image",
+  "added": "Added",
+  "failedToPickImages": "Failed to pick images",
+
+  "enterCropName": "Please enter crop name",
+  "enterValidQuantity": "Please enter valid quantity",
+  "enterValidPrice": "Please enter valid price",
+  "enterPhoneNumber": "Please enter phone number",
+
+  "creatingListing": "Creating listing...",
+  "imagesProcessed": "Images processed successfully!",
+  "listingCreatedWithId": "Listing created with ID:",
+  "listingPosted": "Listing posted successfully!",
+  "errorCreatingListing": "Error creating listing:",
+  "failedToCreateListing": "Failed to create listing:",
+
+  "createNewListing": "Create New Listing",
+  "uploadCropPhotos": "Upload Crop Photos",
+  "addUpTo": "Add up to",
+  "photosOfCrop": "photos of your crop",
+  "photosMappingInfo": "Photos will be mapped to high-quality crop images",
+
+  "imageRemoved": "Image removed",
+  "addPhotos": "Add Photos",
+
+  "cropExamples": "e.g Wheat, Basmati Rice, Cotton",
+  "descriptionHint": "Describe the quality, variety, and any other details.",
+
+  "cropName": "Crop Name",
+  "pricePerKg": "Price per kg",
+  "phoneNumber": "Phone Number",
+  "enterYourPhoneNumber": "Enter your phone number",
+
+  "cropVariety": "Crop Variety",
+  "cropVarietyHint": "e.g., Faisalabad-2008",
+  "harvestDate": "Harvest Date",
+  "selectHarvestDate": "Select harvest date",
+
+  "confirmLocation": "Confirm your location",
+  "locationVisibilityInfo": "Your listing will be visible to buyers in this area.",
+
+  "postListing": "Post Listing",
+  "creatingYourListing": "Creating Your Listing",
+  "pleaseWait": "This may take a few moments..."
+
 
 }

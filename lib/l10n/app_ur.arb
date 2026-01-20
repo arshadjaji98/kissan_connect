@@ -882,6 +882,53 @@
   "errorDeletingListing": "فہرست حذف کرنے میں خرابی:",
   "donthave_active_listings": "آپ کے پاس کوئی فعال فہرستیں نہیں ہیں۔",
   "create_first_listing": "پہلی فہرست بنائیں۔",
-  "active": "فعال"
+  "active": "فعال",
+
+  "maxImagesAllowed": "زیادہ سے زیادہ 5 تصاویر کی اجازت ہے",
+  "errorPickingImages": "تصاویر منتخب کرنے میں خرابی:",
+  "added": "شامل کر دی گئی",
+  "failedToPickImages": "تصاویر منتخب نہیں ہو سکیں",
+  "image":"تصویر",
+  "enterCropName": "براہ کرم فصل کا نام درج کریں",
+  "enterValidQuantity": "براہ کرم درست مقدار درج کریں",
+  "enterValidPrice": "براہ کرم درست قیمت درج کریں",
+  "enterPhoneNumber": "براہ کرم فون نمبر درج کریں",
+
+  "creatingListing": "فہرست بنائی جا رہی ہے...",
+  "imagesProcessed": "تصاویر کامیابی سے پراسیس ہو گئیں!",
+  "listingCreatedWithId": "فہرست اس آئی ڈی کے ساتھ بن گئی:",
+  "listingPosted": "فہرست کامیابی سے شائع ہو گئی!",
+  "errorCreatingListing": "فہرست بنانے میں خرابی:",
+  "failedToCreateListing": "فہرست نہیں بن سکی:",
+
+  "createNewListing": "نئی فہرست بنائیں",
+  "uploadCropPhotos": "فصل کی تصاویر اپلوڈ کریں",
+  "addUpTo": "زیادہ سے زیادہ شامل کریں",
+  "photosOfCrop": "فصل کی تصاویر",
+  "photosMappingInfo": "تصاویر کو اعلیٰ معیار کی فصل کی تصاویر سے میپ کیا جائے گا",
+
+  "imageRemoved": "تصویر ہٹا دی گئی",
+  "addPhotos": "تصاویر لگائیں",
+
+  "cropExamples": "گندم، باسمتی چاول، کپاس وغیرہ",
+  "descriptionHint": "معیار، قسم اور دیگر تفصیلات بیان کریں۔",
+
+  "cropName": "فصل کا نام",
+  "pricePerKg": "قیمت فی کلو",
+  "phoneNumber": "فون نمبر",
+  "enterYourPhoneNumber": "اپنا فون نمبر درج کریں",
+
+  "cropVariety": "فصل کی قسم",
+  "cropVarietyHint": "مثال: فیصل آباد-2008",
+  "harvestDate": "کٹائی کی تاریخ",
+  "selectHarvestDate": "کٹائی کی تاریخ منتخب کریں",
+
+  "confirmLocation": "لوکیشن کنفرم کریں",
+  "locationVisibilityInfo": "آپ کی فہرست اس علاقے کے خریداروں کو نظر آئے گی۔",
+
+  "postListing": "فہرست شائع کریں",
+  "creatingYourListing": "آپ کی فہرست بنائی جا رہی ہے",
+  "pleaseWait": "اس میں چند لمحے لگ سکتے ہیں..."
+
 }
 

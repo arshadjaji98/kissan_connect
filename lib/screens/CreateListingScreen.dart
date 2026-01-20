@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:intl/intl.dart';
+import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 import '../helpers/firebase_helper.dart';
 
 class CreateListingScreen extends StatefulWidget {
@@ -46,9 +47,9 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
 
   Future<void> _pickImages() async {
     if (_selectedImages.length >= 5) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Maximum 5 images allowed')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(AppLocalizations.of(context)!.maxImagesAllowed)),
+      );
       return;
     }
 
@@ -67,44 +68,51 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           }
         });
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Added ${images.length} image(s)')),
+          SnackBar(
+            content: Text(
+              '${AppLocalizations.of(context)!.added} ${images.length} ${AppLocalizations.of(context)!.image}',
+            ),
+          ),
         );
       }
     } catch (e) {
-      print('Error picking images: $e');
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Failed to pick images')));
+      print('${AppLocalizations.of(context)!.errorPickingImages} $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(AppLocalizations.of(context)!.failedToPickImages),
+        ),
+      );
     }
   }
 
   Future<void> _submitListing() async {
+    final loc = AppLocalizations.of(context)!;
     // Validate inputs
     if (_cropNameController.text.isEmpty) {
-      _showError('Please enter crop name');
+      _showError(loc.enterCropName);
       return;
     }
 
     if (_quantityController.text.isEmpty ||
         double.tryParse(_quantityController.text) == null) {
-      _showError('Please enter valid quantity');
+      _showError(loc.enterValidQuantity);
       return;
     }
 
     if (_priceController.text.isEmpty ||
         double.tryParse(_priceController.text) == null) {
-      _showError('Please enter valid price');
+      _showError(loc.enterValidPrice);
       return;
     }
 
     if (_phoneController.text.isEmpty) {
-      _showError('Please enter phone number');
+      _showError(loc.enterPhoneNumber);
       return;
     }
 
     setState(() {
       _isUploading = true;
-      _uploadStatus = 'Creating listing...';
+      _uploadStatus = loc.creatingListing;
     });
 
     try {
@@ -122,8 +130,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
         }
 
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Images processed successfully!'),
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.imagesProcessed),
             backgroundColor: Colors.green,
           ),
         );
@@ -158,8 +166,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
 
       // Show success message
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Listing posted successfully!'),
+        SnackBar(
+          content: Text(loc.listingPosted),
           backgroundColor: Colors.green,
           duration: Duration(seconds: 3),
         ),
@@ -250,6 +258,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -257,8 +266,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 20),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          "Create New Listing",
+        title: Text(
+          loc.createNewListing,
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -288,8 +297,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                         color: Color(0xFF4CAF50),
                       ),
                       const SizedBox(height: 8),
-                      const Text(
-                        "Upload Crop Photos",
+                      Text(
+                        loc.uploadCropPhotos,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -297,7 +306,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        "Add up to ${5 - _selectedImages.length} photos of your crop",
+                        "${loc.addUpTo} ${5 - _selectedImages.length} ${loc.photosOfCrop}",
                         style: const TextStyle(
                           color: Colors.grey,
                           fontSize: 12,
@@ -305,8 +314,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 4),
-                      const Text(
-                        "Photos will be mapped to high-quality crop images",
+                      Text(
+                        loc.photosMappingInfo,
                         style: TextStyle(color: Colors.orange, fontSize: 11),
                         textAlign: TextAlign.center,
                       ),
@@ -358,8 +367,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                                       ScaffoldMessenger.of(
                                         context,
                                       ).showSnackBar(
-                                        const SnackBar(
-                                          content: Text('Image removed'),
+                                        SnackBar(
+                                          content: Text(loc.imageRemoved),
                                         ),
                                       );
                                     },
@@ -408,12 +417,12 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                             vertical: 12,
                           ),
                         ),
-                        child: const Row(
+                        child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Icon(Icons.add_a_photo, size: 18),
                             SizedBox(width: 8),
-                            Text("Add Photos"),
+                            Text(loc.addPhotos),
                           ],
                         ),
                       ),
@@ -423,11 +432,11 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                 const SizedBox(height: 20),
 
                 // Crop Name
-                _buildLabel("Crop Name"),
+                _buildLabel(loc.cropName),
                 TextField(
                   controller: _cropNameController,
                   decoration: InputDecoration(
-                    hintText: "e.g., Wheat, Basmati Rice, Cotton",
+                    hintText: loc.cropExamples,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(color: Colors.grey.shade300),
@@ -446,13 +455,12 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                 const SizedBox(height: 16),
 
                 // Description
-                _buildLabel("Description"),
+                _buildLabel(loc.description),
                 TextField(
                   controller: _descriptionController,
                   maxLines: 4,
                   decoration: InputDecoration(
-                    hintText:
-                        "Describe the quality, variety, and any other details.",
+                    hintText: loc.descriptionHint,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(color: Colors.grey.shade300),
@@ -478,7 +486,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          _buildLabel("Quantity (kg)"),
+                          _buildLabel(loc.quantity),
                           TextField(
                             controller: _quantityController,
                             keyboardType: TextInputType.number,
@@ -513,7 +521,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          _buildLabel("Price per kg (PKR)"),
+                          _buildLabel("${loc.pricePerKg} (PKR)"),
                           TextField(
                             controller: _priceController,
                             keyboardType: TextInputType.number,
@@ -549,12 +557,12 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                 const SizedBox(height: 16),
 
                 // Phone Number
-                _buildLabel("Phone Number"),
+                _buildLabel(loc.phoneNumber),
                 TextField(
                   controller: _phoneController,
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
-                    hintText: "Enter your phone number",
+                    hintText: loc.enterPhoneNumber,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(color: Colors.grey.shade300),
@@ -573,11 +581,11 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                 const SizedBox(height: 16),
 
                 // Crop Variety
-                _buildLabel("Crop Variety"),
+                _buildLabel(loc.cropVariety),
                 TextField(
                   controller: _varietyController,
                   decoration: InputDecoration(
-                    hintText: "e.g., Faisalabad-2008",
+                    hintText: loc.cropVarietyHint,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(color: Colors.grey.shade300),
@@ -596,13 +604,13 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                 const SizedBox(height: 16),
 
                 // Harvest Date
-                _buildLabel("Harvest Date"),
+                _buildLabel(loc.harvestDate),
                 TextField(
                   controller: _harvestDateController,
                   readOnly: true,
                   onTap: _selectHarvestDate,
                   decoration: InputDecoration(
-                    hintText: "Select harvest date",
+                    hintText: loc.selectHarvestDate,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(color: Colors.grey.shade300),
@@ -625,7 +633,7 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                 const SizedBox(height: 16),
 
                 // Location
-                _buildLabel("Confirm your location"),
+                _buildLabel(loc.confirmLocation),
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
@@ -646,8 +654,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const Text(
-                              "Your listing will be visible to buyers in this area.",
+                            Text(
+                              loc.locationVisibilityInfo,
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey,
@@ -683,8 +691,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                               strokeWidth: 3,
                             ),
                           )
-                        : const Text(
-                            "Post Listing",
+                        : Text(
+                            loc.postListing,
                             style: TextStyle(
                               fontSize: 18,
                               color: Colors.white,
@@ -724,8 +732,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                         strokeWidth: 3,
                       ),
                       const SizedBox(height: 20),
-                      const Text(
-                        'Creating Your Listing',
+                      Text(
+                        loc.creatingYourListing,
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -742,8 +750,8 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 10),
-                      const Text(
-                        'This may take a few moments...',
+                      Text(
+                        loc.pleaseWait,
                         style: TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                     ],

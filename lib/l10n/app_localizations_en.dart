@@ -2620,4 +2620,115 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get active => 'Active';
+
+  @override
+  String get maxImagesAllowed => 'Maximum 5 images allowed';
+
+  @override
+  String get errorPickingImages => 'Error picking images:';
+
+  @override
+  String get image => 'Image';
+
+  @override
+  String get added => 'Added';
+
+  @override
+  String get failedToPickImages => 'Failed to pick images';
+
+  @override
+  String get enterCropName => 'Please enter crop name';
+
+  @override
+  String get enterValidQuantity => 'Please enter valid quantity';
+
+  @override
+  String get enterValidPrice => 'Please enter valid price';
+
+  @override
+  String get enterPhoneNumber => 'Please enter phone number';
+
+  @override
+  String get creatingListing => 'Creating listing...';
+
+  @override
+  String get imagesProcessed => 'Images processed successfully!';
+
+  @override
+  String get listingCreatedWithId => 'Listing created with ID:';
+
+  @override
+  String get listingPosted => 'Listing posted successfully!';
+
+  @override
+  String get errorCreatingListing => 'Error creating listing:';
+
+  @override
+  String get failedToCreateListing => 'Failed to create listing:';
+
+  @override
+  String get createNewListing => 'Create New Listing';
+
+  @override
+  String get uploadCropPhotos => 'Upload Crop Photos';
+
+  @override
+  String get addUpTo => 'Add up to';
+
+  @override
+  String get photosOfCrop => 'photos of your crop';
+
+  @override
+  String get photosMappingInfo => 'Photos will be mapped to high-quality crop images';
+
+  @override
+  String get imageRemoved => 'Image removed';
+
+  @override
+  String get addPhotos => 'Add Photos';
+
+  @override
+  String get cropExamples => 'e.g Wheat, Basmati Rice, Cotton';
+
+  @override
+  String get descriptionHint => 'Describe the quality, variety, and any other details.';
+
+  @override
+  String get cropName => 'Crop Name';
+
+  @override
+  String get pricePerKg => 'Price per kg';
+
+  @override
+  String get phoneNumber => 'Phone Number';
+
+  @override
+  String get enterYourPhoneNumber => 'Enter your phone number';
+
+  @override
+  String get cropVariety => 'Crop Variety';
+
+  @override
+  String get cropVarietyHint => 'e.g., Faisalabad-2008';
+
+  @override
+  String get harvestDate => 'Harvest Date';
+
+  @override
+  String get selectHarvestDate => 'Select harvest date';
+
+  @override
+  String get confirmLocation => 'Confirm your location';
+
+  @override
+  String get locationVisibilityInfo => 'Your listing will be visible to buyers in this area.';
+
+  @override
+  String get postListing => 'Post Listing';
+
+  @override
+  String get creatingYourListing => 'Creating Your Listing';
+
+  @override
+  String get pleaseWait => 'This may take a few moments...';
 }

@@ -5200,6 +5200,228 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Active'**
   String get active;
+
+  /// No description provided for @maxImagesAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum 5 images allowed'**
+  String get maxImagesAllowed;
+
+  /// No description provided for @errorPickingImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Error picking images:'**
+  String get errorPickingImages;
+
+  /// No description provided for @image.
+  ///
+  /// In en, this message translates to:
+  /// **'Image'**
+  String get image;
+
+  /// No description provided for @added.
+  ///
+  /// In en, this message translates to:
+  /// **'Added'**
+  String get added;
+
+  /// No description provided for @failedToPickImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to pick images'**
+  String get failedToPickImages;
+
+  /// No description provided for @enterCropName.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter crop name'**
+  String get enterCropName;
+
+  /// No description provided for @enterValidQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter valid quantity'**
+  String get enterValidQuantity;
+
+  /// No description provided for @enterValidPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter valid price'**
+  String get enterValidPrice;
+
+  /// No description provided for @enterPhoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter phone number'**
+  String get enterPhoneNumber;
+
+  /// No description provided for @creatingListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Creating listing...'**
+  String get creatingListing;
+
+  /// No description provided for @imagesProcessed.
+  ///
+  /// In en, this message translates to:
+  /// **'Images processed successfully!'**
+  String get imagesProcessed;
+
+  /// No description provided for @listingCreatedWithId.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing created with ID:'**
+  String get listingCreatedWithId;
+
+  /// No description provided for @listingPosted.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing posted successfully!'**
+  String get listingPosted;
+
+  /// No description provided for @errorCreatingListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Error creating listing:'**
+  String get errorCreatingListing;
+
+  /// No description provided for @failedToCreateListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to create listing:'**
+  String get failedToCreateListing;
+
+  /// No description provided for @createNewListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Create New Listing'**
+  String get createNewListing;
+
+  /// No description provided for @uploadCropPhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload Crop Photos'**
+  String get uploadCropPhotos;
+
+  /// No description provided for @addUpTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Add up to'**
+  String get addUpTo;
+
+  /// No description provided for @photosOfCrop.
+  ///
+  /// In en, this message translates to:
+  /// **'photos of your crop'**
+  String get photosOfCrop;
+
+  /// No description provided for @photosMappingInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Photos will be mapped to high-quality crop images'**
+  String get photosMappingInfo;
+
+  /// No description provided for @imageRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Image removed'**
+  String get imageRemoved;
+
+  /// No description provided for @addPhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Photos'**
+  String get addPhotos;
+
+  /// No description provided for @cropExamples.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g Wheat, Basmati Rice, Cotton'**
+  String get cropExamples;
+
+  /// No description provided for @descriptionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe the quality, variety, and any other details.'**
+  String get descriptionHint;
+
+  /// No description provided for @cropName.
+  ///
+  /// In en, this message translates to:
+  /// **'Crop Name'**
+  String get cropName;
+
+  /// No description provided for @pricePerKg.
+  ///
+  /// In en, this message translates to:
+  /// **'Price per kg'**
+  String get pricePerKg;
+
+  /// No description provided for @phoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phoneNumber;
+
+  /// No description provided for @enterYourPhoneNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get enterYourPhoneNumber;
+
+  /// No description provided for @cropVariety.
+  ///
+  /// In en, this message translates to:
+  /// **'Crop Variety'**
+  String get cropVariety;
+
+  /// No description provided for @cropVarietyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., Faisalabad-2008'**
+  String get cropVarietyHint;
+
+  /// No description provided for @harvestDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Harvest Date'**
+  String get harvestDate;
+
+  /// No description provided for @selectHarvestDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Select harvest date'**
+  String get selectHarvestDate;
+
+  /// No description provided for @confirmLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm your location'**
+  String get confirmLocation;
+
+  /// No description provided for @locationVisibilityInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Your listing will be visible to buyers in this area.'**
+  String get locationVisibilityInfo;
+
+  /// No description provided for @postListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Post Listing'**
+  String get postListing;
+
+  /// No description provided for @creatingYourListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Creating Your Listing'**
+  String get creatingYourListing;
+
+  /// No description provided for @pleaseWait.
+  ///
+  /// In en, this message translates to:
+  /// **'This may take a few moments...'**
+  String get pleaseWait;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

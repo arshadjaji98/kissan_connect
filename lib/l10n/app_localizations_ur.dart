@@ -2620,4 +2620,115 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get active => 'فعال';
+
+  @override
+  String get maxImagesAllowed => 'زیادہ سے زیادہ 5 تصاویر کی اجازت ہے';
+
+  @override
+  String get errorPickingImages => 'تصاویر منتخب کرنے میں خرابی:';
+
+  @override
+  String get image => 'تصویر';
+
+  @override
+  String get added => 'شامل کر دی گئی';
+
+  @override
+  String get failedToPickImages => 'تصاویر منتخب نہیں ہو سکیں';
+
+  @override
+  String get enterCropName => 'براہ کرم فصل کا نام درج کریں';
+
+  @override
+  String get enterValidQuantity => 'براہ کرم درست مقدار درج کریں';
+
+  @override
+  String get enterValidPrice => 'براہ کرم درست قیمت درج کریں';
+
+  @override
+  String get enterPhoneNumber => 'براہ کرم فون نمبر درج کریں';
+
+  @override
+  String get creatingListing => 'فہرست بنائی جا رہی ہے...';
+
+  @override
+  String get imagesProcessed => 'تصاویر کامیابی سے پراسیس ہو گئیں!';
+
+  @override
+  String get listingCreatedWithId => 'فہرست اس آئی ڈی کے ساتھ بن گئی:';
+
+  @override
+  String get listingPosted => 'فہرست کامیابی سے شائع ہو گئی!';
+
+  @override
+  String get errorCreatingListing => 'فہرست بنانے میں خرابی:';
+
+  @override
+  String get failedToCreateListing => 'فہرست نہیں بن سکی:';
+
+  @override
+  String get createNewListing => 'نئی فہرست بنائیں';
+
+  @override
+  String get uploadCropPhotos => 'فصل کی تصاویر اپلوڈ کریں';
+
+  @override
+  String get addUpTo => 'زیادہ سے زیادہ شامل کریں';
+
+  @override
+  String get photosOfCrop => 'فصل کی تصاویر';
+
+  @override
+  String get photosMappingInfo => 'تصاویر کو اعلیٰ معیار کی فصل کی تصاویر سے میپ کیا جائے گا';
+
+  @override
+  String get imageRemoved => 'تصویر ہٹا دی گئی';
+
+  @override
+  String get addPhotos => 'تصاویر لگائیں';
+
+  @override
+  String get cropExamples => 'گندم، باسمتی چاول، کپاس وغیرہ';
+
+  @override
+  String get descriptionHint => 'معیار، قسم اور دیگر تفصیلات بیان کریں۔';
+
+  @override
+  String get cropName => 'فصل کا نام';
+
+  @override
+  String get pricePerKg => 'قیمت فی کلو';
+
+  @override
+  String get phoneNumber => 'فون نمبر';
+
+  @override
+  String get enterYourPhoneNumber => 'اپنا فون نمبر درج کریں';
+
+  @override
+  String get cropVariety => 'فصل کی قسم';
+
+  @override
+  String get cropVarietyHint => 'مثال: فیصل آباد-2008';
+
+  @override
+  String get harvestDate => 'کٹائی کی تاریخ';
+
+  @override
+  String get selectHarvestDate => 'کٹائی کی تاریخ منتخب کریں';
+
+  @override
+  String get confirmLocation => 'لوکیشن کنفرم کریں';
+
+  @override
+  String get locationVisibilityInfo => 'آپ کی فہرست اس علاقے کے خریداروں کو نظر آئے گی۔';
+
+  @override
+  String get postListing => 'فہرست شائع کریں';
+
+  @override
+  String get creatingYourListing => 'آپ کی فہرست بنائی جا رہی ہے';
+
+  @override
+  String get pleaseWait => 'اس میں چند لمحے لگ سکتے ہیں...';
 }
