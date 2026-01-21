@@ -24,10 +24,8 @@ class FirebaseService {
   }) async {
     try {
       // Create user with email and password
-      UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      UserCredential userCredential = await _auth
+          .createUserWithEmailAndPassword(email: email, password: password);
 
       // Create user document in Firestore
       await _firestore.collection('users').doc(userCredential.user!.uid).set({
@@ -78,7 +76,10 @@ class FirebaseService {
   // Get user data from Firestore
   Future<Map<String, dynamic>?> getUserData(String uid) async {
     try {
-      DocumentSnapshot userDoc = await _firestore.collection('users').doc(uid).get();
+      DocumentSnapshot userDoc = await _firestore
+          .collection('users')
+          .doc(uid)
+          .get();
       if (userDoc.exists) {
         return userDoc.data() as Map<String, dynamic>;
       }
