@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../services/firebase_service.dart';
-import '../routes.dart';
 import 'WelcomeScreen.dart';
 import 'HomeScreen.dart';
 
@@ -18,9 +17,7 @@ class AuthWrapper extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.waiting) {
           // Show loading screen while checking auth state
           return const Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
-            ),
+            body: Center(child: CircularProgressIndicator()),
           );
         }
 
@@ -31,9 +28,7 @@ class AuthWrapper extends StatelessWidget {
             builder: (context, userDataSnapshot) {
               if (userDataSnapshot.connectionState == ConnectionState.waiting) {
                 return const Scaffold(
-                  body: Center(
-                    child: CircularProgressIndicator(),
-                  ),
+                  body: Center(child: CircularProgressIndicator()),
                 );
               }
 
@@ -42,9 +37,12 @@ class AuthWrapper extends StatelessWidget {
                 return HomeScreen(
                   userLocation: userData['location'] ?? 'Your Location',
                   userName: userData['name'] ?? 'Farmer',
-                  selectedCrops: List<String>.from(userData['selectedCrops'] ?? ['Wheat']),
-                  primaryCrop: userData['selectedCrops'] != null &&
-                      (userData['selectedCrops'] as List).isNotEmpty
+                  selectedCrops: List<String>.from(
+                    userData['selectedCrops'] ?? ['Wheat'],
+                  ),
+                  primaryCrop:
+                      userData['selectedCrops'] != null &&
+                          (userData['selectedCrops'] as List).isNotEmpty
                       ? (userData['selectedCrops'] as List).first
                       : 'Wheat',
                 );

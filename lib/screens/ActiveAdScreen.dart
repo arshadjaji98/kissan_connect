@@ -696,8 +696,6 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
   }
 
   Future<void> _editListing(QueryDocumentSnapshot listing) async {
-    final data = listing.data() as Map<String, dynamic>;
-
     // Show options menu
     showModalBottomSheet(
       context: context,

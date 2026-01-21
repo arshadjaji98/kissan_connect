@@ -39,7 +39,8 @@ class FirebaseHelper {
     final sampleListings = [
       {
         'cropName': 'Wheat Grains',
-        'description': 'High-quality super fine wheat, harvested this season. Organically grown with no pesticides.',
+        'description':
+            'High-quality super fine wheat, harvested this season. Organically grown with no pesticides.',
         'quantity': 2000,
         'price': 25,
         'phoneNumber': '+923001234567',
@@ -60,7 +61,8 @@ class FirebaseHelper {
       },
       {
         'cropName': 'Basmati Rice',
-        'description': 'Premium quality Basmati rice, aged for perfect texture and aroma.',
+        'description':
+            'Premium quality Basmati rice, aged for perfect texture and aroma.',
         'quantity': 500,
         'price': 150,
         'phoneNumber': '+923002345678',
@@ -139,7 +141,10 @@ class FirebaseHelper {
 
   // Get listing by ID
   static Future<DocumentSnapshot> getListingById(String listingId) async {
-    return await _firestore.collection('marketplace_listings').doc(listingId).get();
+    return await _firestore
+        .collection('marketplace_listings')
+        .doc(listingId)
+        .get();
   }
 
   // Create a new listing - FIXED: Ensure imageUrls is properly typed
@@ -165,11 +170,15 @@ class FirebaseHelper {
       print('📍 Location: $location');
 
       // Validate image URLs
-      final validImageUrls = imageUrls.where((url) => url.isNotEmpty && url.startsWith('http')).toList();
+      final validImageUrls = imageUrls
+          .where((url) => url.isNotEmpty && url.startsWith('http'))
+          .toList();
 
       if (validImageUrls.isEmpty) {
         print('⚠️ No valid image URLs provided, using default fallback');
-        validImageUrls.add('https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&auto=format&fit=crop');
+        validImageUrls.add(
+          'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&auto=format&fit=crop',
+        );
       }
 
       final docRef = await _firestore.collection('marketplace_listings').add({
@@ -215,7 +224,8 @@ class FirebaseHelper {
     try {
       // Generate unique filename
       final timestamp = DateTime.now().millisecondsSinceEpoch;
-      final randomNum = (DateTime.now().millisecondsSinceEpoch % 10000).toString();
+      final randomNum = (DateTime.now().millisecondsSinceEpoch % 10000)
+          .toString();
       final fileName = '${user.uid}_${timestamp}_$randomNum.jpg';
       final ref = _storage.ref().child('marketplace_images/$fileName');
 
@@ -244,11 +254,16 @@ class FirebaseHelper {
       final uploadTask = ref.putFile(imageFile, metadata);
 
       // Listen to state changes
-      uploadTask.snapshotEvents.listen((TaskSnapshot snapshot) {
-        print('📊 Upload progress: ${snapshot.bytesTransferred}/${snapshot.totalBytes}');
-      }, onError: (error) {
-        print('❌ Upload error: $error');
-      });
+      uploadTask.snapshotEvents.listen(
+        (TaskSnapshot snapshot) {
+          print(
+            '📊 Upload progress: ${snapshot.bytesTransferred}/${snapshot.totalBytes}',
+          );
+        },
+        onError: (error) {
+          print('❌ Upload error: $error');
+        },
+      );
 
       // Wait for upload to complete
       final snapshot = await uploadTask;
@@ -274,7 +289,6 @@ class FirebaseHelper {
       } else {
         throw Exception('Upload failed with state: ${snapshot.state}');
       }
-
     } catch (e, stackTrace) {
       print('❌ Error uploading image: $e');
       print('📋 Stack trace: $stackTrace');
@@ -289,10 +303,12 @@ class FirebaseHelper {
       if (e is FirebaseException) {
         switch (e.code) {
           case 'storage/object-not-found':
-            errorMessage += 'Storage reference not found. Please check Firebase Storage configuration.';
+            errorMessage +=
+                'Storage reference not found. Please check Firebase Storage configuration.';
             break;
           case 'storage/unauthorized':
-            errorMessage += 'Unauthorized access. Please check Firebase Storage rules.';
+            errorMessage +=
+                'Unauthorized access. Please check Firebase Storage rules.';
             break;
           case 'storage/canceled':
             errorMessage += 'Upload was canceled.';
@@ -314,10 +330,12 @@ class FirebaseHelper {
   // Increment view count
   static Future<void> incrementViews(String listingId) async {
     try {
-      await _firestore.collection('marketplace_listings').doc(listingId).update({
-        'views': FieldValue.increment(1),
-        'updatedAt': FieldValue.serverTimestamp(),
-      });
+      await _firestore.collection('marketplace_listings').doc(listingId).update(
+        {
+          'views': FieldValue.increment(1),
+          'updatedAt': FieldValue.serverTimestamp(),
+        },
+      );
     } catch (e) {
       print('Error incrementing views: $e');
     }
@@ -330,16 +348,18 @@ class FirebaseHelper {
 
     try {
       if (isSaved) {
-        await _firestore.collection('marketplace_listings').doc(listingId).update({
-          'saves': FieldValue.increment(1),
-        });
+        await _firestore
+            .collection('marketplace_listings')
+            .doc(listingId)
+            .update({'saves': FieldValue.increment(1)});
         await _firestore.collection('users').doc(user.uid).update({
           'savedListings': FieldValue.arrayUnion([listingId]),
         });
       } else {
-        await _firestore.collection('marketplace_listings').doc(listingId).update({
-          'saves': FieldValue.increment(-1),
-        });
+        await _firestore
+            .collection('marketplace_listings')
+            .doc(listingId)
+            .update({'saves': FieldValue.increment(-1)});
         await _firestore.collection('users').doc(user.uid).update({
           'savedListings': FieldValue.arrayRemove([listingId]),
         });
@@ -385,11 +405,13 @@ class FirebaseHelper {
           .orderBy('createdAt', descending: true)
           .get();
 
-      print('📊 [FirebaseHelper] Found ${allActiveListings.docs.length} active listings total');
+      print(
+        '📊 [FirebaseHelper] Found ${allActiveListings.docs.length} active listings total',
+      );
 
       // Filter locally by multiple fields
       final results = allActiveListings.docs.where((doc) {
-        final data = doc.data() as Map<String, dynamic>;
+        final data = doc.data();
         final cropName = data['cropName']?.toString().toLowerCase() ?? '';
         final description = data['description']?.toString().toLowerCase() ?? '';
         final location = data['location']?.toString().toLowerCase() ?? '';
@@ -403,7 +425,9 @@ class FirebaseHelper {
             sellerName.contains(cleanQuery);
       }).toList();
 
-      print('✅ [FirebaseHelper] Search found ${results.length} matching results');
+      print(
+        '✅ [FirebaseHelper] Search found ${results.length} matching results',
+      );
       return results;
     } catch (e, stackTrace) {
       print('❌ [FirebaseHelper] SEARCH ERROR: $e');
@@ -440,15 +464,21 @@ class FirebaseHelper {
 
     try {
       // Check if user owns the listing
-      final listingDoc = await _firestore.collection('marketplace_listings').doc(listingId).get();
+      final listingDoc = await _firestore
+          .collection('marketplace_listings')
+          .doc(listingId)
+          .get();
       if (listingDoc.exists) {
         final data = listingDoc.data() as Map<String, dynamic>;
         if (data['sellerId'] == user.uid) {
           // Soft delete by changing status
-          await _firestore.collection('marketplace_listings').doc(listingId).update({
-            'status': 'deleted',
-            'updatedAt': FieldValue.serverTimestamp(),
-          });
+          await _firestore
+              .collection('marketplace_listings')
+              .doc(listingId)
+              .update({
+                'status': 'deleted',
+                'updatedAt': FieldValue.serverTimestamp(),
+              });
 
           // Remove from user's myListings
           await _firestore.collection('users').doc(user.uid).update({
@@ -488,19 +518,29 @@ class FirebaseHelper {
   }
 
   // Alternative upload method with timeout - FIXED: Using standard Exception
-  static Future<String> uploadImageWithTimeout(File imageFile, {Duration timeout = const Duration(seconds: 30)}) async {
+  static Future<String> uploadImageWithTimeout(
+    File imageFile, {
+    Duration timeout = const Duration(seconds: 30),
+  }) async {
     try {
       // Use Future.any to implement timeout
       final result = await Future.any([
         uploadImage(imageFile),
-        Future.delayed(timeout, () => throw Exception('Image upload timed out after ${timeout.inSeconds} seconds')),
+        Future.delayed(
+          timeout,
+          () => throw Exception(
+            'Image upload timed out after ${timeout.inSeconds} seconds',
+          ),
+        ),
       ]);
 
       return result;
     } on Exception catch (e) {
       if (e.toString().contains('timed out')) {
         print('⏰ Upload timeout: $e');
-        throw Exception('Image upload took too long. Please try again with a smaller image or better internet connection.');
+        throw Exception(
+          'Image upload took too long. Please try again with a smaller image or better internet connection.',
+        );
       } else {
         rethrow;
       }

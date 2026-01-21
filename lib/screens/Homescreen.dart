@@ -173,7 +173,6 @@ class PestPreventionScreen extends StatelessWidget {
   }
 
   Widget _buildPreventionMeasures(String cropName, BuildContext context) {
-    final loc = AppLocalizations.of(context)!;
     final measures = _getPreventionMeasures(cropName, context);
     return Card(
       child: Padding(
