@@ -6,13 +6,8 @@ class FirebaseService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // Get current user
   User? get currentUser => _auth.currentUser;
-
-  // Stream for auth state changes
   Stream<User?> get authStateChanges => _auth.authStateChanges();
-
-  // Sign up with email and password
   Future<User?> signUp({
     required String email,
     required String password,
@@ -23,11 +18,8 @@ class FirebaseService {
     required String landUnit,
   }) async {
     try {
-      // Create user with email and password
       UserCredential userCredential = await _auth
           .createUserWithEmailAndPassword(email: email, password: password);
-
-      // Create user document in Firestore
       await _firestore.collection('users').doc(userCredential.user!.uid).set({
         'uid': userCredential.user!.uid,
         'email': email,
@@ -49,7 +41,6 @@ class FirebaseService {
     }
   }
 
-  // Sign in with email and password
   Future<User?> signIn({
     required String email,
     required String password,
@@ -68,12 +59,10 @@ class FirebaseService {
     }
   }
 
-  // Sign out
   Future<void> signOut() async {
     await _auth.signOut();
   }
 
-  // Get user data from Firestore
   Future<Map<String, dynamic>?> getUserData(String uid) async {
     try {
       DocumentSnapshot userDoc = await _firestore
@@ -92,7 +81,6 @@ class FirebaseService {
     }
   }
 
-  // Update user preferences
   Future<void> updateUserPreferences({
     required String uid,
     String? location,
@@ -119,11 +107,8 @@ class FirebaseService {
     }
   }
 
-  // Check if user exists
   Future<bool> checkUserExists(String email) async {
     try {
-      // Note: This is not directly possible with Firebase Auth
-      // We'll check in Firestore instead
       QuerySnapshot query = await _firestore
           .collection('users')
           .where('email', isEqualTo: email)
@@ -139,7 +124,6 @@ class FirebaseService {
     }
   }
 
-  // Reset password
   Future<void> resetPassword(String email) async {
     try {
       await _auth.sendPasswordResetEmail(email: email);

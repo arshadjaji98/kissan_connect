@@ -19,7 +19,6 @@ void main() async {
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // Static function to change locale dynamically
   static void setLocale(BuildContext context, Locale newLocale) {
     _MyAppState? state = context.findAncestorStateOfType<_MyAppState>();
     state?.setLocale(newLocale);
@@ -30,7 +29,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale _locale = const Locale('en'); // default language
+  Locale _locale = const Locale('en');
 
   void setLocale(Locale locale) {
     setState(() {
@@ -59,7 +58,7 @@ class _MyAppState extends State<MyApp> {
             }
           }
         }
-        return const Locale('en'); // fallback
+        return const Locale('en');
       },
       title: 'Kissan Connect',
       debugShowCheckedModeBanner: false,

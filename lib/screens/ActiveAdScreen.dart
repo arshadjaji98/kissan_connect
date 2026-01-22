@@ -696,7 +696,6 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
   }
 
   Future<void> _editListing(QueryDocumentSnapshot listing) async {
-    // Show options menu
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -762,7 +761,6 @@ class _ActiveAdScreenState extends State<ActiveAdScreen> {
   Future<void> _editListingDetails(QueryDocumentSnapshot listing) async {
     final data = listing.data() as Map<String, dynamic>;
 
-    // Show dialog with form fields
     final priceController = TextEditingController(
       text: (data['price'] as num?)?.toString() ?? '',
     );

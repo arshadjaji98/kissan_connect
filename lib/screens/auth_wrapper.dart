@@ -15,14 +15,12 @@ class AuthWrapper extends StatelessWidget {
       stream: firebaseService.authStateChanges,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          // Show loading screen while checking auth state
           return const Scaffold(
             body: Center(child: CircularProgressIndicator()),
           );
         }
 
         if (snapshot.hasData) {
-          // User is logged in, show home screen
           return FutureBuilder<Map<String, dynamic>?>(
             future: firebaseService.getUserData(snapshot.data!.uid),
             builder: (context, userDataSnapshot) {
@@ -47,8 +45,6 @@ class AuthWrapper extends StatelessWidget {
                       : 'Wheat',
                 );
               }
-
-              // If user data couldn't be loaded, still show home with defaults
               return HomeScreen(
                 userLocation: 'Your Location',
                 userName: 'Farmer',
@@ -58,7 +54,6 @@ class AuthWrapper extends StatelessWidget {
             },
           );
         } else {
-          // User is not logged in, show welcome screen
           return const WelcomeScreen();
         }
       },

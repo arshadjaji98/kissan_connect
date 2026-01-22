@@ -668,8 +668,6 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
                   ),
                 ),
                 const SizedBox(height: 30),
-
-                // Submit Button
                 SizedBox(
                   width: double.infinity,
                   height: 55,
@@ -705,8 +703,6 @@ class _CreateListingScreenState extends State<CreateListingScreen> {
               ],
             ),
           ),
-
-          // Loading Overlay
           if (_isUploading)
             Container(
               color: Colors.black.withOpacity(0.8),

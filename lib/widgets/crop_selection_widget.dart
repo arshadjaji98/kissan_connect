@@ -4,12 +4,12 @@ import 'package:kissan_connect_app_2/l10n/app_localizations.dart';
 
 class CropSelectionWidget extends StatefulWidget {
   final Function(List<String>)? onCropsSelected;
-  final List<String>? initialSelectedCrops; // ADD THIS
+  final List<String>? initialSelectedCrops;
 
   const CropSelectionWidget({
     super.key,
     this.onCropsSelected,
-    this.initialSelectedCrops, // ADD THIS
+    this.initialSelectedCrops,
   });
 
   @override
@@ -17,7 +17,7 @@ class CropSelectionWidget extends StatefulWidget {
 }
 
 class _CropSelectionWidgetState extends State<CropSelectionWidget> {
-  late List<String> _selectedCrops; // Change to late
+  late List<String> _selectedCrops;
 
   final List<String> _cropKeys = [
     'wheat',

@@ -6,9 +6,6 @@ import 'HomeScreen.dart';
 import 'WeatherScreen.dart';
 import 'MarketplaceScreen.dart';
 
-// ---------------------------------------------------------------------------
-// DATA MODEL
-// ---------------------------------------------------------------------------
 class Crop {
   final String nameEn;
   final String nameUr;
@@ -25,9 +22,6 @@ class Crop {
   });
 }
 
-// ---------------------------------------------------------------------------
-// MASTER CROP DATA WITH SPECIALIZED RECOMMENDATIONS
-// ---------------------------------------------------------------------------
 List<Crop> allAvailableCrops(BuildContext context) {
   final loc = AppLocalizations.of(context)!;
   return [
@@ -435,16 +429,10 @@ List<Crop> allAvailableCrops(BuildContext context) {
   ];
 }
 
-// ---------------------------------------------------------------------------
-// CROP DETAIL SCREEN
-
-// ---------------------------------------------------------------------------
-// CROP DETAIL SCREEN
-// ---------------------------------------------------------------------------
 class CropDetailScreen extends StatelessWidget {
   final Crop crop;
 
-  const CropDetailScreen({Key? key, required this.crop}) : super(key: key);
+  const CropDetailScreen({super.key, required this.crop});
 
   @override
   Widget build(BuildContext context) {
@@ -470,7 +458,6 @@ class CropDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Crop Image and Basic Info - FIXED VERSION
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -486,7 +473,6 @@ class CropDetailScreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  // Image Container with consistent styling
                   Container(
                     width: double.infinity,
                     height: 200,
@@ -515,7 +501,6 @@ class CropDetailScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  // Crop Name
                   Text(
                     '${crop.nameEn} (${crop.nameUr})',
                     style: const TextStyle(
@@ -527,7 +512,6 @@ class CropDetailScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 12),
-                  // Description
                   Text(
                     crop.description,
                     style: const TextStyle(
@@ -541,8 +525,6 @@ class CropDetailScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-
-            // Recommendations
             for (var entry in crop.recommendations.entries)
               _buildRecommendationSection(entry.key, entry.value),
 
@@ -622,9 +604,6 @@ class CropDetailScreen extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------
-// MAIN SCREEN: CropGuideScreen
-// ---------------------------------------------------------------------------
 class CropGuideScreen extends StatefulWidget {
   const CropGuideScreen({super.key});
 
@@ -638,14 +617,10 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
   List<Crop> _allOtherCrops = [];
   bool _isLoading = true;
   int _bottomNavIndex = 2;
-
-  // Store user data for navigation
   String _userLocation = '';
   String _userName = '';
   List<String> _selectedCrops = ['Wheat'];
   String _primaryCrop = 'Wheat';
-
-  // For search filtering
   List<Crop> _filteredUserCrops = [];
   List<Crop> _filteredOtherCrops = [];
   bool _isSearching = false;
@@ -755,7 +730,6 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
       _isSearching = query.isNotEmpty;
 
       if (_isSearching) {
-        // Search in both user crops and other crops
         _filteredUserCrops = _userCrops
             .where(
               (crop) =>
@@ -778,7 +752,6 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
     });
   }
 
-  // Navigation Methods
   void _navigateToHome(BuildContext context) {
     Navigator.pushAndRemoveUntil(
       context,
@@ -846,7 +819,6 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
       ),
       body: Column(
         children: [
-          // Fixed Search Bar
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 20.0,
@@ -902,8 +874,6 @@ class _CropGuideScreenState extends State<CropGuideScreen> {
               ),
             ),
           ),
-
-          // Content
           Expanded(
             child: _isLoading
                 ? const Center(
