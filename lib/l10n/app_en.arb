@@ -364,16 +364,13 @@
   "split_application_recommended": "Split application recommended",
   "ensure_adequate_soil_moisture": "Ensure adequate soil moisture",
   "monitor_tiller_count": "Monitor tiller count regularly",
-
   "focus_on_potassium_application": "Focus on potassium application",
   "apply_early_silking_stage": "Apply during early silking stage",
   "reduce_nitrogen_excess_growth": "Reduce nitrogen to prevent excessive growth",
   "ensure_balanced_nutrition": "Ensure balanced nutrition",
   "monitor_ear_development": "Monitor ear development",
-
   "apply_early_pod_development": "Apply during early pod development",
   "monitor_pod_setting_rate": "Monitor pod setting rate",
-
   "avoid_stress_conditions": "Avoid application during stress conditions",
   "follow_crop_specific_schedule": "Follow crop-specific schedules",
   "consider_weather_conditions": "Consider weather conditions",
@@ -543,7 +540,6 @@
   "wheat_y3": "Use combine harvester for efficient harvesting",
   "wheat_y4": "Dry to 12% moisture before storage",
   "wheat_y5": "Store in clean, rodent-proof godowns",
- 
   "sugar_summary": "Sugarcane is a tropical perennial cash crop needing high heat (25-32°C) and moisture. It has a 12-18 month growing season.",
   "sugar_p_title": "Planting",
   "sugar_p1": "Plant from February to March (Spring crop)",
@@ -575,7 +571,6 @@
   "sugar_y3": "Cut close to ground level",
   "sugar_y4": "Mill within 24 hours of harvest",
   "sugar_y5": "Ratoon management for 2-3 cycles",
- 
   "rice_summary": "Rice needs standing water for most of its growing period. The Kharif season is the best time for cultivation.",
   "rice_p_title": "Planting",
   "rice_p1": "Transplant seedlings 20-25 days old",
@@ -607,7 +602,6 @@
   "rice_y3": "Thresh within 2-3 days of harvest",
   "rice_y4": "Dry to 14% moisture content",
   "rice_y5": "Store in aerated containers",
-
   "cotton_summary": "Cotton thrives in dry, warm climates and needs plenty of sunshine. Proper pest management is key.",
   "cotton_p_title": "Planting",
   "cotton_p1": "Sow from April to May",
@@ -639,7 +633,6 @@
   "cotton_y3": "Pick when bolls fully open",
   "cotton_y4": "Dry in shade to maintain fiber quality",
   "cotton_y5": "Store in dry place",
-  
   "maize_summary": "Maize is versatile and requires moderate temperatures. It is often grown as a Kharif crop.",
   "maize_p_title": "Planting",
   "maize_p1": "Sow from June to July for Kharif",
@@ -671,7 +664,6 @@
   "maize_y3": "Harvest at 20-25% moisture",
   "maize_y4": "Dry to 14% moisture for storage",
   "maize_y5": "Store in well-ventilated bins",
-
   "mango_summary": "Mango is a tropical fruit tree. It requires careful pruning and protection from frost during flowering.",
   "mango_p_title": "Planting",
   "mango_p1": "Plant in July-August or February-March",
@@ -703,7 +695,6 @@
   "mango_y3": "Harvest in morning hours",
   "mango_y4": "Handle fruits carefully to avoid damage",
   "mango_y5": "Pack in ventilated boxes",
-
   "potato_summary": "Potato is a cool-season crop grown in winter. Proper soil preparation and seed treatment are crucial.",
   "potato_p_title": "Planting",
   "potato_p1": "Plant from October to November",
@@ -736,7 +727,6 @@
   "potato_y3": "Harvest in cool weather",
   "potato_y4": "Cure tubers for 10-15 days before storage",
   "potato_y5": "Store at 4-5°C with high humidity",
-
   "chilli_summary": "Chilli is a warm-season crop sensitive to frost. Requires well-drained soil and careful water management.",
   "chilli_p_title": "Planting",
   "chilli_p1": "Transplant 30-35 day old seedlings",
@@ -768,7 +758,6 @@
   "chilli_y3": "Pick regularly to encourage more fruiting",
   "chilli_y4": "Dry in shade to retain color and pungency",
   "chilli_y5": "Store in airtight containers",
-
   "errorLoadingCrops": "Error loading crops",
   "errorFetchingCrops": "Error fetching crops",
   "yourCrops": "Your Crops",
@@ -777,7 +766,6 @@
   "searchResults": "Search Results",
   "noCropsSelected": "You have not selected any crops yet.",
   "allCropsSelected": "You have selected all available crops!",
-  
   "errorLoadingUserData": "Error loading user data",
   "searchHint": "Search crops",
   "seller_location": "Seller Location",
@@ -802,19 +790,16 @@
   "chooseCrops": "Choose the crops you grow on your farm",
   "saveChanges": "Save Changes",
   "done": "Done",
-
   "fillAllFields": "Please fill all fields",
   "selectAtLeastOneCrop": "Please select at least one crop",
   "profileUpdated": "Profile updated successfully",
   "errorUpdatingProfile": "Error updating profile:",
-
   "changePassword": "Change Password",
   "enterPasswordInfo": "Enter your current and new password",
   "currentPassword": "Current Password",
   "newPassword": "New Password",
   "confirmNewPassword": "Confirm New Password",
   "passwordHint": "Use at least 8 characters",
-
   "enterCurrentPassword": "Please enter your current password",
   "enterNewPassword": "Please enter a new password",
   "passwordMinLength": "New password must be at least 8 characters",
@@ -823,14 +808,11 @@
   "incorrectPassword": "Incorrect password entered",
   "weakPassword": "New password is too weak",
   "unexpectedError": "An unexpected error occurred",
-
   "errorChangingLanguage": "Error changing language:",
-
   "farmInformation": "Farm Information",
   "chosenCrops": "Chosen Crops",
   "primaryCrop": "Primary Crop",
   "notSet": "Not Set",
-
   "preferences": "Preferences",
   "language": "Language",
   "account": "Account" ,
@@ -841,18 +823,15 @@
   "priceLowToHigh": "Price: Low to High",
   "priceHighToLow": "Price: High to Low",
   "quantityAvailable": "Quantity Available",
-
   "streamError": "Stream Error:",
   "processingError": "Processing Error:",
   "queryError": "Query Error:",
   "buildCardError": "Build Card Error:",
   "errorProcessingData": "Error processing data:",
   "errorDisplayingListing": "Error displaying listing",
-
   "noDataAvailable": "No data available",
   "noActiveListings": "No Active Listings",
   "noListingsYet": "You haven't created any listings yet",
-
   "userNotLoggedIn": "User not logged in",
 
   "listed": "Listed:",
@@ -861,17 +840,14 @@
   "view": "View",
   "edit": "Edit",
   "delete": "Delete",
-
   "editListing": "Edit Listing",
   "whatToEdit": "What would you like to edit?",
   "editDetails": "Edit Details",
   "editDetailsHint": "Change price, quantity, description",
-
   "editListingDetails": "Edit Listing Details",
   "price": "Price",
   "quantity": "Quantity",
   "description": "Description",
-
   "fillRequiredFields": "Please fill all required fields",
   "listingUpdated": "Listing updated successfully",
   "errorUpdatingListing": "Error updating listing:",
@@ -884,55 +860,43 @@
   "donthave_active_listings": "You haven't created any listings yet",
   "create_first_listing": "Create Your First Listing",
   "active": "Active",
-
   "maxImagesAllowed": "Maximum 5 images allowed",
   "errorPickingImages": "Error picking images:",
   "image": "Image",
   "added": "Added",
   "failedToPickImages": "Failed to pick images",
-
   "enterCropName": "Please enter crop name",
   "enterValidQuantity": "Please enter valid quantity",
   "enterValidPrice": "Please enter valid price",
   "enterPhoneNumber": "Please enter phone number",
-
   "creatingListing": "Creating listing...",
   "imagesProcessed": "Images processed successfully!",
   "listingCreatedWithId": "Listing created with ID:",
   "listingPosted": "Listing posted successfully!",
   "errorCreatingListing": "Error creating listing:",
   "failedToCreateListing": "Failed to create listing:",
-
   "createNewListing": "Create New Listing",
   "uploadCropPhotos": "Upload Crop Photos",
   "addUpTo": "Add up to",
   "photosOfCrop": "photos of your crop",
   "photosMappingInfo": "Photos will be mapped to high-quality crop images",
-
   "imageRemoved": "Image removed",
   "addPhotos": "Add Photos",
-
   "cropExamples": "e.g Wheat, Basmati Rice, Cotton",
   "descriptionHint": "Describe the quality, variety, and any other details.",
-
   "cropName": "Crop Name",
   "pricePerKg": "Price per kg",
   "phoneNumber": "Phone Number",
   "enterYourPhoneNumber": "Enter your phone number",
-
   "cropVariety": "Crop Variety",
   "cropVarietyHint": "e.g., Faisalabad-2008",
   "harvestDate": "Harvest Date",
   "selectHarvestDate": "Select harvest date",
-
   "confirmLocation": "Confirm your location",
   "locationVisibilityInfo": "Your listing will be visible to buyers in this area.",
-
   "postListing": "Post Listing",
   "creatingYourListing": "Creating Your Listing",
   "pleaseWait": "This may take a few moments...",
-
-
   "errorCheckingSavedStatus": "Error checking saved status:",
   "errorIncrementingViews": "Error incrementing views:",
   "listingSaved": "Listing saved!",
